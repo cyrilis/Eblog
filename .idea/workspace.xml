@@ -28,7 +28,7 @@
       <file leaf-file-name="header.ejs" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/header.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="21" selection-start="346" selection-end="346" vertical-scroll-proportion="0.5936073" vertical-offset="0" max-vertical-offset="460">
+            <state line="14" column="47" selection-start="421" selection-end="421" vertical-scroll-proportion="0.41055718" vertical-offset="0" max-vertical-offset="682">
               <folding />
             </state>
           </provider>
@@ -243,7 +243,7 @@
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules/stylus/bin/stylus" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="FullScreen" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
   </component>
@@ -350,10 +350,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32972974" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" x="0" y="308" width="1600" height="244" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.7743243" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.126875" sideWeight="0.67027026" order="1" side_tool="false" content_ui="combo" />
@@ -466,7 +466,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/header.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="21" selection-start="346" selection-end="346" vertical-scroll-proportion="0.5936073" vertical-offset="0" max-vertical-offset="460">
+        <state line="14" column="47" selection-start="421" selection-end="421" vertical-scroll-proportion="0.41055718" vertical-offset="0" max-vertical-offset="682">
           <folding />
         </state>
       </provider>
