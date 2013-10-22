@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1f2b440-a030-4a6e-b81d-18bc193abbfe" name="Default" comment="" />
+    <list default="true" id="d1f2b440-a030-4a6e-b81d-18bc193abbfe" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="test.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,7 +28,7 @@
       <file leaf-file-name="header.ejs" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/header.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="27" selection-start="269" selection-end="269" vertical-scroll-proportion="0.456621" vertical-offset="0" max-vertical-offset="460">
+            <state line="13" column="21" selection-start="346" selection-end="346" vertical-scroll-proportion="0.5936073" vertical-offset="0" max-vertical-offset="460">
               <folding />
             </state>
           </provider>
@@ -38,6 +40,9 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitLogSettings">
     <option name="myDateState">
@@ -461,7 +466,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/header.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="27" selection-start="269" selection-end="269" vertical-scroll-proportion="0.456621" vertical-offset="0" max-vertical-offset="460">
+        <state line="13" column="21" selection-start="346" selection-end="346" vertical-scroll-proportion="0.5936073" vertical-offset="0" max-vertical-offset="460">
           <folding />
         </state>
       </provider>
