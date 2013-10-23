@@ -6,8 +6,70 @@ body {
   padding: 0;
   background: #fff;
   font-family: "Microsoft Yahei", "Helvetica Neue", Arail, sans-serif;
+  font-size: 14px;
+  color: #555;
+}
+input:not([type='submit']),
+textarea {
+  width: 260px;
+  line-height: 1;
+  padding: 5px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border: 2px solid #ddd;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+input:not([type='submit']):focus,
+textarea:focus {
+  border: 2px solid #aaa;
+  outline: none;
 }
 .container {
   width: 1000px;
   margin: 0 auto;
+}
+.form-group {
+  margin-bottom: 10px;
+  border-color: #ddd;
+}
+.form-group label {
+  float: left;
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+  margin-right: 20px;
+  line-height: 2;
+}
+.form-group input,
+.form-group textarea {
+  display: inline-block;
+}
+.button {
+  display: inline-block;
+  min-width: 85px;
+  padding: 8px 14px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #d8d8d8;
+  color: #666;
+  font-size: 16px;
+  background: #d8d8d8;
+  outline: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.button:hover,
+.button:focus {
+  background: #0db397;
+  border-color: #0db397;
+  color: #fff;
 }

@@ -1,16 +1,66 @@
 /**
  * Created by Cyril on 13-10-22.
  */
+maincolor = #0DB397
 border-radius()
   -webkit-border-radius: arguments
   -moz-border-radius: arguments
   border-radius: arguments
-body{
+body
   margin: 0;
   padding 0;
   background: #ffffff;
   font-family: "Microsoft Yahei","Helvetica Neue", Arail, sans-serif
-}
+  font-size 14px
+  color #555
+input:not([type='submit']),textarea
+  width: 260px
+  line-height 1
+  padding 5px
+  border-radius 3px
+  border 2px solid #ddd
+  -webkit-transition: all 0.5s
+  -moz-transition: all 0.5s
+  -ms-transition: all 0.5s
+  -o-transition: all 0.5s
+  transition: all 0.5s
+  &:focus
+    border 2px solid #aaaaaa
+    outline none
 .container
   width: 1000px;
   margin: 0 auto;
+.form-group
+  margin-bottom 10px
+  border-color: #ddd;
+  label
+    float left
+    display: inline-block
+    width: 150px;
+    text-align right
+    margin-right 20px
+    line-height 2
+  input,textarea
+    display inline-block
+
+.button
+  display inline-block
+  min-width 85px
+  padding 8px 14px
+  border-radius 3px
+  border 1px solid #d8d8d8
+  color #666666
+  font-size 16px
+  background #d8d8d8
+  outline none
+  -webkit-transition: all .3s
+  -moz-transition: all .3s
+  -ms-transition: all .3s
+  -o-transition: all .3s
+  transition: all .3s
+  &:hover,&:focus
+    background maincolor
+    border-color maincolor
+    color #ffffff
+
+
