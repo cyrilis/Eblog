@@ -15,7 +15,7 @@
       </option>
       <option name="outputFromStdout" value="false" />
       <option name="passParentEnvs" value="true" />
-      <option name="program" value="C:/Users/Cyril/AppData/Roaming/npm/stylus.cmd" />
+      <option name="program" value="$USER_HOME$/AppData/Roaming/npm/stylus.cmd" />
       <option name="scopeName" value="Project Files" />
       <option name="trackOnlyRoot" value="true" />
       <option name="workingDir" value="$FileDir$" />

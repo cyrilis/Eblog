@@ -3,16 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title><%- title %>- Express</title>
-    <link rel="stylesheet" href="stylesheets/normalize.css"/>
-    <link rel="stylesheet" href="stylesheets/style.css"/>
+    <link rel="stylesheet" href="/stylesheets/normalize.css"/>
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
 </head>
 <body>
 <header>
     <nav class="container">
         <ul>
             <li><a href="/">Home</a></li>
+            <% if (user){ %>
+            <li><a href="/u/<%= user.name %>"><%= user.name %></a></li>
+            <li><a href="/post/new">New Post</a></li>
+            <li><a href="/logout">Logout</a></li>
+            <% }else{  %>
             <li><a href="/reg">Register</a></li>
             <li><a href="/login">Login</a></li>
+            <%}   %>
         </ul>
     </nav>
+    <% if (error) { %>
+    <div class="flash_error"><%= error %></div>
+    <% } %>
+    <% if (success){ %>
+    <div class="flash_success"><%= success  %></div>
+    <% } %>
 </header>
