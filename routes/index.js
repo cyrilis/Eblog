@@ -5,14 +5,22 @@
  */
 var crypto = require('crypto'),
     User = require('../models/user.js');
+    Post = require('../models/post.js');
 module.exports = function (app) {
     app.get("/", function (q, s) {
-        s.render("index", {
-            title: "Home",
-            user: q.session.user,
-            error: q.flash("error").toString(),
-            success: q.flash('success').toString()
+        Post.get(null, function(err,posts){
+            if(err){
+                posts=[];
+            }
+            s.render("index", {
+                title: "Home",
+                user: q.session.user,
+                error: q.flash("error").toString(),
+                success: q.flash('success').toString(),
+                posts:  posts
+            })
         })
+
     });
     app.get('/reg', checkNotLogin);
     app.get("/reg", function (q, s) {
@@ -89,7 +97,18 @@ module.exports = function (app) {
     });
     app.post('/post', checkLogin)
     app.post('/post', function (q, s) {
-        s.send('Yooo!')
+        var currentUser = q.session.user,
+            postObj= q.body.post;
+        postObj.name= currentUser.name;
+        var post = new Post(postObj);
+        post.save(function(err,post){
+            if(err){
+                q.flash('error',err);
+                return s.redirect('/')
+            }
+            q.flash('success',"Posted Successfully!");
+            s.redirect('/')
+        })
     });
     app.get('/logout', function (q, s) {
         q.session.user=null;

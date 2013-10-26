@@ -1,7 +1,14 @@
 <%- include header.ejs %>
 <main class="container">
     <ul class="page_list">
-        Post List
+        <% posts.forEach(function(post, index){   %>
+            <h2><a href="#"><%= post.title  %></a></h2>
+            <p>作者： <a href="#"><%= post.name   %></a></p>
+            <p>日期： <a href="#"><%= post.time.minute  %></a></p>
+            <p>
+                <%= post.content   %>
+            </p>
+        <% })   %>
     </ul>
 </main>
 <% include footer.ejs %>

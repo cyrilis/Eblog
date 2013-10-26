@@ -1,26 +1,30 @@
 <%- include header.ejs   %>
-<form action="/post">
-    <div class="form-group">
-        <label for="post_title">Title</label>
-        <input name="post[title]" id="post_title" type="text"/>
-    </div>
-    <div class="form-group">
-        <label for="post_content">Content</label>
-        <textarea name="post[content]" id="post_content" cols="30" rows="10"></textarea>
-    </div>
-    <div class="form-group">
-        <label for="post_tags">Tags</label>
-        <input name="post[tags]" id="post_tags" type="text"/>
-    </div>
-    <div class="form-group">
-        <label for="post_category">Category</label>
-        <select name="post[category]" id="post_category">
-            <option value="1">Not Categorised</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="post_submit">&nbsp;</label>
-        <input type="submit" class="button" value="Create Post"/>
-    </div>
-</form>
+<div class="container">
+    <form action="/post" method="POST">
+
+        <div class="form-group">
+            <label for="post_title">Title</label>
+            <input name="post[title]" id="post_title" type="text"/>
+        </div>
+        <div class="form-group">
+            <label for="post_content">Content</label>
+            <textarea name="post[content]" id="post_content" cols="30" rows="10"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="post_tags">Tags</label>
+            <input name="post[tags]" id="post_tags" type="text"/>
+        </div>
+        <div class="form-group">
+            <label for="post_category">Category</label>
+            <select name="post[category]" id="post_category">
+                <option value="1">Not Categorised</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="post_submit">&nbsp;</label>
+            <input type="submit" class="button" value="Create Post"/>
+        </div>
+    </form>
+</div>
+
 <%- include footer.ejs  %>

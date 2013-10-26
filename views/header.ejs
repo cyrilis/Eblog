@@ -21,10 +21,13 @@
             <%}   %>
         </ul>
     </nav>
-    <% if (error) { %>
-    <div class="flash_error"><%= error %></div>
-    <% } %>
-    <% if (success){ %>
-    <div class="flash_success"><%= success  %></div>
-    <% } %>
+    <div class="container">
+        <% if (error) { %>
+        <div class="flash_error"><%= error %></div>
+        <% } %>
+        <% if (success){ %>
+        <div class="flash_success"><%= success  %></div>
+        <% } %>
+    </div>
+
 </header>
