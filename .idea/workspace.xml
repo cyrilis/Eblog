@@ -1,51 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1f2b440-a030-4a6e-b81d-18bc193abbfe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382844775817" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382844911660jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382844982198.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382845111882.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382845177348.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382845391225.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382845406270.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382846524547.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382846654740.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382846767422.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382847844668.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382848118709.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382848203425.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382848277662.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382848727285.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382849985283.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382850468015.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382850706922.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382865586085.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382865622012.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382866131208.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382866232691.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382866267676.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382869808888.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382876834923.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382892718022.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382892790990.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382892907386.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382893831700.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382893860145.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382893884175.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382893907633.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382893922866.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382894035632.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382894106526.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/1382894185741.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/480-1jdg7w.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/6508-1x4vfw6.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/6508-a7dxd3.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/6708-187l3uw.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/6708-mh3znp.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/upload/9028-b1ves3.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="d1f2b440-a030-4a6e-b81d-18bc193abbfe" name="Default" comment="" />
     <ignored path="test.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="public/images/upload/" />
@@ -391,10 +347,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="upload" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
