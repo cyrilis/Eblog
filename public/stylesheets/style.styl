@@ -1,20 +1,55 @@
 /**
  * Created by Cyril on 13-10-22.
- */
 maincolor = #0DB397
+ */
+maincolor = #18B0B6
 border-radius()
   -webkit-border-radius: arguments
   -moz-border-radius: arguments
   border-radius: arguments
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(fonts/Open-Sans-300.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(fonts/Open-Sans-400.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(fonts/Open-Sans-700.woff) format('woff');
+}
+::selection{
+  background maincolor
+  color #fff
+}
 body
   margin: 0;
   padding 0;
-  background: #ffffff;
-  font-family: "Microsoft Yahei","Helvetica Neue", Arail, sans-serif
+  background: #ffffff
+  font-family: "Open Sans","Microsoft Yahei","Helvetica Neue", Arail, sans-serif
   font-size 14px
   color #555
   position relative
-input:not([type='submit']),textarea,select
+p
+  margin: 0 0 10px 0
+  line-height 1.3
+img
+  max-width 100%
+  height auto
+blockquote
+  margin: 0
+  padding 10px 0 10px 20px
+  border-left: 5px solid maincolor
+  line-height 1.3
+  font-size 16px
+input:not([type='submit']),textarea,select,[contenteditable='true']
   width: 260px
   line-height 1
   padding 5px
@@ -26,11 +61,77 @@ input:not([type='submit']),textarea,select
   -o-transition: all 0.5s
   transition: all 0.5s
   &:focus
-    border 2px solid #aaaaaa
+    border-color #aaaaaa
     outline none
+[contenteditable='true']
+  width 100%
+  min-height 400px
+  height auto
+  border-top 0
+  margin-bottom 15px
+  &>div
+  &>p
+    font-size 16px
+    margin: 10px 0;
+  & img
+    max-width 100%
+    border 1px solid transparent
+  & span.resize_span
+    position relative
+    display inline-block
+    border 1px dashed #666
+    line-height 0
+    & span.resize_arrow
+      position absolute
+      right -4px
+      bottom -4px
+      z-index 1000
+      width 8px
+      height 8px
+      border 1px solid #ffffff
+      background #000000
+      cursor: nw-resize
+    & img
+      border 0
 .container
   width: 1000px;
   margin: 0 auto;
+.pull-right
+  float right
+.pull-left
+  float left
+.flash_success
+.flash_error
+  width: 970px
+  padding 8px 15px
+  font-size 16px
+  color #ffffff
+  -webkit-border-radius: 3px
+  -moz-border-radius: 3px
+  border-radius: 3px
+  margin-bottom 20px
+.flash_error
+  background #EE688D
+.flash_success
+  background maincolor
+#post_title_outer
+  font-size 20px
+  width 100%
+#post_title_outer:-moz-placeholder {
+  line-height 1.3
+}
+
+#post_title_outer::-moz-placeholder {
+  line-height 1.3
+}
+
+#post_title_outer:-ms-input-placeholder {
+  line-height 1.3
+}
+
+#post_title_outer::-webkit-input-placeholder {
+  line-height 1.3
+}
 .form-group
   margin-bottom 10px
   border-color: #ddd;
@@ -43,7 +144,8 @@ input:not([type='submit']),textarea,select
     line-height 2
   input,textarea
     display inline-block
-
+a
+  color #18B0B6
 .button
   display inline-block
   min-width 85px
@@ -63,3 +165,59 @@ input:not([type='submit']),textarea,select
     background maincolor
     border-color maincolor
     color #ffffff
+.clearfix:before
+.clearfix:after
+  display table
+  content ""
+.clearfix:after
+  clear both
+header
+  width 100%
+  border-bottom 1px solid #d8d8d8
+  .header_navs
+    ul
+      list-style none
+      margin 0
+      padding 0
+      float right
+      border-left 1px solid #d8d8d8
+      li
+        float left
+        a
+          display inline-block
+          padding 20px 24px
+          line-height 1
+          background #ffffff
+          color #666666
+          border-right: 1px solid #d8d8d8
+          text-decoration none
+          -webkit-transition: all .3s
+          -moz-transition: all .3s
+          -ms-transition: all .3s
+          -o-transition: all .3s
+          transition: all .3s
+          &:hover
+            color #ffffff
+            background maincolor
+            border-color maincolor
+main
+  padding 20px 0
+  .posts
+    padding 0
+    ul.post_list
+      margin: 0
+      padding 0
+      list-style none
+      li
+        margin-bottom 40px
+        border-bottom 1px solid #ddd
+        padding-bottom 20px
+        h2
+          color #777
+          margin: 0 0 20px 0
+          font-size 24px
+          line-height 1
+          font-weight 600
+          a
+            text-decoration none
+            text-transform capitalize

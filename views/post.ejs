@@ -1,30 +1,48 @@
 <%- include header.ejs   %>
 <div class="container">
-    <form action="/post" method="POST">
-
+    <h2>New Post</h2>
+    <input type="text" name="post[title]" id="post_title_outer" placeholder="Post Title" />
+    <div class="skriv-container">
+        <ul class="skriv">
+            <li data-id="undo" data-model="skriv.actions.undo"></li>
+            <li data-id="divider"></li>
+            <li data-id="bold" data-command="bold" data-tags="b,strong" data-keys="66"></li>
+            <li data-id="italic" data-command="italic" data-tags="i,em" data-keys="73"></li>
+            <li data-id="underline" data-command="underline" data-tags="u" data-keys="85"></li>
+            <li data-id="divider"></li>
+            <li data-id="align" data-model="skriv.actions.align"></li>
+            <li data-id="divider"></li>
+            <li data-id="ul" data-command="insertunorderedlist" data-tags="ul"></li>
+            <li data-id="ol" data-command="insertorderedlist" data-tags="ol"></li>
+            <li data-id="divider"></li>
+            <li data-id="fontFormat" data-model="skriv.actions.fontFormat"></li>
+            <li data-id="divider"></li>
+            <li data-id="fontSize" data-model="skriv.actions.fontSize"></li>
+            <li data-id="divider"></li>
+            <li data-id="removeFormat" data-command="removeFormat"></li>
+            <li data-id="divider"></li>
+            <li data-id="foregroundColor" data-model="skriv.actions.foregroundColor"></li>
+            <li data-id="backgroundColor" data-model="skriv.actions.backgroundColor"></li>
+            <li data-id="divider"></li>
+            <li data-id="link" data-model="skriv.actions.link" data-tags="a" data-keys="75"></li>
+            <li data-id="unlink" data-model="skriv.actions.unlink" data-tags="a"></li>
+            <li data-id="divider"></li>
+            <li data-id="image" data-model="skriv.actions.image" data-tags="img" data-maxsize="5000" data-endpoint="/upload"></li>
+        </ul>
+    </div>
+    <div class="post" id="post_editor" contenteditable="true">
+        <p>Post Content...</p>
+    </div>
+    <form action="/post" class="clearfix" id="post" onsubmit="submitPost();return false" method="POST">
+            <input name="post[title]" id="post_title" type="text" hidden="hidden"/>
+            <textarea name="post[content]" id="post_content" hidden="hidden"></textarea>
+            <input name="post[tags]" id="post_tags" type="text" hidden="hidden"/>
         <div class="form-group">
-            <label for="post_title">Title</label>
-            <input name="post[title]" id="post_title" type="text"/>
-        </div>
-        <div class="form-group">
-            <label for="post_content">Content</label>
-            <textarea name="post[content]" id="post_content" cols="30" rows="10"></textarea>
-        </div>
-        <div class="form-group">
-            <label for="post_tags">Tags</label>
-            <input name="post[tags]" id="post_tags" type="text"/>
-        </div>
-        <div class="form-group">
-            <label for="post_category">Category</label>
-            <select name="post[category]" id="post_category">
-                <option value="1">Not Categorised</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="post_submit">&nbsp;</label>
-            <input type="submit" class="button" value="Create Post"/>
+            <input type="submit" class="button pull-right" value="Create Post"/>
         </div>
     </form>
 </div>
-
+<script src="/javascripts/jquery-1.9.1.min.js"></script>
+<script src="/javascripts/vendor-editor.js"></script>
+<script src="/javascripts/main.js"></script>
 <%- include footer.ejs  %>

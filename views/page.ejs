@@ -1,0 +1,12 @@
+<%- include header.ejs %>
+<div class="container post">
+    <section>
+        <h2><a href="/post/<%= post.time.day+"/"+post.title %>"><%= post.title  %></a></h2>
+        <p>作者： <a href="/<%= post.name %>"><%= post.name   %></a></p>
+        <p>日期： <a href="#"><%= post.time.minute  %></a></p>
+        <p>
+            <%- post.content   %>
+        </p>
+    </section>
+</div>
+<% include footer.ejs %>

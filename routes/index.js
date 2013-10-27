@@ -4,6 +4,7 @@
  * List all routes here
  */
 var crypto = require('crypto'),
+    fs = require('fs'),
     User = require('../models/user.js');
     Post = require('../models/post.js');
 module.exports = function (app) {
@@ -80,13 +81,13 @@ module.exports = function (app) {
                 return s.redirect('/login')
             }
             q.session.user = user;
-            q.flash('error',"Login Success");
+            q.flash('success',"Login Success");
             return s.redirect('/')
         })
 
 
     });
-    app.get('/post/new', checkLogin)
+    app.get('/post/new', checkLogin);
     app.get('/post/new', function (q, s) {
         s.render('post', {
             title: "New Post",
@@ -95,7 +96,27 @@ module.exports = function (app) {
             success: q.flash('success').toString()
         })
     });
-    app.post('/post', checkLogin)
+    app.get('/post/:day/:title',function(q,s){
+        Post.get({
+            "time.day": q.params.day,
+            "title": q.params.title
+        },function(err,post){
+            if(err){
+                q.flash('error',err);
+                return s.redirect('/')
+            }
+            post=post[0];
+            console.log(post);
+            s.render('page',{
+                title: post.title,
+                post: post,
+                user: q.session.user,
+                success: q.flash('success').toString(),
+                error: q.flash('error').toString()
+            })
+        })
+    });
+    app.post('/post', checkLogin);
     app.post('/post', function (q, s) {
         var currentUser = q.session.user,
             postObj= q.body.post;
@@ -115,6 +136,18 @@ module.exports = function (app) {
         q.flash("success","Logout Success");
         s.redirect('/')
     });
+    app.post('/upload',checkLogin);
+    app.post('/upload',function(q,s){
+        if(q.files.file.size==0){
+            fs.unlinkSync(q.files.file.path);
+            console.log("[Delete]-Successfully removed an empty file!")
+        }else{
+            var target_path='/images/upload/'+(function(){return +new Date})()+".jpg";
+            fs.renameSync(q.files.file.path,"./public"+target_path);
+            console.log("[Rename]-Successfully renamed a file!")
+        }
+        s.json({url:target_path})
+    })
     function checkLogin(q,s,next){
         if (!q.session.user){
             q.flash("error","Login First!");

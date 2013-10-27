@@ -15,9 +15,9 @@ Post.prototype.save = function(callback){
     var time = {
         date: date,
         year: date.getFullYear(),
-        month: date.getFullYear()+"年"+(date.getMonth()+1)+"月",
-        day: date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDate()+"日",
-        minute: date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDate()+"日"+date.getHours()+"时"+date.getMinutes()+"分"
+        month: date.getFullYear()+"-"+(date.getMonth()+1),
+        day: date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate(),
+        minute: date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+date.getMinutes()
     }
     var post={
         name: this.name,
@@ -61,6 +61,26 @@ Post.get = function(postObj,callback){
                     return callback(err)
                 }
                 callback(null, posts)
+            })
+        })
+    })
+}
+Post.getOne= function(postObj,callback){
+    database.open(function(err,db){
+        if(err){
+            return callback(err)
+        }
+        db.collection("post",function(err,collection){
+            if(err){
+                database.close()
+                return callback(err)
+            }
+            collection.findOne(postObj,function(err,post){
+                database.close();
+                if(err){
+                    return callback(err)
+                }
+                callback(null, post)
             })
         })
     })

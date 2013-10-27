@@ -5,11 +5,14 @@
     <title><%- title %>- Express</title>
     <link rel="stylesheet" href="/stylesheets/normalize.css"/>
     <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <% if(title == "New Post"||title == "Edit Post"){%>
+    <link rel="stylesheet" href="/stylesheets/skriv.css"/>
+    <% }   %>
 </head>
 <body>
 <header>
-    <nav class="container">
-        <ul>
+    <nav class="container header_navs clearfix">
+        <ul class="clearfix">
             <li><a href="/">Home</a></li>
             <% if (user){ %>
             <li><a href="/u/<%= user.name %>"><%= user.name %></a></li>
@@ -21,6 +24,8 @@
             <%}   %>
         </ul>
     </nav>
+</header>
+<main>
     <div class="container">
         <% if (error) { %>
         <div class="flash_error"><%= error %></div>
@@ -30,4 +35,3 @@
         <% } %>
     </div>
 
-</header>
