@@ -479,7 +479,11 @@
       <created>1382895360157</created>
       <updated>1382895360157</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="all">
+      <created>1382896244004</created>
+      <updated>1382896244004</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -560,7 +564,8 @@
     <MESSAGE value="TODO:文件梳理" />
     <MESSAGE value="Editor Action add failed ." />
     <MESSAGE value="Seems All bugs have been Solved &#10;Next station is Add features&#10;Yeah!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Seems All bugs have been Solved &#10;Next station is Add features&#10;Yeah!" />
+    <MESSAGE value="all" />
+    <option name="LAST_COMMIT_MESSAGE" value="all" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
