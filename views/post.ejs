@@ -1,7 +1,12 @@
 <%- include header.ejs   %>
 <div class="container">
+    <% if(post){ %>
+    <h2>Edit Post</h2>
+    <input type="text" name="post[title]" id="post_title_outer" placeholder="Post Title" value="<%= post.title   %>" />
+    <% }else{%>
     <h2>New Post</h2>
     <input type="text" name="post[title]" id="post_title_outer" placeholder="Post Title" />
+    <% }   %>
     <div class="skriv-container">
         <ul class="skriv">
             <li data-id="undo" data-model="skriv.actions.undo"></li>
@@ -31,7 +36,11 @@
         </ul>
     </div>
     <div class="post" id="post_editor" contenteditable="true">
+        <% if(post){   %>
+        <%- post.content   %>
+        <% }else{   %>
         <p>Post Content...</p>
+        <%}   %>
     </div>
     <form action="/post" class="clearfix" id="post" onsubmit="submitPost();return false" method="POST">
             <input name="post[title]" id="post_title" type="text" hidden="hidden"/>
@@ -42,7 +51,11 @@
         </div>
     </form>
 </div>
-<script src="/javascripts/jquery-1.9.1.min.js"></script>
-<script src="/javascripts/vendor-editor.js"></script>
-<script src="/javascripts/main.js"></script>
+<script>
+    <% if(post){  %>
+    var postAction="/post/<%= post.time.day %>/<%= post.title %>/edit";
+    <% }else{   %>
+    var postAction= undefined;
+    <% }%>
+</script>
 <%- include footer.ejs  %>

@@ -86,21 +86,20 @@ select:focus,
 }
 [contenteditable='true'] img {
   max-width: 100%;
-  border: 1px solid transparent;
 }
 [contenteditable='true'] span.resize_span {
   position: relative;
   display: inline-block;
-  border: 1px dashed #666;
+  outline: rgba(0,0,0,0.6) dashed 2px;
   line-height: 0;
 }
 [contenteditable='true'] span.resize_span span.resize_arrow {
   position: absolute;
-  right: -4px;
-  bottom: -4px;
+  right: -5px;
+  bottom: -5px;
   z-index: 1000;
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border: 1px solid #fff;
   background: #000;
   cursor: nw-resize;
@@ -263,4 +262,12 @@ main .posts ul.post_list li h2 {
 main .posts ul.post_list li h2 a {
   text-decoration: none;
   text-transform: capitalize;
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  text-decoration: none;
 }

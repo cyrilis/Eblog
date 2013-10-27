@@ -65,21 +65,14 @@ Post.get = function(postObj,callback){
         })
     })
 }
-Post.getOne= function(postObj,callback){
+Post.update= function(postObjAttr,postObj,callback){
     database.open(function(err,db){
-        if(err){
-            return callback(err)
-        }
-        db.collection("post",function(err,collection){
-            if(err){
-                database.close()
-                return callback(err)
-            }
-            collection.findOne(postObj,function(err,post){
+        if(err){return callback(err)}
+        db.collection('post',function(err,collection){
+            if(err){database.close();return callback(err)}
+            collection.update(postObjAttr,{$set:postObj},function(err,post){
                 database.close();
-                if(err){
-                    return callback(err)
-                }
+                if(err){callback(err)};
                 callback(null, post)
             })
         })

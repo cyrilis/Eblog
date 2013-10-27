@@ -92,8 +92,46 @@ module.exports = function (app) {
         s.render('post', {
             title: "New Post",
             user: q.session.user,
+            post: null,
             error: q.flash("error").toString(),
             success: q.flash('success').toString()
+        })
+    });
+    app.get('/post/:day/:title/edit',checkLogin);
+    app.get('/post/:day/:title/edit',function(q,s){
+        Post.get({
+            "time.day": q.params.day,
+            "title": q.params.title
+        },function(err,post){
+            if(err){
+                q.flash('error',err);
+                return s.redirect('/')
+            }
+            post=post[0];
+            s.render('post',{
+                title: "Edit Post",
+                post:post,
+                user: q.session.user,
+                success: q.flash('success').toString(),
+                error: q.flash('error').toString()
+            })
+        })
+    });
+    app.post('/post/:day/:title/edit',checkLogin);
+    app.post('/post/:day/:title/edit',function(q,s){
+        var postObj= q.body.post;
+        Post.update({
+            "time.day": q.params.day,
+            "title": q.params.title
+        },postObj,function(err,post){
+            if(err){
+                q.flash('error',err);
+                return s.redirect('/')
+            }
+            console.dir(post);
+            console.log(JSON.stringify(postObj));
+            q.flash('success',"Successfully Updated!")
+            s.redirect('/post/'+ q.params.day+"/"+ postObj.title)
         })
     });
     app.get('/post/:day/:title',function(q,s){
@@ -118,6 +156,10 @@ module.exports = function (app) {
     });
     app.post('/post', checkLogin);
     app.post('/post', function (q, s) {
+        if(!q.body.post.title||!q.body.post.content){
+            q.flash('error',"Oh-oh, Something Went Wrong, Check if your Content Exist.")
+            return s.redirect("/post/new")
+        }
         var currentUser = q.session.user,
             postObj= q.body.post;
         postObj.name= currentUser.name;

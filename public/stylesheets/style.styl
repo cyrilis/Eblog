@@ -75,19 +75,18 @@ input:not([type='submit']),textarea,select,[contenteditable='true']
     margin: 10px 0;
   & img
     max-width 100%
-    border 1px solid transparent
   & span.resize_span
     position relative
     display inline-block
-    border 1px dashed #666
+    outline: rgba(0, 0, 0, 0.6) dashed 2px
     line-height 0
     & span.resize_arrow
       position absolute
-      right -4px
-      bottom -4px
+      right -5px
+      bottom -5px
       z-index 1000
-      width 8px
-      height 8px
+      width 10px
+      height 10px
       border 1px solid #ffffff
       background #000000
       cursor: nw-resize
@@ -221,3 +220,6 @@ main
           a
             text-decoration none
             text-transform capitalize
+h1,h2,h3,h4,h5,h6
+  a
+    text-decoration none
