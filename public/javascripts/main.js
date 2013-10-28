@@ -121,7 +121,6 @@ if(editorElement.size()>0){
         })
 }
 $("a.post").click(function(){
-    confirm("Do You Really Want to Delete This Post?")? ajax_delete() : false;
     var _this=this;
     var ajax_delete = function(){
         $.ajax({
@@ -133,13 +132,16 @@ $("a.post").click(function(){
             error: function(){
                 alert("Sorry, But Something Went Wrong.")
             },
-            success:function(){
-                $(_this).parents("section").animate({
-                    height:0
-                },500)
+            success:function(data){
+                if(data.result){
+                    $(_this).parents("section").css({"overflow":"hidden"}).animate({
+                        height:0
+                    },500)
+                }
             }
         })
     }
+    confirm("Do You Really Want to Delete This Post?")? ajax_delete() : false;
     return false;
 
 })

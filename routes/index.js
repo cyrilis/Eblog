@@ -124,6 +124,9 @@ module.exports = function (app) {
                 return s.redirect('/')
             }
             post=post[0];
+            if(!post){
+                return s.send("404-Not Found")
+            }
             console.log(post);
             s.render('page',{
                 title: post.title,
