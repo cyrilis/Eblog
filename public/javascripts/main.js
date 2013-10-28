@@ -120,7 +120,29 @@ if(editorElement.size()>0){
             }
         })
 }
+$("a.post").click(function(){
+    confirm("Do You Really Want to Delete This Post?")? ajax_delete() : false;
+    var _this=this;
+    var ajax_delete = function(){
+        $.ajax({
+            data:{
+                notJoke: true
+            },
+            url:$(_this).attr("href"),
+            method: "POST",
+            error: function(){
+                alert("Sorry, But Something Went Wrong.")
+            },
+            success:function(){
+                $(_this).parents("section").animate({
+                    height:0
+                },500)
+            }
+        })
+    }
+    return false;
 
+})
 $(document).ready(function(){
     window.setTimeout(function(){
         $(".flash_error,.flash_success").fadeOut();

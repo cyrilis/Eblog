@@ -78,3 +78,21 @@ Post.update= function(postObjAttr,postObj,callback){
         })
     })
 }
+Post.remove= function(postObj,callback){
+    database.open(function(err,db){
+        if(err){return callback(err)}
+        db.collection('post',function(err,collection){
+            if(err){
+                database.close();
+                return callback(err)
+            }
+            collection.remove(postObj,function(err,result){
+                database.close();
+                if(err){
+                    return callback(err)
+                }
+                return callback(null)
+            })
+        })
+    })
+}

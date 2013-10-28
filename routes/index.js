@@ -84,8 +84,6 @@ module.exports = function (app) {
             q.flash('success',"Login Success");
             return s.redirect('/')
         })
-
-
     });
     app.get('/post/new', checkLogin);
     app.get('/post/new', function (q, s) {
@@ -96,6 +94,50 @@ module.exports = function (app) {
             error: q.flash("error").toString(),
             success: q.flash('success').toString()
         })
+    });
+    app.post('/post', checkLogin);
+    app.post('/post', function (q, s) {
+        if(!q.body.post.title||!q.body.post.content){
+            q.flash('error',"Oh-oh, Something Went Wrong, Check if your Content Exist.")
+            return s.redirect("/post/new")
+        }
+        var currentUser = q.session.user,
+            postObj= q.body.post;
+        postObj.name= currentUser.name;
+        var post = new Post(postObj);
+        post.save(function(err,post){
+            if(err){
+                q.flash('error',err);
+                return s.redirect('/')
+            }
+            q.flash('success',"Posted Successfully!");
+            s.redirect('/')
+        })
+    });
+    app.get('/post/:day/:title',function(q,s){
+        Post.get({
+            "time.day": q.params.day,
+            "title": q.params.title
+        },function(err,post){
+            if(err){
+                q.flash('error',err);
+                return s.redirect('/')
+            }
+            post=post[0];
+            console.log(post);
+            s.render('page',{
+                title: post.title,
+                post: post,
+                user: q.session.user,
+                success: q.flash('success').toString(),
+                error: q.flash('error').toString()
+            })
+        })
+    });
+    app.get('/logout', function (q, s) {
+        q.session.user=null;
+        q.flash("success","Logout Success");
+        s.redirect('/')
     });
     app.get('/post/:day/:title/edit',checkLogin);
     app.get('/post/:day/:title/edit',function(q,s){
@@ -128,56 +170,26 @@ module.exports = function (app) {
                 q.flash('error',err);
                 return s.redirect('/')
             }
-            console.dir(post);
-            console.log(JSON.stringify(postObj));
             q.flash('success',"Successfully Updated!")
             s.redirect('/post/'+ q.params.day+"/"+ postObj.title)
         })
     });
-    app.get('/post/:day/:title',function(q,s){
-        Post.get({
-            "time.day": q.params.day,
-            "title": q.params.title
-        },function(err,post){
-            if(err){
-                q.flash('error',err);
-                return s.redirect('/')
+    app.post('/post/:day/:title/delete',checkLogin);
+    app.post('/post/:day/:title/delete',function(q,s){
+        var postObj = q.body.post;
+        Post.remove(
+            {
+                "time.day": q.params.day,
+                "title": q.params.title
+            },function(err){
+                if(err){
+                    q.flash("error",err);
+                    return s.redirct("/")
+                }
+                s.json({result: true})
             }
-            post=post[0];
-            console.log(post);
-            s.render('page',{
-                title: post.title,
-                post: post,
-                user: q.session.user,
-                success: q.flash('success').toString(),
-                error: q.flash('error').toString()
-            })
-        })
-    });
-    app.post('/post', checkLogin);
-    app.post('/post', function (q, s) {
-        if(!q.body.post.title||!q.body.post.content){
-            q.flash('error',"Oh-oh, Something Went Wrong, Check if your Content Exist.")
-            return s.redirect("/post/new")
-        }
-        var currentUser = q.session.user,
-            postObj= q.body.post;
-        postObj.name= currentUser.name;
-        var post = new Post(postObj);
-        post.save(function(err,post){
-            if(err){
-                q.flash('error',err);
-                return s.redirect('/')
-            }
-            q.flash('success',"Posted Successfully!");
-            s.redirect('/')
-        })
-    });
-    app.get('/logout', function (q, s) {
-        q.session.user=null;
-        q.flash("success","Logout Success");
-        s.redirect('/')
-    });
+        )
+    })
     app.post('/upload',checkLogin);
     app.post('/upload',function(q,s){
         if(q.files.file.size==0){
@@ -189,7 +201,7 @@ module.exports = function (app) {
             console.log("[Rename]-Successfully renamed a file!")
         }
         s.json({url:target_path})
-    })
+    });
     function checkLogin(q,s,next){
         if (!q.session.user){
             q.flash("error","Login First!");

@@ -5,7 +5,9 @@
         <p>作者： <a href="/<%= post.name %>"><%= post.name   %></a>
             日期： <%= post.time.minute  %>
             <% if(user&&post.name==user.name){ %>
-            <a href="/post/<%= post.time.day+"/"+post.title %>/edit">编辑</a></p>
+            <a href="/post/<%= post.time.day+"/"+post.title %>/edit">编辑</a>
+            <a class="post" href="/post/<%= post.time.day+"/"+post.title %>/delete">刪除</a>
+        </p>
             <% } %>
         <p>
             <%- post.content   %>
