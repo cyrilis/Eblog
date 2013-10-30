@@ -75,47 +75,47 @@ if(editorElement.size()>0){
         editorContent.find("span.resize_span img").removeClass("resize").unwrap();
         $('#post_content').val(editorContent.html().trim());
         $('#post_title').val($("#post_title_outer").val().trim());
-        if($("#post_title").val()&&$("#post_content").val()){
-            form.submit();
-            return false;
-        }else{
-            window.setTimeout(function(){
-                form.submit();
-                return false;
-            },500)
-        }
+        form.submit();
     }
     var dragable=false,dragImg=null;
+    var wrap_img=function(a){
+        $('[contenteditable]>p').addClass("disable_select");
+        $(a).addClass("resize").wrap("<span class='resize_span'></span>").parent()
+            .append('<span class="resize_arrow"></span><span class="edit_pic_btn" contenteditable="false">Edit</span>')
+    }
+    var unwrap_img=function(){
+        $('[contenteditable]>p').removeClass("disable_select");
+        $("img.resize").removeClass("resize").unwrap();
+        $(".resize_arrow,.edit_pic_btn,.resize_span").remove();
+    }
+    var init_img_box=function(){
+        $("body").append("<div class='img_box'>title<br/><input type='text'/><br/>link <br/><input type='text'/></div>")
+    };
     editorElement
         .on('click',"img",function(e){
             if($(this).hasClass('resize')){
                 return false;
             }
-            $(this).addClass("resize").select().wrap("<span class='resize_span'></span>");
-            $('<span class="resize_arrow"></span>').appendTo($(this).parent());
+            wrap_img(this);
             window.dragImg=$(this);
         })
         .on('mousedown','span.resize_arrow',function(e){
             window.dragable=true;
         })
         .on('mousemove',function(e){
+            e.preventDefault();
             if(!dragable){
                 return false
             }
-            var thisWidth= e.pageX - dragImg.parent().offset().left,
-                thisHeight= e.pageY-dragImg.parent().offset().top;
-            console.log(thisHeight,thisHeight);
+            var thisWidth= e.pageX - dragImg.parent().offset().left;
             dragImg.css({width: thisWidth});
         })
         .on('mouseup',function(e){
             window.dragable=false;
-        }).on('click',function(e){
+        });
+    $(document).on('click',function(e){
             if($(event.target).parents().index($('span.resize_span')) == -1){
-                if(!dragImg){
-                    return false;
-                }
-                dragImg.parent().find("span.resize_arrow").remove();
-                dragImg.removeClass("resize").unwrap();
+                unwrap_img();
                 dragImg=null;
             }
         })
@@ -123,14 +123,8 @@ if(editorElement.size()>0){
 $("a.confirm").click(function(){
     var url=this.getAttribute("href"),
         confirmData=this.getAttribute('data-confirm');
-        window.url=this;
-    if(url.slice(0,1)=="#"){
-        showDialog(url,confirmData,!!1);
-        return false
-    }else if(confirmData){
-        confirm(confirmData)? window.location=url : false
-        return false
-    }
+    showDialog(url,confirmData,!!1);
+    return false
 })
 function showDialog(url,confirmData,really){
     if(!really){
@@ -156,12 +150,22 @@ function showDialog(url,confirmData,really){
         newDiv.appendChild(confirmBody);
         newDiv.appendChild(confirmFooter);
         document.body.appendChild(newDiv);
-        newDiv.className+= " show";
+        setTimeout(function(){
+            newDiv.className+= " show";
+        },1)// to show animate style, set a 0.001s delay
         return false
     }
 }
 $(document).on("click",".confirm .close",function(){
     $(this).parents(".confirm").removeClass("show");
+    setTimeout(function(){
+        var x=document.getElementsByClassName("confirm");
+        for(var i=0;i< x.length;i++){
+            if(x[i].tagName.toLowerCase()=="div"){
+                x[i].parentNode.removeChild(x[i]);
+            }
+        }
+    },300)
 })
 $(document).ready(function(){
     window.setTimeout(function(){

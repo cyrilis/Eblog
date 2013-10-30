@@ -69,7 +69,12 @@ input:not([type='submit']),textarea,select,[contenteditable='true']
   height auto
   border-top 0
   margin-bottom 15px
-  &>div
+  p.disable_select
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  & div
   &>p
     font-size 16px
     margin: 10px 0;
@@ -92,6 +97,18 @@ input:not([type='submit']),textarea,select,[contenteditable='true']
       cursor: nw-resize
     & img
       border 0
+.edit_pic_btn
+  display block
+  position absolute
+  padding 5px 10px
+  background maincolor
+  color #ffffff
+  top 50%
+  left 50%
+  margin-left -16px
+  margin-top -12px
+  line-height 20px
+  cursor pointer
 .container
   width: 1000px;
   margin: 0 auto;
@@ -227,19 +244,17 @@ div.confirm
   opacity 0
   position fixed
   left 50%
-  top 40%
+  top 45%
   margin-top -100px
   margin-left -240px
   width: 480px
-  padding 10px
-  padding-top 30px
   -webkit-border-radius: 4px
   -moz-border-radius: 4px
   border-radius: 4px
   border 1px solid #d8d8d8
   background #ffffff
-  height 0
-  padding 0
+  padding 10px
+  padding-top 30px
   -webkit-transition: all .3s
   -moz-transition: all .3s
   -ms-transition: all .3s
@@ -247,6 +262,7 @@ div.confirm
   transition: all .3s
   &.show
     display block;
+    top 40%
     opacity 1
     height auto
   a.close
@@ -278,3 +294,15 @@ div.confirm
 h1,h2,h3,h4,h5,h6
   a
     text-decoration none
+.title
+  border-bottom: solid 1px #CCC;
+  -webkit-box-shadow: 0px 3px 0px #FFF, 0px 4px 0px #CCC;
+  -moz-box-shadow: 0px 3px 0px #fff, 0px 4px 0px #ccc;
+  box-shadow: 0px 3px 0px #FFF, 0px 4px 0px #CCC;
+  h2
+    float left
+    width 60%
+  p.info
+    float right
+    text-align right
+    margin-top 30px

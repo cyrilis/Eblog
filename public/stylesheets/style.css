@@ -79,7 +79,13 @@ select:focus,
   border-top: 0;
   margin-bottom: 15px;
 }
-[contenteditable='true']>div,
+[contenteditable='true'] p.disable_select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+[contenteditable='true'] div,
 [contenteditable='true']>p {
   font-size: 16px;
   margin: 10px 0;
@@ -106,6 +112,19 @@ select:focus,
 }
 [contenteditable='true'] span.resize_span img {
   border: 0;
+}
+.edit_pic_btn {
+  display: block;
+  position: absolute;
+  padding: 5px 10px;
+  background: #18b0b6;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  margin-left: -16px;
+  margin-top: -12px;
+  line-height: 20px;
+  cursor: pointer;
 }
 .container {
   width: 1000px;
@@ -270,12 +289,10 @@ div.confirm {
   opacity: 0;
   position: fixed;
   left: 50%;
-  top: 40%;
+  top: 45%;
   margin-top: -100px;
   margin-left: -240px;
   width: 480px;
-  padding: 10px;
-  padding-top: 30px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -283,8 +300,8 @@ div.confirm {
   border-radius: 4px;
   border: 1px solid #d8d8d8;
   background: #fff;
-  height: 0;
-  padding: 0;
+  padding: 10px;
+  padding-top: 30px;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
@@ -293,6 +310,7 @@ div.confirm {
 }
 div.confirm.show {
   display: block;
+  top: 40%;
   opacity: 1;
   height: auto;
 }
@@ -334,4 +352,19 @@ h4 a,
 h5 a,
 h6 a {
   text-decoration: none;
+}
+.title {
+  border-bottom: solid 1px #ccc;
+  -webkit-box-shadow: 0px 3px 0px #fff, 0px 4px 0px #ccc;
+  -moz-box-shadow: 0px 3px 0px #fff, 0px 4px 0px #ccc;
+  box-shadow: 0px 3px 0px #fff, 0px 4px 0px #ccc;
+}
+.title h2 {
+  float: left;
+  width: 60%;
+}
+.title p.info {
+  float: right;
+  text-align: right;
+  margin-top: 30px;
 }
