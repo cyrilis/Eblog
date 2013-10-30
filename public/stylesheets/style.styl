@@ -223,6 +223,7 @@ main
             text-decoration none
             text-transform capitalize
 div.confirm
+  display none
   position fixed
   left 50%
   top 40%
@@ -236,7 +237,9 @@ div.confirm
   border-radius: 4px
   border 1px solid #d8d8d8
   background #ffffff
-  .close
+  &.show
+    display block
+  a.close
     cursor pointer
     font-size 16px
     display block

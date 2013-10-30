@@ -266,6 +266,7 @@ main .posts ul.post_list li h2 a {
   text-transform: capitalize;
 }
 div.confirm {
+  display: none;
   position: fixed;
   left: 50%;
   top: 40%;
@@ -282,7 +283,10 @@ div.confirm {
   border: 1px solid #d8d8d8;
   background: #fff;
 }
-div.confirm .close {
+div.confirm.show {
+  display: block;
+}
+div.confirm a.close {
   cursor: pointer;
   font-size: 16px;
   display: block;
@@ -294,7 +298,7 @@ div.confirm .close {
   right: 10px;
   top: 10px;
 }
-div.confirm .close:hover {
+div.confirm a.close:hover {
   color: #333;
   font-weight: bold;
 }

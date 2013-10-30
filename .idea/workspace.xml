@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1f2b440-a030-4a6e-b81d-18bc193abbfe" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/footer.ejs" afterPath="$PROJECT_DIR$/views/footer.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/main.js" afterPath="$PROJECT_DIR$/public/javascripts/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/page.ejs" afterPath="$PROJECT_DIR$/views/page.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.styl" afterPath="$PROJECT_DIR$/public/stylesheets/style.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="test.iws" />
@@ -33,10 +29,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="162" column="52" selection-start="6956" selection-end="6956" vertical-scroll-proportion="0.63190186" vertical-offset="2931" max-vertical-offset="3480">
+            <state line="141" column="46" selection-start="6062" selection-end="6062" vertical-scroll-proportion="0.0" vertical-offset="2691" max-vertical-offset="3500">
               <folding />
             </state>
           </provider>
@@ -51,16 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.styl" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="style.styl" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/style.styl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="167" column="17" selection-start="3438" selection-end="3438" vertical-scroll-proportion="0.0" vertical-offset="2998" max-vertical-offset="5440">
-              <folding>
-                <marker date="1383107401400" expanded="true" signature="3005:3438" placeholder="{...}" />
-                <marker date="1383107401400" expanded="true" signature="3373:3438" placeholder="{...}" />
-                <marker date="1383107401400" expanded="true" signature="4692:5392" placeholder="{...}" />
-                <marker date="1383107401400" expanded="true" signature="5206:5320" placeholder="{...}" />
-              </folding>
+            <state line="241" column="3" selection-start="4987" selection-end="4987" vertical-scroll-proportion="0.6812749" vertical-offset="4478" max-vertical-offset="5500">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -131,8 +122,8 @@
         <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/views/page.ejs" />
         <option value="$PROJECT_DIR$/views/footer.ejs" />
-        <option value="$PROJECT_DIR$/public/stylesheets/style.styl" />
         <option value="$PROJECT_DIR$/public/javascripts/main.js" />
+        <option value="$PROJECT_DIR$/public/stylesheets/style.styl" />
       </list>
     </option>
   </component>
@@ -525,7 +516,11 @@
       <created>1382958015612</created>
       <updated>1382958015612</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="OOOOOO">
+      <created>1383107594985</created>
+      <updated>1383107594985</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -552,6 +547,7 @@
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34300342" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32764506" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="0" y="308" width="1600" height="244" />
@@ -566,7 +562,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34300342" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -608,7 +603,9 @@
     <MESSAGE value="Seems All bugs have been Solved &#10;Next station is Add features&#10;Yeah!" />
     <MESSAGE value="all" />
     <MESSAGE value="Save it then dinner" />
-    <option name="LAST_COMMIT_MESSAGE" value="Save it then dinner" />
+    <MESSAGE value="OOOOOO" />
+    <MESSAGE value="todo: animate close confirm" />
+    <option name="LAST_COMMIT_MESSAGE" value="todo: animate close confirm" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -689,13 +686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/page.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="43" selection-start="361" selection-end="361" vertical-scroll-proportion="-4.827586" vertical-offset="0" max-vertical-offset="440">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/footer.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="7" selection-start="291" selection-end="291" vertical-scroll-proportion="-8.275862" vertical-offset="0" max-vertical-offset="380">
@@ -707,6 +697,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/page.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="43" selection-start="361" selection-end="361" vertical-scroll-proportion="-4.827586" vertical-offset="0" max-vertical-offset="440">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/vendor-editor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="34" selection-start="37" selection-end="37" vertical-scroll-proportion="8.148149" vertical-offset="240" max-vertical-offset="920">
@@ -714,21 +711,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.styl">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="167" column="17" selection-start="3438" selection-end="3438" vertical-scroll-proportion="0.0" vertical-offset="2998" max-vertical-offset="5440">
-          <folding>
-            <marker date="1383107401400" expanded="true" signature="3005:3438" placeholder="{...}" />
-            <marker date="1383107401400" expanded="true" signature="3373:3438" placeholder="{...}" />
-            <marker date="1383107401400" expanded="true" signature="4692:5392" placeholder="{...}" />
-            <marker date="1383107401400" expanded="true" signature="5206:5320" placeholder="{...}" />
-          </folding>
+        <state line="141" column="46" selection-start="6062" selection-end="6062" vertical-scroll-proportion="0.0" vertical-offset="2691" max-vertical-offset="3500">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="162" column="52" selection-start="6956" selection-end="6956" vertical-scroll-proportion="0.63190186" vertical-offset="2931" max-vertical-offset="3480">
+        <state line="241" column="3" selection-start="4987" selection-end="4987" vertical-scroll-proportion="0.6812749" vertical-offset="4478" max-vertical-offset="5500">
           <folding />
         </state>
       </provider>

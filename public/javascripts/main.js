@@ -139,7 +139,7 @@ function showDialog(url,confirmData,really){
         var newDiv=document.createElement('div'),
             confirmBody=document.createElement("div"),
             confirmFooter=document.createElement("div"),
-            closeBtn=document.createElement("div"),
+            closeBtn=document.createElement("a"),
             aLink=document.createElement("a");
         closeBtn.setAttribute("class","close");
         closeBtn.innerHTML="&times;";
@@ -148,7 +148,7 @@ function showDialog(url,confirmData,really){
         aLink.innerHTML="确定";
         confirmBody.setAttribute("class","confirm_body");
         confirmFooter.setAttribute("class","confirm_footer");
-        confirmFooter.innerHTML="<button class='button'>取消</button>";
+        confirmFooter.innerHTML="<button class='button close'>取消</button>";
         confirmFooter.appendChild(aLink);
         confirmBody.innerHTML=confirmData;
         newDiv.setAttribute("class","confirm");
@@ -156,10 +156,11 @@ function showDialog(url,confirmData,really){
         newDiv.appendChild(confirmBody);
         newDiv.appendChild(confirmFooter);
         document.body.appendChild(newDiv);
+        newDiv.className+= " show ";
         return false
     }
 }
-$(document).on("click",".confirm .button,.confirm .close",function(){
+$(document).on("click",".confirm .close",function(){
     $(this).parents(".confirm").removeClass("show");
 })
 $(document).ready(function(){
