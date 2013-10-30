@@ -156,7 +156,7 @@ function showDialog(url,confirmData,really){
         newDiv.appendChild(confirmBody);
         newDiv.appendChild(confirmFooter);
         document.body.appendChild(newDiv);
-        newDiv.className+= " show ";
+        newDiv.className+= " show";
         return false
     }
 }
