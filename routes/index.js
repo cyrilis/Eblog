@@ -177,8 +177,8 @@ module.exports = function (app) {
             s.redirect('/post/'+ q.params.day+"/"+ postObj.title)
         })
     });
-    app.post('/post/:day/:title/delete',checkLogin);
-    app.post('/post/:day/:title/delete',function(q,s){
+    app.get('/post/:day/:title/delete',checkLogin);
+    app.get('/post/:day/:title/delete',function(q,s){
         var postObj = q.body.post;
         Post.remove(
             {
@@ -189,7 +189,8 @@ module.exports = function (app) {
                     q.flash("error",err);
                     return s.redirct("/")
                 }
-                s.json({result: true})
+                q.flash("success", "The blog "+q.params.title+" was deleted successfully");
+                return s.redirect("/")
             }
         )
     })

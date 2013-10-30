@@ -6,7 +6,7 @@
             日期： <%= post.time.minute  %>
             <% if(user&&post.name==user.name){ %>
             <a href="/post/<%= post.time.day+"/"+post.title %>/edit">编辑</a>
-            <a class="post" href="/post/<%= post.time.day+"/"+post.title %>/delete">刪除</a>
+            <a class="confirm" data-confirm="Are you sure to Detele this blog?" href="#ppp/post/<%= post.time.day+"/"+post.title %>/delete">刪除</a>
         </p>
             <% } %>
         <p>

@@ -173,7 +173,8 @@ a {
 }
 .button {
   display: inline-block;
-  min-width: 85px;
+  text-align: center;
+  min-width: 45px;
   padding: 8px 14px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -182,6 +183,7 @@ a {
   color: #666;
   font-size: 16px;
   background: #d8d8d8;
+  text-decoration: none;
   outline: none;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -262,6 +264,54 @@ main .posts ul.post_list li h2 {
 main .posts ul.post_list li h2 a {
   text-decoration: none;
   text-transform: capitalize;
+}
+div.confirm {
+  position: fixed;
+  left: 50%;
+  top: 40%;
+  margin-top: -100px;
+  margin-left: -240px;
+  width: 480px;
+  padding: 10px;
+  padding-top: 30px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #d8d8d8;
+  background: #fff;
+}
+div.confirm .close {
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+div.confirm .close:hover {
+  color: #333;
+  font-weight: bold;
+}
+div.confirm .confirm_footer {
+  position: relative;
+  bottom: 0;
+  padding: 10px;
+  left: 0;
+  text-align: right;
+}
+div.confirm .confirm_footer .button {
+  margin-left: 10px;
+}
+div.confirm .confirm_body {
+  min-height: 60px;
+  padding: 20px;
+  font-size: 16px;
 }
 h1 a,
 h2 a,

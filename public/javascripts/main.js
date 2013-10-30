@@ -91,7 +91,7 @@ if(editorElement.size()>0){
             if($(this).hasClass('resize')){
                 return false;
             }
-            $(this).addClass("resize").wrap("<span class='resize_span'></span>");
+            $(this).addClass("resize").select().wrap("<span class='resize_span'></span>");
             $('<span class="resize_arrow"></span>').appendTo($(this).parent());
             window.dragImg=$(this);
         })
@@ -120,30 +120,47 @@ if(editorElement.size()>0){
             }
         })
 }
-$("a.post").click(function(){
-    var _this=this;
-    var ajax_delete = function(){
-        $.ajax({
-            data:{
-                notJoke: true
-            },
-            url:$(_this).attr("href"),
-            method: "POST",
-            error: function(){
-                alert("Sorry, But Something Went Wrong.")
-            },
-            success:function(data){
-                if(data.result){
-                    $(_this).parents("section").css({"overflow":"hidden"}).animate({
-                        height:0
-                    },500)
-                }
-            }
-        })
+$("a.confirm").click(function(){
+    var url=this.getAttribute("href"),
+        confirmData=this.getAttribute('data-confirm');
+        window.url=this;
+    if(url.slice(0,1)=="#"){
+        showDialog(url,confirmData,!!1);
+        return false
+    }else if(confirmData){
+        confirm(confirmData)? window.location=url : false
+        return false
     }
-    confirm("Do You Really Want to Delete This Post?")? ajax_delete() : false;
-    return false;
-
+})
+function showDialog(url,confirmData,really){
+    if(!really){
+        return confirm(confirmData)? window.location="#":false;
+    }else{
+        var newDiv=document.createElement('div'),
+            confirmBody=document.createElement("div"),
+            confirmFooter=document.createElement("div"),
+            closeBtn=document.createElement("div"),
+            aLink=document.createElement("a");
+        closeBtn.setAttribute("class","close");
+        closeBtn.innerHTML="&times;";
+        aLink.setAttribute("href",url);
+        aLink.setAttribute("class","button");
+        aLink.innerHTML="确定";
+        confirmBody.setAttribute("class","confirm_body");
+        confirmFooter.setAttribute("class","confirm_footer");
+        confirmFooter.innerHTML="<button class='button'>取消</button>";
+        confirmFooter.appendChild(aLink);
+        confirmBody.innerHTML=confirmData;
+        newDiv.setAttribute("class","confirm");
+        newDiv.appendChild(closeBtn);
+        newDiv.appendChild(confirmBody);
+        newDiv.appendChild(confirmFooter);
+        document.body.appendChild(newDiv);
+        return false
+    }
+}
+$(document).on("click",".confirm .button,.confirm .close",function(){
+    $(this).parents(".confirm").removeClass("show");
 })
 $(document).ready(function(){
     window.setTimeout(function(){
