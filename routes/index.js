@@ -153,6 +153,10 @@ module.exports = function (app) {
                 return s.redirect('/')
             }
             post=post[0];
+            if(!post){
+                q.flash("error","404 - Page not found.");
+                return s.redirect("/")
+            }
             s.render('post',{
                 title: "Edit Post",
                 post:post,

@@ -69,34 +69,35 @@ input:not([type='submit']),textarea,select,[contenteditable='true']
   height auto
   border-top 0
   margin-bottom 15px
-  p.disable_select
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  & div
+  &.disable_select
+    user-drag:none;
+    -webkit-user-drag:none;
+    -moz-user-drag:none;
+    & *
+      -moz-user-select:none;
+      -webkit-user-select:none;
+      user-select:none;
+  &>div
   &>p
     font-size 16px
     margin: 10px 0;
   & img
     max-width 100%
-  & span.resize_span
-    position relative
-    display inline-block
-    outline: rgba(0, 0, 0, 0.6) dashed 2px
-    line-height 0
-    & span.resize_arrow
-      position absolute
-      right -5px
-      bottom -5px
-      z-index 1000
-      width 10px
-      height 10px
-      border 1px solid #ffffff
-      background #000000
-      cursor: nw-resize
-    & img
-      border 0
+#resize_arrow
+  padding 0
+  margin 0
+  margin-left -5px
+  margin-top -5px
+  display block
+  height 10px
+  width 10px
+  position absolute
+  background #000
+  line-height 0
+  cursor: nw-resize
+img.resize
+  outline: rgba(0, 0, 0, 0.6) dashed 2px
+  opacity 0.5
 .edit_pic_btn
   display block
   position absolute

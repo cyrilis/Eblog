@@ -79,13 +79,17 @@ select:focus,
   border-top: 0;
   margin-bottom: 15px;
 }
-[contenteditable='true'] p.disable_select {
-  -webkit-user-select: none;
+[contenteditable='true'].disable_select {
+  user-drag: none;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+}
+[contenteditable='true'].disable_select * {
   -moz-user-select: none;
-  -ms-user-select: none;
+  -webkit-user-select: none;
   user-select: none;
 }
-[contenteditable='true'] div,
+[contenteditable='true']>div,
 [contenteditable='true']>p {
   font-size: 16px;
   margin: 10px 0;
@@ -93,25 +97,22 @@ select:focus,
 [contenteditable='true'] img {
   max-width: 100%;
 }
-[contenteditable='true'] span.resize_span {
-  position: relative;
-  display: inline-block;
-  outline: rgba(0,0,0,0.6) dashed 2px;
-  line-height: 0;
-}
-[contenteditable='true'] span.resize_span span.resize_arrow {
-  position: absolute;
-  right: -5px;
-  bottom: -5px;
-  z-index: 1000;
-  width: 10px;
+#resize_arrow {
+  padding: 0;
+  margin: 0;
+  margin-left: -5px;
+  margin-top: -5px;
+  display: block;
   height: 10px;
-  border: 1px solid #fff;
+  width: 10px;
+  position: absolute;
   background: #000;
+  line-height: 0;
   cursor: nw-resize;
 }
-[contenteditable='true'] span.resize_span img {
-  border: 0;
+img.resize {
+  outline: rgba(0,0,0,0.6) dashed 2px;
+  opacity: 0.5;
 }
 .edit_pic_btn {
   display: block;
