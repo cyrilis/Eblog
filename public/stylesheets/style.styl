@@ -69,20 +69,19 @@ input:not([type='submit']),textarea,select,[contenteditable='true']
   height auto
   border-top 0
   margin-bottom 15px
-  &.disable_select
-    user-drag:none;
-    -webkit-user-drag:none;
-    -moz-user-drag:none;
-    & *
-      -moz-user-select:none;
-      -webkit-user-select:none;
-      user-select:none;
-  &>div
-  &>p
+  &>div,&>p
     font-size 16px
     margin: 10px 0;
   & img
     max-width 100%
+.unselectable *{
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
 #resize_arrow
   padding 0
   margin 0
@@ -95,6 +94,7 @@ input:not([type='submit']),textarea,select,[contenteditable='true']
   background #000
   line-height 0
   cursor: nw-resize
+  z-index 1000
 img.resize
   outline: rgba(0, 0, 0, 0.6) dashed 2px
   opacity 0.5

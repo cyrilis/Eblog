@@ -42,8 +42,12 @@
         <p>Post Content...</p>
         <%}   %>
     </div>
+    <% if(post){   %>
+    <form action="/post/<%= post.time.day+"/"+post.title %>/edit" class="clearfix" id="post" onsubmit="submitPost();return false" method="POST">
+    <%}else{   %>
     <form action="/post" class="clearfix" id="post" onsubmit="submitPost();return false" method="POST">
-            <input name="post[title]" id="post_title" type="text" hidden="hidden"/>
+    <%}   %>
+        <input name="post[title]" id="post_title" type="text" hidden="hidden"/>
             <textarea name="post[content]" id="post_content" hidden="hidden"></textarea>
             <input name="post[tags]" id="post_tags" type="text" hidden="hidden"/>
         <div class="form-group">
