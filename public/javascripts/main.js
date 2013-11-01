@@ -120,7 +120,7 @@ if(editorElement.size()>0){
             $("#resize_arrow").focus();
             window.dragable=true;
             $("body").addClass("unselectable");
-            clearSel=window.setInterval(function(){
+            window.clearSel=window.setInterval(function(){
                 sel.removeAllRanges()
             },5);
         })
