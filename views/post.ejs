@@ -52,6 +52,23 @@
         <textarea name="post[content]" id="post_content" hidden="hidden"></textarea>
         <input name="post[tags]" id="post_tags" type="text" hidden="hidden"/>
         <div class="form-group">
+            <label for="post_tags">Tags</label>
+            <span id="tags_container">
+                <%if(post&&post.tags){ %>
+                <%post.tags.forEach(function(tag){%><span class="tag_span"><span class="tag_name"><%= tag.tag %></span><span class="tag_close">×</span></span><%}) %>
+                <%}   %>
+                <input id="newTag" type="text"/>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="post_category">Category</label>
+            <select name="post[category]" id="post_category">
+                <option value="Uncategorized">Uncategorized</option>
+                <option value="Technology" <%= post&&post.category=="Technology"? ' selected="selected"':'' %>>Technology</option>
+                <option value="Music"      <%= post&&post.category=="Music"? ' selected="selected"':'' %>>Music</option>
+                <option value="Life"       <%= post&&post.category=="Life"? ' selected="selected"':'' %>>Life</option>
+                <option value="Think"      <%= post&&post.category=="Think"? ' selected="selected"':'' %>>Think</option>
+            </select>
             <% if(post){  %>
             <input type="submit" class="button pull-right" value="Update Post"/>
             <% }else{   %>

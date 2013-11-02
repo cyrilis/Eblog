@@ -15,7 +15,8 @@ User.prototype.save = function(callback){
     var user = {
         name: this.name,
         password: this.password,
-        email: this.email
+        email: this.email,
+        avatar: "/images/avatar_default.png"
     };
 
     database.open(function(err, db){

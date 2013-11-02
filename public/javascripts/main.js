@@ -65,7 +65,6 @@ if(editorElement.size()>0){
         var form=$("#post");
         var editorContent=$("#post_editor");
         cancelResize();
-
         $('#post_content').val(editorContent.html().trim());
         $('#post_title').val($("#post_title_outer").val().trim());
         form.submit();
@@ -149,7 +148,25 @@ if(editorElement.size()>0){
                 range.setEndAfter(dragImg[0]);
                 sel.addRange(range);
             }
-        })
+        });
+    $('#newTag').on("keypress",function(e) {
+        console.log(e);
+        if(e.which == 13&&$(this).val()){
+            e.preventDefault();
+            console.log(e);
+            $('<span class="tag_span">' +
+                '<span class="tag_name">'+$(this).val()+'</span>' +
+                '<span class="tag_close">&times;</span>' +
+                '</span>\n\r').insertBefore($("#newTag"))
+                .on("click",function(){
+                    $(this).remove();
+                    updateTags();
+                });
+            $(this).val("");
+            updateTags();
+            return false;
+        }
+    });
 }
 
 $("a.confirm").click(function(){
@@ -157,7 +174,18 @@ $("a.confirm").click(function(){
         confirmData=this.getAttribute('data-confirm');
     showDialog(url,confirmData,!!1);
     return false
-})
+});
+$(".tag_span").click(function(e){
+    $(this).remove();
+    updateTags();
+});
+function updateTags(){
+    var tags=[];
+    $(".tag_name").each(function(index){
+        tags.push($(this).text());
+    })
+    $("#post_tags").val(tags.join("|"));
+}
 function showDialog(url,confirmData,really){
     if(!really){
         return confirm(confirmData)? window.location="#":false;
@@ -235,5 +263,9 @@ $(document).on("click",".confirm .close,.show_box .close",function(){
 $(document).ready(function(){
     window.setTimeout(function(){
         $(".flash_error,.flash_success").fadeOut();
-    },2000)
+    },2000);
+    updateTags();
+    $("#tags_container").click(function(){
+        $("#newTag").focus();
+    })
 })

@@ -51,6 +51,8 @@ blockquote
   line-height 1.3
   font-size 16px
   background #f8f8f8
+pre,code
+  font-family Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif
 input:not([type='submit']):not([type='radio']):not([type='checkbox']),textarea,select,[contenteditable='true']
   width: 260px
   line-height 1
@@ -171,6 +173,68 @@ img.resize
 #post_title_outer::-webkit-input-placeholder {
   line-height 1.3
 }
+span#tags_container
+  border: 2px solid #ccc
+  border-radius: 3px
+  height: inherit
+  display: inline-block
+  padding: 3px
+  padding-bottom 0px
+  min-width 260px
+  cursor: text
+  input
+    width 30px
+#newTag
+  width: 60px
+  height: auto
+  padding: 0
+  border: 0
+  line-height: 1.3
+  font-size: 14px
+  min-width 100px
+span.tag_span
+  position relative
+  background: #18B0B6
+  color: #FFF
+  padding: 0px 20px
+  border-radius: 3px
+  display: inline-block
+  cursor: pointer
+  margin-right: 4px
+  margin-bottom 3px
+  -webkit-transition: padding  0.25s
+  -moz-transition: padding  0.25s
+  -ms-transition: padding  0.25s
+  -o-transition: padding  0.25s
+  transition: padding  0.25s
+  -webkit-transition-timing-function: linear
+  -moz-transition-timing-function: linear
+  -ms-transition-timing-function: linear
+  -o-transition-timing-function: linear
+  transition-timing-function: linear
+  &:hover
+    padding 0 27px 0 13px;
+    .tag_close
+      opacity 1
+  .tag_close
+    opacity 0
+    position absolute
+    right 3px
+    top 3px
+    display block
+    width 20px
+    height 20px
+    line-height 20px
+    text-align center
+    font-size 18px
+    font-weight bold
+    -webkit-transition: all .3s
+    -moz-transition: all .3s
+    -ms-transition: all .3s
+    -o-transition: all .3s
+    transition: all .3s
+  .tag_name
+    display inline-block
 .form-group
   margin-bottom 10px
   border-color: #ddd;
@@ -181,6 +245,10 @@ img.resize
     text-align right
     margin-right 20px
     line-height 36px
+    #post &
+      width: 70px
+      text-align: left
+      margin-right: 5px
   input,textarea
     display inline-block
 a
@@ -338,3 +406,14 @@ h1,h2,h3,h4,h5,h6
   .next
     float right
     padding 5px 18px
+.tag_links
+  float left
+.category_link
+  float right
+.post_info
+  color #9c9c9c
+  a
+    color #8a8a8a
+    margin-left 5px
+    &:hover
+        color #666666

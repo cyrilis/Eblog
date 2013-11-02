@@ -6,10 +6,10 @@ function Post(post){
     this.title = post.title;
     this.content = post.content;
     this.name = post.name;
+    this.tags = post.tags;
+    this.category=post.category;
 }
-
 module.exports= Post;
-
 Post.prototype.save = function(callback){
     var date = new Date();
     var time = {
@@ -23,7 +23,9 @@ Post.prototype.save = function(callback){
         name: this.name,
         time: time,
         title: this.title,
-        content: this.content
+        content: this.content,
+        tags: this.tags,
+        category: this.category
     }
     database.open(function(err, db){
         if (err){
@@ -43,8 +45,7 @@ Post.prototype.save = function(callback){
             })
         })
     })
-}
-
+};
 Post.get = function(postObj,page,callback){
     database.open(function(err, db){
         if(err){
@@ -70,7 +71,7 @@ Post.get = function(postObj,page,callback){
             })
         })
     })
-}
+};
 Post.update= function(postObjAttr,postObj,callback){
     database.open(function(err,db){
         if(err){return callback(err)}
@@ -83,7 +84,33 @@ Post.update= function(postObjAttr,postObj,callback){
             })
         })
     })
-}
+};
+Post.tags = function(callback){
+    database.open(function(err,db){
+        if(err){return callback(err)}
+        db.collection("post",function(err,collection){
+            if(err){database.close();return callback(err)}
+            collection.distinct("tags.tag",function(err,tags){
+                database.close();
+                if(err){return callback(err)}
+                callback(null,tags)
+            })
+        })
+    })
+};
+Post.categories = function(callback){
+    database.open(function(err,db){
+        if(err){return callback(err)}
+        db.collection("post",function(err,collection){
+            if(err){database.close();return callback(err)}
+            collection.distinct("category",function(err,categories){
+                database.close();
+                if(err){return callback(err)}
+                callback(null,categories)
+            })
+        })
+    })
+};
 Post.remove= function(postObj,callback){
     database.open(function(err,db){
         if(err){return callback(err)}
@@ -101,4 +128,4 @@ Post.remove= function(postObj,callback){
             })
         })
     })
-}
+};
