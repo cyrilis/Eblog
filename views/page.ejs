@@ -1,19 +1,19 @@
 <%- include header.ejs %>
 <div class="container post">
-    <section>
-        <div class="title clearfix">
+    <section class="clearfix">
+        <div class="post_title clearfix">
             <h2><a href="/post/<%= post.time.day+"/"+post.title %>"><%= post.title  %></a></h2>
-            <p class="info">作者： <a href="/<%= post.name %>"><%= post.name   %></a>
-                日期： <%= post.time.minute  %>
+            <p class="info">作者: <a href="/u/<%= post.name %>"><%= post.name %> </a>
+                <span> 日期: <%= post.time.minute  %></span>
                 <% if(user&&post.name==user.name){ %>
                 <a href="/post/<%= post.time.day+"/"+post.title %>/edit">编辑</a>
                 <a class="confirm" data-confirm="Are you sure to Detele this blog?" href="/post/<%= post.time.day+"/"+post.title %>/delete">刪除</a>
+                <% } %>
             </p>
         </div>
-            <% } %>
-        <p>
+        <div class="post_content clearfix">
             <%- post.content   %>
-        </p>
+        </div>
     </section>
 </div>
 <% include footer.ejs %>

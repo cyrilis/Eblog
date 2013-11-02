@@ -30,12 +30,13 @@ body {
   background: #fff;
   font-family: "Open Sans", "Microsoft Yahei", "Helvetica Neue", Arail, sans-serif;
   font-size: 14px;
+  line-height: 26px;
   color: #555;
   position: relative;
 }
 p {
   margin: 0 0 10px 0;
-  line-height: 1.3;
+  font: inherit;
 }
 img {
   max-width: 100%;
@@ -47,8 +48,9 @@ blockquote {
   border-left: 5px solid #18b0b6;
   line-height: 1.3;
   font-size: 16px;
+  background: #f8f8f8;
 }
-input:not([type='submit']),
+input:not([type='submit']):not([type='radio']):not([type='checkbox']),
 textarea,
 select,
 [contenteditable='true'] {
@@ -65,12 +67,17 @@ select,
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-input:not([type='submit']):focus,
+input:not([type='submit']):not([type='radio']):not([type='checkbox']):focus,
 textarea:focus,
 select:focus,
 [contenteditable='true']:focus {
   border-color: #aaa;
   outline: none;
+}
+input[type="radio"],
+input[type='checkbox'] {
+  line-height: 1;
+  padding: 5px;
 }
 [contenteditable='true'] {
   width: 100%;
@@ -81,11 +88,18 @@ select:focus,
 }
 [contenteditable='true']>div,
 [contenteditable='true']>p {
-  font-size: 16px;
+  font-size: 14px;
   margin: 10px 0;
+  line-height: 26px;
 }
 [contenteditable='true'] img {
   max-width: 100%;
+  display: block;
+  line-height: 0 !important;
+}
+[contenteditable='true'] img::selection {
+  background: rgba(0,0,0,0.3);
+  color: #09f;
 }
 .unselectable * {
   user-select: none;
@@ -109,9 +123,21 @@ select:focus,
   cursor: nw-resize;
   z-index: 1000;
 }
+#resize_btn {
+  display: block;
+  position: absolute;
+  margin-left: -30px;
+  margin-top: -20px;
+  -webkit-transition: top 0, left 0;
+  -moz-transition: top 0, left 0;
+  -ms-transition: top 0, left 0;
+  -o-transition: top 0, left 0;
+  transition: top 0, left 0;
+}
 img.resize {
   outline: rgba(0,0,0,0.6) dashed 2px;
-  opacity: 0.5;
+  zoom: 1;
+  display: block;
 }
 .edit_pic_btn {
   display: block;
@@ -181,7 +207,7 @@ img.resize {
   width: 150px;
   text-align: right;
   margin-right: 20px;
-  line-height: 2;
+  line-height: 36px;
 }
 .form-group input,
 .form-group textarea {
@@ -263,28 +289,29 @@ main {
 main .posts {
   padding: 0;
 }
-main .posts ul.post_list {
+main .posts div.post_list {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-main .posts ul.post_list li {
-  margin-bottom: 40px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 20px;
+main .posts div.post_list>article {
+  margin-bottom: 20px;
 }
-main .posts ul.post_list li h2 {
+main .posts div.post_list>article .post_content {
+  border-bottom: 1px solid #d8d8d8;
+}
+main .posts div.post_list>article h2 {
   color: #777;
-  margin: 0 0 20px 0;
   font-size: 24px;
   line-height: 1;
   font-weight: 600;
 }
-main .posts ul.post_list li h2 a {
+main .posts div.post_list>article h2>a {
   text-decoration: none;
   text-transform: capitalize;
 }
-div.confirm {
+div.confirm,
+div.show_box {
   display: block;
   opacity: 0;
   position: fixed;
@@ -308,13 +335,19 @@ div.confirm {
   -o-transition: all 0.3s;
   transition: all 0.3s;
 }
-div.confirm.show {
+div.confirm .form-group label,
+div.show_box .form-group label {
+  width: 80px;
+}
+div.confirm.show,
+div.show_box.show {
   display: block;
   top: 40%;
   opacity: 1;
   height: auto;
 }
-div.confirm a.close {
+div.confirm a.close,
+div.show_box a.close {
   cursor: pointer;
   font-size: 16px;
   display: block;
@@ -326,21 +359,31 @@ div.confirm a.close {
   right: 10px;
   top: 10px;
 }
-div.confirm a.close:hover {
+div.confirm a.close:hover,
+div.show_box a.close:hover {
   color: #333;
   font-weight: bold;
 }
-div.confirm .confirm_footer {
+div.confirm .confirm_footer,
+div.show_box .confirm_footer,
+div.confirm .box_footer,
+div.show_box .box_footer {
   position: relative;
   bottom: 0;
   padding: 10px;
   left: 0;
   text-align: right;
 }
-div.confirm .confirm_footer .button {
+div.confirm .confirm_footer .button,
+div.show_box .confirm_footer .button,
+div.confirm .box_footer .button,
+div.show_box .box_footer .button {
   margin-left: 10px;
 }
-div.confirm .confirm_body {
+div.confirm .confirm_body,
+div.show_box .confirm_body,
+div.confirm .box_body,
+div.show_box .box_body {
   min-height: 60px;
   padding: 20px;
   font-size: 16px;
@@ -353,18 +396,27 @@ h5 a,
 h6 a {
   text-decoration: none;
 }
-.title {
-  border-bottom: solid 1px #ccc;
-  -webkit-box-shadow: 0px 3px 0px #fff, 0px 4px 0px #ccc;
-  -moz-box-shadow: 0px 3px 0px #fff, 0px 4px 0px #ccc;
-  box-shadow: 0px 3px 0px #fff, 0px 4px 0px #ccc;
-}
-.title h2 {
+.post_title h2 {
   float: left;
   width: 60%;
 }
-.title p.info {
+.post_title p.info {
   float: right;
   text-align: right;
-  margin-top: 30px;
+  margin-top: 25px;
+  color: #aaa;
+}
+.post_title p.info a {
+  color: #888;
+}
+.post_title p.info a:hover {
+  color: #666;
+}
+.pagination .prev {
+  float: left;
+  padding: 5px 18px;
+}
+.pagination .next {
+  float: right;
+  padding: 5px 18px;
 }

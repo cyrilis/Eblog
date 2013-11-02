@@ -45,7 +45,7 @@ Post.prototype.save = function(callback){
     })
 }
 
-Post.get = function(postObj,callback){
+Post.get = function(postObj,page,callback){
     database.open(function(err, db){
         if(err){
            return callback(err)
@@ -55,12 +55,18 @@ Post.get = function(postObj,callback){
                 database.close();
                 return callback(err)
             }
-            collection.find(postObj).sort({time:-1}).toArray(function(err,posts){
-                database.close();
+            var filter= page? {skip:(page-1)*5,limit:5} :{};
+            collection.count(postObj,function(err,totle){
                 if(err){
-                    return callback(err)
+                    return callback(err);
                 }
-                callback(null, posts)
+                collection.find(postObj,filter).sort({time:-1}).toArray(function(err,posts){
+                    database.close();
+                    if(err){
+                        return callback(err)
+                    }
+                    callback(null, posts,totle)
+                })
             })
         })
     })

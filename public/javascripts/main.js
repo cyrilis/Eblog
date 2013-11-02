@@ -31,7 +31,7 @@ if(editorElement.size()>0){
     var initEditor= function(){
         window.editor={};
         editor.toolbar = skriv.create(document.querySelector(".skriv"));
-        skriv.util.execCommand("enableObjectResizing", true, true);
+        skriv.util.execCommand("enableObjectResizing", false, false);
         var e = {direction: "b", delay: 500};
         if(navigator.userAgent.indexOf("Mac OS X") !== -1){
             t="&#8984";
@@ -65,34 +65,37 @@ if(editorElement.size()>0){
         var form=$("#post");
         var editorContent=$("#post_editor");
         cancelResize();
-        
+
         $('#post_content').val(editorContent.html().trim());
         $('#post_title').val($("#post_title_outer").val().trim());
         form.submit();
     }
     var dragable=false,dragImg=null;
-    var init_img_box=function(){
-        $("body").append("<div class='img_box'>title<br/><input type='text'/><br/>link <br/><input type='text'/></div>")
-    };
     var setupResize=function(e){
-        window.dragImg=$(e);
+        window.thisImg=null;
+        window.thisImg=window.dragImg=$(e);
         $(e).addClass("resize");
         var resize_arrow=$("body").append("<div id='resize_arrow'></div>").find("#resize_arrow");
+        var resize_btn=$("body").append("<button class='button' id='resize_btn'>Edit</button>").find("#resize_btn").click(function(){show_edit_box(dragImg)});
         var eLeft=$(e).offset().left+$(e).width(),
             eTop=$(e).offset().top+$(e).height();
         resize_arrow.css({left:eLeft,top: eTop});
+        resize_btn.css({left:eLeft-dragImg.width()/2,top:eTop-dragImg.height()/2});
     }
     var cancelResize=function(){
         $("img.resize").removeClass("resize");
         $("#resize_arrow").remove();
+        $("#resize_btn").remove();
         window.dragImg=null;
     };
     var updateResize= function(){
         if($("#resize_arrow").size()>0){
             var eLeft=dragImg.offset().left+dragImg.width(),
-                eTop=dragImg.offset().top+dragImg.height();
+                eTop=dragImg.offset().top+dragImg.height(),
+                hLeft=dragImg.offset().left+dragImg.width()/ 2,
+                hTop=dragImg.offset().top+dragImg.height()/2;
             $("#resize_arrow").css({left:eLeft,top: eTop});
-            console.log(1)
+            $("#resize_btn").css({left:hLeft,top:hTop})
         }
     }
     $(window).scroll(function(e){
@@ -102,7 +105,7 @@ if(editorElement.size()>0){
         editorEle[method]("fixed");
         updateResize();
     });
-    var sel = window.getSelection(),clearSel;
+    var sel = window.getSelection(),range = document.createRange(),clearSel;
     editorElement
         .on('click',"img",function(e){
             if($(this).hasClass('resize')){
@@ -110,6 +113,10 @@ if(editorElement.size()>0){
             }
             cancelResize();
             setupResize(this);
+            range.setStartAfter(dragImg[0]);
+            range.setEndAfter(dragImg[0]);
+            sel.removeAllRanges();
+            sel.addRange(range);
         })
     $(document).on('click',function(e){
             if(!$(e.target).hasClass("resize")&&$(e.target).attr("id")!=="resize_arrow"){
@@ -117,12 +124,10 @@ if(editorElement.size()>0){
             }
         })
         .on("mousedown","#resize_arrow",function(e){
-            $("#resize_arrow").focus();
             window.dragable=true;
-            $("body").addClass("unselectable");
             window.clearSel=window.setInterval(function(){
-                sel.removeAllRanges()
-            },5);
+                sel.removeAllRanges();
+            },10);
         })
         .on("mousemove","[contenteditable]",function(e){
             if(!dragable){return false};
@@ -134,11 +139,16 @@ if(editorElement.size()>0){
             }
             dragImg.css({width: eleft-dragImg.offset().left});
             $("#resize_arrow").css({left: dragImg.offset().left+dragImg.outerWidth(),top: dragImg.offset().top+dragImg.outerHeight()});
+            $("#resize_btn").css({left: dragImg.offset().left+dragImg.outerWidth()/2,top: dragImg.offset().top+dragImg.outerHeight()/2});
         })
         .on("mouseup",function(e){
             window.dragable=false;
-            $("body").removeClass("unselectable");
-            clearInterval(clearSel)
+            clearInterval(clearSel);
+            if(window.dragImg){
+                range.setStartAfter(dragImg[0]);
+                range.setEndAfter(dragImg[0]);
+                sel.addRange(range);
+            }
         })
 }
 
@@ -152,43 +162,76 @@ function showDialog(url,confirmData,really){
     if(!really){
         return confirm(confirmData)? window.location="#":false;
     }else{
-        var newDiv=document.createElement('div'),
-            confirmBody=document.createElement("div"),
-            confirmFooter=document.createElement("div"),
-            closeBtn=document.createElement("a"),
-            aLink=document.createElement("a");
-        closeBtn.setAttribute("class","close");
-        closeBtn.innerHTML="&times;";
-        aLink.setAttribute("href",url);
-        aLink.setAttribute("class","button");
-        aLink.innerHTML="确定";
-        confirmBody.setAttribute("class","confirm_body");
-        confirmFooter.setAttribute("class","confirm_footer");
-        confirmFooter.innerHTML="<button class='button close'>取消</button>";
-        confirmFooter.appendChild(aLink);
-        confirmBody.innerHTML=confirmData;
-        newDiv.setAttribute("class","confirm");
-        newDiv.appendChild(closeBtn);
-        newDiv.appendChild(confirmBody);
-        newDiv.appendChild(confirmFooter);
+        var newDiv=document.createElement("div");
+        newDiv.className="confirm";
+        newDiv.innerHTML='<a class="close">&times;</a>' +
+            '<div class="confirm_body">'+confirmData+'</div>' +
+            '<div class="confirm_footer">' +
+            '<button class="button close">取消</button>' +
+            '<a href="'+url+'" class="button">确定</a>' +
+            '</div>';
         document.body.appendChild(newDiv);
         setTimeout(function(){
-            newDiv.className+= " show";
-        },1)// to show animate style, set a 0.001s delay
+            newDiv.className+=" show";
+        },1);
         return false
     }
 }
-$(document).on("click",".confirm .close",function(){
-    $(this).parents(".confirm").removeClass("show");
+function show_edit_box(ele){
+    if(!ele){
+        return
+    }
+    var newDiv=document.createElement("div");
+    newDiv.className="show_box";
+    newDiv.innerHTML='<a class="close">&times;</a>' +
+        '<div class="box_body"><div class="form-group">' +
+        '<label for="img_float">Float</label><select name="img_float" id="img_float">' +
+        '<option value="none">None</option>' +
+        '<option value="left">Left</option>' +
+        '<option value="right">Right</option>' +
+        '</select> </div><div class="form-group">' +
+        '<label for="img_link">Link:</label><input id="img_link" type="text" name="img_link"/></div>' +
+        '</div><div class="box_footer">' +
+        '<button class="button close">Cancel</button>' +
+        '<button class="button" onclick="update_img()">OK</button>' +
+        '</div>';
+    document.body.appendChild(newDiv);
+    document.getElementById("img_float").selectedIndex= thisImg.css("float")=="left"? 1: thisImg.css("float")=="right"? 2:0;
+    thisImg.parent().attr("href")?document.getElementById("img_link").value=thisImg.parent().attr("href"):true;
     setTimeout(function(){
-        var x=document.getElementsByClassName("confirm");
-        for(var i=0;i< x.length;i++){
-            if(x[i].tagName.toLowerCase()=="div"){
-                x[i].parentNode.removeChild(x[i]);
-            }
-        }
+        newDiv.className+=" show";
+    },1);
+    return false
+}
+function update_img(){
+    var url=$("#img_link").val();
+    var float=$("#img_float").val();
+    if(float=="left"){
+        thisImg.css({float:"left",margin:"0 10px 0 0"});
+    }else if(float=="right"){
+        thisImg.css({float:"right",margin: "0 0 0 10px"})
+    }else{
+        thisImg.css({float:"none",margin:0})
+    }
+    if(thisImg.parent()[0].nodeName.toLowerCase()=="a"){
+        thisImg.unwrap();
+    }
+    if(url){
+        thisImg.wrap("<a></a>");
+        thisImg.parent().attr("href",url);
+    }
+    close_box();
+}
+function close_box(){
+    $('div.confirm,.show_box').removeClass("show");
+    setTimeout(function(){
+        $("div.confirm,.show_box").remove();
     },300)
+}
+$(document).on("click",".confirm .close,.show_box .close",function(){
+    close_box();
 })
+
 $(document).ready(function(){
     window.setTimeout(function(){
         $(".flash_error,.flash_success").fadeOut();

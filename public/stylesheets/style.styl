@@ -35,11 +35,12 @@ body
   background: #ffffff
   font-family: "Open Sans","Microsoft Yahei","Helvetica Neue", Arail, sans-serif
   font-size 14px
+  line-height 26px
   color #555
   position relative
 p
   margin: 0 0 10px 0
-  line-height 1.3
+  font inherit
 img
   max-width 100%
   height auto
@@ -49,7 +50,8 @@ blockquote
   border-left: 5px solid maincolor
   line-height 1.3
   font-size 16px
-input:not([type='submit']),textarea,select,[contenteditable='true']
+  background #f8f8f8
+input:not([type='submit']):not([type='radio']):not([type='checkbox']),textarea,select,[contenteditable='true']
   width: 260px
   line-height 1
   padding 5px
@@ -63,6 +65,9 @@ input:not([type='submit']),textarea,select,[contenteditable='true']
   &:focus
     border-color #aaaaaa
     outline none
+input[type="radio"],input[type='checkbox']
+  line-height 1
+  padding 5px
 [contenteditable='true']
   width 100%
   min-height 400px
@@ -70,10 +75,16 @@ input:not([type='submit']),textarea,select,[contenteditable='true']
   border-top 0
   margin-bottom 15px
   &>div,&>p
-    font-size 16px
+    font-size 14px
     margin: 10px 0;
+    line-height 26px
   & img
     max-width 100%
+    display block
+    line-height 0!important
+    &::selection
+      background rgba(0,0,0,.3)
+      color #0099ff
 .unselectable *{
   user-select: none;
   -webkit-user-select: none;
@@ -95,9 +106,20 @@ input:not([type='submit']),textarea,select,[contenteditable='true']
   line-height 0
   cursor: nw-resize
   z-index 1000
+#resize_btn
+  display block
+  position absolute
+  margin-left -30px
+  margin-top -20px
+  -webkit-transition: top 0, left 0
+  -moz-transition: top 0, left 0
+  -ms-transition: top 0, left 0
+  -o-transition: top 0, left 0
+  transition: top 0, left 0
 img.resize
   outline: rgba(0, 0, 0, 0.6) dashed 2px
-  opacity 0.5
+  zoom: 1
+  display block
 .edit_pic_btn
   display block
   position absolute
@@ -158,7 +180,7 @@ img.resize
     width: 150px;
     text-align right
     margin-right 20px
-    line-height 2
+    line-height 36px
   input,textarea
     display inline-block
 a
@@ -223,24 +245,23 @@ main
   padding 20px 0
   .posts
     padding 0
-    ul.post_list
+    div.post_list
       margin: 0
       padding 0
       list-style none
-      li
-        margin-bottom 40px
-        border-bottom 1px solid #ddd
-        padding-bottom 20px
+      &>article
+        margin-bottom 20px
+        .post_content
+          border-bottom 1px solid #d8d8d8
         h2
           color #777
-          margin: 0 0 20px 0
           font-size 24px
           line-height 1
           font-weight 600
-          a
+          &>a
             text-decoration none
             text-transform capitalize
-div.confirm
+div.confirm,div.show_box
   display block
   opacity 0
   position fixed
@@ -261,6 +282,8 @@ div.confirm
   -ms-transition: all .3s
   -o-transition: all .3s
   transition: all .3s
+  & .form-group label
+    width 80px
   &.show
     display block;
     top 40%
@@ -280,7 +303,7 @@ div.confirm
     &:hover
       color: #333
       font-weight bold
-  .confirm_footer
+  .confirm_footer,.box_footer
     position relative
     bottom 0
     padding 10px
@@ -288,22 +311,30 @@ div.confirm
     text-align right
     .button
       margin-left 10px
-  .confirm_body
+  .confirm_body,.box_body
     min-height 60px
     padding 20px
     font-size 16px
 h1,h2,h3,h4,h5,h6
   a
     text-decoration none
-.title
-  border-bottom: solid 1px #CCC;
-  -webkit-box-shadow: 0px 3px 0px #FFF, 0px 4px 0px #CCC;
-  -moz-box-shadow: 0px 3px 0px #fff, 0px 4px 0px #ccc;
-  box-shadow: 0px 3px 0px #FFF, 0px 4px 0px #CCC;
+.post_title
   h2
     float left
     width 60%
   p.info
     float right
     text-align right
-    margin-top 30px
+    margin-top 25px
+    color #aaaaaa
+    a
+      color #888888
+      &:hover
+        color #666
+.pagination
+  .prev
+    float left
+    padding 5px 18px
+  .next
+    float right
+    padding 5px 18px

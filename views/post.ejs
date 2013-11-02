@@ -35,31 +35,29 @@
             <li data-id="image" data-model="skriv.actions.image" data-tags="img" data-maxsize="5000" data-endpoint="/upload"></li>
         </ul>
     </div>
-    <div class="post" id="post_editor" contenteditable="true">
-        <% if(post){   %>
-        <%- post.content   %>
-        <% }else{   %>
-        <p>Post Content...</p>
-        <%}   %>
-    </div>
+
     <% if(post){   %>
     <form action="/post/<%= post.time.day+"/"+post.title %>/edit" class="clearfix" id="post" onsubmit="submitPost();return false" method="POST">
     <%}else{   %>
     <form action="/post" class="clearfix" id="post" onsubmit="submitPost();return false" method="POST">
     <%}   %>
+        <div class="post clearfix" id="post_editor" contenteditable="true">
+            <% if(post){   %>
+            <%- post.content   %>
+            <% }else{   %>
+            <div><p>Page Content...</p></div>
+            <%}   %>
+        </div>
         <input name="post[title]" id="post_title" type="text" hidden="hidden"/>
-            <textarea name="post[content]" id="post_content" hidden="hidden"></textarea>
-            <input name="post[tags]" id="post_tags" type="text" hidden="hidden"/>
+        <textarea name="post[content]" id="post_content" hidden="hidden"></textarea>
+        <input name="post[tags]" id="post_tags" type="text" hidden="hidden"/>
         <div class="form-group">
+            <% if(post){  %>
+            <input type="submit" class="button pull-right" value="Update Post"/>
+            <% }else{   %>
             <input type="submit" class="button pull-right" value="Create Post"/>
+            <% }  %>
         </div>
     </form>
 </div>
-<script>
-    <% if(post){  %>
-    var postAction="/post/<%= post.time.day %>/<%= post.title %>/edit";
-    <% }else{   %>
-    var postAction= undefined;
-    <% }%>
-</script>
 <%- include footer.ejs  %>

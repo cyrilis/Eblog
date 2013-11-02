@@ -9,7 +9,7 @@ var crypto = require('crypto'),
     Post = require('../models/post.js');
 module.exports = function (app) {
     app.get("/", function (q, s) {
-        Post.get(null, function(err,posts){
+        Post.get(null,1,function(err,posts,totle){
             if(err){
                 posts=[];
             }
@@ -18,11 +18,83 @@ module.exports = function (app) {
                 user: q.session.user,
                 error: q.flash("error").toString(),
                 success: q.flash('success').toString(),
-                posts:  posts
+                posts:  posts,
+                totle: totle,
+                page: 1
             })
         })
 
     });
+    app.get("/pages/:page",function(q,s){
+        Post.get(null, q.params.page,function(err,posts,totle){
+            if(err){
+                posts=[];
+            }
+            s.render("index",{
+                title: "Page "+ q.params.page,
+                user: q.session.user,
+                error: q.flash("error").toString(),
+                success: q.flash("success").toString(),
+                posts: posts,
+                totle: totle,
+                page: q.params.page
+            })
+        })
+    });
+    app.get("/u/:name",function(q,s){
+        postObj={name: q.params.name};
+        userObj={name: q.params.name};
+        User.get(userObj,function(err,user){
+            if(err||!user){
+                q.flash("error","User Doesn't Exist");
+                return s.redirect("/");
+            }
+            Post.get(postObj,1,function(err,posts,totle){
+                if(err){
+                    q.flash("error",err);
+                    return s.redirect("/")
+                }
+                user.posts=posts;
+                s.render('user',{
+                    title: user.name,
+                    user: q.session.user,
+                    error: q.flash("error").toString(),
+                    success: q.flash("success").toString(),
+                    author: user,
+                    posts: user.posts,
+                    totle: totle,
+                    page: 1
+                })
+            })
+        })
+    });
+    app.get("/u/:name/pages/:page",function(q,s){
+        postObj={name: q.params.name};
+        userObj={name: q.params.name};
+        User.get(userObj,function(err,user){
+            if(err||!user){
+                q.flash("error","User Doesn't Exist");
+                return s.redirect("/");
+            }
+            Post.get(postObj, q.params.page ,function(err,posts,totle){
+                if(err){
+                    q.flash("error",err);
+                    return s.redirect("/")
+                }
+                user.posts=posts;
+                return s.render('user',{
+                    title: user.name,
+                    user: q.session.user,
+                    error: q.flash("error").toString(),
+                    success: q.flash("success").toString(),
+                    author: user,
+                    posts: user.posts,
+                    totle: totle,
+                    page: q.params.page
+                })
+            })
+        })
+    })
     app.get('/reg', checkNotLogin);
     app.get("/reg", function (q, s) {
         s.render("reg", {
@@ -118,7 +190,7 @@ module.exports = function (app) {
         Post.get({
             "time.day": q.params.day,
             "title": q.params.title
-        },function(err,post){
+        },null,function(err,post){
             if(err){
                 q.flash('error',err);
                 return s.redirect('/')
@@ -127,7 +199,6 @@ module.exports = function (app) {
             if(!post){
                 return s.send("404-Not Found")
             }
-            console.log(post);
             s.render('page',{
                 title: post.title,
                 post: post,
@@ -147,7 +218,7 @@ module.exports = function (app) {
         Post.get({
             "time.day": q.params.day,
             "title": q.params.title
-        },function(err,post){
+        },null,function(err,post){
             if(err){
                 q.flash('error',err);
                 return s.redirect('/')
