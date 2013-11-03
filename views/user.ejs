@@ -2,10 +2,9 @@
 <div class="container posts" xmlns="http://www.w3.org/1999/html">
     <div class="author">
         <%= author.email %>
-        <%= author.avatar   %>
     </div>
     <div class="post_list">
-        <% posts.forEach(function(post, index){   %>
+        <% posts.forEach(function(post){   %>
         <article class="clearfix">
             <div class="post_title clearfix">
                 <h2><a href="/post/<%= post.time.day+"/"+post.title %>"><%= post.title  %></a></h2>
