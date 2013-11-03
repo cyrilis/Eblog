@@ -3,7 +3,6 @@
  */
 
 var crypto = require('crypto'),
-    fs = require('fs'),
     User = require('../models/user.js'),
     Post = require('../models/post.js');
 

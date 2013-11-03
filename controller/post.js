@@ -2,10 +2,7 @@
  * Created by Cyril on 13-11-3.
  */
 
-var crypto = require('crypto'),
-    fs = require('fs'),
-    User = require('../models/user.js'),
-    Post = require('../models/post.js');
+var Post = require('../models/post.js');
 
 exports.index=function (q, s) {
     Post.get(null,1,function(err,posts,totle){
@@ -132,6 +129,7 @@ exports.postNew=function (q, s) {
     var currentUser = q.session.user,
         postObj= q.body.post;
     postObj.name= currentUser.name;
+    postObj.avatar=currentUser.avatar;
     var  tagsObj=[];
     postObj.tags.split('|').forEach(function(tag){
         tagsObj.push({tag:tag.trim()})

@@ -259,11 +259,11 @@ function close_box(){
 $(document).on("click",".confirm .close,.show_box .close",function(){
     close_box();
 })
-
+$(".flash_error,.flash_success").addClass("show");
 $(document).ready(function(){
     window.setTimeout(function(){
-        $(".flash_error,.flash_success").fadeOut();
-    },2000);
+        $(".flash_error,.flash_success").removeClass("show");
+    },5000);
     updateTags();
     $("#tags_container").click(function(){
         $("#newTag").focus();

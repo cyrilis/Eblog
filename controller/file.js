@@ -3,9 +3,7 @@
  */
 
 var crypto = require('crypto'),
-    fs = require('fs'),
-    User = require('../models/user.js'),
-    Post = require('../models/post.js');
+    fs = require('fs');
 exports.upload=function(q,s){
     if(q.files.file.size==0){
         fs.unlinkSync(q.files.file.path);

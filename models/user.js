@@ -1,8 +1,8 @@
 /**
  * Created by never on 13-10-26.
  */
-var database = require('./db');
-
+var database = require('./db'),
+    crypto = require('crypto');
 function User(user){
     this.name= user.name;
     this.password = user.password;
@@ -12,11 +12,13 @@ function User(user){
 module.exports = User;
 
 User.prototype.save = function(callback){
+        avatar = "/images/default_avatar.jpg";
     var user = {
         name: this.name,
         password: this.password,
         email: this.email,
-        avatar: "/images/avatar_default.png"
+        avatar: avatar,
+        bio: ""
     };
 
     database.open(function(err, db){

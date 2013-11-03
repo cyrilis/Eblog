@@ -105,13 +105,8 @@ input[type='checkbox'] {
   background: rgba(0,0,0,0.3);
   color: #09f;
 }
-.unselectable * {
-  user-select: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  user-select: none;
+.skriv-container {
+  height: 57px;
 }
 #resize_arrow {
   padding: 0;
@@ -168,7 +163,6 @@ img.resize {
 }
 .flash_success,
 .flash_error {
-  width: 970px;
   padding: 8px 15px;
   font-size: 16px;
   color: #fff;
@@ -178,6 +172,21 @@ img.resize {
   -moz-border-radius: 3px;
   border-radius: 3px;
   margin-bottom: 20px;
+  position: fixed;
+  bottom: -100px;
+  width: 200px;
+  right: 10px;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -ms-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+.flash_success.show,
+.flash_error.show {
+  bottom: 30px;
+  opacity: 1;
 }
 .flash_error {
   background: #ee688d;

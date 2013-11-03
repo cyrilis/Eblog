@@ -8,6 +8,7 @@ function Post(post){
     this.name = post.name;
     this.tags = post.tags;
     this.category=post.category;
+    this.avatar=post.avatar;
 }
 module.exports= Post;
 Post.prototype.save = function(callback){
@@ -20,6 +21,7 @@ Post.prototype.save = function(callback){
         minute: date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+date.getMinutes()
     }
     var post={
+        avatar: this.avatar,
         name: this.name,
         time: time,
         title: this.title,

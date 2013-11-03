@@ -2,6 +2,7 @@
 <div class="container posts" xmlns="http://www.w3.org/1999/html">
     <div class="author">
         <%= author.email %>
+        <%= author.avatar   %>
     </div>
     <div class="post_list">
         <% posts.forEach(function(post, index){   %>
@@ -11,8 +12,8 @@
                 <p class="info">By  <a href="/u/<%= post.name %>"><%= post.name %></a>
                     <span> at  <%= post.time.minute  %></span>
                     <% if(user&&post.name==user.name){ %>
-                    <a href="/post/<%= post.time.day+"/"+post.title %>/edit">编辑</a>
-                    <a class="confirm" data-confirm="Are you sure to Detele this blog?" href="/post/<%= post.time.day+"/"+post.title %>/delete">刪除</a>
+                    <a href="/post/<%= post.time.day+"/"+post.title %>/edit">Edit</a>
+                    <a class="confirm" data-confirm="Are you sure to Detele this blog?" href="/post/<%= post.time.day+"/"+post.title %>/delete">Delete</a>
                     <% } %>
                 </p>
             </div>

@@ -3,11 +3,11 @@
     <section class="clearfix">
         <div class="post_title clearfix">
             <h2><a href="/post/<%= post.time.day+"/"+post.title %>"><%= post.title  %></a></h2>
-            <p class="info">作者: <a href="/u/<%= post.name %>"><%= post.name %> </a>
-                <span> 日期: <%= post.time.minute  %></span>
+            <p class="info">By <a href="/u/<%= post.name %>"><%= post.name %> </a>
+                <span> at <%= post.time.minute  %></span>
                 <% if(user&&post.name==user.name){ %>
-                <a href="/post/<%= post.time.day+"/"+post.title %>/edit">编辑</a>
-                <a class="confirm" data-confirm="Are you sure to Detele this blog?" href="/post/<%= post.time.day+"/"+post.title %>/delete">刪除</a>
+                <a href="/post/<%= post.time.day+"/"+post.title %>/edit">Edit</a>
+                <a class="confirm" data-confirm="Are you sure to Detele this blog?" href="/post/<%= post.time.day+"/"+post.title %>/delete">Delete</a>
                 <% } %>
             </p>
         </div>
