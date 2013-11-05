@@ -8,7 +8,7 @@ var settings = require('../settings'),
     Server = require('mongodb').Server;
 module.exports = new Db(settings.db, new Server(settings.host, Connection.DEFAULT_PORT, {auto_reconnect: true}));
 
-var Eblog=function(host, port, dbname) {
+exports.Eblog = Eblog = function(host, port, dbname) {
     this.host = host;
     this.port = port;
     this.dbname = dbname;
@@ -32,22 +32,20 @@ var Eblog=function(host, port, dbname) {
         self.db = db;
         for (var i = 0; i < self.queue.length; i++) {
             var collection = new mongodb.Collection(
-                self.db, self.queue[i].cn);
-            self.queue[i].cb(collection);
+                self.db, self.queue[i].collection);
+            self.queue[i].callback(collection);
         }
         self.queue = [];
-
     });
 };
-exports.Eblog=Eblog;
 Eblog.prototype.query = function(collectionName, callback) {
     if (this.db != undefined) {
         var collection = new mongodb.Collection(this.db, collectionName);
         callback(collection);
         return;
     }
-    this.queue.push({ "cn" : collectionName, "cb" : callback});
-}
+    this.queue.push({ "collection" : collectionName, "callback" : callback});
+};
 
 /**
  * Created by never on 13-10-26.
