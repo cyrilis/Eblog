@@ -1,9 +1,13 @@
 <%- include header.ejs %>
 <div class="container posts" xmlns="http://www.w3.org/1999/html">
-    <div class="author">
-        <%= author.email %>
+    <div class="author clearfix">
+        <a href="/u/<%= author.name %>"><img class="avatar" src="<%= author.avatar %>" alt=""/></a>
+        <div class="author_name"><%= author.name  %></div>
+        <div class="author_email"><a href="mailto:<%= author.email %>"><%= author.email %></a></div>
+        <div class="author_link"><a href="<%= author.link %>"><%= author.link %></a></div>
     </div>
     <div class="post_list">
+        <h3>Posts list of <%= author.name %></h3>
         <% posts.forEach(function(post){   %>
         <article class="clearfix">
             <div class="post_title clearfix">

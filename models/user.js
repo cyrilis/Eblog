@@ -1,8 +1,9 @@
 /**
  * Created by never on 13-10-26.
  */
-var database = require('./db'),
-    crypto = require('crypto');
+var Db = require('./database').DB,
+    db;
+db= new Db();
 function User(user){
     this.name= user.name;
     this.password = user.password;
@@ -21,46 +22,34 @@ User.prototype.save = function(callback){
         bio: ""
     };
 
-    database.open(function(err, db){
-        if (err){
-            return callback(err)
+    db.connect("users",function(err,collection){
+        if(err) {
+            callback(err);
+            return;
         }
-        db.collection("users",function(err,collection){
-            if(err) {
-                database.close();
-                return callback(err)
+        collection.insert(user,{safe: true},function(err,user){
+            if(err){
+                callback(err);
+                return;
             }
-            collection.insert(user,{safe: true},function(err,user){
-                if(err){
-                    return callback(err)
-                }
-                database.close();
-                callback(null, user[0])
-            })
+            callback(null, user[0])
         })
     })
-}
+};
 
 //user.get({id: id, name: name})
 User.get = function(userObj, callback){
-    database.open(function(err,db){
+    db.connect("users",function(err,collection){
         if(err){
-            return callback(err);
+            callback(err);
+            return;
         }
-        db.collection("users",function(err,collection){
+        collection.findOne(userObj,function(err,user){
             if(err){
-                database.close();
-                return callback(err)
+                callback(err);
+                return;
             }
-
-            collection.findOne(userObj,function(err,user){
-                if(err){
-                    database.close();
-                    return callback(err)
-                }
-                database.close();
-                return callback(null,user)
-            })
+            return callback(null,user)
         })
     })
-}
+};
