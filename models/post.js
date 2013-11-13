@@ -20,7 +20,7 @@ Post.prototype.save = function(callback){
         month: date.getFullYear()+"-"+(date.getMonth()+1),
         day: date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate(),
         minute: date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+date.getMinutes()
-    }
+    };
     var post={
         avatar: this.avatar,
         name: this.name,

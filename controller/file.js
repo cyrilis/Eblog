@@ -2,8 +2,7 @@
  * Created by never on 13-11-3.
  */
 
-var crypto = require('crypto'),
-    fs = require('fs');
+var fs = require('fs');
 exports.upload=function(q,s){
     if(q.files.file.size==0){
         fs.unlinkSync(q.files.file.path);

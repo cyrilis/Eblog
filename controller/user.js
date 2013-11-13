@@ -14,7 +14,7 @@ exports.show=function(q,s){
             q.flash("error","User Doesn't Exist");
             return s.redirect("/");
         }
-        Post.get(postObj,1,function(err,posts,totle){
+        Post.get(postObj,1,function(err,posts,total){
             if(err){
                 q.flash("error",err);
                 return s.redirect("/")
@@ -27,7 +27,7 @@ exports.show=function(q,s){
                 success: q.flash("success").toString(),
                 author: user,
                 posts: user.posts,
-                totle: totle,
+                total: total,
                 page: 1
             })
         })
@@ -42,7 +42,7 @@ exports.pages=function(q,s){
             q.flash("error","User Doesn't Exist");
             return s.redirect("/");
         }
-        Post.get(postObj, q.params.page ,function(err,posts,totle){
+        Post.get(postObj, q.params.page ,function(err,posts,total){
             if(err){
                 q.flash("error",err);
                 return s.redirect("/")
@@ -55,7 +55,7 @@ exports.pages=function(q,s){
                 success: q.flash("success").toString(),
                 author: user,
                 posts: user.posts,
-                totle: totle,
+                total: total,
                 page: q.params.page
             })
         })

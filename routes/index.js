@@ -5,6 +5,7 @@
 var user = require('../controller/user.js'),
     post = require('../controller/post.js'),
     file = require('../controller/file.js');
+//    album= require('../controller/album.js');
 
 module.exports = function (app) {
     app.get("/", post.index);
@@ -28,6 +29,7 @@ module.exports = function (app) {
     app.post('/post', checkLogin);
     app.post('/post', post.postNew);
     app.get('/post/:day/:title', post.show);
+//    app.get('/albums',album.show);
     app.get('/logout', user.logout);
     app.get('/post/:day/:title/edit', checkLogin);
     app.get('/post/:day/:title/edit', post.getEdit);

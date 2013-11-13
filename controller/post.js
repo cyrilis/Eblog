@@ -5,7 +5,7 @@
 var Post = require('../models/post.js');
 
 exports.index=function (q, s) {
-    Post.get(null,1,function(err,posts,totle){
+    Post.get(null,1,function(err,posts,total){
         if(err){
             posts=[];
         }
@@ -15,13 +15,13 @@ exports.index=function (q, s) {
             error: q.flash("error").toString(),
             success: q.flash('success').toString(),
             posts:  posts,
-            totle: totle,
+            total: total,
             page: 1
         })
     })
 };
 exports.pages=function(q,s){
-    Post.get(null, q.params.page,function(err,posts,totle){
+    Post.get(null, q.params.page,function(err,posts,total){
         if(err){
             posts=[];
         }
@@ -31,7 +31,7 @@ exports.pages=function(q,s){
             error: q.flash("error").toString(),
             success: q.flash("success").toString(),
             posts: posts,
-            totle: totle,
+            total: total,
             page: q.params.page
         })
     })
@@ -40,9 +40,10 @@ exports.tag=function(q,s){
     var postObj={
         "tags.tag": q.params.tag
     }
-    Post.get(postObj, 1,function(err,posts,totle){
+    Post.get(postObj, 1,function(err,posts,total){
         if(err){
             posts=[];
+            total=0;
         }
         s.render("index",{
             title: "Tags "+ q.params.tag +" - Page 1",
@@ -50,7 +51,7 @@ exports.tag=function(q,s){
             error: q.flash("error").toString(),
             success: q.flash("success").toString(),
             posts: posts,
-            totle: totle,
+            total: total,
             page: 1
         })
     })
@@ -59,7 +60,7 @@ exports.tagPages=function(q,s){
     var postObj={
         "tags.tag": q.params.tag
     }
-    Post.get(postObj, q.params.page,function(err,posts,totle){
+    Post.get(postObj, q.params.page,function(err,posts,total){
         if(err){
             posts=[];
         }
@@ -69,7 +70,7 @@ exports.tagPages=function(q,s){
             error: q.flash("error").toString(),
             success: q.flash("success").toString(),
             posts: posts,
-            totle: totle,
+            total: total,
             page: q.params.page
         })
     })
@@ -78,7 +79,7 @@ exports.category=function(q,s){
     var postObj={
         "category": q.params.category
     }
-    Post.get(postObj, 1,function(err,posts,totle){
+    Post.get(postObj, 1,function(err,posts,total){
         if(err){
             posts=[];
         }
@@ -88,7 +89,7 @@ exports.category=function(q,s){
             error: q.flash("error").toString(),
             success: q.flash("success").toString(),
             posts: posts,
-            totle: totle,
+            total: total,
             page: 1
         })
     })
@@ -97,7 +98,7 @@ exports.categoryPage=function(q,s){
     var postObj={
         "category": q.params.category
     }
-    Post.get(postObj, q.params.page,function(err,posts,totle){
+    Post.get(postObj, q.params.page,function(err,posts,total){
         if(err){
             posts=[];
         }
@@ -107,7 +108,7 @@ exports.categoryPage=function(q,s){
             error: q.flash("error").toString(),
             success: q.flash("success").toString(),
             posts: posts,
-            totle: totle,
+            total: total,
             page: q.params.page
         })
     })
