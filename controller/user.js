@@ -12,12 +12,14 @@ exports.show=function(q,s){
     User.get(userObj,function(err,user){
         if(err||!user){
             q.flash("error","User Doesn't Exist");
-            return s.redirect("/");
+            s.redirect("/");
+            return
         }
         Post.get(postObj,1,function(err,posts,total){
             if(err){
                 q.flash("error",err);
-                return s.redirect("/")
+                s.redirect("/");
+                return
             }
             user.posts=posts;
             s.render('user',{
@@ -40,7 +42,8 @@ exports.pages=function(q,s){
     User.get(userObj,function(err,user){
         if(err||!user){
             q.flash("error","User Doesn't Exist");
-            return s.redirect("/");
+            s.redirect("/");
+            return
         }
         Post.get(postObj, q.params.page ,function(err,posts,total){
             if(err){
@@ -74,7 +77,8 @@ exports.postNew=function (q, s) {
     console.dir(user);
     if(user.password!=user.password_confirmation){
         q.flash("error","Password Not Match");
-        return s.redirect("/reg");
+        s.redirect("/reg");
+        return
     }
     var md5 = crypto.createHash("md5");
     user.password=md5.update(user.password).digest('hex');
@@ -82,12 +86,14 @@ exports.postNew=function (q, s) {
     User.get({name: user.name},function(err,user){
         if(user){
             q.flash("error","User Exist Already");
-            return s.redirect('/reg')
+            s.redirect('/reg');
+            return
         }
         newUser.save(function(err,user){
             if(err){
                 q.flash("error",err);
-                return s.redirect('/reg')
+                 s.redirect('/reg');
+                return
             }
             q.session.user=user;
             q.flash('success',"Register Success");

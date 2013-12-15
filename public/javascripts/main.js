@@ -17,7 +17,7 @@ if(editorElement.size()>0){
     submitPost = function(){
         if(!$('#post_title_outer').val()){
             alert("Title Can't be Blank");
-            return false;
+            return;
         }
         var form=$("#post");
         var editorContent=$("#post_editor");
@@ -65,7 +65,7 @@ if(editorElement.size()>0){
     editorElement
         .on('click',"img",function(e){
             if($(this).hasClass('resize')){
-                return false
+                return
             }
             cancelResize();
             setupResize(this);
@@ -86,12 +86,12 @@ if(editorElement.size()>0){
             },10);
         })
         .on("mousemove","[contenteditable]",function(e){
-            if(!dragable){return false};
+            if(!dragable){return}
             var parentPos=$("body").offset(),
                 etop=parentPos.top+ e.pageY,
                 eleft=parentPos.left+ e.pageX;
             if(dragImg.outerHeight()<100&&eleft-dragImg.offset().left<100){
-                return false
+                return
             }
             dragImg.css({width: eleft-dragImg.offset().left});
             $("#resize_arrow").css({left: dragImg.offset().left+dragImg.outerWidth(),top: dragImg.offset().top+dragImg.outerHeight()});
