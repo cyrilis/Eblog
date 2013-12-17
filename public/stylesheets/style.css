@@ -93,7 +93,7 @@ input[type='checkbox'] {
 [contenteditable='true']>div,
 [contenteditable='true']>p {
   font-size: 14px;
-  margin: 10px 0;
+  margin: 0 0 10px 0;
   line-height: 26px;
 }
 [contenteditable='true'] img {
@@ -586,4 +586,7 @@ img.avatar {
 html.decks.edit .sidebar .secondary .button.active,
 html.decks.edit .sidebar .secondary .button:hover {
   background: #138d92;
+}
+.skriv-container .skriv .action.image .panel .file-form .browse-output {
+  background: #169ea4;
 }
