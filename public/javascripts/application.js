@@ -14,11 +14,10 @@ submitPost = function(){
 };
 var ue = UM.getEditor('post_content');
 
-$('#newTag').on("keypress",function(e) {
+$('#newTag').on("keyup",function(e) {
     console.log(e);
-    if(e.which == 13&&$(this).val()){
+    if(e.which == 32&&$(this).val()){
         e.preventDefault();
-        console.log(e);
         $('<span class="tag_span">' +
             '<span class="tag_name">'+$(this).val()+'</span>' +
             '<span class="tag_close">&times;</span>' +
@@ -30,6 +29,10 @@ $('#newTag').on("keypress",function(e) {
         $(this).val("");
         updateTags();
         return false;
+    }else if(e.which == 8){
+        e.preventDefault();
+        $(".tag_span").last().remove();
+        updateTags();
     }
 });
 
