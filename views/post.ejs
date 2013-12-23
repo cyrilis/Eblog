@@ -1,62 +1,36 @@
 <%- include header.ejs   %>
 <div class="container">
-    <% if(post){ %>
-    <h2>Edit Post</h2>
-    <input type="text" name="post[title]" id="post_title_outer" placeholder="Post Title" value="<%= post.title   %>" />
-    <% }else{%>
-    <h2>New Post</h2>
-    <input type="text" name="post[title]" id="post_title_outer" placeholder="Post Title" />
-    <% }   %>
-    <div class="skriv-container">
-        <ul class="skriv">
-            <li data-id="undo" data-model="skriv.actions.undo"></li>
-            <li data-id="divider"></li>
-            <li data-id="bold" data-command="bold" data-tags="b,strong" data-keys="66"></li>
-            <li data-id="italic" data-command="italic" data-tags="i,em" data-keys="73"></li>
-            <li data-id="underline" data-command="underline" data-tags="u" data-keys="85"></li>
-            <li data-id="divider"></li>
-            <li data-id="align" data-model="skriv.actions.align"></li>
-            <li data-id="divider"></li>
-            <li data-id="ul" data-command="insertunorderedlist" data-tags="ul"></li>
-            <li data-id="ol" data-command="insertorderedlist" data-tags="ol"></li>
-            <li data-id="divider"></li>
-            <li data-id="fontFormat" data-model="skriv.actions.fontFormat"></li>
-            <li data-id="divider"></li>
-            <li data-id="fontSize" data-model="skriv.actions.fontSize"></li>
-            <li data-id="divider"></li>
-            <li data-id="removeFormat" data-command="removeFormat"></li>
-            <li data-id="divider"></li>
-            <li data-id="foregroundColor" data-model="skriv.actions.foregroundColor"></li>
-            <li data-id="backgroundColor" data-model="skriv.actions.backgroundColor"></li>
-            <li data-id="divider"></li>
-            <li data-id="link" data-model="skriv.actions.link" data-tags="a" data-keys="75"></li>
-            <li data-id="unlink" data-model="skriv.actions.unlink" data-tags="a"></li>
-            <li data-id="divider"></li>
-            <li data-id="image" data-model="skriv.actions.image" data-tags="img" data-maxsize="5000" data-endpoint="/upload"></li>
-        </ul>
-    </div>
+
+
 
     <% if(post){   %>
-    <form action="/post/<%= post.time.day+"/"+post.title %>/edit" class="clearfix" id="post" onsubmit="submitPost();return false" method="POST">
+        <form action="/post/<%= post.time.day+"/"+post.title %>/edit" class="clearfix" id="post" onsubmit="submitPost();return false" method="POST">
     <%}else{   %>
-    <form action="/post" class="clearfix" id="post" onsubmit="submitPost();return false" method="POST">
+        <form action="/post" class="clearfix" id="post" onsubmit="submitPost();return false" method="POST">
     <%}   %>
-        <div class="post clearfix" id="post_editor" contenteditable="true">
+
+        <% if(post){ %>
+        <h2>Edit Post</h2>
+        <div style="padding: 0 7px;"><input type="text" name="post[title]" id="post_title_outer" placeholder="Post Title" value="<%= post.title   %>" /></div>
+        <% }else{%>
+        <h2>New Post</h2>
+        <div style="padding: 0 7px;"><input type="text" name="post[title]" id="post_title_outer" placeholder="Post Title" /></div>
+        <% }   %>
+        <div style="margin: 20px 0;width: 1000px">
             <% if(post){   %>
-            <%- post.content   %>
+            <textarea name="post[content]" id="post_content" cols="30" rows="10" style="width: 100%;height: 400px"><%- post.content   %></textarea>
             <% }else{   %>
-            <div><p>Page Content...</p></div>
+            <textarea name="post[content]" id="post_content" cols="30" rows="10" style="width: 100%;height: 400px"><p>Page Content...</p></textarea>
             <%}   %>
         </div>
-        <input name="post[title]" id="post_title" type="text" hidden="hidden"/>
-        <textarea name="post[content]" id="post_content" hidden="hidden"></textarea>
+
         <input name="post[tags]" id="post_tags" type="text" hidden="hidden"/>
         <div class="form-group">
             <label for="post_tags">Tags</label>
             <span id="tags_container">
                 <%if(post&&post.tags){ %>
                 <%post.tags.forEach(function(tag){%><span class="tag_span"><span class="tag_name"><%= tag.tag %></span><span class="tag_close">×</span></span><%}) %>
-                <%}   %>
+                <%}  %>
                 <input id="newTag" type="text"/>
             </span>
         </div>

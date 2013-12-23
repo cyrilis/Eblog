@@ -56,8 +56,7 @@ code {
 }
 input:not([type='submit']):not([type='radio']):not([type='checkbox']),
 textarea,
-select,
-[contenteditable='true'] {
+select {
   width: 260px;
   line-height: 1;
   padding: 5px;
@@ -73,8 +72,7 @@ select,
 }
 input:not([type='submit']):not([type='radio']):not([type='checkbox']):focus,
 textarea:focus,
-select:focus,
-[contenteditable='true']:focus {
+select:focus {
   border-color: #aaa;
   outline: none;
 }
@@ -197,6 +195,7 @@ img.resize {
 #post_title_outer {
   font-size: 20px;
   width: 100%;
+  margin-left: -7px;
 }
 #post_title_outer:-moz-placeholder {
   line-height: 1.3;

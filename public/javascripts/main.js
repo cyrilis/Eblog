@@ -1,6 +1,9 @@
 /**
  * Created by never on 13-10-27.
  */
+
+var ue = UM.getEditor('post_content');
+
 var editorElement=$("#post_editor");
 if(editorElement.size()>0){
     var initEditor= function(){
