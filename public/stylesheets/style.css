@@ -33,6 +33,14 @@ body {
   line-height: 26px;
   color: #555;
   position: relative;
+  opacity: 1;
+}
+body.unloaded * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
 }
 p {
   margin: 0 0 10px 0;
@@ -58,7 +66,7 @@ input:not([type='submit']):not([type='radio']):not([type='checkbox']),
 textarea,
 select {
   width: 260px;
-  line-height: 1;
+  line-height: 19px;
   padding: 5px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -69,6 +77,11 @@ select {
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
+  -webkit-transition-property: color, background, border-color, outline;
+  -moz-transition-property: color, background, border-color, outline;
+  -ms-transition-property: color, background, border-color, outline;
+  -o-transition-property: color, background, border-color, outline;
+  transition-property: color, background, border-color, outline;
 }
 input:not([type='submit']):not([type='radio']):not([type='checkbox']):focus,
 textarea:focus,
@@ -541,51 +554,6 @@ img.avatar {
   padding: 10px;
   background: #f8f8f8;
 }
-.skriv {
-  background: #18b0b6;
-  box-shadow: 0 4px 0 #169ea4;
-}
-.skriv .action:hover>button,
-.skriv .action.open>button,
-.skriv .action .dropdown ul li:hover {
-  background: #17a7ad;
-}
-.skriv .action .panel {
-  background: #138d92;
-}
-.skriv .action .dropdown ul li {
-  background: #14969b;
-}
-.skriv .action .panel:after {
-  border-color: rgba(0,0,0,0) rgba(0,0,0,0) #138d92;
-}
-.skriv .action .backgroundColor.icon:before {
-  color: #18b0b6;
-}
-.sp-container {
-  background: #169ea4;
-  border-color: #0c585b;
-}
-.sp-palette-container {
-  background: #18b0b6;
-}
-.skriv .action .panel.tabbed .tab-bar button.selected {
-  background: #169ea4;
-}
-.skriv .action .panel.tabbed .tab-bar button:hover {
-  background: #14969b;
-}
-.skriv .action .panel.tabbed .tab-bar button {
-  background: #117b7f;
-}
-.skriv .action .panel.tabbed .tab-contents {
-  background: #169ea4;
-}
-.skriv .action.selected>button,
-html.decks.edit .sidebar .secondary .button.active,
-html.decks.edit .sidebar .secondary .button:hover {
-  background: #138d92;
-}
-.skriv-container .skriv .action.image .panel .file-form .browse-output {
-  background: #169ea4;
+body.unloaded .loading {
+  width: 100px;
 }
