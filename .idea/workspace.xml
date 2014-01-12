@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1f2b440-a030-4a6e-b81d-18bc193abbfe" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/footer.ejs" afterPath="$PROJECT_DIR$/views/footer.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="test.iws" />
@@ -83,25 +84,25 @@
       <file leaf-file-name="header.ejs" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/header.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="48" selection-start="491" selection-end="491" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="968">
+            <state line="13" column="48" selection-start="491" selection-end="491" vertical-scroll-proportion="-5.7419353" vertical-offset="108" max-vertical-offset="968">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.ejs" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="footer.ejs" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/footer.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="26" selection-start="312" selection-end="312" vertical-scroll-proportion="-7.806452" vertical-offset="0" max-vertical-offset="462">
+            <state line="11" column="35" selection-start="321" selection-end="321" vertical-scroll-proportion="0.36778116" vertical-offset="0" max-vertical-offset="658">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="prefix.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="prefix.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/prefix.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="343" column="24" selection-start="9261" selection-end="9261" vertical-scroll-proportion="0.33898306" vertical-offset="7326" max-vertical-offset="9790">
+            <state line="343" column="24" selection-start="9261" selection-end="9261" vertical-scroll-proportion="-8.148149" vertical-offset="7326" max-vertical-offset="9790">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -154,8 +155,8 @@
         <option value="$PROJECT_DIR$/public/javascripts/main.js" />
         <option value="$PROJECT_DIR$/views/header.ejs" />
         <option value="$PROJECT_DIR$/public/stylesheets/style.styl" />
-        <option value="$PROJECT_DIR$/views/footer.ejs" />
         <option value="$PROJECT_DIR$/public/javascripts/prefix.js" />
+        <option value="$PROJECT_DIR$/views/footer.ejs" />
       </list>
     </option>
   </component>
@@ -577,7 +578,11 @@
       <created>1389547700332</created>
       <updated>1389547700332</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="add prefix as a lib :cupid:">
+      <created>1389547714500</created>
+      <updated>1389547714500</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -757,26 +762,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/prefix.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="343" column="24" selection-start="9261" selection-end="9261" vertical-scroll-proportion="-8.148149" vertical-offset="7326" max-vertical-offset="9790">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/header.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="48" selection-start="491" selection-end="491" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="968">
+        <state line="13" column="48" selection-start="491" selection-end="491" vertical-scroll-proportion="-5.7419353" vertical-offset="108" max-vertical-offset="968">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/footer.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="26" selection-start="312" selection-end="312" vertical-scroll-proportion="-7.806452" vertical-offset="0" max-vertical-offset="462">
+        <state line="11" column="35" selection-start="321" selection-end="321" vertical-scroll-proportion="0.36778116" vertical-offset="0" max-vertical-offset="658">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/prefix.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="343" column="24" selection-start="9261" selection-end="9261" vertical-scroll-proportion="0.33898306" vertical-offset="7326" max-vertical-offset="9790">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
