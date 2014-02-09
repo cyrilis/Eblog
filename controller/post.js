@@ -1,6 +1,7 @@
 /**
  * Created by Cyril on 13-11-3.
  */
+"use strict";
 
 var Post = require('../models/post.js');
 

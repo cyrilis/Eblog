@@ -1,8 +1,9 @@
 /**
  * Created by never on 13-10-26.
  */
+"use strict";
 var db = require('./database').DB;
-DB= new db();
+var DB= new db();
 function Post(post){
     this.title = post.title;
     this.content = post.content;
@@ -32,9 +33,9 @@ Post.prototype.save = function(callback){
     };
     DB.connect("post",function(err,collection){
         collection.insert(post, {safe:true},function(err, post){
-            return callback(null, post[0])
-        })
-    })
+            return callback(null, post[0]);
+        });
+    });
 };
 Post.get = function(postObj,page,callback){
     DB.connect("post",function(err,collection){
@@ -45,37 +46,37 @@ Post.get = function(postObj,page,callback){
                     callback(err);
                     return;
                 }
-                callback(null, posts,total)
-            })
-        })
-    })
+                callback(null, posts,total);
+            });
+        });
+    });
 };
 Post.update= function(postObjAttr,postObj,callback){
     DB.connect('post',function(err,collection){
         if(err){callback(err);return;}
         collection.update(postObjAttr,{$set:postObj},function(err,post){
-            if(err){callback(err)}
-            callback(null, post)
-        })
-    })
+            if(err){callback(err);}
+            callback(null, post);
+        });
+    });
 };
 Post.tags = function(callback){
     DB.connect("post",function(err,collection){
         if(err){callback(err);return;}
         collection.distinct("tags.tag",function(err,tags){
-            if(err){return callback(err)}
-            callback(null,tags)
-        })
-    })
+            if(err){callback(err); return;}
+            callback(null,tags);
+        });
+    });
 };
 Post.categories = function(callback){
     DB.connect("post",function(err,collection){
         if(err){callback(err);return;}
         collection.distinct("category",function(err,categories){
-            if(err){return callback(err)}
-            callback(null,categories)
-        })
-    })
+            if(err){callback(err);return;}
+            callback(null,categories);
+        });
+    });
 };
 Post.remove= function(postObj,callback){
     DB.connect('post',function(err,collection){
@@ -88,7 +89,7 @@ Post.remove= function(postObj,callback){
                 callback(err);
                 return;
             }
-            return callback(null)
-        })
-    })
+            callback(null);
+        });
+    });
 };
