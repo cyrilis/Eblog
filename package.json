@@ -1,15 +1,16 @@
 {
-    "name": "Eblog",
-    "version": "0.0.1",
-    "private": true,
-    "scripts": {
-        "start": "node app.js"
-    },
-    "dependencies": {
-        "express": "3.4.2",
-        "ejs": "*",
-        "mongodb": "*",
-        "connect-mongo": "*",
-        "connect-flash": "*"
-    }
+  "name": "Eblog",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.4.2",
+    "ejs": "*",
+    "mongodb": "*",
+    "connect-mongo": "*",
+    "connect-flash": "*",
+    "mongoose": "~3.8.7"
+  }
 }

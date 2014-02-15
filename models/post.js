@@ -2,6 +2,25 @@
  * Created by never on 13-10-26.
  */
 "use strict";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var db = require('./database').DB;
 var DB= new db();
 function Post(post){

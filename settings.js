@@ -4,5 +4,6 @@
 module.exports = {
     cookieSecret: 'blogpost',
     db: 'EPost',
-    host: 'localhost'
+    host: 'localhost',
+    dburl: 'mongodb://localhost/EPost'
 };

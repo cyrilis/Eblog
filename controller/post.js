@@ -2,227 +2,168 @@
  * Created by Cyril on 13-11-3.
  */
 "use strict";
+var handleError = function(){
+    return function(err,next){
+        if(err){
+            console.log(err);
+            next();
+            return;
+        }
+    };
+};
+var db = require('../models/database.js');
 
-var Post = require('../models/post.js');
-
-exports.index=function (q, s) {
-    Post.get(null,1,function(err,posts,total){
+var Post = db.Post,
+    User = db.User;
+exports.index = function(q,s,next){
+    var skip, limit, ne;
+    limit = 10;
+    skip = ((q.query.page||1)-1)*limit;
+    Post.find().count(null,function(err, count){
         if(err){
-            posts=[];
+            console.log(err);
+            next(err);
+            return;
         }
-        s.render("index", {
-            title: "Home",
-            user: q.session.user,
-            error: q.flash("error").toString(),
-            success: q.flash('success').toString(),
-            posts:  posts,
-            total: total,
-            page: 1
-        })
-    })
-};
-exports.pages=function(q,s){
-    Post.get(null, q.params.page,function(err,posts,total){
-        if(err){
-            posts=[];
-        }
-        s.render("index",{
-            title: "Page "+ q.params.page,
-            user: q.session.user,
-            error: q.flash("error").toString(),
-            success: q.flash("success").toString(),
-            posts: posts,
-            total: total,
-            page: q.params.page
-        })
-    })
-};
-exports.tag=function(q,s){
-    var postObj={
-        "tags.tag": q.params.tag
-    }
-    Post.get(postObj, 1,function(err,posts,total){
-        if(err){
-            posts=[];
-            total=0;
-        }
-        s.render("index",{
-            title: "Tags "+ q.params.tag +" - Page 1",
-            user: q.session.user,
-            error: q.flash("error").toString(),
-            success: q.flash("success").toString(),
-            posts: posts,
-            total: total,
-            page: 1
-        })
-    })
-};
-exports.tagPages=function(q,s){
-    var postObj={
-        "tags.tag": q.params.tag
-    }
-    Post.get(postObj, q.params.page,function(err,posts,total){
-        if(err){
-            posts=[];
-        }
-        s.render("index",{
-            title: "Tags "+ q.params.tag+" - Page "+ q.params.page,
-            user: q.session.user,
-            error: q.flash("error").toString(),
-            success: q.flash("success").toString(),
-            posts: posts,
-            total: total,
-            page: q.params.page
-        })
-    })
-};
-exports.category=function(q,s){
-    var postObj={
-        "category": q.params.category
-    }
-    Post.get(postObj, 1,function(err,posts,total){
-        if(err){
-            posts=[];
-        }
-        s.render("index",{
-            title: "Category: "+ q.params.category +" - Page 1",
-            user: q.session.user,
-            error: q.flash("error").toString(),
-            success: q.flash("success").toString(),
-            posts: posts,
-            total: total,
-            page: 1
-        })
-    })
-};
-exports.categoryPage=function(q,s){
-    var postObj={
-        "category": q.params.category
-    }
-    Post.get(postObj, q.params.page,function(err,posts,total){
-        if(err){
-            posts=[];
-        }
-        s.render("index",{
-            title: "Category "+ q.params.category +" - Page "+ q.params.page,
-            user: q.session.user,
-            error: q.flash("error").toString(),
-            success: q.flash("success").toString(),
-            posts: posts,
-            total: total,
-            page: q.params.page
-        })
-    })
-};
-exports.getNew=function (q, s) {
-    s.render('post', {
-        title: "New Post",
-        user: q.session.user,
-        post: null,
-        error: q.flash("error").toString(),
-        success: q.flash('success').toString()
-    })
-};
-exports.postNew=function (q, s) {
-    if(!q.body.post.title||!q.body.post.content){
-        q.flash('error',"Oh-oh, Something Went Wrong, Check if your Content Exist.")
-        return s.redirect("/post/new")
-    }
-    var currentUser = q.session.user,
-        postObj= q.body.post;
-    postObj.name= currentUser.name;
-    postObj.avatar=currentUser.avatar;
-    var  tagsObj=[];
-    postObj.tags.split('|').forEach(function(tag){
-        tagsObj.push({tag:tag.trim()})
+        Post.find().skip(skip).limit(limit).populate('user').sort('_id').exec(function(err,posts){
+            if(err){
+                console.log();
+                next(err);
+                return;
+            }
+            s.render('index',{
+                posts: posts,
+                count: count,
+                limit: limit,
+                page: q.query.page||1,
+                title: "Home"
+            });
+        });
     });
-    postObj.tags=tagsObj;
-    var post = new Post(postObj);
-    post.save(function(err,post){
-        if(err){
-            q.flash('error',err);
-            return s.redirect('/')
-        }
-        q.flash('success',"Posted Successfully!");
-        s.redirect('/')
-    })
 };
-exports.show=function(q,s){
-    Post.get({
-        "time.day": q.params.day,
-        "title": q.params.title
-    },null,function(err,post){
-        if(err){
-            q.flash('error',err);
-            return s.redirect('/')
-        }
-        post=post[0];
-        if(!post){
-            return s.send("404-Not Found")
-        }
-        s.render('page',{
-            title: post.title,
+
+exports.tag = function(q,s,next){
+    var limit = 10,skip= ((q.query.page||1)-1)*limit;
+    var query = {'tags.tag': q.params.tag};
+    Post.find(query).count(null,function(err,count){
+        Post.find(query,function(err,posts){
+            if(err){
+                console.log(err);
+                next(err);
+                return;
+            }
+            s.render('index',{
+                title: 'Tags: '+ q.params.tag + ' - Page: '+ (q.query.page||1),
+                posts: posts,
+                total: count,
+                page: q.query.page || 1
+            });
+        });
+    });
+
+};
+
+exports.category= function(q,s,next){
+    var query = {'category': q.params.category};
+    var limit = 10, skip = ((q.query.page||1)-1)*limit;
+    Post.find(query).count(function(err, count){
+        handleError();
+        Post.find(query).sort('_id').limit(limit).exec(function(err,posts){
+            handleError();
+            s.render('index',{
+                title: 'Category: '+ q.params.category,
+                posts: posts,
+                total: count,
+                page: q.query.page || 1
+            });
+        });
+    });
+};
+
+exports.getNew=function (q, s,next) {
+    Post.distinct('category',function(err,categories){
+        handleError();
+        s.render('edit', {
+            title: "New Post",
+            post: null,
+            categories: categories
+        });
+    });
+};
+
+
+exports.postNew=function (q, s, next) {
+    if(!q.body.post.title){
+        q.flash('error',"Oh-oh, Something Went Wrong, Check if your post title Exist.")
+        s.redirect("/post/new");
+        return;
+    }
+    var postObj = q.body.post;
+    postObj.user = q.session.user._id;
+    var newPost = new Post(q.body.post);
+    newPost.save(function(err,post){
+        handleError();
+        s.render('post',{
             post: post,
-            user: q.session.user,
-            success: q.flash('success').toString(),
-            error: q.flash('error').toString()
-        })
-    })
+            title: post.title
+        });
+    });
 };
-exports.getEdit=function(q,s){
-    Post.get({
-        "time.day": q.params.day,
-        "title": q.params.title
-    },null,function(err,post){
-        if(err){
-            q.flash('error',err);
-            return s.redirect('/')
-        }
-        post=post[0];
+
+
+exports.show=function(q,s){
+    Post.find({slug: q.params.slug}).sort('_id').exec(function(err,posts){
+        handleError();
+        var post = posts[0];
         if(!post){
-            q.flash("error","404 - Page not found.");
-            return s.redirect("/")
+            s.redirect(404,'404');
+            return;
         }
         s.render('post',{
-            title: "Edit Post",
-            post:post,
-            user: q.session.user,
-            success: q.flash('success').toString(),
-            error: q.flash('error').toString()
-        })
-    })
-};
-exports.postEdit=function(q,s){
-    var postObj= q.body.post;
-    var  tagsObj=[];
-    q.body.post.tags.split('|').forEach(function(tag){
-        tagsObj.push({tag:tag.trim()})
+            post: post,
+            title: post.title
+        });
     });
-    postObj.tags=tagsObj;
-    Post.update({
-        "time.day": q.params.day,
-        "title": q.params.title
-    },postObj,function(err,post){
-        if(err){
-            q.flash('error',err);
-            return s.redirect('/')
-        }
-        q.flash('success',"Successfully Updated!")
-        s.redirect('/post/'+ q.params.day+"/"+ postObj.title)
-    })
 };
-exports.getDelete=function(q,s){
-    Post.remove(
-        {
-            "time.day": q.params.day,
-            "title": q.params.title
-        },function(err){
-            if(err){
-                q.flash("error",err);
-                return s.redirct("/")
-            }
-            q.flash("success", "The blog "+q.params.title+" was deleted successfully");
-            return s.redirect("/")
+
+exports.getEdit=function(q,s){
+    Post.find({slug: q.params.slug}).sort('_id').exec(function(err,posts){
+        handleError();
+        var post = posts[0];
+        if(!post){
+            s.redirect(404,'404');
+            return;
         }
-    )
+        s.render('edit',{
+            post: post,
+            title: 'Edit Post: '+ post.title
+        });
+    });
+};
+
+exports.postEdit=function(q,s,next){
+    if(!q.body.post.title){
+        q.flash('error',"Oh-oh, Something Went Wrong, Check if your post title Exist.")
+        s.redirect("/post/new");
+        return;
+    }
+    var postObj = q.body.post;
+    postObj.user = q.session.user._id;
+    Post.findByIdAndUpdate(q.body.post._id,postObj,function(err,post){
+        handleError();
+        s.render('post',{
+            title: post.title,
+            post: post,
+            success: q.flash('success',"Successfully Updated!")
+        });
+    });
+};
+
+exports.getDelete=function(q,s,next){
+    Post.findByIdAndRemove(q.body.post._id,function(err){
+            handleError();
+            q.flash("success", "The blog "+q.params.title+" was deleted successfully");
+            return s.redirect("/");
+        }
+    );
 };

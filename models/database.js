@@ -1,39 +1,47 @@
 /**
  * Created by Cyril on 13-11-3.
  */
-
+"use strict";
 var settings = require('../settings'),
-    mongodb = require('mongodb'),
-    Connection;
-Connection= mongodb.Connection;
-exports.DB = DB = function(){
-    this.server = new mongodb.Server(
-        settings.host,
-        Connection.DEFAULT_PORT,
-        {auto_reconnect: true});
-    this.db_connector = new mongodb.Db(settings.db, this.server);
-    var _this = this;
-    this.db = undefined;
-    this.queue = [];
-    this.db_connector.open(function(err, db) {
-        if( err ) {
-            console.log(err);
-            return;
-        }
-        _this.db = db;
-        for (var i = 0; i < _this.queue.length; i++) {
-            var collection = new mongodb.Collection(
-                _this.db, _this.queue[i].collection);
-            _this.queue[i].callback(collection);
-        }
-        _this.queue = [];
-    });
-};
-DB.prototype.connect = function(collectionName, callback) {
-    if (this.db != undefined) {
-        var collection = new mongodb.Collection(this.db, collectionName);
-        callback(null,collection);
-        return;
-    }
-    this.queue.push({ "collection" : collectionName, "callback" : callback});
+    mongoose = require('mongoose'),
+    Schema = mongoose.Schema,
+    ObjectId = Schema.ObjectId;
+
+var UserSchema = new Schema({
+    id: ObjectId,
+    name: {type:String, default: ""},
+    email: {type:String, required: true, trim: true,unique: true},
+    password: {type:String, required: true},
+    avatar: {type: String, default:"/images/default_avatar.jpg"},
+    bio: {type: String, default: '这个人很懒，什么也没写。'},
+    posts: [{
+        type:ObjectId, ref: 'Post'
+    }]
+});
+var PostSchema = new Schema({
+    id: ObjectId,
+    time: {type: Date},
+    title: {type: String, required: true, default: ''},
+    content: String,
+    tags: [{
+        type: String
+    }],
+    user: {type: ObjectId, ref: 'User'},
+    category: String
+});
+var CategorySchema = new Schema({
+    id: ObjectId,
+    name: {type: String, required:true},
+    posts: [{
+        type: ObjectId, ref: 'Post'
+    }]
+});
+var connection = mongoose.createConnection(settings.dburl),
+    User = connection.model('User',UserSchema),
+    Post = connection.model('Post',PostSchema),
+    Category = connection.model('Category',CategorySchema);
+
+module.exports = {
+    'User': User,
+    'Post': Post
 };

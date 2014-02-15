@@ -46,11 +46,11 @@
     <option validthis="false" />
     <option browser="true" />
     <option couch="false" />
-    <option devel="false" />
+    <option devel="true" />
     <option dojo="false" />
     <option jquery="false" />
     <option mootools="false" />
-    <option node="false" />
+    <option node="true" />
     <option nonstandard="false" />
     <option prototypejs="false" />
     <option rhino="false" />
