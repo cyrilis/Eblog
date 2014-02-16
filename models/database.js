@@ -5,7 +5,8 @@
 var settings = require('../settings'),
     mongoose = require('mongoose'),
     Schema = mongoose.Schema,
-    ObjectId = Schema.ObjectId;
+    ObjectId = Schema.ObjectId,
+    uslug = require('uslug');
 
 var UserSchema = new Schema({
     id: ObjectId,
@@ -29,17 +30,19 @@ var PostSchema = new Schema({
     user: {type: ObjectId, ref: 'User'},
     category: String
 });
-var CategorySchema = new Schema({
-    id: ObjectId,
-    name: {type: String, required:true},
-    posts: [{
-        type: ObjectId, ref: 'Post'
-    }]
+var postSlug = PostSchema.virtual('slug');
+postSlug.get(function () {
+    return uslug(this.title);
 });
+var postDate = PostSchema.virtual('date');
+postDate.get(function(){
+    return this.time;
+});
+
 var connection = mongoose.createConnection(settings.dburl),
     User = connection.model('User',UserSchema),
-    Post = connection.model('Post',PostSchema),
-    Category = connection.model('Category',CategorySchema);
+    Post = connection.model('Post',PostSchema);
+
 
 module.exports = {
     'User': User,

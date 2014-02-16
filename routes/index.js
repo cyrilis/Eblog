@@ -1,19 +1,22 @@
-/*
+/**
+ * Created by Cyril on 13-10-26.
  * Routes File
  * List all routes here
  */
+
+"use strict";
+
 var user = require('../controller/user.js'),
     post = require('../controller/post.js'),
     file = require('../controller/file.js');
 //    album= require('../controller/album.js');
 
 module.exports = function (app) {
+    app.all("*", post.all);
     app.get("/", post.index);
-    app.get("/pages/:page", post.pages);
+    app.get("/pages/:page", post.index);
     app.get("/tags/:tag",post.tag);
-    app.get("/tags/:tag/pages/:page",post.tagPages);
     app.get("/categories/:category",post.category);
-    app.get("/categories/:category/pages/:page",post.categoryPage);
     app.get("/u/:name", user.show);
     app.get("/u/:name/pages/:page", user.pages);
     app.get('/reg', checkNotLogin);
@@ -28,15 +31,15 @@ module.exports = function (app) {
     app.get('/post/new', post.getNew);
     app.post('/post', checkLogin);
     app.post('/post', post.postNew);
-    app.get('/post/:day/:title', post.show);
+    app.get('/post/:slug', post.show);
 //    app.get('/albums',album.show);
     app.get('/logout', user.logout);
-    app.get('/post/:day/:title/edit', checkLogin);
-    app.get('/post/:day/:title/edit', post.getEdit);
-    app.post('/post/:day/:title/edit', checkLogin);
-    app.post('/post/:day/:title/edit', post.postEdit);
-    app.get('/post/:day/:title/delete', checkLogin);
-    app.get('/post/:day/:title/delete', post.getDelete);
+    app.get('/post/:slug/edit', checkLogin);
+    app.get('/post/:slug/edit', post.getEdit);
+    app.put('/post/:slug/edit', checkLogin);
+    app.put('/post/:slug/edit', post.postEdit);
+    app.delete('/post/:slug/delete', checkLogin);
+    app.delete('/post/:slug/delete', post.getDelete);
     app.post('/upload', checkLogin);
     app.post('/upload', file.upload);
     function checkLogin(q,s,next){

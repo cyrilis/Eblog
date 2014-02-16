@@ -28,11 +28,17 @@
 </header>
 <main>
     <div class="container">
-        <% if (error) { %>
-        <div class="flash_error"><%= error %></div>
-        <% } %>
-        <% if (success){ %>
-        <div class="flash_success"><%= success  %></div>
-        <% } %>
+        <div class="flash">
+            <% error = flash("error")||null;success = flash("success")||null %>
+            <% if (error.length) { %>
+            <div class="flash_error"><%= error %></div>
+            <script>
+                var error = <%= typeof  error%>;
+            </script>
+            <% } %>
+            <% if (success.length){ %>
+            <div class="flash_success"><%= success  %></div>
+            <% } %>
+        </div>
     </div>
 

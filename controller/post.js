@@ -15,22 +15,34 @@ var db = require('../models/database.js');
 
 var Post = db.Post,
     User = db.User;
+
+exports.all = function(q,s,next){
+    s.locals({
+        session: q.session,
+        flash: q.flash,
+        user: q.session.user||null,
+        title: 'Eblog'
+    });
+    next();
+};
+
 exports.index = function(q,s,next){
-    var skip, limit, ne;
+    var skip, limit;
     limit = 10;
-    skip = ((q.query.page||1)-1)*limit;
+    skip = ((q.params.page||1)-1)*limit;
     Post.find().count(null,function(err, count){
         if(err){
             console.log(err);
             next(err);
             return;
         }
-        Post.find().skip(skip).limit(limit).populate('user').sort('_id').exec(function(err,posts){
+        Post.find().skip(skip).limit(limit).sort('_id').populate('user').exec(function(err,posts){
             if(err){
                 console.log();
                 next(err);
                 return;
             }
+            console.log(posts[0].user);
             s.render('index',{
                 posts: posts,
                 count: count,
@@ -94,22 +106,21 @@ exports.getNew=function (q, s,next) {
 
 exports.postNew=function (q, s, next) {
     if(!q.body.post.title){
-        q.flash('error',"Oh-oh, Something Went Wrong, Check if your post title Exist.")
+        q.flash('error',"Oh-oh, Something Went Wrong, Check if your post title Exist.");
         s.redirect("/post/new");
         return;
     }
     var postObj = q.body.post;
+    postObj.time = new Date();
     postObj.user = q.session.user._id;
+    postObj.tags = q.body.post.tags.split('|').map(function(e){return e.trim();});
     var newPost = new Post(q.body.post);
     newPost.save(function(err,post){
         handleError();
-        s.render('post',{
-            post: post,
-            title: post.title
-        });
+        q.flash('success',"New Post Created!");
+        s.redirect('/');
     });
 };
-
 
 exports.show=function(q,s){
     Post.find({slug: q.params.slug}).sort('_id').exec(function(err,posts){
@@ -143,7 +154,7 @@ exports.getEdit=function(q,s){
 
 exports.postEdit=function(q,s,next){
     if(!q.body.post.title){
-        q.flash('error',"Oh-oh, Something Went Wrong, Check if your post title Exist.")
+        q.flash('error',"Oh-oh, Something Went Wrong, Check if your post title Exist.");
         s.redirect("/post/new");
         return;
     }

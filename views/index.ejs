@@ -1,42 +1,11 @@
 <%- include header.ejs %>
-<div class="container posts" xmlns="http://www.w3.org/1999/html">
-    <div class="post_list">
-        <% posts.forEach(function(post, index){   %>
-        <article class="clearfix">
-            <div class="post_title clearfix">
-                <h2><a href="/post/<%= post.time.day+"/"+post.title %>"><%= post.title  %></a></h2>
-                <p class="info">By  <a href="/u/<%= post.name %>"><%= post.name %></a>
-                    <span> at  <%= post.time.minute  %></span>
-                    <% if(user&&post.name==user.name){ %>
-                    <a href="/post/<%= post.time.day+"/"+post.title %>/edit">Edit</a>
-                    <a class="confirm" data-confirm="Are you sure to Detele this blog?" href="/post/<%= post.time.day+"/"+post.title %>/delete">Delete</a>
-                    <% } %>
-                </p>
-            </div>
-            <div class="post_content clearfix">
-                <%- post.content  %>
-            </div>
-            <div class="post_info clearfix">
-                <% if(post.tags){ %>
-                <div class="tag_links">
-                    Tags:&nbsp;&nbsp;
-                    <%post.tags.forEach(function(tag){ %>
-                    <a class="tag_link" href="/tags/<%=tag.tag %>">#<%= tag.tag %></a>
-                    <%})%>
-                </div>
-                <%}   %>
-                <% if(post.category){ %>
-                <div class="category_link">Category:&nbsp;&nbsp;<a href="/categories/<%=post.category%>"><%=post.category %></a></div>
-                <%}   %>
-            </div>
-        </article>
-        <% })   %>
-    </div>
+<div class="container posts">
+    <% include post_list.ejs %>
     <div class="pagination clearfix">
         <% if(page-1>0){    %>
         <a class="button prev" href="/pages/<%= +page-1 %>">Prev</a>
         <%} %>
-        <%if(total/5>page){ %>
+        <%if(count/5>page){ %>
         <a class="button next" href="/pages/<%= +page+1 %>">Next</a>
         <%}   %>
     </div>

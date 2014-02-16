@@ -1,51 +1,11 @@
 <%- include header.ejs %>
-<div class="container posts" xmlns="http://www.w3.org/1999/html">
+<div class="container posts">
     <div class="author clearfix">
         <a href="/u/<%= author.name %>"><img class="avatar" src="<%= author.avatar %>" alt=""/></a>
         <div class="author_name"><%= author.name  %></div>
         <div class="author_email"><a href="mailto:<%= author.email %>"><%= author.email %></a></div>
         <div class="author_link"><a href="<%= author.link %>"><%= author.link %></a></div>
     </div>
-    <div class="post_list">
-        <h3>Posts list of <%= author.name %></h3>
-        <% posts.forEach(function(post){   %>
-        <article class="clearfix">
-            <div class="post_title clearfix">
-                <h2><a href="/post/<%= post.time.day+"/"+post.title %>"><%= post.title  %></a></h2>
-                <p class="info">By  <a href="/u/<%= post.name %>"><%= post.name %></a>
-                    <span> at  <%= post.time.minute  %></span>
-                    <% if(user&&post.name==user.name){ %>
-                    <a href="/post/<%= post.time.day+"/"+post.title %>/edit">Edit</a>
-                    <a class="confirm" data-confirm="Are you sure to Detele this blog?" href="/post/<%= post.time.day+"/"+post.title %>/delete">Delete</a>
-                    <% } %>
-                </p>
-            </div>
-            <div class="post_content clearfix">
-                <%- post.content   %>
-            </div>
-            <div class="post_info clearfix">
-                <% if(post.tags){ %>
-                <div class="tag_links">
-                    Tags:&nbsp;&nbsp;
-                    <%post.tags.forEach(function(tag){ %>
-                    <a class="tag_link" href="/tags/<%=tag.tag %>">#<%= tag.tag %></a>
-                    <%})%>
-                </div>
-                <%}   %>
-                <% if(post.category){ %>
-                <div class="category_link">Category:&nbsp;&nbsp;<a href="/categories/<%=post.category%>"><%=post.category %></a></div>
-                <%}   %>
-            </div>
-        </article>
-        <% })   %>
-        <div class="pagination clearfix">
-            <% if(page-1>0){    %>
-            <a class="button prev" href="/u/<%=author.name %>/pages/<%= +page-1 %>">Prev</a>
-            <%} %>
-            <%if(total/5>page){ %>
-            <a class="button next" href="/u/<%=author.name %>/pages/<%= +page+1 %>">Next</a>
-            <%}   %>
-        </div>
-    </div>
+    <% include post_list.ejs %>
 </div>
 <% include footer.ejs %>
