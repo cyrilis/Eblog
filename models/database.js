@@ -6,7 +6,8 @@ var settings = require('../settings'),
     mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId,
-    uslug = require('uslug');
+    uslug = require('uslug'),
+    moment = require('moment');
 
 var UserSchema = new Schema({
     id: ObjectId,
@@ -28,15 +29,19 @@ var PostSchema = new Schema({
         type: String
     }],
     user: {type: ObjectId, ref: 'User'},
-    category: String
+    category: String,
+    slug: {type: String, unique: true}
 });
 var postSlug = PostSchema.virtual('slug');
-postSlug.get(function () {
-    return uslug(this.title);
+PostSchema.pre('save',function (next) {
+    // TODO: check if Update Acts Here.
+    this.slug = uslug(this.title);
+    next();
 });
 var postDate = PostSchema.virtual('date');
 postDate.get(function(){
-    return this.time;
+//    2014-02-16 18:02:30
+    return moment(this.time).lang('zh-cn').format('LL');
 });
 
 var connection = mongoose.createConnection(settings.dburl),

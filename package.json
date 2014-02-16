@@ -12,6 +12,7 @@
     "connect-mongo": "*",
     "connect-flash": "*",
     "mongoose": "~3.8.7",
-    "uslug": "~1.0.3"
+    "uslug": "~1.0.3",
+    "moment": "~2.5.1"
   }
 }

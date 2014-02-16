@@ -42,7 +42,6 @@ exports.index = function(q,s,next){
                 next(err);
                 return;
             }
-            console.log(posts[0].user);
             s.render('index',{
                 posts: posts,
                 count: count,
@@ -85,7 +84,7 @@ exports.category= function(q,s,next){
             s.render('index',{
                 title: 'Category: '+ q.params.category,
                 posts: posts,
-                total: count,
+                count: count,
                 page: q.query.page || 1
             });
         });
@@ -123,8 +122,9 @@ exports.postNew=function (q, s, next) {
 };
 
 exports.show=function(q,s){
-    Post.find({slug: q.params.slug}).sort('_id').exec(function(err,posts){
+    Post.find({slug: q.params.slug}).populate('user').sort('_id').exec(function(err,posts){
         handleError();
+        console.log(q.params.slug);
         var post = posts[0];
         if(!post){
             s.redirect(404,'404');

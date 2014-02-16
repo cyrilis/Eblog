@@ -31,7 +31,7 @@ module.exports = function (app) {
     app.get('/post/new', post.getNew);
     app.post('/post', checkLogin);
     app.post('/post', post.postNew);
-    app.get('/post/:slug', post.show);
+    app.get('/posts/:slug', post.show);
 //    app.get('/albums',album.show);
     app.get('/logout', user.logout);
     app.get('/post/:slug/edit', checkLogin);

@@ -2,11 +2,11 @@
     <% posts.forEach(function(post, index){   %>
     <article class="clearfix">
         <div class="post_title clearfix">
-            <h2><a href="/post/<%= post.time+"/"+post.slug %>"><%= post.title  %></a></h2>
+            <h2><a href="/posts/<%= post.slug %>"><%= post.title  %></a></h2>
             <p class="info">By  <a href="/u/<%= post.user.name %>"><%= post.user.name %></a>
-                <span> at  <%= post.time  %></span>
+                <span> at  <%= post.date  %></span>
                 <% if(user&&post.user.name==user.name){ %>
-                <a href="/post/<%= post.time+"/"+post.title %>/edit">Edit</a>
+                <a href="/posts/<%= post.slug %>/edit">Edit</a>
                 <a class="confirm" data-confirm="Are you sure to Detele this blog?" href="/post/<%= post.time+"/"+post.title %>/delete">Delete</a>
                 <% } %>
             </p>
