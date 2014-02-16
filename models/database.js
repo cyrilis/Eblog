@@ -38,6 +38,11 @@ PostSchema.pre('save',function (next) {
     this.slug = uslug(this.title);
     next();
 });
+PostSchema.pre('update',function (next) {
+    // TODO: check if Update Acts Here.
+    this.slug = uslug(this.title);
+    next();
+});
 var postDate = PostSchema.virtual('date');
 postDate.get(function(){
 //    2014-02-16 18:02:30

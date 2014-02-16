@@ -21,7 +21,8 @@ exports.all = function(q,s,next){
         session: q.session,
         flash: q.flash,
         user: q.session.user||null,
-        title: 'Eblog'
+        title: 'Eblog',
+        mode: null
     });
     next();
 };
@@ -55,7 +56,7 @@ exports.index = function(q,s,next){
 
 exports.tag = function(q,s,next){
     var limit = 10,skip= ((q.query.page||1)-1)*limit;
-    var query = {'tags.tag': q.params.tag};
+    var query = {'tags': q.params.tag};
     Post.find(query).count(null,function(err,count){
         Post.find(query,function(err,posts){
             if(err){
@@ -66,12 +67,11 @@ exports.tag = function(q,s,next){
             s.render('index',{
                 title: 'Tags: '+ q.params.tag + ' - Page: '+ (q.query.page||1),
                 posts: posts,
-                total: count,
+                count: count,
                 page: q.query.page || 1
             });
         });
     });
-
 };
 
 exports.category= function(q,s,next){
@@ -97,7 +97,8 @@ exports.getNew=function (q, s,next) {
         s.render('edit', {
             title: "New Post",
             post: null,
-            categories: categories
+            categories: categories,
+            mode: 'new'
         });
     });
 };
@@ -115,6 +116,7 @@ exports.postNew=function (q, s, next) {
     postObj.tags = q.body.post.tags.split('|').map(function(e){return e.trim();});
     var newPost = new Post(q.body.post);
     newPost.save(function(err,post){
+        console.log(post);
         handleError();
         q.flash('success',"New Post Created!");
         s.redirect('/');
@@ -138,16 +140,16 @@ exports.show=function(q,s){
 };
 
 exports.getEdit=function(q,s){
-    Post.find({slug: q.params.slug}).sort('_id').exec(function(err,posts){
+    Post.findOne({slug: q.params.slug}).sort('_id').exec(function(err,post){
         handleError();
-        var post = posts[0];
         if(!post){
             s.redirect(404,'404');
             return;
         }
         s.render('edit',{
             post: post,
-            title: 'Edit Post: '+ post.title
+            title: 'Edit Post: '+ post.title,
+            mode: 'edit'
         });
     });
 };
@@ -155,18 +157,25 @@ exports.getEdit=function(q,s){
 exports.postEdit=function(q,s,next){
     if(!q.body.post.title){
         q.flash('error',"Oh-oh, Something Went Wrong, Check if your post title Exist.");
-        s.redirect("/post/new");
+        s.redirect("back");
         return;
     }
     var postObj = q.body.post;
     postObj.user = q.session.user._id;
-    Post.findByIdAndUpdate(q.body.post._id,postObj,function(err,post){
-        handleError();
-        s.render('post',{
-            title: post.title,
-            post: post,
-            success: q.flash('success',"Successfully Updated!")
-        });
+    var _id = postObj._id;
+    delete postObj._id;
+    console.log(postObj);
+    postObj.tags = postObj.tags.split('|').map(function(e){return e.trim();});
+    Post.findByIdAndUpdate(_id,{title: postObj.title, content: postObj.content,tags: postObj.tags,category: postObj.category},function(err,post){
+        console.log(post);
+//        handleError();
+        if(err){
+            console.log(err);
+            s.send(err.message);
+            return;
+        }
+        q.flash('success',"Post Updated Successfully!");
+        s.redirect('back');
     });
 };
 

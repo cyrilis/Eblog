@@ -1,7 +1,9 @@
 /**
  * Created by never on 13-10-27.
  */
-submitPost = function(){
+"use strict";
+
+var submitPost = function(){
     if(!$('#post_title_outer').val()){
         alert("Title Can't be Blank");
         return;
@@ -12,11 +14,11 @@ submitPost = function(){
     $('#post_title').val($("#post_title_outer").val().trim());
     form.submit();
 };
-var ue = UM.getEditor('post_content');
+
 
 $('#newTag').on("keyup",function(e) {
     console.log(e);
-    if(e.which == 32&&$(this).val()){
+    if(e.which === 32&&$(this).val().trim()){
         e.preventDefault();
         $('<span class="tag_span">' +
             '<span class="tag_name">'+$(this).val()+'</span>' +
@@ -29,7 +31,7 @@ $('#newTag').on("keyup",function(e) {
         $(this).val("");
         updateTags();
         return false;
-    }else if(e.which == 8){
+    }else if(e.which === 8&&$('#newTag').val()===""){
         e.preventDefault();
         $(".tag_span").last().remove();
         updateTags();
@@ -40,7 +42,7 @@ $("a.confirm").click(function(){
     var url=this.getAttribute("href"),
         confirmData=this.getAttribute('data-confirm');
     showDialog(url,confirmData,!!1);
-    return false
+    return false;
 });
 $(".tag_span").click(function(e){
     $(this).remove();
@@ -69,7 +71,7 @@ function showDialog(url,confirmData,really){
         setTimeout(function(){
             newDiv.className+=" show";
         },1);
-        return false
+        return false;
     }
 }
 
@@ -78,7 +80,7 @@ function close_box(){
     $('div.confirm,.show_box').removeClass("show");
     setTimeout(function(){
         $("div.confirm,.show_box").remove();
-    },300)
+    },300);
 }
 $(document).on("click",".confirm .close,.show_box .close",function(){
     close_box();
@@ -91,5 +93,5 @@ $(document).ready(function(){
     updateTags();
     $("#tags_container").click(function(){
         $("#newTag").focus();
-    })
+    });
 });

@@ -266,10 +266,11 @@ body {
   background: #222;
   position: absolute;
   white-space: nowrap;
-  padding: 3px 5px;
+  padding: 6px 5px;
   display: none;
   border-radius: 2px;
   margin-top: -81px;
+  line-height: 20px;
 }
 .edui-tooltip:after {
   display: block;
@@ -490,7 +491,7 @@ body {
   padding: 9px 5px;
 }
 .edui-editor-body>.edui-body-container p {
-  margin: 0 0 20px 0;
+  margin: 0;
 }
 .edui-modal-backdrop {
   opacity: 0.5;
