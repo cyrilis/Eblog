@@ -64,8 +64,16 @@ exports.postNew=function (q, s) {
     var md5 = crypto.createHash("md5");
     user.password=md5.update(user.password).digest('hex');
     var newUser=new User(user);
+    User.find().exec(function(err,users){
+        if(err){
+            console.log(err);
+            return;
+        }
+    })
     newUser.save(function(err,user){
-        handleError();
+        if(err){
+            handleError();
+        }
         q.session.user = user;
         console.log('Register Successfully!');
         q.flash('success','Congratulations, Registered Successfully!');
