@@ -39,34 +39,7 @@ exports.show=function(q,s,next){
     });
 };
 
-exports.pages=function(q,s){
-    var postObj={name: q.params.name};
-    var userObj={name: q.params.name};
-    User.get(userObj,function(err,user){
-        if(err||!user){
-            q.flash("error","User Doesn't Exist");
-            s.redirect("/");
-            return
-        }
-        Post.get(postObj, q.params.page ,function(err,posts,total){
-            if(err){
-                q.flash("error",err);
-                return s.redirect("/")
-            }
-            user.posts=posts;
-            return s.render('user',{
-                title: user.name,
-                user: q.session.user,
-                error: q.flash("error").toString(),
-                success: q.flash("success").toString(),
-                author: user,
-                posts: user.posts,
-                total: total,
-                page: q.params.page
-            })
-        })
-    })
-};
+
 exports.getNew=function (q, s) {
     s.render("reg", {
         title: 'Register',
@@ -77,57 +50,58 @@ exports.getNew=function (q, s) {
 };
 exports.postNew=function (q, s) {
     var user = q.body.user;
-    console.dir(user);
+    if(!(user.name&&user.password&&user.password_confirmation&&user.email)){
+        q.flash('error',"Please fill all the field in the form!");
+        s.redirect('back');
+        return
+    }
+//    console.dir(user);
     if(user.password!=user.password_confirmation){
         q.flash("error","Password Not Match");
-        s.redirect("/reg");
+        s.redirect("back");
         return
     }
     var md5 = crypto.createHash("md5");
     user.password=md5.update(user.password).digest('hex');
     var newUser=new User(user);
-    User.get({name: user.name},function(err,user){
-        if(user){
-            q.flash("error","User Exist Already");
-            s.redirect('/reg');
-            return
-        }
-        newUser.save(function(err,user){
-            if(err){
-                q.flash("error",err);
-                 s.redirect('/reg');
-                return
-            }
-            q.session.user=user;
-            q.flash('success',"Register Success");
-            s.redirect('/')
-        })
-    })
+    newUser.save(function(err,user){
+        handleError();
+        q.session.user = user;
+        console.log('Register Successfully!');
+        q.flash('success','Congratulations, Registered Successfully!');
+        s.redirect('/');
+    });
 };
+
 exports.getLogin=function (q, s) {
     s.render("login", {
-        title: 'Login',
-        user: q.session.user,
-        error: q.flash("error").toString(),
-        success: q.flash('success').toString()
+        title: 'Login'
     })
 };
 exports.postLogin=function (q, s) {
     var userObj = q.body.user;
+    if(!(userObj.email&&userObj.password)){
+        q.flash('error','Please fill all the field in the form.');
+        s.redirect('back');
+        return;
+    }
     var md5 = crypto.createHash("md5");
     userObj.password=md5.update(userObj.password).digest('hex');
-    User.get({email: userObj.email},function(err,user){
-        if(!user){
-            q.flash('error',"User Doesn't Exist");
-            return s.redirect('/login')
+    User.findOne({name: userObj.name},function(err,user){
+        if(user){
+            if(user.password === userObj.password){
+                q.session.user = user;
+                s.redirct('/');
+                return;
+            }
+            console.log(1);
+            q.flash('error','Error, Please Check your password.');
+            s.redirct('back');
+        }else{
+            console.log(2);
+            q.flash('error',"Error, User doesn't Exist");
+            s.redirect('back');
         }
-        if(user.password!=userObj.password){
-            q.flash('error',"User Password Error");
-            return s.redirect('/login')
-        }
-        q.session.user = user;
-        q.flash('success',"Login Success");
-        return s.redirect('/')
     })
 };
 exports.logout=function (q, s) {

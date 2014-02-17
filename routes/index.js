@@ -18,7 +18,6 @@ module.exports = function (app) {
     app.get("/tags/:tag",post.tag);
     app.get("/categories/:category",post.category);
     app.get("/u/:name", user.show);
-    app.get("/u/:name/pages/:page", user.pages);
     app.get('/reg', checkNotLogin);
     app.get("/reg", user.getNew);
     app.post("/reg", checkNotLogin);

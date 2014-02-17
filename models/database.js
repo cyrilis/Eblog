@@ -20,6 +20,7 @@ var UserSchema = new Schema({
         type:ObjectId, ref: 'Post'
     }]
 });
+
 var PostSchema = new Schema({
     id: ObjectId,
     time: {type: Date},
