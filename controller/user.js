@@ -69,10 +69,14 @@ exports.postNew=function (q, s) {
             console.log(err);
             return;
         }
-    })
+        console.log(users);
+    });
     newUser.save(function(err,user){
         if(err){
-            handleError();
+            console.log(err);
+            q.flash('error',err.err.toString());
+            s.redirect('back');
+            return;
         }
         q.session.user = user;
         console.log('Register Successfully!');
