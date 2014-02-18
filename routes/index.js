@@ -44,14 +44,14 @@ module.exports = function (app) {
     function checkLogin(q,s,next){
         if (!q.session.user){
             q.flash("error","Login First!");
-            s.redirect('/login')
+            s.redirect('/login');
         }
         next();
     }
     function checkNotLogin(q,s,next){
         if (q.session.user){
             q.flash("error","You've logged in");
-            s.redirect('back')
+            s.redirect('back');
         }
         next();
     }

@@ -58,7 +58,7 @@ exports.tag = function(q,s,next){
     var limit = 10,skip= ((q.query.page||1)-1)*limit;
     var query = {'tags': q.params.tag};
     Post.find(query).count(null,function(err,count){
-        Post.find(query,function(err,posts){
+        Post.find(query).populate('user').sort('_id').exec(function(err,posts){
             if(err){
                 console.log(err);
                 next(err);
@@ -79,7 +79,7 @@ exports.category= function(q,s,next){
     var limit = 10, skip = ((q.query.page||1)-1)*limit;
     Post.find(query).count(function(err, count){
         handleError();
-        Post.find(query).sort('_id').limit(limit).exec(function(err,posts){
+        Post.find(query).populate('user').sort('_id').limit(limit).exec(function(err,posts){
             handleError();
             s.render('index',{
                 title: 'Category: '+ q.params.category,
