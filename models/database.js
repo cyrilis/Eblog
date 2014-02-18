@@ -33,7 +33,6 @@ var PostSchema = new Schema({
     category: String,
     slug: {type: String, unique: true}
 });
-var postSlug = PostSchema.virtual('slug');
 PostSchema.pre('save',function (next) {
     // TODO: check if Update Acts Here.
     this.slug = uslug(this.title);
