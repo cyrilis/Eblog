@@ -93,7 +93,12 @@ exports.category= function(q,s,next){
 
 exports.getNew=function (q, s,next) {
     Post.distinct('category',function(err,categories){
-        handleError();
+        if(err){
+            console.log(err);
+            q.flash('error',err.message);
+            next();
+            return;
+        }
         s.render('edit', {
             title: "New Post",
             post: null,

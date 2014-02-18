@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1f2b440-a030-4a6e-b81d-18bc193abbfe" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/post.js" afterPath="$PROJECT_DIR$/controller/post.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/user.js" afterPath="$PROJECT_DIR$/controller/user.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="test.iws" />
@@ -68,7 +66,7 @@
       <file leaf-file-name="post.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller/post.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="0" selection-start="2413" selection-end="2413" vertical-scroll-proportion="0.38235295" vertical-offset="1684" max-vertical-offset="3880">
+            <state line="99" column="19" selection-start="2635" selection-end="2635" vertical-scroll-proportion="0.7745098" vertical-offset="1664" max-vertical-offset="3980">
               <folding />
             </state>
           </provider>
@@ -501,7 +499,11 @@
       <created>1392633779586</created>
       <updated>1392633779586</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="fix user controller and post#populate in tag and category">
+      <created>1392713512572</created>
+      <updated>1392713512572</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -528,6 +530,7 @@
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34154353" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32839838" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3257066" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="0" y="308" width="1600" height="244" />
@@ -542,7 +545,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2857143" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34154353" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24961948" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -556,7 +558,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="Save changed files&#10; complate some basic features" />
     <MESSAGE value="add post function&#10;index page update" />
     <MESSAGE value="Not so much" />
     <MESSAGE value="TODO:文件梳理" />
@@ -581,7 +582,8 @@
     <MESSAGE value="fix tag add and remove method" />
     <MESSAGE value="What's error with USER" />
     <MESSAGE value="go back home ." />
-    <option name="LAST_COMMIT_MESSAGE" value="go back home ." />
+    <MESSAGE value="fix user controller and post#populate in tag and category" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix user controller and post#populate in tag and category" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -698,7 +700,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/post.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="0" selection-start="2413" selection-end="2413" vertical-scroll-proportion="0.38235295" vertical-offset="1684" max-vertical-offset="3880">
+        <state line="99" column="19" selection-start="2635" selection-end="2635" vertical-scroll-proportion="0.7745098" vertical-offset="1664" max-vertical-offset="3980">
           <folding />
         </state>
       </provider>
