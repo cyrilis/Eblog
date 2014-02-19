@@ -34,12 +34,6 @@ var PostSchema = new Schema({
     slug: {type: String, unique: true}
 });
 PostSchema.pre('save',function (next) {
-    // TODO: check if Update Acts Here.
-    this.slug = uslug(this.title);
-    next();
-});
-PostSchema.pre('update',function (next) {
-    // TODO: check if Update Acts Here.
     this.slug = uslug(this.title);
     next();
 });
