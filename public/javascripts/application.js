@@ -11,7 +11,7 @@ var submitPost = function(){
     var form=$("#post");
     var editorContent=$("#post_editor");
     updateTags();
-    $('#post_title').val($("#post_title_outer").val().trim());
+//    $('#post_title').val($("#post_title_outer").val().trim());
     form.submit();
 };
 

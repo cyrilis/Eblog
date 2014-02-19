@@ -2,17 +2,7 @@
  * Created by Cyril on 13-11-3.
  */
 "use strict";
-var handleError = function(){
-    return function(err,next){
-        if(err){
-            console.log(err);
-            next();
-            return;
-        }
-    };
-};
 var db = require('../models/database.js');
-
 var Post = db.Post,
     User = db.User;
 
@@ -37,7 +27,7 @@ exports.index = function(q,s,next){
             next(err);
             return;
         }
-        Post.find().skip(skip).limit(limit).sort('_id').populate('user').exec(function(err,posts){
+        Post.find().skip(skip).limit(limit).sort('-_id').populate('user').exec(function(err,posts){
             if(err){
                 console.log();
                 next(err);
@@ -58,7 +48,7 @@ exports.tag = function(q,s,next){
     var limit = 10,skip= ((q.query.page||1)-1)*limit;
     var query = {'tags': q.params.tag};
     Post.find(query).count(null,function(err,count){
-        Post.find(query).populate('user').sort('_id').exec(function(err,posts){
+        Post.find(query,function(err,posts){
             if(err){
                 console.log(err);
                 next(err);
@@ -78,9 +68,19 @@ exports.category= function(q,s,next){
     var query = {'category': q.params.category};
     var limit = 10, skip = ((q.query.page||1)-1)*limit;
     Post.find(query).count(function(err, count){
-        handleError();
-        Post.find(query).populate('user').sort('_id').limit(limit).exec(function(err,posts){
-            handleError();
+        if(err){
+            console.log(err);
+            q.flash('error',err.message);
+            s.redirect('back');
+            return;
+        }
+        Post.find(query).sort('-_id').limit(limit).exec(function(err,posts){
+            if(err){
+                console.log(err);
+                q.flash('error',err.message);
+                s.redirect('back');
+                return;
+            }
             s.render('index',{
                 title: 'Category: '+ q.params.category,
                 posts: posts,
@@ -96,7 +96,7 @@ exports.getNew=function (q, s,next) {
         if(err){
             console.log(err);
             q.flash('error',err.message);
-            next();
+            s.redirect('back');
             return;
         }
         s.render('edit', {
@@ -122,7 +122,12 @@ exports.postNew=function (q, s, next) {
     var newPost = new Post(q.body.post);
     newPost.save(function(err,post){
         console.log(post);
-        handleError();
+        if(err){
+            console.log(err);
+            q.flash('error',err.message);
+            s.redirect('back');
+            return;
+        }
         q.flash('success',"New Post Created!");
         s.redirect('/');
     });
@@ -130,7 +135,12 @@ exports.postNew=function (q, s, next) {
 
 exports.show=function(q,s){
     Post.find({slug: q.params.slug}).populate('user').sort('_id').exec(function(err,posts){
-        handleError();
+        if(err){
+            console.log(err);
+            q.flash('error',err.message);
+            s.redirect('back');
+            return;
+        }
         console.log(q.params.slug);
         var post = posts[0];
         if(!post){
@@ -146,7 +156,12 @@ exports.show=function(q,s){
 
 exports.getEdit=function(q,s){
     Post.findOne({slug: q.params.slug}).sort('_id').exec(function(err,post){
-        handleError();
+        if(err){
+            console.log(err);
+            q.flash('error',err.message);
+            s.redirect('back');
+            return;
+        }
         if(!post){
             s.redirect(404,'404');
             return;
@@ -172,8 +187,6 @@ exports.postEdit=function(q,s,next){
     console.log(postObj);
     postObj.tags = postObj.tags.split('|').map(function(e){return e.trim();});
     Post.findByIdAndUpdate(_id,{title: postObj.title, content: postObj.content,tags: postObj.tags,category: postObj.category},function(err,post){
-        console.log(post);
-//        handleError();
         if(err){
             console.log(err);
             s.send(err.message);
@@ -186,7 +199,12 @@ exports.postEdit=function(q,s,next){
 
 exports.getDelete=function(q,s,next){
     Post.findByIdAndRemove(q.body.post._id,function(err){
-            handleError();
+            if(err){
+                console.log(err);
+                q.flash('error',err.message);
+                s.redirect('back');
+                return;
+            }
             q.flash("success", "The blog "+q.params.title+" was deleted successfully");
             return s.redirect("/");
         }

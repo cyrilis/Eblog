@@ -254,23 +254,11 @@ span.tag_span {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  display: inline-block;
+  display: block;
+  float: left;
   cursor: pointer;
   margin-right: 4px;
   margin-bottom: 3px;
-  -webkit-transition: padding 0.25s;
-  -moz-transition: padding 0.25s;
-  -ms-transition: padding 0.25s;
-  -o-transition: padding 0.25s;
-  transition: padding 0.25s;
-  -webkit-transition-timing-function: linear;
-  -moz-transition-timing-function: linear;
-  -ms-transition-timing-function: linear;
-  -o-transition-timing-function: linear;
-  transition-timing-function: linear;
-}
-span.tag_span:hover {
-  padding: 0 27px 0 13px;
 }
 span.tag_span:hover .tag_close {
   opacity: 1;
