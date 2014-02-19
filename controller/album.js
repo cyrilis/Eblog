@@ -6,7 +6,7 @@
 var db = require('../models/database');
 var User = db.User, Album = db.Album, Photo = db.Photo;
 function deleteFromAlbum (q,s,next,photoId,albumId,cb){
-    Album.findById(albumId,function(err,album){
+    Album.findById(albumId).populate('photos').exec(function(err,album){
         if(err){
             console.log(err);
             s.json({
@@ -40,7 +40,7 @@ function deleteFromAlbum (q,s,next,photoId,albumId,cb){
 }
 
 function addToAlbum (q,s,next,photoId, albumId,cb){
-    Album.findById(albumId,function(err,album){
+    Album.findById(albumId).populate('photos').exec(function(err,album){
         if(err){
             console.log(err);
             s.json({
@@ -72,11 +72,71 @@ function addToAlbum (q,s,next,photoId, albumId,cb){
         });
     });
 }
-exports.getNew = function(q,s,next){
-    s.render('newAlbum',{title: 'New Album'});
+
+exports.getAlbum = function(q,s,next){
+    var limit = 10,page = q.query.page,skip = (-1+parseInt(q.query.page||1,10))*limit;
+
+    Album.find().count(function(err,count){
+        if(err){
+            console.log(err);
+            q.flash('error','Database Error, Please try to reload page.');
+            s.redirect('back');
+            return;
+        }
+        Album.find().skip(skip).populate('photos').limit(limit).sort('-updated').exec(function(err,albums){
+            if(err){
+                console.log(err);
+                q.flash('error','Database Error, Please try to reload page.');
+                s.redirect('back');
+                return;
+            }
+            s.render('albums/index',{
+                title: "Albums",
+                page: page,
+                limit: limit,
+                count: count,
+                albums: albums
+            });
+        });
+    });
 };
 
-exports.PostNew = function(q,s,next){
+
+exports.getOneAlbum = function(q,s,next){
+    var limit = 10,page = q.query.page,skip = (-1+parseInt(q.query.page||1,10))*limit;
+
+    Album.find().count(function(err,count){
+        if(err){
+            console.log(err);
+            q.flash('error','Database Error, Please try to reload page.');
+            s.redirect('back');
+            return;
+        }
+        console.log(q.params.title);
+        Album.findOne({title: q.params.title}).skip(skip).populate('photos').limit(limit).sort('-updated').exec(function(err,album){
+            if(err){
+                console.log(err);
+                q.flash('error','Database Error, Please try to reload page.');
+                s.redirect('back');
+                return;
+            }
+            s.render('albums/album',{
+                title: "Albums",
+                page: page,
+                limit: limit,
+                count: count,
+                album: album
+            });
+        });
+    });
+};
+
+
+exports.getNew = function(q,s,next){
+    s.render('albums/new',{title: 'New Album'});
+};
+
+exports.postNew = function(q,s,next){
     if(!q.body.album.title){
         console.log('No Album title');
         q.flash('error','Error, Please input title for new album');

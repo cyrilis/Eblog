@@ -80,6 +80,8 @@ input:not([type='submit']):not([type='radio']):not([type='checkbox']),textarea,s
   &:focus
     border-color #aaaaaa
     outline none
+  &.double_width
+    width 520px
 input[type="radio"],input[type='checkbox']
   line-height 1
   padding 5px
@@ -95,13 +97,11 @@ input[type="radio"],input[type='checkbox']
     line-height 26px
   & img
     max-width 100%
-    display block
+    display inline-block
     line-height 0!important
     &::selection
       background rgba(0,0,0,.3)
       color #0099ff
-.skriv-container
-  height 57px
 #resize_arrow
   padding 0
   margin 0
@@ -115,32 +115,6 @@ input[type="radio"],input[type='checkbox']
   line-height 0
   cursor: nw-resize
   z-index 1000
-#resize_btn
-  display block
-  position absolute
-  margin-left -30px
-  margin-top -20px
-  -webkit-transition: top 0, left 0
-  -moz-transition: top 0, left 0
-  -ms-transition: top 0, left 0
-  -o-transition: top 0, left 0
-  transition: top 0, left 0
-img.resize
-  outline: rgba(0, 0, 0, 0.6) dashed 2px
-  zoom: 1
-  display block
-.edit_pic_btn
-  display block
-  position absolute
-  padding 5px 10px
-  background maincolor
-  color #ffffff
-  top 50%
-  left 50%
-  margin-left -16px
-  margin-top -12px
-  line-height 20px
-  cursor pointer
 .container
   width: 1000px;
   margin: 0 auto;
@@ -440,3 +414,12 @@ img.avatar
   background  #f8f8f8
 body.unloaded .loading
   width 100px
+ul.albums_list
+  list-style none
+  margin 0
+  padding 0
+  li
+    float left
+    width 50%
+    img.cover
+      width 300px

@@ -1,0 +1,14 @@
+<%- include ../header.ejs %>
+<div class="container albums">
+    <h2><%= album.title %></h2>
+    <button onclick="addPhoto();return false;" class="button">Add Photo to this Album</button>
+    <ul class="photos_list">
+        <% album.photos.forEach(function(photo){ %>
+        <li>
+            <img src="<%= photo.location %>" alt=""/>
+            <p class="photo_name"><%= photo.title %></p>
+        </li>
+        <%}) %>
+    </ul>
+</div>
+<% include ../footer.ejs %>

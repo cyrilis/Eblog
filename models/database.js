@@ -52,7 +52,10 @@ var AlbumSchema = new Schema({
     desc: {type: String},
     updated: Date
 });
-
+var albumCover = AlbumSchema.virtual('cover');
+albumCover.get(function(){
+        return this.photos&&this.photos.length? this.photos[0].location: '/images/default_cover.png';
+});
 var PhotoSchema = new Schema({
     id: ObjectId,
     time: Date,

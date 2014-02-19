@@ -9,7 +9,7 @@
 var user = require('../controller/user.js'),
     post = require('../controller/post.js'),
     file = require('../controller/file.js');
-//    album= require('../controller/album.js');
+var album= require('../controller/album.js');
 
 module.exports = function (app) {
     app.all("*", post.all);
@@ -41,6 +41,12 @@ module.exports = function (app) {
     app.delete('/post/:slug/delete', post.getDelete);
     app.post('/upload', checkLogin);
     app.post('/upload', file.upload);
+
+//    Albums routers
+    app.get('/albums',album.getAlbum);
+    app.get('/albums/new',album.getNew);
+    app.post('/albums',album.postNew);
+    app.get('/albums/:title',album.getOneAlbum);
     function checkLogin(q,s,next){
         if (!q.session.user){
             q.flash("error","Login First!");
