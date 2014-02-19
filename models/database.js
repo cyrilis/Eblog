@@ -43,12 +43,33 @@ postDate.get(function(){
     return moment(this.time).lang('zh-cn').format('LL');
 });
 
+var AlbumSchema = new Schema({
+    id: ObjectId,
+    time: {type:Date},
+    title: {type:String,required: true},
+    photos: {type: ObjectId, ref: 'Photo'},
+    desc: {type: String},
+    updated: Date
+});
+
+var PhotoSchema = new Schema({
+    id: ObjectId,
+    time: Date,
+    title: {type:String, unique:true},
+    location: String,
+    desc: String,
+    album: {type: ObjectId, ref: 'Album'}
+});
+
 var connection = mongoose.createConnection(settings.dburl),
     User = connection.model('User',UserSchema),
-    Post = connection.model('Post',PostSchema);
-
+    Post = connection.model('Post',PostSchema),
+    Album = connection.model('Album',AlbumSchema),
+    Photo = connection.model('Photo',PhotoSchema);
 
 module.exports = {
     'User': User,
-    'Post': Post
+    'Post': Post,
+    'Album': Album,
+    'Photo': Photo
 };
