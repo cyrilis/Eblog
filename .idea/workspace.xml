@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1f2b440-a030-4a6e-b81d-18bc193abbfe" name="Default" comment="remove unused database hook.">
+    <list default="true" id="d1f2b440-a030-4a6e-b81d-18bc193abbfe" name="Default" comment="add new Photo controller">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/album.js" afterPath="$PROJECT_DIR$/controller/album.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/database.js" afterPath="$PROJECT_DIR$/models/database.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/file.js" afterPath="$PROJECT_DIR$/controller/file.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="test.iws" />
@@ -60,7 +58,7 @@
       <file leaf-file-name="album.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller/album.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="2" selection-start="3666" selection-end="3666" vertical-scroll-proportion="0.91584855" vertical-offset="1867" max-vertical-offset="2640">
+            <state line="179" column="33" selection-start="5450" selection-end="5450" vertical-scroll-proportion="0.6072931" vertical-offset="3147" max-vertical-offset="4900">
               <folding />
             </state>
           </provider>
@@ -69,16 +67,7 @@
       <file leaf-file-name="file.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/file.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="23" selection-start="78" selection-end="78" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="500">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="160">
+            <state line="17" column="5" selection-start="567" selection-end="567" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="500">
               <folding />
             </state>
           </provider>
@@ -136,9 +125,9 @@
         <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/controller/user.js" />
         <option value="$PROJECT_DIR$/controller/post.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/controller/file.js" />
         <option value="$PROJECT_DIR$/models/database.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/controller/album.js" />
       </list>
     </option>
@@ -563,7 +552,11 @@
       <created>1392780530150</created>
       <updated>1392780530150</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="add new Photo controller">
+      <created>1392804035038</created>
+      <updated>1392804035038</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -618,7 +611,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="Seems All bugs have been Solved &#10;Next station is Add features&#10;Yeah!" />
     <MESSAGE value="all" />
     <MESSAGE value="Save it then dinner" />
     <MESSAGE value="OOOOOO" />
@@ -643,7 +635,8 @@
     <MESSAGE value="remove slug virtual method" />
     <MESSAGE value="remove unused database hook." />
     <MESSAGE value="rewrite Album controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="rewrite Album controller" />
+    <MESSAGE value="add new Photo controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new Photo controller" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -721,20 +714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="13" selection-start="3415" selection-end="3415" vertical-scroll-proportion="0.0" vertical-offset="1807" max-vertical-offset="2520">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="15140">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/dictionaries/Cyril.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="713">
@@ -749,20 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="160">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/file.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="23" selection-start="78" selection-end="78" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="500">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/database.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="48" column="39" selection-start="1284" selection-end="1284" vertical-scroll-proportion="-0.22222222" vertical-offset="954" max-vertical-offset="1640">
@@ -770,9 +735,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controller/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="111" column="13" selection-start="3415" selection-end="3415" vertical-scroll-proportion="0.0" vertical-offset="1807" max-vertical-offset="2520">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="23" selection-end="23" vertical-scroll-proportion="0.056100983" vertical-offset="0" max-vertical-offset="713">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="67" selection-start="708" selection-end="708" vertical-scroll-proportion="0.37142858" vertical-offset="0" max-vertical-offset="16180">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/file.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="5" selection-start="567" selection-end="567" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="500">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controller/album.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="2" selection-start="3666" selection-end="3666" vertical-scroll-proportion="0.91584855" vertical-offset="1867" max-vertical-offset="2640">
+        <state line="179" column="33" selection-start="5450" selection-end="5450" vertical-scroll-proportion="0.6072931" vertical-offset="3147" max-vertical-offset="4900">
           <folding />
         </state>
       </provider>

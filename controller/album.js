@@ -5,7 +5,73 @@
 
 var db = require('../models/database');
 var User = db.User, Album = db.Album, Photo = db.Photo;
+function deleteFromAlbum (q,s,next,photoId,albumId,cb){
+    Album.findById(albumId,function(err,album){
+        if(err){
+            console.log(err);
+            s.json({
+                error: true,
+                message: 'Database Error, Please try again.'
+            });
+            return;
+        }
+        if(!album){
+            console.log('Error! Contact Administrator Please.');
+            s.json({
+                error: true,
+                message: 'Error! Contact Administrator Please.'
+            });
+            return;
+        }
+        album.photos.pull(photoId);
+        album.save(function(err,album){
+            if(err){
+                console.log(err);
+                s.json({
+                    error: true,
+                    message: "Database Error, Try to reload page."
+                });
+                return;
+            }
+            console.log('Delete Photo Passed!');
+            cb(album);
+        });
+    });
+}
 
+function addToAlbum (q,s,next,photoId, albumId,cb){
+    Album.findById(albumId,function(err,album){
+        if(err){
+            console.log(err);
+            s.json({
+                error: true,
+                message: 'Database Error, Please try again.'
+            });
+            return;
+        }
+        if(!album){
+            console.log('Error! Contact Administrator Please.');
+            s.json({
+                error: true,
+                message: 'Error! Contact Administrator Please.'
+            });
+            return;
+        }
+        album.photos.push(photoId);
+        album.save(function(err,album){
+            if(err){
+                console.log(err);
+                s.json({
+                    error: true,
+                    message: "Database Error, Try to reload page."
+                });
+                return;
+            }
+            console.log('Photo Added to new Album');
+            cb(album);
+        });
+    });
+}
 exports.getNew = function(q,s,next){
     s.render('newAlbum',{title: 'New Album'});
 };
@@ -107,11 +173,14 @@ exports.newPhoto = function(q,s, next){
                 });
                 return;
             }
-            s.json({
-                error: false,
-                message: 'New Photo Added',
-                id: photo._id
+            addToAlbum(q,s,next, q.body.photo.album, photo._id,function(album){
+                s.json({
+                    error: false,
+                    message: 'New photo added successfully!',
+                    id: photo._id
+                });
             });
+
         });
     }else{
         console.log('No Photo, aborted...');
@@ -122,6 +191,50 @@ exports.newPhoto = function(q,s, next){
     }
 };
 
-exports.deletePhoto = function(){
+exports.deletePhoto = function(q,s,next){
+    if(!q.body.photo._id||!q.body.photo.album){
+        console.log('Not Valid Request!');
+        s.json({
+            error: true,
+            message: 'Request is not valid, Please try to refresh!'
+        });
+        return;
+    }
+    Photo.findByIdAndRemove(q.body.photo._id,function(err){
+        if(err){
+            console.log(err);
+            s.json({
+                error: true,
+                message: 'Database Error, Please try again.'
+            });
+            return;
+        }
+        deleteFromAlbum(q,s,next, q.body.photo.album, q.body.photo._id, function(album){
+            s.json({
+                error: false,
+                message: 'Photo deleted successfully!'
+            });
+//            fs.unlink('./public'+q.body.photo.location)
+//            todo: Remember to remove file when done.
+        });
+    });
+};
 
+exports.modifyPhoto = function(q,s,next){
+    if(!q.body.photo._id||!q.body.photo.album||!q.body.photo.newAlbum){
+        console.log('Not Valid Request!');
+        s.json({
+            error: true,
+            message: 'Request is not valid, Please try to refresh!'
+        });
+        return;
+    }
+    deleteFromAlbum(q,s,next, q.body.photo.album, q.body.photo._id,function(album){
+        addToAlbum(q,s,next, q.body.photo.newAlbum, q.body.photo._id,function(album){
+            s.json({
+                error: false,
+                message: 'Successfully Modified Album!'
+            });
+        });
+    });
 };
