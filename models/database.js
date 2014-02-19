@@ -46,6 +46,7 @@ postDate.get(function(){
 var AlbumSchema = new Schema({
     id: ObjectId,
     time: {type:Date},
+    user: {type:ObjectId, ref: 'User'},
     title: {type:String,required: true},
     photos: {type: ObjectId, ref: 'Photo'},
     desc: {type: String},
