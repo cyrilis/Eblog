@@ -9,7 +9,7 @@ var crypto = require('crypto'),
 
 exports.show=function(q,s,next){
     var limit = 10,skip = ((q.query.page||1)-1)*limit;
-    User.findOne({name: q.params.name}).populate('posts',{limit: limit, skip: skip}).exec(function(err,user){
+    User.findOne({name: q.params.name}).populate('posts',{limit: limit, skip: skip,sort: '-_id'}).exec(function(err,user){
         if(err){
             console.log(err);
             q.flash('err',err.message);
@@ -20,7 +20,7 @@ exports.show=function(q,s,next){
             return;
         }
         Post.find({user:user._id}).count(function(err,count){
-            Post.find({user: user._id}).populate('user').exec(function(err,posts){
+            Post.find({user: user._id}).populate('user').sort('-_id').exec(function(err,posts){
                 console.log(posts[0]);
                 s.render('user',{
                     title: user.name,

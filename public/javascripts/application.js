@@ -6,13 +6,14 @@
 var submitPost = function(){
     if(!$('#post_title_outer').val()){
         alert("Title Can't be Blank");
-        return;
+        return false;
     }
     var form=$("#post");
-    var editorContent=$("#post_editor");
+//    var editorContent=$("#post_editor");
     updateTags();
 //    $('#post_title').val($("#post_title_outer").val().trim());
     form.submit();
+    return false;
 };
 
 

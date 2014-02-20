@@ -1,6 +1,9 @@
 <%- include ../header.ejs %>
 <div class="container albums">
     <% if(albums.length){ %>
+    <% if(user){ %>
+    <a class="button" href="/albums/new">Create an album</a>
+    <%}   %>
     <ul class="albums_list">
         <% albums.forEach(function(album,index){ %>
         <li>
@@ -12,10 +15,13 @@
         <%}) %>
     </ul>
     <%}else{ %>
-    <p>It seems there is no album yet, you can create one by press the button bellow.</p>
-    <a class="button" href="/albums/new">Create an album</a>
+        <%if(user){   %>
+            <p>It seems there is no album yet, you can create one by press the button bellow.</p>
+            <a class="button" href="/albums/new">Create an album</a>
+        <%}else{   %>
+            <p>There is no album yet.</p>
+        <%}   %>
     <%} %>
-
     <div class="pagination clearfix">
         <% if(page-1>0){    %>
         <a class="button prev" href="/pages/<%= +page-1 %>">Prev</a>

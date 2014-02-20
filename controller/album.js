@@ -83,7 +83,7 @@ exports.getAlbum = function(q,s,next){
             s.redirect('back');
             return;
         }
-        Album.find().skip(skip).populate('photos').limit(limit).sort('-updated').exec(function(err,albums){
+        Album.find().skip(skip).populate('photos').limit(limit).sort('-_id').exec(function(err,albums){
             if(err){
                 console.log(err);
                 q.flash('error','Database Error, Please try to reload page.');
@@ -113,7 +113,7 @@ exports.getOneAlbum = function(q,s,next){
             return;
         }
         console.log(q.params.title);
-        Album.findOne({title: q.params.title}).skip(skip).populate('photos').limit(limit).sort('-updated').exec(function(err,album){
+        Album.findOne({title: q.params.title}).skip(skip).populate('photos').limit(limit).sort('-_id').exec(function(err,album){
             if(err){
                 console.log(err);
                 q.flash('error','Database Error, Please try to reload page.');
