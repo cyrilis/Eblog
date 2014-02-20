@@ -197,16 +197,17 @@ exports.postEdit=function(q,s,next){
     });
 };
 
-exports.getDelete=function(q,s,next){
-    Post.findByIdAndRemove(q.body.post._id,function(err){
+exports.postDelete=function(q,s,next){
+    Post.findOne({slug: q.params.slug},function(err,post){
             if(err){
                 console.log(err);
                 q.flash('error',err.message);
                 s.redirect('back');
                 return;
             }
-            q.flash("success", "The blog "+q.params.title+" was deleted successfully");
-            return s.redirect("/");
+            post.remove();
+            q.flash("success", "The post was deleted successfully!");
+            s.redirect("/");
         }
     );
 };

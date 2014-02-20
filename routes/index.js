@@ -37,8 +37,8 @@ module.exports = function (app) {
     app.get('/posts/:slug/edit', post.getEdit);
     app.put('/posts', checkLogin);
     app.put('/posts', post.postEdit);
-    app.delete('/post/:slug/delete', checkLogin);
-    app.delete('/post/:slug/delete', post.getDelete);
+    app.delete('/posts/:slug', checkLogin);
+    app.delete('/posts/:slug', post.postDelete);
     app.post('/upload', checkLogin);
     app.post('/upload', file.upload);
 

@@ -7,7 +7,7 @@
                 <span> at  <%= post.date  %></span>
                 <% if(user&&post.user.name==user.name){ %>
                 <a href="/posts/<%= post.slug %>/edit">Edit</a>
-                <a class="confirm" data-confirm="Are you sure to Detele this blog?" href="/post/<%= post.time+"/"+post.title %>/delete">Delete</a>
+                <a class="confirm" data-method="delete" rel="nofollow" data-confirm="Are you sure to Detele this blog?" href="/posts/<%= post.slug %>">Delete</a>
                 <% } %>
             </p>
         </div>
