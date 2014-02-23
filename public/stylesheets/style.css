@@ -328,9 +328,10 @@ header .header_navs ul {
 }
 header .header_navs ul li {
   float: left;
+  position: relative;
 }
 header .header_navs ul li a {
-  display: inline-block;
+  display: block;
   padding: 20px 24px;
   line-height: 1;
   background: #fff;
@@ -347,6 +348,66 @@ header .header_navs ul li a:hover {
   color: #fff;
   background: #18b0b6;
   border-color: #18b0b6;
+}
+header .header_navs ul li.has_sub>a:after {
+  display: inline-block;
+  content: "";
+  width: 1px;
+  height: 1px;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: #888 transparent;
+  float: right;
+  vertical-align: middle;
+  margin-left: 5px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  margin-top: 4px;
+}
+header .header_navs ul li.has_sub:hover>a:after,
+header .header_navs ul li.has_sub.open>a:after {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+header .header_navs ul li.has_sub a:hover:after {
+  border-color: #fff transparent;
+}
+header .header_navs ul li ul.sub_nav {
+  display: block;
+  position: absolute;
+  right: 0;
+  width: auto;
+  border-top: 1px solid #d8d8d8;
+  margin-left: -1px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s, top 0.3s;
+  -moz-transition: opacity 0.3s, top 0.3s;
+  -ms-transition: opacity 0.3s, top 0.3s;
+  -o-transition: opacity 0.3s, top 0.3s;
+  transition: opacity 0.3s, top 0.3s;
+  top: 200%;
+  visibility: hidden;
+}
+header .header_navs ul li ul.sub_nav li {
+  width: 100%;
+}
+header .header_navs ul li ul.sub_nav li a {
+  border-bottom: 1px solid #d8d8d8;
+  white-space: nowrap;
+  padding: 15px 20px;
+}
+header .header_navs ul li:hover ul.sub_nav,
+header .header_navs ul li.open ul.sub_nav {
+  display: block;
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
 }
 main {
   padding: 20px 0;
@@ -535,4 +596,22 @@ ul.photos_list {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+@media (max-width: 1024px) {
+  p {
+    margin-bottom: 1em;
+    line-height: 1.3em;
+  }
+  .container {
+    width: 95%;
+  }
+  .post_title h2 {
+    margin: 10px 0;
+  }
+  .post_title p.info {
+    margin: 0;
+    clear: both;
+    text-align: left;
+    float: none;
+  }
 }

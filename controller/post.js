@@ -48,7 +48,7 @@ exports.tag = function(q,s,next){
     var limit = 10,skip= ((q.query.page||1)-1)*limit;
     var query = {'tags': q.params.tag};
     Post.find(query).count(null,function(err,count){
-        Post.find(query,function(err,posts){
+        Post.find(query).populate('user').sort('-_id').exec(function(err,posts){
             if(err){
                 console.log(err);
                 next(err);
@@ -118,7 +118,8 @@ exports.postNew=function (q, s, next) {
     var postObj = q.body.post;
     postObj.time = new Date();
     postObj.user = q.session.user._id;
-    postObj.tags = q.body.post.tags.split('|').map(function(e){return e.trim();});
+    postObj.tags = q.body.post.tags.split('|').map(function(e){return e.trim();}).filter(function(n){return n;});
+    console.log('Tags::::::-------',postObj.tags);
     var newPost = new Post(q.body.post);
     newPost.save(function(err,post){
         console.log(post);
@@ -185,7 +186,7 @@ exports.postEdit=function(q,s,next){
     var _id = postObj._id;
     delete postObj._id;
     console.log(postObj);
-    postObj.tags = postObj.tags.split('|').map(function(e){return e.trim();});
+    postObj.tags = postObj.tags.split('|').map(function(e){return e.trim();}).filter(function(n){return n;});
     Post.findByIdAndUpdate(_id,{title: postObj.title, content: postObj.content,tags: postObj.tags,category: postObj.category},function(err,post){
         if(err){
             console.log(err);

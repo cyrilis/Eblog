@@ -26,13 +26,13 @@ module.exports = function (app) {
     app.get('/login', user.getLogin);
     app.post("/login", checkNotLogin);
     app.post('/login', user.postLogin);
-    app.get('/post/new', checkLogin);
-    app.get('/post/new', post.getNew);
+    app.get('/posts/new', checkLogin);
+    app.get('/posts/new', post.getNew);
     app.post('/posts', checkLogin);
     app.post('/posts', post.postNew);
     app.get('/posts/:slug', post.show);
 //    app.get('/albums',album.show);
-    app.get('/logout', user.logout);
+    app.post('/logout', user.logout);
     app.get('/posts/:slug/edit', checkLogin);
     app.get('/posts/:slug/edit', post.getEdit);
     app.put('/posts', checkLogin);

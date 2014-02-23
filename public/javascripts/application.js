@@ -2,41 +2,57 @@
  * Created by never on 13-10-27.
  */
 "use strict";
-
+var newTag = $('#newTag');
 var submitPost = function(){
     if(!$('#post_title_outer').val()){
         alert("Title Can't be Blank");
         return false;
     }
     var form=$("#post");
+    if(newTag.val().trim()){
+        updateTagsDom(newTag);
+    }
 //    var editorContent=$("#post_editor");
     updateTags();
 //    $('#post_title').val($("#post_title_outer").val().trim());
     form.submit();
     return false;
 };
-
-
-$('#newTag').on("keyup",function(e) {
-    console.log(e);
-    if(e.which === 32&&$(this).val().trim()){
-        e.preventDefault();
-        $('<span class="tag_span">' +
-            '<span class="tag_name">'+$(this).val()+'</span>' +
-            '<span class="tag_close">&times;</span>' +
-            '</span>\n\r').insertBefore($("#newTag"))
-            .on("click",function(){
-                $(this).remove();
-                updateTags();
-            });
-        $(this).val("");
+function updateTagsDom (elem){
+    var _this = elem;
+    $('<span class="tag_span">' +
+        '<span class="tag_name">'+$(_this).val().trim()+'</span>' +
+        '<span class="tag_close">&times;</span>' +
+        '</span>\n\r').insertBefore($(_this))
+        .on("click",function(){
+            $(_this).remove();
+            updateTags();
+        });
+    $(_this).val(" ");
+}
+newTag.on( 'keypress', '.input_class', function (e) {
+    if (e.charCode===13) {
+//        $(this).parent('.container').children('.button_class').trigger('click');
+        return false;
+    }
+    return false;
+});
+newTag.on("keyup",function(e) {
+//    console.log(e);
+    var _this = this;
+    if(e.which === 32&&$(_this).val().trim()&& $(_this).val().split('').pop()===" "){
+//        e.preventDefault();
+        updateTagsDom(_this);
         updateTags();
         return false;
     }else if(e.which === 8&&$('#newTag').val()===""){
         e.preventDefault();
         $(".tag_span").last().remove();
+        $(_this).val(" ");
         updateTags();
     }
+    e.preventDefault();
+    return false;
 });
 
 $("a.confirm").click(function(){
@@ -56,6 +72,7 @@ function updateTags(){
     });
     $("#post_tags").val(tags.join("|"));
 }
+
 function showDialog(url,confirmData,really){
     if(!really){
         return confirm(confirmData)? window.location="#":false;
@@ -96,3 +113,9 @@ $(document).ready(function(){
         $("#newTag").focus();
     });
 });
+
+$(".header_navs .has_sub>a").on('touchstart',function(e){
+    e.preventDefault();
+    $(this).parent().toggleClass('open');
+    return false;
+})

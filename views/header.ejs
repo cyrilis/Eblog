@@ -15,10 +15,16 @@
         <ul class="clearfix">
             <li><a href="/">Home</a></li>
             <li><a href="/albums">Albums</a></li>
+            <li><a href="/lab">Lab</a></li>
             <% if (user){ %>
-            <li><a href="/u/<%= user.name %>"><%= user.name %></a></li>
-            <li><a href="/post/new">New Post</a></li>
-            <li><a href="/logout">Logout</a></li>
+            <li class="has_sub"><a href="/u/<%= user.name %>"><%= user.name %></a>
+                <ul class="sub_nav">
+                    <li><a href="/posts/new">New Post</a></li>
+                    <li><a href="/me">View Profile</a></li>
+                    <li><a href="/settings">Settings</a></li>
+                    <li><a data-method="post" href="/logout">Logout</a></li>
+                </ul>
+            </li>
             <% }else{  %>
             <li><a href="/reg">Register</a></li>
             <li><a href="/login">Login</a></li>

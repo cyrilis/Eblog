@@ -37,6 +37,8 @@ app.use(express.session({
 }));
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+// Lab source
+app.use(express.static(path.join(__dirname, 'lab')));
 
 // development only
 if ('development' === app.get('env')) {

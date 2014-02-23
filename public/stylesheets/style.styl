@@ -276,8 +276,9 @@ header
       border-left 1px solid #d8d8d8
       li
         float left
+        position relative
         a
-          display inline-block
+          display block
           padding 20px 24px
           line-height 1
           background #ffffff
@@ -293,6 +294,59 @@ header
             color #ffffff
             background maincolor
             border-color maincolor
+        &.has_sub>a:after
+          display inline-block
+          content ""
+          width 1px
+          height 1px
+          border-style solid
+          border-width: 5px 5px 0 5px;
+          border-color: #888 transparent;
+          float right
+          vertical-align middle
+          margin-left 5px
+          -webkit-transition: all 0.3s
+          -moz-transition: all 0.3s
+          -ms-transition: all 0.3s
+          -o-transition: all 0.3s
+          transition: all 0.3s
+          margin-top 4px
+        &.has_sub:hover>a:after
+        &.has_sub.open>a:after
+          -webkit-transform: rotate(180deg)
+          -moz-transform: rotate(180deg)
+          -ms-transform: rotate(180deg)
+          -o-transform: rotate(180deg)
+          transform: rotate(180deg)
+        &.has_sub a:hover:after
+          border-color: #fff transparent
+        ul.sub_nav
+          display block
+          position absolute
+          right 0
+          width auto
+          border-top 1px solid #d8d8d8
+          margin-left -1px
+          opacity 0
+          -webkit-transition: opacity 0.3s, top 0.3s
+          -moz-transition: opacity 0.3s, top 0.3s
+          -ms-transition: opacity 0.3s, top 0.3s
+          -o-transition: opacity 0.3s, top 0.3s
+          transition: opacity 0.3s, top 0.3s
+          top 200%
+          visibility hidden
+          li
+            width 100%
+            a
+              border-bottom 1px solid #d8d8d8
+              white-space nowrap
+              padding 15px 20px
+        &:hover ul.sub_nav
+        &.open ul.sub_nav
+          display block
+          opacity 1
+          top 100%
+          visibility visible
 main
   padding 20px 0
   .posts
@@ -428,3 +482,17 @@ ul.photos_list
   margin 0
   padding 0
   list-style none
+@media (max-width: 1024px)
+  p
+    margin-bottom 1em
+    line-height 1.3em
+  .container
+    width 95%
+  .post_title
+    h2
+      margin 10px 0
+    p.info
+      margin 0
+      clear both
+      text-align left
+      float none
