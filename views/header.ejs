@@ -7,9 +7,15 @@
     <%if(mode == "new"||mode == "edit"){%>
     <link rel="stylesheet" href="/stylesheets/turquoise.min.css"/>
     <%}%>
+    <link rel="stylesheet" href="/stylesheets/icon_style.css"/>
     <link rel="stylesheet" href="/stylesheets/style.css"/>
 </head>
 <body class="unloaded" onload="document.body.className='loaded'">
+    <div class="logo container">
+        <h1>
+            <a href="/">Cyrilis.com</a>
+        </h1>
+    </div>
 <header>
     <nav class="container header_navs clearfix">
         <ul class="clearfix">
@@ -19,9 +25,9 @@
             <% if (user){ %>
             <li class="has_sub"><a href="/u/<%= user.name %>"><%= user.name %></a>
                 <ul class="sub_nav">
-                    <li><a href="/posts/new">New Post</a></li>
-                    <li><a href="/settings">Settings</a></li>
-                    <li><a data-method="post" href="/logout">Logout</a></li>
+                    <li><a href="/posts/new"><i class="icon-pencil"></i>New Post</a></li>
+                    <li><a href="/settings"><i class="icon-cog"></i>Settings</a></li>
+                    <li><a data-method="post" href="/logout"><i class="icon-enter"></i>Logout</a></li>
                 </ul>
             </li>
             <% }else{  %>

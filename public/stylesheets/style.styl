@@ -26,6 +26,12 @@ border-radius()
   font-weight: 600;
   src: local('Open Sans Light'), local('OpenSans-Light'), url(fonts/Open-Sans-700.woff) format('woff');
 }
+@font-face {
+  font-family: 'Gentium Book Basic';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Gentium Book Basic'), local('GentiumBookBasic'), url(fonts/Gentium-Book-Basic-400.woff) format('woff');
+}
 ::selection{
   background maincolor
   color #fff
@@ -61,6 +67,7 @@ blockquote
   line-height 1.3
   font-size 16px
   background #f8f8f8
+  margin-bottom: 10px
 pre,code
   font-family Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif
 input:not([type='submit']):not([type='radio']):not([type='checkbox']),textarea,select
@@ -177,7 +184,7 @@ span#tags_container
   display: inline-block
   padding: 3px
   padding-bottom 0px
-  min-width 260px
+  min-width 250px
   cursor: text
   input
     width 30px
@@ -267,9 +274,22 @@ a
   content ""
 .clearfix:after
   clear both
+.logo
+  display block
+  h1
+    display block
+    width 500px
+    font-size 96px
+    margin 0 auto
+    line-height 200px
+    height 200px
+    text-align center
+    font-weight 400
+    font-family 'Gentium Book Basic'
 header
   width 100%
   border-bottom 1px solid #d8d8d8
+  border-top 1px solid #d8d8d8
   .header_navs
     ul
       list-style none
@@ -338,12 +358,15 @@ header
           transition: opacity 0.3s, top 0.3s
           top 200%
           visibility hidden
+          z-index 1000
           li
             width 100%
             a
               border-bottom 1px solid #d8d8d8
               white-space nowrap
               padding 15px 20px
+              i
+                margin-right 10px
         &:hover ul.sub_nav
         &.open ul.sub_nav
           display block
@@ -362,20 +385,41 @@ main
         margin-bottom 20px
         .post_content
           border-bottom 1px solid #d8d8d8
-        h2
-          color #777
-          font-size 24px
-          line-height 1
-          font-weight 600
-          &>a
-            text-decoration none
-            text-transform capitalize
+        .post_title
+          h2
+            color #777
+            font-size 40px
+            line-height 1
+            font-weight 400
+            margin 0.8em 0
+            &>a
+              /*text-decoration none*/
+              text-transform capitalize
+.backdrops
+  display block
+  position fixed
+  height 100%
+  width 100%
+  background rgba(0,0,0,0.75)
+  opacity 0
+  z-index 1000
+  left 0
+  top 0
+  -webkit-transition: all 0.3s
+  -moz-transition: all 0.3s
+  -ms-transition: all 0.3s
+  -o-transition: all 0.3s
+  transition: all 0.3s
+  visibility hidden
+  &.show
+    opacity 1
+    visibility visible
 div.confirm,div.show_box
   display block
   opacity 0
   position fixed
   left 50%
-  top 45%
+  top 40%
   margin-top -100px
   margin-left -240px
   width: 480px
@@ -386,11 +430,17 @@ div.confirm,div.show_box
   background #ffffff
   padding 10px
   padding-top 30px
+  -webkit-transform: scale(1.5)
+  -moz-transform: scale(1.5)
+  -ms-transform: scale(1.5)
+  -o-transform: scale(1.5)
+  transform: scale(1.5)
   -webkit-transition: all .3s
   -moz-transition: all .3s
   -ms-transition: all .3s
   -o-transition: all .3s
   transition: all .3s
+  z-index 1001
   & .form-group label
     width 80px
   &.show
@@ -398,6 +448,11 @@ div.confirm,div.show_box
     top 40%
     opacity 1
     height auto
+    -webkit-transform: scale(1)
+    -moz-transform: scale(1)
+    -ms-transform: scale(1)
+    -o-transform: scale(1)
+    transform: scale(1)
   a.close
     cursor pointer
     font-size 16px
@@ -438,6 +493,19 @@ h1,h2,h3,h4,h5,h6
     color #aaaaaa
     a
       color #888888
+      /*text-decoration none*/
+      i
+        display inline-block
+        padding 5px
+        border-radius 3px
+        font-size 22px
+        height 22px
+        width 22px
+        background #666666
+        color #ffffff
+        opacity 0.7
+        &:hover
+          opacity 1
       &:hover
         color #666
 .pagination
@@ -449,13 +517,17 @@ h1,h2,h3,h4,h5,h6
     padding 5px 18px
 .tag_links
   float left
+  a
+    text-decoration none
+    i
+      margin-right 5px
 .category_link
   float right
 .post_info
   color #9c9c9c
   a
     color #8a8a8a
-    margin-left 5px
+    margin-left 10px
     &:hover
         color #666666
 // User Page
@@ -485,17 +557,24 @@ ul.photos_list
   margin 0
   padding 0
   list-style none
+.github_link
+  font-size 20px
+  text-decoration none
+  &:hover
+    opacity 0.75
+  i
+    display inline-table
+    margin-top 3px
+
 @media (max-width: 1024px)
-  p
-    margin-bottom 1em
-    line-height 1.3em
   .container
     width 95%
   .post_title
     h2
-      margin 10px 0
+      margin 20px 0
     p.info
       margin 0
       clear both
       text-align left
       float none
+
