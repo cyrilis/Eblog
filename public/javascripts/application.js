@@ -124,4 +124,8 @@ $(".header_navs .has_sub>a").on('touchstart',function(e){
     e.preventDefault();
     $(this).parent().toggleClass('open');
     return false;
-})
+});
+$("header .toggle_sidebar").on("click",function(){
+    $('header').toggleClass("show");
+    $('.logo, main, footer,html').toggleClass('toggled');
+});

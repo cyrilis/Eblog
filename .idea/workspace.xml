@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1f2b440-a030-4a6e-b81d-18bc193abbfe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/fonts/Eblog.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/fonts/Eblog.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/fonts/Eblog.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/fonts/Eblog.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/icon_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/Promise.js" afterPath="$PROJECT_DIR$/public/javascripts/Promise.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/application.js" afterPath="$PROJECT_DIR$/public/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/file.js" afterPath="$PROJECT_DIR$/controller/file.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/footer.ejs" afterPath="$PROJECT_DIR$/views/footer.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/header.ejs" afterPath="$PROJECT_DIR$/views/header.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/main.js" afterPath="$PROJECT_DIR$/public/javascripts/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/post.ejs" afterPath="$PROJECT_DIR$/views/post.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/post_list.ejs" afterPath="$PROJECT_DIR$/views/post_list.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.styl" afterPath="$PROJECT_DIR$/public/stylesheets/style.styl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -40,13 +29,13 @@
     <favorites_list name="test" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6888627">
+    <splitter split-orientation="horizontal" split-proportion="0.52740127">
       <split-first>
         <leaf>
-          <file leaf-file-name="footer.ejs" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="footer.ejs" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/footer.ejs">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="4" column="71" selection-start="155" selection-end="155" vertical-scroll-proportion="0.10169491" vertical-offset="0" max-vertical-offset="826">
+                <state line="4" column="71" selection-start="155" selection-end="155" vertical-scroll-proportion="-2.8" vertical-offset="0" max-vertical-offset="588">
                   <folding />
                 </state>
               </provider>
@@ -111,10 +100,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="application.js" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="application.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="101" column="21" selection-start="2881" selection-end="2881" vertical-scroll-proportion="0.0" vertical-offset="1864" max-vertical-offset="2772">
+                <state line="115" column="12" selection-start="3345" selection-end="3345" vertical-scroll-proportion="0.5029586" vertical-offset="1990" max-vertical-offset="2856">
                   <folding />
                 </state>
               </provider>
@@ -132,7 +121,7 @@
           <file leaf-file-name="header.ejs" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/header.ejs">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="13" column="30" selection-start="516" selection-end="516" vertical-scroll-proportion="-9.1" vertical-offset="0" max-vertical-offset="1281">
+                <state line="22" column="30" selection-start="813" selection-end="827" vertical-scroll-proportion="-9.933333" vertical-offset="164" max-vertical-offset="1386">
                   <folding />
                 </state>
               </provider>
@@ -145,7 +134,7 @@
           <file leaf-file-name="style.styl" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/stylesheets/style.styl">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="563" column="16" selection-start="12194" selection-end="12194" vertical-scroll-proportion="0.65654206" vertical-offset="11261" max-vertical-offset="12306">
+                <state line="636" column="25" selection-start="13762" selection-end="13762" vertical-scroll-proportion="0.54402894" vertical-offset="12905" max-vertical-offset="14259">
                   <folding />
                 </state>
               </provider>
@@ -203,12 +192,12 @@
         <option value="$PROJECT_DIR$/views/post.ejs" />
         <option value="$PROJECT_DIR$/public/javascripts/main.js" />
         <option value="$PROJECT_DIR$/controller/file.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/application.js" />
         <option value="$PROJECT_DIR$/public/stylesheets/icon_style.css" />
         <option value="$PROJECT_DIR$/views/post_list.ejs" />
-        <option value="$PROJECT_DIR$/views/header.ejs" />
-        <option value="$PROJECT_DIR$/public/stylesheets/style.styl" />
         <option value="$PROJECT_DIR$/views/footer.ejs" />
+        <option value="$PROJECT_DIR$/views/header.ejs" />
+        <option value="$PROJECT_DIR$/public/javascripts/application.js" />
+        <option value="$PROJECT_DIR$/public/stylesheets/style.styl" />
       </list>
     </option>
   </component>
@@ -377,6 +366,46 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="style.styl" />
               <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Eblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fonts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Eblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -892,7 +921,15 @@
       <created>1393173251976</created>
       <updated>1393173251976</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Made a lot of changes :cupid:">
+      <created>1393737425100</created>
+      <updated>1393737425100</updated>
+    </task>
+    <task id="LOCAL-00040" summary="forgot to add the font file.">
+      <created>1393737476781</created>
+      <updated>1393737476781</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -919,6 +956,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34154353" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840723" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32676518" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22271715" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="0" y="308" width="1600" height="244" />
@@ -933,7 +971,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24721603" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34154353" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24961948" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -947,8 +984,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="todo: animate close confirm" />
-    <MESSAGE value="Editor function complate  half" />
     <MESSAGE value="Works a lot &#10;Yeah , fix bugs and get more feature .&#10;not so much so far" />
     <MESSAGE value="It seems all basic function completed.&#10;Next is add user setting and blog setting and Photos and Albums" />
     <MESSAGE value="some fix&#10;" />
@@ -972,7 +1007,9 @@
     <MESSAGE value="todo:Album Detal page." />
     <MESSAGE value="Changed something." />
     <MESSAGE value="TODO: Write a Promise Class." />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO: Write a Promise Class." />
+    <MESSAGE value="Made a lot of changes :cupid:" />
+    <MESSAGE value="forgot to add the font file." />
+    <option name="LAST_COMMIT_MESSAGE" value="forgot to add the font file." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1070,13 +1107,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="21" selection-start="2881" selection-end="2881" vertical-scroll-proportion="0.0" vertical-offset="1864" max-vertical-offset="2772">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/icon_style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="1" selection-start="361" selection-end="361" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3129">
@@ -1091,23 +1121,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/footer.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="71" selection-start="155" selection-end="155" vertical-scroll-proportion="-2.8" vertical-offset="0" max-vertical-offset="588">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/header.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="30" selection-start="516" selection-end="516" vertical-scroll-proportion="-9.1" vertical-offset="0" max-vertical-offset="1281">
+        <state line="22" column="30" selection-start="813" selection-end="827" vertical-scroll-proportion="-9.933333" vertical-offset="164" max-vertical-offset="1386">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/style.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="563" column="16" selection-start="12194" selection-end="12194" vertical-scroll-proportion="0.65654206" vertical-offset="11261" max-vertical-offset="12306">
+        <state line="636" column="25" selection-start="13762" selection-end="13762" vertical-scroll-proportion="0.54402894" vertical-offset="12905" max-vertical-offset="14259">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/footer.ejs">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="71" selection-start="155" selection-end="155" vertical-scroll-proportion="0.10169491" vertical-offset="0" max-vertical-offset="826">
+        <state line="115" column="12" selection-start="3345" selection-end="3345" vertical-scroll-proportion="0.5029586" vertical-offset="1990" max-vertical-offset="2856">
           <folding />
         </state>
       </provider>
