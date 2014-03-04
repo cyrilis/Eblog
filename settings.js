@@ -5,5 +5,9 @@ module.exports = {
     cookieSecret: 'blogpost',
     db: 'EPost',
     host: 'localhost',
-    dburl: 'mongodb://localhost/EPost'
+    dburl: 'mongodb://localhost/EPost',
+    mailgun:{
+        user: "postmaster@again.cc",
+        pass: "Youdick!"
+    }
 };

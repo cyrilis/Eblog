@@ -65,15 +65,32 @@ var PhotoSchema = new Schema({
     album: {type: ObjectId, ref: 'Album'}
 });
 
+var LogSchema = new Schema({
+    id: ObjectId,
+    date: Date,
+    user: {type: ObjectId, ref: "User"},
+    method: String,
+    url: String,
+    data: String,
+    ip: String,
+    country: String,
+    city: String,
+    browser: String,
+    version: String,
+    os: String
+});
+
 var connection = mongoose.createConnection(settings.dburl),
     User = connection.model('User',UserSchema),
     Post = connection.model('Post',PostSchema),
     Album = connection.model('Album',AlbumSchema),
-    Photo = connection.model('Photo',PhotoSchema);
+    Photo = connection.model('Photo',PhotoSchema),
+    Log   = connection.model("Log", LogSchema);
 
 module.exports = {
     'User': User,
     'Post': Post,
     'Album': Album,
-    'Photo': Photo
+    'Photo': Photo,
+    'Log' : Log
 };

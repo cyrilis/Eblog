@@ -4,9 +4,11 @@
 "use strict";
 var db = require('../models/database.js');
 var Post = db.Post,
-    User = db.User;
-
+    User = db.User,
+    log  = require('../controller/utils').log,
+    mail = require('../controller/utils').mail;
 exports.all = function(q,s,next){
+    log(q);
     s.locals({
         session: q.session,
         flash: q.flash,
@@ -119,7 +121,6 @@ exports.postNew=function (q, s, next) {
     postObj.time = new Date();
     postObj.user = q.session.user._id;
     postObj.tags = q.body.post.tags.split('|').map(function(e){return e.trim();}).filter(function(n){return n;});
-    console.log('Tags::::::-------',postObj.tags);
     var newPost = new Post(q.body.post);
     newPost.save(function(err,post){
         console.log(post);
@@ -131,6 +132,7 @@ exports.postNew=function (q, s, next) {
         }
         q.flash('success',"New Post Created!");
         s.redirect('/');
+        mail("root@cyrilis.com","houshoushuai@gmail.com","Just Posted 《"+post.title+"》a new Blog!","<h1>"+post.title+"</h1>"+post.content,null);
     });
 };
 
@@ -195,6 +197,7 @@ exports.postEdit=function(q,s,next){
         }
         q.flash('success',"Post Updated Successfully!");
         s.redirect('back');
+        mail("root@cyrilis.com","houshoushuai@gmail.com","The Post 《"+post.title+"》 Got Updated!","<h1>"+post.title+"</h1>"+post.content,null);
     });
 };
 
@@ -207,6 +210,7 @@ exports.postDelete=function(q,s,next){
                 return;
             }
             post.remove();
+            mail("root@cyrilis.com","houshoushuai@gmail.com","One Post Got Deleted!","<h1>"+post.title+"</h1>"+post.content,null);
             q.flash("success", "The post was deleted successfully!");
             s.redirect("/");
         }

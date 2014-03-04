@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1f2b440-a030-4a6e-b81d-18bc193abbfe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/dribbble/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/dribbble/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
+    <list default="true" id="d1f2b440-a030-4a6e-b81d-18bc193abbfe" name="Default" comment="add Dribble to Lab Sys">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/utils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/database.js" afterPath="$PROJECT_DIR$/models/database.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/footer.ejs" afterPath="$PROJECT_DIR$/views/footer.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/post.js" afterPath="$PROJECT_DIR$/controller/post.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.js" afterPath="$PROJECT_DIR$/settings.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/user.js" afterPath="$PROJECT_DIR$/controller/user.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="test.iws" />
@@ -29,13 +34,13 @@
     <favorites_list name="test" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.72727275">
+    <splitter split-orientation="horizontal" split-proportion="0.6238671">
       <split-first>
         <leaf>
           <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="49" column="40" selection-start="1236" selection-end="1236" vertical-scroll-proportion="0.0" vertical-offset="724" max-vertical-offset="1276">
+                <state line="36" column="4" selection-start="915" selection-end="915" vertical-scroll-proportion="0.0" vertical-offset="669" max-vertical-offset="1298">
                   <folding />
                 </state>
               </provider>
@@ -44,7 +49,7 @@
           <file leaf-file-name="post.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/controller/post.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="134" column="2" selection-start="3735" selection-end="3735" vertical-scroll-proportion="0.0" vertical-offset="2773" max-vertical-offset="4818">
+                <state line="8" column="47" selection-start="188" selection-end="231" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4906">
                   <folding />
                 </state>
               </provider>
@@ -54,15 +59,21 @@
             <entry file="file://$PROJECT_DIR$/views/header.ejs">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="39" column="20" selection-start="1662" selection-end="1662" vertical-scroll-proportion="-8.344828" vertical-offset="616" max-vertical-offset="1452">
-                  <folding />
+                  <folding>
+                    <marker date="1393814407166" expanded="true" signature="350:428" placeholder="{...}" />
+                    <marker date="1393814407166" expanded="true" signature="1075:1535" placeholder="{...}" />
+                    <marker date="1393814407166" expanded="true" signature="1539:1657" placeholder="{...}" />
+                    <marker date="1393814407166" expanded="true" signature="1874:2043" placeholder="{...}" />
+                    <marker date="1393814407166" expanded="true" signature="2081:2163" placeholder="{...}" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/lab/dribbble/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="7" column="13" selection-start="152" selection-end="152" vertical-scroll-proportion="0.22481751" vertical-offset="0" max-vertical-offset="748">
+                <state line="7" column="13" selection-start="152" selection-end="152" vertical-scroll-proportion="-3.9655173" vertical-offset="39" max-vertical-offset="748">
                   <folding />
                 </state>
               </provider>
@@ -71,35 +82,8 @@
           <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/routes/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="34" column="36" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.0" vertical-offset="748" max-vertical-offset="1518">
+                <state line="14" column="24" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0" vertical-offset="154" max-vertical-offset="1518">
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="post_list.ejs" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/post_list.ejs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="24" column="20" selection-start="1161" selection-end="1161" vertical-scroll-proportion="0.0" vertical-offset="143" max-vertical-offset="814">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="edit.ejs" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/edit.ejs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1276">
-                  <folding>
-                    <marker date="1392604143903" expanded="true" signature="190:336" placeholder="{...}" />
-                    <marker date="1392604143903" expanded="true" signature="359:562" placeholder="{...}" />
-                    <marker date="1392604143903" expanded="true" signature="566:739" placeholder="{...}" />
-                    <marker date="1392604143903" expanded="true" signature="829:1000" placeholder="{...}" />
-                    <marker date="1392604143903" expanded="true" signature="1004:1175" placeholder="{...}" />
-                    <marker date="1392604143903" expanded="true" signature="1432:1618" placeholder="{...}" />
-                    <marker date="1392604143903" expanded="true" signature="2464:2567" placeholder="{...}" />
-                    <marker date="1392604143903" expanded="true" signature="2571:2675" placeholder="{...}" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -107,16 +91,52 @@
           <file leaf-file-name="footer.ejs" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/footer.ejs">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="8" column="9" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0" vertical-offset="176" max-vertical-offset="616">
+                <state line="20" column="0" selection-start="823" selection-end="823" vertical-scroll-proportion="-10.034483" vertical-offset="149" max-vertical-offset="616">
+                  <folding>
+                    <marker date="1393898250358" expanded="true" signature="15:368" placeholder="..." />
+                    <marker date="1393898250358" expanded="true" signature="43:358" placeholder="..." />
+                    <marker date="1393898250358" expanded="true" signature="63:81" placeholder="..." />
+                    <marker date="1393898250358" expanded="true" signature="82:347" placeholder="..." />
+                    <marker date="1393898250358" expanded="true" signature="541:720" placeholder="{...}" />
+                    <marker date="1393898250358" expanded="true" signature="662:715" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="utils.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/controller/utils.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="55" column="2" selection-start="1494" selection-end="1494" vertical-scroll-proportion="0.0" vertical-offset="811" max-vertical-offset="1364">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="rails.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/javascripts/rails.js">
+          <file leaf-file-name="database.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/models/database.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8888">
+                <state line="76" column="17" selection-start="2002" selection-end="2002" vertical-scroll-proportion="0.0" vertical-offset="1397" max-vertical-offset="2244">
+                  <folding>
+                    <marker date="1393921829106" expanded="true" signature="2389:2484" placeholder="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="user.js" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/controller/user.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="161" column="4" selection-start="5099" selection-end="5099" vertical-scroll-proportion="0.8669355" vertical-offset="3112" max-vertical-offset="3696">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="settings.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/settings.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="10" column="24" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="396">
                   <folding />
                 </state>
               </provider>
@@ -126,10 +146,19 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="style.styl" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="style.styl" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/stylesheets/style.styl">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="107" column="33" selection-start="2939" selection-end="2939" vertical-scroll-proportion="0.3751783" vertical-offset="2091" max-vertical-offset="15180">
+                <state line="107" column="33" selection-start="2939" selection-end="2939" vertical-scroll-proportion="0.0" vertical-offset="2091" max-vertical-offset="15180">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="database.js" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/models/database.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="76" column="17" selection-start="2002" selection-end="2002" vertical-scroll-proportion="0.5544355" vertical-offset="1397" max-vertical-offset="2244">
                   <folding />
                 </state>
               </provider>
@@ -159,22 +188,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/views/post.ejs" />
-        <option value="$PROJECT_DIR$/controller/file.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/models/database.js" />
         <option value="$PROJECT_DIR$/views/albums/index.ejs" />
         <option value="$PROJECT_DIR$/controller/album.js" />
-        <option value="$PROJECT_DIR$/controller/user.js" />
         <option value="$PROJECT_DIR$/views/albums/album.ejs" />
         <option value="$PROJECT_DIR$/public/javascripts/application.js" />
         <option value="$PROJECT_DIR$/views/post_list.ejs" />
-        <option value="$PROJECT_DIR$/views/footer.ejs" />
         <option value="$PROJECT_DIR$/routes/index.js" />
-        <option value="$PROJECT_DIR$/controller/post.js" />
         <option value="$PROJECT_DIR$/public/stylesheets/style.styl" />
         <option value="$PROJECT_DIR$/views/header.ejs" />
         <option value="$PROJECT_DIR$/public/lab/dribbble/index.html" />
+        <option value="$PROJECT_DIR$/views/footer.ejs" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/models/database.js" />
+        <option value="$PROJECT_DIR$/settings.js" />
+        <option value="$PROJECT_DIR$/controller/post.js" />
+        <option value="$PROJECT_DIR$/controller/utils.js" />
+        <option value="$PROJECT_DIR$/controller/user.js" />
       </list>
     </option>
   </component>
@@ -435,6 +464,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="routes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Eblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Eblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -461,22 +504,50 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Eblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Eblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Eblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Eblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="recentsLimit" value="5" />
-    <property name="restartRequiresConfirmation" value="true" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea/workspace.xml" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.32932693" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -492,14 +563,6 @@
       <ConfigurationWrapper RunnerId="NodeJS.run" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -510,15 +573,23 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -722,7 +793,11 @@
       <created>1393580339958</created>
       <updated>1393580339958</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="add Dribble to Lab Sys">
+      <created>1393829450276</created>
+      <updated>1393829450276</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -753,11 +828,11 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32479784" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32884097" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="0" y="308" width="1600" height="244" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962631" sideWeight="0.71672356" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18083756" sideWeight="0.7725437" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15989847" sideWeight="0.7250674" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33386075" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16393442" sideWeight="0.30821916" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21698113" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37281293" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="12" y="282" width="1342" height="163" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27493262" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="12" y="282" width="1342" height="163" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22745626" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -777,7 +852,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="Editor function complate  half" />
     <MESSAGE value="Works a lot &#10;Yeah , fix bugs and get more feature .&#10;not so much so far" />
     <MESSAGE value="It seems all basic function completed.&#10;Next is add user setting and blog setting and Photos and Albums" />
     <MESSAGE value="some fix&#10;" />
@@ -802,7 +876,8 @@
     <MESSAGE value="fix some album logic and post sort." />
     <MESSAGE value="go" />
     <MESSAGE value="Fox some style about P style" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fox some style about P style" />
+    <MESSAGE value="add Dribble to Lab Sys" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Dribble to Lab Sys" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -824,32 +899,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/albums/index.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="9" selection-start="500" selection-end="500" vertical-scroll-proportion="-11.379311" vertical-offset="0" max-vertical-offset="858" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="21" selection-start="2693" selection-end="2693" vertical-scroll-proportion="0.0" vertical-offset="1589" max-vertical-offset="2772" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="14" selection-start="531" selection-end="531" vertical-scroll-proportion="0.0" vertical-offset="145" max-vertical-offset="2772">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/post.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="814">
-          <folding>
-            <marker date="1393814407167" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/rails.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8888">
@@ -861,49 +910,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1276">
           <folding>
-            <marker date="1392604143903" expanded="true" signature="190:336" placeholder="{...}" />
-            <marker date="1392604143903" expanded="true" signature="359:562" placeholder="{...}" />
-            <marker date="1392604143903" expanded="true" signature="566:739" placeholder="{...}" />
-            <marker date="1392604143903" expanded="true" signature="829:1000" placeholder="{...}" />
-            <marker date="1392604143903" expanded="true" signature="1004:1175" placeholder="{...}" />
-            <marker date="1392604143903" expanded="true" signature="1432:1618" placeholder="{...}" />
-            <marker date="1392604143903" expanded="true" signature="2464:2567" placeholder="{...}" />
-            <marker date="1392604143903" expanded="true" signature="2571:2675" placeholder="{...}" />
+            <marker date="1392604143903" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1392604143903" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1392604143903" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1392604143903" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1392604143903" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1392604143903" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1392604143903" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1392604143903" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="40" selection-start="1236" selection-end="1236" vertical-scroll-proportion="0.0" vertical-offset="724" max-vertical-offset="1276">
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/post_list.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="20" selection-start="1161" selection-end="1161" vertical-scroll-proportion="0.0" vertical-offset="143" max-vertical-offset="814">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/footer.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="9" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0" vertical-offset="176" max-vertical-offset="616">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="36" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="1518">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/post.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="2" selection-start="3735" selection-end="3735" vertical-scroll-proportion="0.0" vertical-offset="2773" max-vertical-offset="4818">
           <folding />
         </state>
       </provider>
@@ -915,28 +936,97 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/style.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="33" selection-start="2939" selection-end="2939" vertical-scroll-proportion="0.3751783" vertical-offset="2091" max-vertical-offset="15180">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/header.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="20" selection-start="1662" selection-end="1662" vertical-scroll-proportion="-8.344828" vertical-offset="616" max-vertical-offset="1452">
+        <state line="107" column="33" selection-start="2939" selection-end="2939" vertical-scroll-proportion="0.0" vertical-offset="2091" max-vertical-offset="15180">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/lab/dribbble/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="5" selection-start="34" selection-end="34" vertical-scroll-proportion="0.094151214" vertical-offset="0" max-vertical-offset="7348">
+        <state line="3" column="5" selection-start="34" selection-end="34" vertical-scroll-proportion="0.094151214" vertical-offset="0" max-vertical-offset="7348" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/header.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="20" selection-start="1662" selection-end="1662" vertical-scroll-proportion="-8.344828" vertical-offset="616" max-vertical-offset="1452">
+          <folding>
+            <marker date="1393814407166" expanded="true" signature="350:428" placeholder="{...}" />
+            <marker date="1393814407166" expanded="true" signature="1075:1535" placeholder="{...}" />
+            <marker date="1393814407166" expanded="true" signature="1539:1657" placeholder="{...}" />
+            <marker date="1393814407166" expanded="true" signature="1874:2043" placeholder="{...}" />
+            <marker date="1393814407166" expanded="true" signature="2081:2163" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="24" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0" vertical-offset="154" max-vertical-offset="1518">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="4" selection-start="915" selection-end="915" vertical-scroll-proportion="0.0" vertical-offset="669" max-vertical-offset="1298">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="24" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="396">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/post.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="47" selection-start="188" selection-end="231" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4906">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/database.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="17" selection-start="2002" selection-end="2002" vertical-scroll-proportion="0.0" vertical-offset="1397" max-vertical-offset="2244">
+          <folding>
+            <marker date="1393921829106" expanded="true" signature="2389:2484" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/footer.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="823" selection-end="823" vertical-scroll-proportion="-10.034483" vertical-offset="149" max-vertical-offset="616">
+          <folding>
+            <marker date="1393898250358" expanded="true" signature="15:368" placeholder="..." />
+            <marker date="1393898250358" expanded="true" signature="43:358" placeholder="..." />
+            <marker date="1393898250358" expanded="true" signature="63:81" placeholder="..." />
+            <marker date="1393898250358" expanded="true" signature="82:347" placeholder="..." />
+            <marker date="1393898250358" expanded="true" signature="541:720" placeholder="{...}" />
+            <marker date="1393898250358" expanded="true" signature="662:715" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="2" selection-start="1494" selection-end="1494" vertical-scroll-proportion="0.0" vertical-offset="811" max-vertical-offset="1364">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/lab/dribbble/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="152" selection-end="152" vertical-scroll-proportion="0.22481751" vertical-offset="0" max-vertical-offset="748">
+        <state line="7" column="13" selection-start="152" selection-end="152" vertical-scroll-proportion="-3.9655173" vertical-offset="39" max-vertical-offset="748">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="161" column="4" selection-start="5099" selection-end="5099" vertical-scroll-proportion="0.8669355" vertical-offset="3112" max-vertical-offset="3696">
           <folding />
         </state>
       </provider>

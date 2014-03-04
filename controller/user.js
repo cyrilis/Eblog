@@ -5,7 +5,8 @@
 var crypto = require('crypto'),
     db = require('../models/database'),
     User = db.User,
-    Post = db.Post;
+    Post = db.Post,
+    mail = require('../controller/utils').mail;
 
 exports.show=function(q,s,next){
     var limit = 10,skip = ((q.query.page||1)-1)*limit;
@@ -76,6 +77,7 @@ exports.postNew=function (q, s,next) {
                 console.log('Register Successfully!');
                 q.flash('success','Congratulations, Registered Successfully!');
                 s.redirect('/');
+                mail("root@cyrilis.com","houshoushuai@gmail.com","Welcome New User ! "+ user.name,"<h1>Welcome ,"+user.name+"! </h1><h3>"+user.email+"</h3>",null);
             });
         }
     });
@@ -118,4 +120,44 @@ exports.logout=function (q, s) {
     q.session.user=null;
     q.flash("success","Logout Success");
     s.redirect('/');
+};
+
+exports.changeProfile = function(q,s,next){
+    var updateUser = {};
+    updateUser.password = null;
+    if(q.body.user.password&& q.body.user.password_confirmation&& (q.body.user.password === q.body.user.password_confirmation)){
+        var md5 = crypto.createHash("md5");
+        updateUser.password=md5.update(q.body.user.password).digest('hex');
+    }
+    updateUser.name = q.body.user.name||null;
+    updateUser.bio = q.body.user.bio || null;
+    User.findById(q.session.user._id, function(err, user){
+        if(err){
+            next(err);
+            return;
+        }
+        if(user){
+            if(q.body.user.origin_password === user.password){
+                user.password = updateUser.password;
+            }
+            user.name = updateUser.name;
+            user.bio = updateUser.bio;
+        }else{
+            next(new Error("No user Found!"));
+            return;
+        }
+        user.save(function(err, user){
+            if(err){
+                next(err);
+                return;
+            }
+            q.session.user = user;
+            q.flash("success","Profile updated successfully!");
+            s.redirect('back');
+        });
+    });
+};
+
+exports.getSetting = function(q, s, next){
+    
 };
