@@ -1,0 +1,62 @@
+<%- include header.ejs %>
+<div class="container">
+    <div class="setting_sidebar">
+        <ul>
+            <li>
+                <a href="/settings">Profiles</a>
+            </li>
+            <li>
+                <a href="/settings?tab=profile">Profile</a>
+            </li>
+            <li>
+                <a href="/logs">Logs</a>
+            </li>
+        </ul>
+    </div>
+    <div class="setting_content">
+        <ul class="tab_content">
+            <li class="active">
+                <form action="/users" method="post">
+                    <input type="hidden" name="_method" value="PUT"/>
+                    <div class="form-group">
+                        <h3>Change Profile</h3>
+                        <hr class="inner_form"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_name">User name</label>
+                        <input id="user_name" type="text" name="user[name]" value="<%= user.name %>"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_bio">User Bio</label>
+                        <textarea name="user[bio]" id="user_bio" cols="30" rows="5"><%= user.bio %></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_url">User Url</label>
+                        <input type="text" id="user_url" name="user[url]" value="<%= user.url %>"/>
+                    </div>
+                    <div class="form-group">
+                        <h3>Change Password</h3>
+                        <hr class="inner_form"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="origin_password">Origin Password</label>
+                        <input type="password" id="origin_password" name="user[origin_password]"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_password">New Password</label>
+                        <input type="password" id="user_password" name="user[password]"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_password_confirmation">Confirm Password</label>
+                        <input type="password" id="user_password_confirmation" name="user[password_confirmation]"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="submit">&nbsp;</label>
+                        <input type="submit" class="button" id="submit"/>
+                    </div>
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>
+<%- include footer.ejs %>

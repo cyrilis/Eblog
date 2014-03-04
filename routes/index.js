@@ -18,6 +18,7 @@ module.exports = function (app) {
     app.get("/tags/:tag",post.tag);
     app.get("/categories/:category",post.category);
     app.get("/u/:name", user.show);
+//    User actions
     app.get('/reg', checkNotLogin);
     app.get("/reg", user.getNew);
     app.post("/reg", checkNotLogin);
@@ -26,6 +27,8 @@ module.exports = function (app) {
     app.get('/login', user.getLogin);
     app.post("/login", checkNotLogin);
     app.post('/login', user.postLogin);
+    app.get('/settings',user.getSetting);
+//    Post Actions
     app.get('/posts/new', checkLogin);
     app.get('/posts/new', post.getNew);
     app.post('/posts', checkLogin);
