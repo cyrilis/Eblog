@@ -579,6 +579,57 @@ ul.photos_list
     display inline-table
     margin-top 3px
 
+
+/*
+  Settings
+*/
+
+.setting_sidebar
+  width 25%
+  ul
+    list-style none
+    margin 0
+    padding 0
+    border-bottom 1px solid #d8d8d8
+    margin-right 16%
+    li
+      a
+        display block
+        padding 10px 20px
+        //min-width 100px
+        text-transform uppercase
+        background #ffffff
+        border 1px solid #d8d8d8
+        border-bottom 0
+        text-decoration none
+        -webkit-transition: all 0.3s
+        -moz-transition: all 0.3s
+        -ms-transition: all 0.3s
+        -o-transition: all 0.3s
+        transition: all 0.3s
+        &:hover
+          background maincolor
+          color #ffffff
+        i
+          display inline-table
+          vertical-align middle
+          margin-right 10px
+          font-size 1.2em
+.setting_content
+  width 75%
+  margin-bottom 40px
+  .tab_content
+    form
+      input[type="text"],input[type="password"],textarea,input[type='number']
+        width 50%
+      hr.inner_form
+        border 0
+        border-top 1px solid
+        border-color #d8d8d8
+        margin-bottom 20px
+/*
+  Responsive Css
+*/
 @media (max-width: 1024px)
   .container
     width 95%
@@ -593,7 +644,7 @@ ul.photos_list
       text-align left
       float none
 
-@media (max-width: 480px)
+@media (max-width: 540px)
   .logo
     h1
       width 100%
@@ -601,7 +652,6 @@ ul.photos_list
       span
         font-size 24px
         bottom: 40px
-@media (max-width: 540px)
   html.toggled
     overflow hidden
     body

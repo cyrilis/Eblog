@@ -707,6 +707,62 @@ ul.photos_list {
   display: inline-table;
   margin-top: 3px;
 }
+/*
+  Settings
+*/
+.setting_sidebar {
+  width: 25%;
+}
+.setting_sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #d8d8d8;
+  margin-right: 16%;
+}
+.setting_sidebar ul li a {
+  display: block;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  border-bottom: 0;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.setting_sidebar ul li a:hover {
+  background: #18b0b6;
+  color: #fff;
+}
+.setting_sidebar ul li a i {
+  display: inline-table;
+  vertical-align: middle;
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+.setting_content {
+  width: 75%;
+  margin-bottom: 40px;
+}
+.setting_content .tab_content form input[type="text"],
+.setting_content .tab_content form input[type="password"],
+.setting_content .tab_content form textarea,
+.setting_content .tab_content form input[type='number'] {
+  width: 50%;
+}
+.setting_content .tab_content form hr.inner_form {
+  border: 0;
+  border-top: 1px solid;
+  border-color: #d8d8d8;
+  margin-bottom: 20px;
+}
+/*
+  Responsive Css
+*/
 @media (max-width: 1024px) {
   .container {
     width: 95%;
@@ -723,7 +779,7 @@ ul.photos_list {
     float: none;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 540px) {
   .logo h1 {
     width: 100%;
     font-size: 64px;
@@ -732,8 +788,6 @@ ul.photos_list {
     font-size: 24px;
     bottom: 40px;
   }
-}
-@media (max-width: 540px) {
   html.toggled {
     overflow: hidden;
   }

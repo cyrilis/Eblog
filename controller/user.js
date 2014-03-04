@@ -161,3 +161,6 @@ exports.changeProfile = function(q,s,next){
 exports.getSetting = function(q, s, next){
     s.render("settings");
 };
+exports.getProfiles = function(q, s, next){
+    s.render("profiles");
+};

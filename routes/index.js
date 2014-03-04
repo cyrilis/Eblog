@@ -27,7 +27,10 @@ module.exports = function (app) {
     app.get('/login', user.getLogin);
     app.post("/login", checkNotLogin);
     app.post('/login', user.postLogin);
+    app.get('/settings',checkLogin);
     app.get('/settings',user.getSetting);
+    app.get('/profiles',checkLogin);
+    app.get('/profiles',user.getProfiles);
 //    Post Actions
     app.get('/posts/new', checkLogin);
     app.get('/posts/new', post.getNew);
