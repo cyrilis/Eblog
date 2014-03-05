@@ -1,4 +1,4 @@
-<%- include ../header.ejs %>
+<%- include ../_header.ejs %>
 <div class="container albums">
     <% if(user&&user._id == album.user){ %>
     <button onclick="addPhoto();return false;" class="button pull-right">Add Photo</button>
@@ -20,4 +20,4 @@
 <form action="/photos/new" method="post" target="#new_photo">
 
 </form>
-<% include ../footer.ejs %>
+<% include ../_footer.ejs %>

@@ -1,4 +1,4 @@
-<%- include header.ejs %>
+<%- include _header.ejs %>
 <div class="container posts">
     <div class="author clearfix">
         <a href="/u/<%= author.name %>"><img class="avatar" src="<%= author.avatar %>" alt=""/></a>
@@ -8,4 +8,4 @@
     </div>
     <% include post_list.ejs %>
 </div>
-<% include footer.ejs %>
+<% include _footer.ejs %>

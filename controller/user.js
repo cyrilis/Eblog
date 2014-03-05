@@ -159,8 +159,8 @@ exports.changeProfile = function(q,s,next){
 };
 
 exports.getSetting = function(q, s, next){
-    s.render("settings");
+    s.render("settings/site");
 };
 exports.getProfiles = function(q, s, next){
-    s.render("profiles");
+    s.render("settings/profile");
 };

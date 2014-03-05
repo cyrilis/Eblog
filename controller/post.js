@@ -46,6 +46,10 @@ exports.index = function(q,s,next){
     });
 };
 
+
+
+
+
 exports.tag = function(q,s,next){
     var limit = 10,skip= ((q.query.page||1)-1)*limit;
     var query = {'tags': q.params.tag};
@@ -215,4 +219,31 @@ exports.postDelete=function(q,s,next){
             s.redirect("/");
         }
     );
+};
+
+exports.settingPages = function(q,s,next){
+    var skip, limit;
+    limit = 10;
+    skip = ((q.params.page||1)-1)*limit;
+    Post.find().count(null,function(err, count){
+        if(err){
+            console.log(err);
+            next(err);
+            return;
+        }
+        Post.find().skip(skip).limit(limit).sort('-_id').populate('user').exec(function(err,posts){
+            if(err){
+                console.log();
+                next(err);
+                return;
+            }
+            s.render('settings/posts',{
+                posts: posts,
+                count: count,
+                limit: limit,
+                page: q.query.page||1,
+                title: "Home"
+            });
+        });
+    });
 };

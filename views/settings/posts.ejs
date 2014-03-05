@@ -1,0 +1,24 @@
+<%- include ../_header.ejs %>
+<div class="container clearfix">
+    <%- include _setting_sidebar.ejs %>
+    <div class="setting_content pull-left">
+        <div class="tab_content">
+            <ul class="post_list_tab">
+                <% posts.forEach(function(post){ %>
+                <li>
+                    <a href="/posts/<%= post.slug %>/edit"><h2><%= post.title %></h2></a>
+                </li>
+                <%}) %>
+            </ul>
+            <div class="pagination clearfix">
+                <% if(page-1>0){    %>
+                <a class="button prev" href="/pages/<%= +page-1 %>">Prev</a>
+                <%} %>
+                <%if(count/5>page){ %>
+                <a class="button next" href="/pages/<%= +page+1 %>">Next</a>
+                <%}   %>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include ../_footer.ejs %>
