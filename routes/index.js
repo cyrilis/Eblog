@@ -38,6 +38,7 @@ module.exports = function (app) {
     app.put('/password',user.changePassword);
     app.put('/about',checkLogin);
     app.put('/about',user.updateAbout);
+    app.get('/about',user.getAbout);
 //    Post Actions
     app.get('/posts/new', checkLogin);
     app.get('/posts/new', post.getNew);

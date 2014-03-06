@@ -2,7 +2,7 @@
  * Created by never on 13-10-27.
  */
 "use strict";
-$.ready(function(){
+$(document).ready(function(){
     var newTag = $('#newTag');
     var submitPost = function(){
         if(!$('#post_title_outer').val()){

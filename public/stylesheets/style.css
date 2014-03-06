@@ -1,6 +1,6 @@
 /**
  * Created by Cyril on 13-10-22.
-maincolor = #0DB397
+ * maincolor = #0DB397
  */
 @font-face {
   font-family: 'Open Sans';
@@ -41,7 +41,6 @@ body {
   color: #555;
   position: relative;
   opacity: 1;
-  overflow: scroll;
 }
 body.unloaded * {
   -webkit-transition: none !important;
