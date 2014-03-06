@@ -18,7 +18,9 @@ var UserSchema = new Schema({
     bio: {type: String, default: '这个人很懒，什么也没写。'},
     posts: [{
         type:ObjectId, ref: 'Post'
-    }]
+    }],
+    url: {type: String, default:""},
+    about: {type:String, default: ""}
 });
 
 var PostSchema = new Schema({

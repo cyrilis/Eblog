@@ -9,6 +9,7 @@ var Post = db.Post,
     mail = require('../controller/utils').mail;
 exports.all = function(q,s,next){
     log(q);
+
     s.locals({
         session: q.session,
         flash: q.flash,
@@ -31,7 +32,7 @@ exports.index = function(q,s,next){
         }
         Post.find().skip(skip).limit(limit).sort('-_id').populate('user').exec(function(err,posts){
             if(err){
-                console.log();
+                console.log(err);
                 next(err);
                 return;
             }
@@ -127,7 +128,7 @@ exports.postNew=function (q, s, next) {
     postObj.tags = q.body.post.tags.split('|').map(function(e){return e.trim();}).filter(function(n){return n;});
     var newPost = new Post(q.body.post);
     newPost.save(function(err,post){
-        console.log(post);
+        //console.log(post);
         if(err){
             console.log(err);
             q.flash('error',err.message);
@@ -148,7 +149,7 @@ exports.show=function(q,s){
             s.redirect('back');
             return;
         }
-        console.log(q.params.slug);
+        //console.log(q.params.slug);
         var post = posts[0];
         if(!post){
             s.redirect(404,'404');
@@ -191,7 +192,7 @@ exports.postEdit=function(q,s,next){
     postObj.user = q.session.user._id;
     var _id = postObj._id;
     delete postObj._id;
-    console.log(postObj);
+    //console.log(postObj);
     postObj.tags = postObj.tags.split('|').map(function(e){return e.trim();}).filter(function(n){return n;});
     Post.findByIdAndUpdate(_id,{title: postObj.title, content: postObj.content,tags: postObj.tags,category: postObj.category},function(err,post){
         if(err){

@@ -15,6 +15,7 @@ exports.show=function(q,s,next){
             console.log(err);
             q.flash('err',err.message);
             next(err);
+            return;
         }
         if(!user){
             s.redirect(404,'404');
@@ -22,7 +23,7 @@ exports.show=function(q,s,next){
         }
         Post.find({user:user._id}).count(function(err,count){
             Post.find({user: user._id}).populate('user').sort('-_id').exec(function(err,posts){
-                console.log(posts[0]);
+//                console.log(posts[0]);
                 s.render('user',{
                     title: user.name,
                     author: user,
@@ -108,7 +109,7 @@ exports.postLogin=function (q, s) {
             }
             console.log(1);
             q.flash('error','Error, Please Check your password.');
-            s.redirct('back');
+            s.redirect('back');
         }else{
             console.log(user);
             q.flash('error',"Error, User doesn't Exist");
@@ -124,43 +125,91 @@ exports.logout=function (q, s) {
 
 exports.changeProfile = function(q,s,next){
     var updateUser = {};
-    updateUser.password = null;
-    if(q.body.user.password&& q.body.user.password_confirmation&& (q.body.user.password === q.body.user.password_confirmation)){
-        var md5 = crypto.createHash("md5");
-        updateUser.password=md5.update(q.body.user.password).digest('hex');
-    }
     updateUser.name = q.body.user.name||null;
     updateUser.bio = q.body.user.bio || null;
-    User.findById(q.session.user._id, function(err, user){
+    updateUser.url = q.body.user.url || null;
+    User.findByIdAndUpdate(q.session.user._id, updateUser ,function(err, user){
         if(err){
             next(err);
             return;
         }
         if(user){
-            if(q.body.user.origin_password === user.password){
-                user.password = updateUser.password;
-            }
-            user.name = updateUser.name;
-            user.bio = updateUser.bio;
-        }else{
-            next(new Error("No user Found!"));
-            return;
-        }
-        user.save(function(err, user){
-            if(err){
-                next(err);
-                return;
-            }
             q.session.user = user;
             q.flash("success","Profile updated successfully!");
             s.redirect('back');
-        });
+        }else{
+            next(new Error("No user Found!"));
+        }
     });
 };
-
+exports.changePassword = function(q,s,next){
+    if(q.body.user.origin_password){
+        if(q.body.user.password && (q.body.user.password === q.body.user.password_confirmation)){
+            User.findById(q.session.user._id,function(err, user){
+                if(!user){
+                    next(new Error("User doesn't Exist!"));
+                    return;
+                }
+                var md5 = crypto.createHash("md5");
+                var originPassword = q.body.user.origin_password;
+                var hashedPassword = md5.update(originPassword).digest('hex');
+                console.log(hashedPassword);
+                if(user.password===hashedPassword){
+                    var md6 = crypto.createHash("md5");
+                    var newPassword = q.body.user.password;
+                    newPassword = crypto.createHash("md5").update(newPassword).digest('hex');
+                    console.log(user.password);
+                    user.update({password: newPassword},function(err,user){
+                        if(err){
+                            next(err);
+                            return;
+                        }
+                        q.session.user = user;
+                        q.flash("success","User Password Updated Successfully!");
+                        s.redirect("back");
+                    });
+                }else{
+                    q.flash("error","User Origin Password doesn't match!");
+                    s.redirect('back');
+                }
+            });
+        }else{
+            q.flash("error","New Password and Password confirmation doesn't match or doesn't exist!");
+            s.redirect("back");
+        }
+    }else{
+        q.flash("error","Original Password Should Be filed!.");
+        s.redirect("back");
+    }
+};
 exports.getSetting = function(q, s, next){
     s.render("settings/site");
 };
 exports.getProfiles = function(q, s, next){
     s.render("settings/profile");
+};
+exports.getEditAbout= function(q,s,next){
+    s.render("settings/about",{
+        mode: "edit"
+    });
+};
+exports.updateAbout = function(q,s,next){
+    console.log(q.body.user);
+    if(q.body.user.about){
+        User.findByIdAndUpdate(q.session.user._id,{about: q.body.user.about},function(err, user){
+            if(err){
+                next(err);
+                return;
+            }
+            q.session.user = user;
+            q.flash("success","User About Page updated successfully!");
+            s.redirect('back');
+        });
+    }else{
+        q.flash("error","No Content, Please Try again!");
+        s.redirect('back');
+    }
+};
+exports.getAbout = function(q,s,next){
+    s.render("about");
 };

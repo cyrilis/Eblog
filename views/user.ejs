@@ -4,7 +4,8 @@
         <a href="/u/<%= author.name %>"><img class="avatar" src="<%= author.avatar %>" alt=""/></a>
         <div class="author_name"><%= author.name  %></div>
         <div class="author_email"><a href="mailto:<%= author.email %>"><%= author.email %></a></div>
-        <div class="author_link"><a href="<%= author.link %>"><%= author.link %></a></div>
+        <div class="author_link"><a href="<%= author.url %>"><%= author.url %></a></div>
+        <div class="author_link"><p><%= author.bio %></p></div>
     </div>
     <% include post_list.ejs %>
 </div>

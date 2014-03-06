@@ -31,6 +31,13 @@ module.exports = function (app) {
     app.get('/settings/site',user.getSetting);
     app.get('/settings/profile',user.getProfiles);
     app.get('/settings/posts',post.settingPages);
+    app.get('/settings/about',user.getEditAbout);
+    app.put('/users',checkLogin);
+    app.put('/users',user.changeProfile);
+    app.put('/password',checkLogin);
+    app.put('/password',user.changePassword);
+    app.put('/about',checkLogin);
+    app.put('/about',user.updateAbout);
 //    Post Actions
     app.get('/posts/new', checkLogin);
     app.get('/posts/new', post.getNew);
