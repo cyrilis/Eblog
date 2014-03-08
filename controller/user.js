@@ -42,6 +42,7 @@ exports.getNew=function (q, s) {
     s.render("reg", {title: 'Register'});
 };
 exports.postNew=function (q, s,next) {
+
     var user = q.body.user;
     if(!(user.name&&user.password&&user.password_confirmation&&user.email)){
         q.flash('error',"Please fill all the field in the form!");
@@ -67,19 +68,33 @@ exports.postNew=function (q, s,next) {
             q.flash('error','Your Email has Been Used, Try Login?');
             s.redirect('back');
         }else{
-            newUser.save(function(err,user){
+            User.count(function(err,count){
                 if(err){
                     console.log(err);
-                    q.flash('error',err.message);
+                    next(err);
+                    return;
+                }
+                if(count>0){
+                    console.log("You Are Not Allowed To Register!");
+                    q.flash('error',"Sorry, But You Are Not Allowed To Register!");
                     s.redirect('back');
                     return;
                 }
-                q.session.user = user;
-                console.log('Register Successfully!');
-                q.flash('success','Congratulations, Registered Successfully!');
-                s.redirect('/');
-                mail("root@cyrilis.com","houshoushuai@gmail.com","Welcome New User ! "+ user.name,"<h1>Welcome ,"+user.name+"! </h1><h3>"+user.email+"</h3>",null);
+                newUser.save(function(err,user){
+                    if(err){
+                        console.log(err);
+                        q.flash('error',err.message);
+                        s.redirect('back');
+                        return;
+                    }
+                    q.session.user = user;
+                    console.log('Register Successfully!');
+                    q.flash('success','Congratulations, Registered Successfully!');
+                    s.redirect('/');
+                    mail("robot@again.cc","houshoushuai@gmail.com","Welcome New User ! "+ user.name,"<h1>Welcome ,"+user.name+"! </h1><h3>"+user.email+"</h3>",null);
+                });
             });
+
         }
     });
 
