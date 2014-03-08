@@ -54,7 +54,7 @@
           <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="53" column="3" selection-start="1495" selection-end="1495" vertical-scroll-proportion="0.8795987" vertical-offset="587" max-vertical-offset="1260">
+                <state line="52" column="76" selection-start="1462" selection-end="1462" vertical-scroll-proportion="0.8444816" vertical-offset="587" max-vertical-offset="1260">
                   <folding />
                 </state>
               </provider>
@@ -1000,7 +1000,11 @@
       <created>1394294963963</created>
       <updated>1394294963963</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="fix env and listen address">
+      <created>1394295976448</created>
+      <updated>1394295976448</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1075,7 +1079,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="Changed  a Lot" />
     <MESSAGE value="Made any Change?" />
     <MESSAGE value="fix onload css3 transition" />
     <MESSAGE value="add prefix as a lib :cupid:" />
@@ -1100,7 +1103,8 @@
     <MESSAGE value="some post" />
     <MESSAGE value="Fix application js" />
     <MESSAGE value="Almost Done!&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Almost Done!&#10;" />
+    <MESSAGE value="fix env and listen address" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix env and listen address" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1279,7 +1283,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="3" selection-start="1495" selection-end="1495" vertical-scroll-proportion="0.8795987" vertical-offset="587" max-vertical-offset="1260">
+        <state line="52" column="76" selection-start="1462" selection-end="1462" vertical-scroll-proportion="0.8444816" vertical-offset="587" max-vertical-offset="1260">
           <folding />
         </state>
       </provider>
