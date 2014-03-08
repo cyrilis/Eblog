@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1f2b440-a030-4a6e-b81d-18bc193abbfe" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/utils.js" afterPath="$PROJECT_DIR$/controller/utils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="test.iws" />
@@ -29,19 +29,19 @@
     <splitter split-orientation="horizontal" split-proportion="0.52091926">
       <split-first>
         <leaf>
-          <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="54" column="0" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.0" vertical-offset="587" max-vertical-offset="1260">
+                <state line="54" column="0" selection-start="1497" selection-end="1497" vertical-scroll-proportion="0.9147157" vertical-offset="587" max-vertical-offset="1260">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="utils.js" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="utils.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/controller/utils.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="16" column="25" selection-start="470" selection-end="470" vertical-scroll-proportion="0.5499182" vertical-offset="0" max-vertical-offset="1302">
+                <state line="17" column="31" selection-start="502" selection-end="502" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1302">
                   <folding />
                 </state>
               </provider>
@@ -68,7 +68,7 @@
           <file leaf-file-name="site.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/controller/site.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="88" column="33" selection-start="2384" selection-end="2384" vertical-scroll-proportion="0.0" vertical-offset="1405" max-vertical-offset="2037">
+                <state line="51" column="7" selection-start="1470" selection-end="1470" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="2037">
                   <folding />
                 </state>
               </provider>
@@ -224,8 +224,8 @@
         <option value="$PROJECT_DIR$/public/stylesheets/style.styl" />
         <option value="$PROJECT_DIR$/controller/user.js" />
         <option value="$PROJECT_DIR$/views/_header.ejs" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/controller/utils.js" />
+        <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
   </component>
@@ -468,64 +468,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Eblog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="style.styl" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Eblog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Eblog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1017,7 +959,11 @@
       <created>1394297891243</created>
       <updated>1394297891243</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="fix location lookup">
+      <created>1394298047199</created>
+      <updated>1394298047199</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1092,7 +1038,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="fix DATABASE." />
     <MESSAGE value="use mongoose instead of mongodb." />
     <MESSAGE value="Tobe  Effective." />
     <MESSAGE value="Go to McDonald's. Back Soon." />
@@ -1117,7 +1062,8 @@
     <MESSAGE value="temporarily get rid of albums" />
     <MESSAGE value="cancel listen on only localhost" />
     <MESSAGE value="fix get ip Error." />
-    <option name="LAST_COMMIT_MESSAGE" value="fix get ip Error." />
+    <MESSAGE value="fix location lookup" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix location lookup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1215,13 +1161,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/site.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="33" selection-start="2384" selection-end="2384" vertical-scroll-proportion="0.0" vertical-offset="1405" max-vertical-offset="2037">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/database.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="87" column="3" selection-start="2244" selection-end="2244" vertical-scroll-proportion="0.0" vertical-offset="1302" max-vertical-offset="2499">
@@ -1269,16 +1208,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/controller/utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.0" vertical-offset="587" max-vertical-offset="1260">
+        <state line="17" column="31" selection-start="502" selection-end="502" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1302">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/utils.js">
+    <entry file="file://$PROJECT_DIR$/controller/site.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="25" selection-start="470" selection-end="470" vertical-scroll-proportion="0.5499182" vertical-offset="0" max-vertical-offset="1302">
+        <state line="51" column="7" selection-start="1470" selection-end="1470" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="2037">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="0" selection-start="1497" selection-end="1497" vertical-scroll-proportion="0.9147157" vertical-offset="587" max-vertical-offset="1260">
           <folding />
         </state>
       </provider>
