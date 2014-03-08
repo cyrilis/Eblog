@@ -46,7 +46,7 @@ exports.mail = function(from, to , subject, html, text){
     var mailOptions = {
         to: to,
         from: from,
-        subject: "[EBlog]"+subject,
+        subject: "[EBlog Notification] "+subject,
         text: text,
         html: html
     };

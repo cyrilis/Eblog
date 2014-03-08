@@ -193,23 +193,4 @@ exports.getEditAbout= function(q,s,next){
         mode: "edit"
     });
 };
-exports.updateAbout = function(q,s,next){
-    console.log(q.body.user);
-    if(q.body.user.about){
-        User.findByIdAndUpdate(q.session.user._id,{about: q.body.user.about},function(err, user){
-            if(err){
-                next(err);
-                return;
-            }
-            q.session.user = user;
-            q.flash("success","User About Page updated successfully!");
-            s.redirect('back');
-        });
-    }else{
-        q.flash("error","No Content, Please Try again!");
-        s.redirect('back');
-    }
-};
-exports.getAbout = function(q,s,next){
-    s.render("about");
-};
+

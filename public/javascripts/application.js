@@ -126,8 +126,26 @@ $(document).ready(function(){
         $(this).parent().toggleClass('open');
         return false;
     });
-    $("header .toggle_sidebar").on("click",function(){
+    $("header .toggle_sidebar").on("touchstart",function(e){
+        e.preventDefault();
         $('header').toggleClass("show");
-        $('.logo, main, footer,html').toggleClass('toggled');
+        $('html').toggleClass('toggled');
     });
+    $('body').on('click','main,.logo,.footer',function(e){
+        if($("html").hasClass('toggled')){
+            $('header').removeClass('show');
+            $('html').removeClass('toggled');
+        }
+    });
+//    Highlight Code
+//    Powered By Highlight.js
+    function highlight(){
+        var code = document.getElementsByTagName('pre');
+        Array.prototype.map.call(code, function(e){
+            window.hljs.highlightBlock(e);
+        });
+    }
+    window.hljs.configure({useBR: true});
+    highlight();
+
 });

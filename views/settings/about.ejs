@@ -4,7 +4,7 @@
         <input type="hidden" name="_method" value="PUT"/>
         <h2>Edit About Page</h2>
         <div style="margin: 20px 0;width: 1000px">
-            <textarea name="user[about]" id="post_content" cols="30" rows="10" style="width: 100%;height: 400px"><%- user.about %></textarea>
+            <textarea name="site[about]" id="post_content" cols="30" rows="10" style="width: 100%;height: 400px"><%- site?site.about:"" %></textarea>
         </div>
         <div class="form-group">
             <input type="submit" class="button pull-right" value="Update About"/>

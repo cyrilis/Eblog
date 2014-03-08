@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%- title %>- EBlog</title>
+    <title><%- title %> - <%= site&&site.name? site.name: " EBlog" %></title>
     <link rel="stylesheet" href="/stylesheets/normalize.css"/>
     <%if(mode == "new"||mode == "edit"){%>
     <link rel="stylesheet" href="/stylesheets/turquoise.min.css"/>
     <%}%>
     <link rel="stylesheet" href="/stylesheets/icon_style.css"/>
     <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <link rel="stylesheet" href="/stylesheets/monokai_sublime.min.css">
+    <script src="/javascripts/highlight.min.js"></script>
 </head>
 <body class="unloaded" onload="document.body.className='loaded'">
     <div class="logo container">
         <h1>
-            <a href="/">Cyrilis.com</a>
-            <span>Everything in the World</span>
+            <a href="/"><%= site&&site.logo? site.logo : "Cyilis.com" %></a>
+            <span><%= site&&site.desc? site.desc : "Just Another EBlog" %></span>
         </h1>
     </div>
 <header>

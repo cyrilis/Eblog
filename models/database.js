@@ -19,8 +19,7 @@ var UserSchema = new Schema({
     posts: [{
         type:ObjectId, ref: 'Post'
     }],
-    url: {type: String, default:""},
-    about: {type:String, default: ""}
+    url: {type: String, default:""}
 });
 
 var PostSchema = new Schema({
@@ -44,6 +43,7 @@ postDate.get(function(){
 //    2014-02-16 18:02:30
     return moment(this.time).lang('zh-cn').format('LL');
 });
+
 
 var AlbumSchema = new Schema({
     id: ObjectId,
@@ -82,17 +82,32 @@ var LogSchema = new Schema({
     os: String
 });
 
+var logDate = LogSchema.virtual('time');
+logDate.get(function(){
+    return moment(this.date).lang('zh-cn').format("YYYY/MM/DD/H:mm:ss");
+});
+
+var SiteSchema = new Schema({
+    id: ObjectId,
+    name: String,
+    about: String,
+    logo: String,
+    desc: String
+});
+
 var connection = mongoose.createConnection(settings.dburl),
     User = connection.model('User',UserSchema),
     Post = connection.model('Post',PostSchema),
     Album = connection.model('Album',AlbumSchema),
     Photo = connection.model('Photo',PhotoSchema),
-    Log   = connection.model("Log", LogSchema);
+    Log   = connection.model("Log", LogSchema),
+    Site  = connection.model("Site", SiteSchema);
 
 module.exports = {
     'User': User,
     'Post': Post,
     'Album': Album,
     'Photo': Photo,
-    'Log' : Log
+    'Log' : Log,
+    'Site': Site
 };

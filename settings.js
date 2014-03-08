@@ -7,7 +7,7 @@ module.exports = {
     host: 'localhost',
     dburl: 'mongodb://localhost/EPost',
     mailgun:{
-        user: "postmaster@again.cc",
-        pass: "Youdick!"
+        user: "robot@again.cc",
+        pass: "WhatEver!"
     }
 };

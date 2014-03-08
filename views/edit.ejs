@@ -1,5 +1,5 @@
 <%- include _header.ejs   %>
-<div class="container">
+<div class="container" xmlns="http://www.w3.org/1999/html">
 
 
 
@@ -17,7 +17,7 @@
         <% }   %>
         <div style="margin: 20px 0;width: 1000px">
             <% if(post&&post._id){   %>
-            <textarea name="post[content]" id="post_content" cols="30" rows="10" style="width: 100%;height: 400px"><%- post.content   %></textarea>
+            <script name="post[content]" id="post_content" cols="30" rows="10" style="display: block;width: 100%;height: 500px"><%- post.content   %></script>
             <% }else{   %>
             <textarea name="post[content]" id="post_content" cols="30" rows="10" style="width: 100%;height: 400px"><p>Page Content...</p></textarea>
             <%}   %>

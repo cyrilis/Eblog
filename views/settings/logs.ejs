@@ -1,0 +1,48 @@
+<%- include ../_header.ejs %>
+<div class="container clearfix">
+    <%- include _setting_sidebar.ejs %>
+    <div class="setting_content pull-left">
+        <div class="tab_content">
+            <table class="bordered">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>hasUser</th>
+                        <th>Method</th>
+                        <th>Url</th>
+                        <th>IP</th>
+                        <th>Country</th>
+                        <th>City</th>
+                        <th>Browser</th>
+                        <th>Version</th>
+                        <th>OS</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <% logs.forEach(function(log){ %>
+                    <tr>
+                        <td><%= log.time %></td>
+                        <td><%= !!log.user %></td>
+                        <td><%= log.method %></td>
+                        <td><%= log.url %></td>
+                        <td><%= log.ip %></td>
+                        <td><%= log.country %></td>
+                        <td><%= log.city %></td>
+                        <td><%= log.browser %></td>
+                        <td><%= log.version %></td>
+                        <td><%= log.os %></td>
+                    </tr>
+                    <%}) %>
+                </tbody>
+            </table>
+            <div class="pagination clearfix">
+                <% if(page-1>0){    %>
+                <a class="button prev" href="?page=/<%= +page-1 %>">Prev</a>
+                <%} %>
+                <a class="button next" href="?page=<%= +page+1 %>">Next</a>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include ../_footer.ejs %>

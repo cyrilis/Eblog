@@ -3,7 +3,7 @@
     <%- include _setting_sidebar.ejs %>
     <div class="setting_content pull-left">
         <div class="tab_content">
-            <form action="/sites" method="post">
+            <form action="/site" method="post">
                 <input type="hidden" name="_method" value="PUT"/>
                 <div class="form-group">
                     <h3>Change Site Settings</h3>
@@ -11,17 +11,17 @@
                 </div>
                 <div class="form-group">
                     <label for="site_name">Site Name</label>
-                    <input id="site_name" type="text" name="site[name]" value="<%= user.name %>"/>
+                    <input id="site_name" type="text" name="site[name]" value="<%= site?site.name:"" %>"/>
                     <p class="form_info">Show in Title</p>
                 </div>
                 <div class="form-group">
                     <label for="site_logo">Logo Name</label>
-                    <input type="text" id="site_logo" name="site[logo]"/>
+                    <input type="text" id="site_logo" name="site[logo]" value="<%= site? site.logo:"" %>"/>
                     <p class="form_info">Show as Logo name</p>
                 </div>
                 <div class="form-group">
                     <label for="site_description">Site Description</label>
-                    <input type="text" id="site_description" name="site[desc]" value="<%= user.desc %>"/>
+                    <input type="text" id="site_description" name="site[desc]" value="<%= site? site.desc:"" %>"/>
                     <p class="form_info">Show as The description beneath the logo</p>
                 </div>
                 <div class="form-group">

@@ -6,18 +6,22 @@ var db = require('../models/database.js');
 var Post = db.Post,
     User = db.User,
     log  = require('../controller/utils').log,
-    mail = require('../controller/utils').mail;
+    mail = require('../controller/utils').mail,
+    Site = db.Site;
 exports.all = function(q,s,next){
     log(q);
-
-    s.locals({
-        session: q.session,
-        flash: q.flash,
-        user: q.session.user||null,
-        title: 'Eblog',
-        mode: null
+    Site.findOne(function(err,site){
+        s.locals({
+            session: q.session,
+            flash: q.flash,
+            user: q.session.user||null,
+            title: 'Eblog',
+            mode: null,
+            site: site
+        });
+        next();
     });
-    next();
+
 };
 
 exports.index = function(q,s,next){
@@ -65,6 +69,7 @@ exports.tag = function(q,s,next){
                 title: 'Tags: '+ q.params.tag + ' - Page: '+ (q.query.page||1),
                 posts: posts,
                 count: count,
+                limit: limit,
                 page: q.query.page || 1
             });
         });
@@ -92,6 +97,7 @@ exports.category= function(q,s,next){
                 title: 'Category: '+ q.params.category,
                 posts: posts,
                 count: count,
+                limit: limit,
                 page: q.query.page || 1
             });
         });
@@ -137,7 +143,7 @@ exports.postNew=function (q, s, next) {
         }
         q.flash('success',"New Post Created!");
         s.redirect('/');
-        mail("root@cyrilis.com","houshoushuai@gmail.com","Just Posted 《"+post.title+"》a new Blog!","<h1>"+post.title+"</h1>"+post.content,null);
+        mail("robot@again.cc","houshoushuai@gmail.com","Just Posted 《"+post.title+"》 a new Blog!","<h1>"+post.title+"</h1>"+post.content,null);
     });
 };
 
@@ -202,7 +208,7 @@ exports.postEdit=function(q,s,next){
         }
         q.flash('success',"Post Updated Successfully!");
         s.redirect('back');
-        mail("root@cyrilis.com","houshoushuai@gmail.com","The Post 《"+post.title+"》 Got Updated!","<h1>"+post.title+"</h1>"+post.content,null);
+        mail("robot@again.cc","houshoushuai@gmail.com","The Post 《"+post.title+"》 Got Updated!","<h1>"+post.title+"</h1>"+post.content,null);
     });
 };
 
@@ -215,7 +221,7 @@ exports.postDelete=function(q,s,next){
                 return;
             }
             post.remove();
-            mail("root@cyrilis.com","houshoushuai@gmail.com","One Post Got Deleted!","<h1>"+post.title+"</h1>"+post.content,null);
+            mail("robot@again.cc","houshoushuai@gmail.com","One Post Got Deleted!","<h1>"+post.title+"</h1>"+post.content,null);
             q.flash("success", "The post was deleted successfully!");
             s.redirect("/");
         }

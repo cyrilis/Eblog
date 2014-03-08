@@ -69,8 +69,16 @@ blockquote
   font-size 16px
   background #f8f8f8
   margin-bottom: 10px
-pre,code
+pre
   font-family Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif
+  border-left 5px solid maincolor
+  padding 20px
+  font-size 16px
+  overflow-x auto
+  p
+    margin 0
+pre.hljs
+  padding 20px
 input:not([type='submit']):not([type='radio']):not([type='checkbox']),textarea,select
   width: 260px
   line-height 19px
@@ -113,19 +121,14 @@ input[type="radio"],input[type='checkbox']
     &::selection
       background rgba(0,0,0,.3)
       color #0099ff
-#resize_arrow
-  padding 0
-  margin 0
-  margin-left -5px
-  margin-top -5px
-  display block
-  height 10px
-  width 10px
-  position absolute
-  background #000
-  line-height 0
-  cursor: nw-resize
-  z-index 1000
+
+table.bordered
+  border 1px solid #d8d8d8
+  margin-bottom 20px
+  tbody
+    td
+      border 1px solid #d8d8d8
+      border-right 0
 .container
   width: 1000px;
   margin: 0 auto;
@@ -400,7 +403,7 @@ main
         .post_title
           h2
             color #777
-            font-size 40px
+            font-size 37px
             line-height 1
             font-weight 400
             margin 0.8em 0
@@ -651,40 +654,24 @@ ul.photos_list
       span
         font-size 24px
         bottom: 40px
-  html.toggled
-    overflow hidden
-    body
-      overflow hidden
-  .logo
-  main
-  footer
-    -webkit-transition: -webkit-transform 0.3s
-    -moz-transition: -moz-transform 0.3s
-    -ms-transition: -ms-transform 0.3s
-    -o-transition: -o-transform 0.3s
-    transition: transform 0.3s
-  .logo.toggled
-  main.toggled
-  footer.toggled
-    /*-webkit-transform: translateX(75%);*/
-    -webkit-transform: translateX(75%)
-    -moz-transform: translateX(75%)
-    -ms-transform: translateX(75%)
-    -o-transform: translateX(75%)
-    transform: translateX(75%)
-    border-left 1px solid #d8d8d8
   header
     position fixed
     top 0
-    left -75%
-    width 75%
+    left -70%
+    width 70%
+    height 100%
     z-index 10000
     background #ffffff
-    -webkit-transition: left 0.3s
-    -moz-transition: left 0.3s
-    -ms-transition: left 0.3s
-    -o-transition: left 0.3s
-    transition: left 0.3s
+    -webkit-transition: all 0.3s
+    -moz-transition: all 0.3s
+    -ms-transition: all 0.3s
+    -o-transition: all 0.3s
+    transition: all 0.3s
+    border 0
+    border-right 1px solid #d8d8d8
+    -webkit-box-shadow: 0 0 0 0 rbgb(0, 0, 0, 0)
+    -moz-box-shadow: 0 0 0 0 rbgb(0, 0, 0, 0)
+    box-shadow: 0 0 0 0 rbgb(0, 0, 0, 0)
     .header_navs
       margin 0
       width 100%
@@ -694,9 +681,12 @@ ul.photos_list
         li
           float none
           display block
+          .sub_nav
+            a
+              border-left 1px solid #d8d8d8
           a
             margin-left -1px
-            border-right 1px solid #d8d8d8
+            border-right 0
             border-bottom 1px solid #d8d8d8
     .toggle_sidebar
       display block
@@ -720,13 +710,17 @@ ul.photos_list
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       &:before
-        content "\e601"
+        content "\e617"
         display block
         font-size 44px
         line-height 54px
         text-align center
+        color maincolor
     &.show
       left 0
+      -webkit-box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 0.75);
       .toggle_sidebar:before
         content "×"
         line-height 44px

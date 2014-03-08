@@ -10,6 +10,7 @@ var user = require('../controller/user.js'),
     post = require('../controller/post.js'),
     file = require('../controller/file.js');
 var album= require('../controller/album.js');
+var site = require('../controller/site.js');
 
 module.exports = function (app) {
     app.all("*", post.all);
@@ -28,7 +29,7 @@ module.exports = function (app) {
     app.post("/login", checkNotLogin);
     app.post('/login', user.postLogin);
     app.get('/settings/*',checkLogin);
-    app.get('/settings/site',user.getSetting);
+
     app.get('/settings/profile',user.getProfiles);
     app.get('/settings/posts',post.settingPages);
     app.get('/settings/about',user.getEditAbout);
@@ -36,9 +37,15 @@ module.exports = function (app) {
     app.put('/users',user.changeProfile);
     app.put('/password',checkLogin);
     app.put('/password',user.changePassword);
+
+//    Site Actions
+    app.get('/settings/site',user.getSetting);
     app.put('/about',checkLogin);
-    app.put('/about',user.updateAbout);
-    app.get('/about',user.getAbout);
+    app.put('/about',site.updateAbout);
+    app.get('/about',site.getAbout);
+    app.put('/site',site.updateSite);
+    app.get('/settings/logs',site.visiteLogs);
+
 //    Post Actions
     app.get('/posts/new', checkLogin);
     app.get('/posts/new', post.getNew);
