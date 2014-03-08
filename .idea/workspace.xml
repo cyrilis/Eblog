@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1f2b440-a030-4a6e-b81d-18bc193abbfe" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/_header.ejs" afterPath="$PROJECT_DIR$/views/_header.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/utils.js" afterPath="$PROJECT_DIR$/controller/utils.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="test.iws" />
@@ -29,32 +29,19 @@
     <splitter split-orientation="horizontal" split-proportion="0.52091926">
       <split-first>
         <leaf>
-          <file leaf-file-name="post.ejs" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/post.ejs">
+          <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="34" column="25" selection-start="1549" selection-end="1549" vertical-scroll-proportion="-18.966667" vertical-offset="145" max-vertical-offset="861">
-                  <folding>
-                    <marker date="1394114750402" expanded="true" signature="55:1522" placeholder="..." />
-                    <marker date="1394114750402" expanded="true" signature="83:1514" placeholder="..." />
-                    <marker date="1394114750402" expanded="true" signature="118:1503" placeholder="..." />
-                    <marker date="1394114750402" expanded="true" signature="164:764" placeholder="..." />
-                    <marker date="1394114750402" expanded="true" signature="279:745" placeholder="..." />
-                    <marker date="1394114750402" expanded="true" signature="459:722" placeholder="{...}" />
-                    <marker date="1394114750402" expanded="true" signature="812:868" placeholder="..." />
-                    <marker date="1394114750402" expanded="true" signature="913:1484" placeholder="..." />
-                    <marker date="1394114750402" expanded="true" signature="947:1260" placeholder="{...}" />
-                    <marker date="1394114750402" expanded="true" signature="990:1239" placeholder="..." />
-                    <marker date="1394114750402" expanded="true" signature="1083:1214" placeholder="{...}" />
-                    <marker date="1394114750402" expanded="true" signature="1302:1461" placeholder="{...}" />
-                  </folding>
+                <state line="54" column="0" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.0" vertical-offset="587" max-vertical-offset="1260">
+                  <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app.js">
+          <file leaf-file-name="utils.js" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/controller/utils.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="52" column="76" selection-start="1462" selection-end="1462" vertical-scroll-proportion="0.0" vertical-offset="587" max-vertical-offset="1260">
+                <state line="22" column="47" selection-start="756" selection-end="756" vertical-scroll-proportion="0.7561375" vertical-offset="0" max-vertical-offset="1302">
                   <folding />
                 </state>
               </provider>
@@ -139,10 +126,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_header.ejs" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="_header.ejs" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/_header.ejs">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="29" column="12" selection-start="1265" selection-end="1265" vertical-scroll-proportion="0.51760566" vertical-offset="315" max-vertical-offset="1386">
+                <state line="29" column="12" selection-start="1265" selection-end="1265" vertical-scroll-proportion="-9.8" vertical-offset="315" max-vertical-offset="1386">
                   <folding />
                 </state>
               </provider>
@@ -225,7 +212,6 @@
       <list>
         <option value="$PROJECT_DIR$/views/settings/site.ejs" />
         <option value="$PROJECT_DIR$/settings.js" />
-        <option value="$PROJECT_DIR$/controller/utils.js" />
         <option value="$PROJECT_DIR$/views/index.ejs" />
         <option value="$PROJECT_DIR$/controller/post.js" />
         <option value="$PROJECT_DIR$/controller/file.js" />
@@ -236,9 +222,10 @@
         <option value="$PROJECT_DIR$/models/database.js" />
         <option value="$PROJECT_DIR$/views/settings/logs.ejs" />
         <option value="$PROJECT_DIR$/public/stylesheets/style.styl" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/controller/user.js" />
         <option value="$PROJECT_DIR$/views/_header.ejs" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/controller/utils.js" />
       </list>
     </option>
   </component>
@@ -1018,7 +1005,15 @@
       <created>1394296930217</created>
       <updated>1394296930217</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="temporarily get rid of albums">
+      <created>1394297210073</created>
+      <updated>1394297210073</updated>
+    </task>
+    <task id="LOCAL-00052" summary="cancel listen on only localhost">
+      <created>1394297438215</created>
+      <updated>1394297438215</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1051,7 +1046,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22271715" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="0" y="308" width="1600" height="244" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24721603" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962631" sideWeight="0.71672356" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.104957804" sideWeight="0.73942095" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.104957804" sideWeight="0.73942095" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33386075" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16393442" sideWeight="0.30821916" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16926503" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1093,8 +1088,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="add prefix as a lib :cupid:" />
-    <MESSAGE value="fix footer javascript link" />
     <MESSAGE value="Though I Don't get what i've done , i still wanna commit ." />
     <MESSAGE value="fix DATABASE." />
     <MESSAGE value="use mongoose instead of mongodb." />
@@ -1118,7 +1111,9 @@
     <MESSAGE value="fix env and listen address" />
     <MESSAGE value="fix word error" />
     <MESSAGE value="fix user register" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix user register" />
+    <MESSAGE value="temporarily get rid of albums" />
+    <MESSAGE value="cancel listen on only localhost" />
+    <option name="LAST_COMMIT_MESSAGE" value="cancel listen on only localhost" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1141,34 +1136,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/edit.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1218">
-          <folding>
-            <marker date="1394272922838" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1394272922838" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1394272922838" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394272922838" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394272922838" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1394272922838" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394272922838" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1394272922838" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1394272922838" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1394272922838" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394272922838" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1394272922838" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394272922838" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1394272922838" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1394272922838" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1394272922838" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394272922838" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1394272922838" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1394272922838" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394272922838" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/file.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="20" selection-start="188" selection-end="188" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="693">
@@ -1187,18 +1154,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="25" selection-start="1549" selection-end="1549" vertical-scroll-proportion="-18.966667" vertical-offset="145" max-vertical-offset="861">
           <folding>
-            <marker date="1394114750402" expanded="true" signature="55:1522" placeholder="..." />
-            <marker date="1394114750402" expanded="true" signature="83:1514" placeholder="..." />
-            <marker date="1394114750402" expanded="true" signature="118:1503" placeholder="..." />
-            <marker date="1394114750402" expanded="true" signature="164:764" placeholder="..." />
-            <marker date="1394114750402" expanded="true" signature="279:745" placeholder="..." />
-            <marker date="1394114750402" expanded="true" signature="459:722" placeholder="{...}" />
-            <marker date="1394114750402" expanded="true" signature="812:868" placeholder="..." />
-            <marker date="1394114750402" expanded="true" signature="913:1484" placeholder="..." />
-            <marker date="1394114750402" expanded="true" signature="947:1260" placeholder="{...}" />
-            <marker date="1394114750402" expanded="true" signature="990:1239" placeholder="..." />
-            <marker date="1394114750402" expanded="true" signature="1083:1214" placeholder="{...}" />
-            <marker date="1394114750402" expanded="true" signature="1302:1461" placeholder="{...}" />
+            <marker date="1394114750402" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1394114750402" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1394114750402" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1394114750402" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1394114750402" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1394114750402" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1394114750402" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1394114750402" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1394114750402" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1394114750402" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1394114750402" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1394114750402" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1284,13 +1251,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="76" selection-start="1462" selection-end="1462" vertical-scroll-proportion="0.0" vertical-offset="587" max-vertical-offset="1260">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="98" column="7" selection-start="3271" selection-end="3271" vertical-scroll-proportion="0.0" vertical-offset="1718" max-vertical-offset="4557">
@@ -1300,7 +1260,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/_header.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="12" selection-start="1265" selection-end="1265" vertical-scroll-proportion="0.51760566" vertical-offset="315" max-vertical-offset="1386">
+        <state line="29" column="12" selection-start="1265" selection-end="1265" vertical-scroll-proportion="-9.8" vertical-offset="315" max-vertical-offset="1386">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="0" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.0" vertical-offset="587" max-vertical-offset="1260">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="47" selection-start="756" selection-end="756" vertical-scroll-proportion="0.7561375" vertical-offset="0" max-vertical-offset="1302">
           <folding />
         </state>
       </provider>

@@ -19,7 +19,7 @@ exports.log = function(q){
         method: q.method,
         url: q.protocol + "://" + q.get('host') + q.url||"Unknown",
         data: JSON.stringify(q.body)||"",
-        ip: q.connection.remoteAddress,
+        ip: q.header('x-forwarded-for') || q.connection.remoteAddress,
         country: city? city.country: undefined,
         city: city? city.city: undefined,
         browser: userAgent.family||"Unknown",
