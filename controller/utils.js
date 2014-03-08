@@ -12,7 +12,7 @@ var ip = require('geoip-lite');
 var nodemailer = require("nodemailer");
 exports.log = function(q){
     var userAgent = ua.parse(q.headers['user-agent']);
-    var city = ip.lookup(q.connection.remoteAddress);
+    var city = ip.lookup(q.header('x-forwarded-for') || q.connection.remoteAddress);
     var log = new Log({
         date: new Date(),
         user: q.session.user? q.session.user._id : undefined,
@@ -20,11 +20,11 @@ exports.log = function(q){
         url: q.protocol + "://" + q.get('host') + q.url||"Unknown",
         data: JSON.stringify(q.body)||"",
         ip: q.header('x-forwarded-for') || q.connection.remoteAddress,
-        country: city? city.country: undefined,
-        city: city? city.city: undefined,
-        browser: userAgent.family||"Unknown",
-        version: userAgent.major||"Unknown",
-        os: userAgent.os.family||"Unknown"
+        country: city? city.country: "_",
+        city: city? city.city: "_",
+        browser: userAgent.family||"_",
+        version: userAgent.major||"_",
+        os: userAgent.os.family||"_"
 });
     log.save();
 };

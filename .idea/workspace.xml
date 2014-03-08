@@ -41,7 +41,7 @@
           <file leaf-file-name="utils.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/controller/utils.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="22" column="47" selection-start="756" selection-end="756" vertical-scroll-proportion="0.7561375" vertical-offset="0" max-vertical-offset="1302">
+                <state line="16" column="25" selection-start="470" selection-end="470" vertical-scroll-proportion="0.5499182" vertical-offset="0" max-vertical-offset="1302">
                   <folding />
                 </state>
               </provider>
@@ -1013,7 +1013,11 @@
       <created>1394297438215</created>
       <updated>1394297438215</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="fix get ip Error.">
+      <created>1394297891243</created>
+      <updated>1394297891243</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1046,7 +1050,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22271715" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="0" y="308" width="1600" height="244" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24721603" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962631" sideWeight="0.71672356" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.104957804" sideWeight="0.73942095" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.104957804" sideWeight="0.73942095" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33386075" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16393442" sideWeight="0.30821916" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16926503" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1088,7 +1092,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="Though I Don't get what i've done , i still wanna commit ." />
     <MESSAGE value="fix DATABASE." />
     <MESSAGE value="use mongoose instead of mongodb." />
     <MESSAGE value="Tobe  Effective." />
@@ -1113,7 +1116,8 @@
     <MESSAGE value="fix user register" />
     <MESSAGE value="temporarily get rid of albums" />
     <MESSAGE value="cancel listen on only localhost" />
-    <option name="LAST_COMMIT_MESSAGE" value="cancel listen on only localhost" />
+    <MESSAGE value="fix get ip Error." />
+    <option name="LAST_COMMIT_MESSAGE" value="fix get ip Error." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1274,7 +1278,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="47" selection-start="756" selection-end="756" vertical-scroll-proportion="0.7561375" vertical-offset="0" max-vertical-offset="1302">
+        <state line="16" column="25" selection-start="470" selection-end="470" vertical-scroll-proportion="0.5499182" vertical-offset="0" max-vertical-offset="1302">
           <folding />
         </state>
       </provider>
