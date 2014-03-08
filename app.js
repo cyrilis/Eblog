@@ -15,7 +15,8 @@ var flash = require('connect-flash');
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 2000);
+var port = process.argv.indexOf('-p')? +process.argv[process.argv.indexOf('-p')+1]:undefined;
+app.set('port', process.env.PORT || port || 2000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(flash());
@@ -48,6 +49,6 @@ if ('development' === app.get('env')) {
 
 routes(app);
 module.exports = app;
-http.createServer(app).listen(app.get('port'), function(){
-    console.log('Express server listening on port ' + app.get('port'));
+http.createServer(app).listen(app.get('port'),'127.0.0.1', function(){
+    console.log('Express server listening on port ' + app.get('port') + 'at '+ app.get('env') + " mode");
 });
