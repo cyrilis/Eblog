@@ -86,7 +86,7 @@ exports.category= function(q,s,next){
             s.redirect('back');
             return;
         }
-        Post.find(query).sort('-_id').limit(limit).exec(function(err,posts){
+        Post.find(query).sort('-_id').populate('user').limit(limit).exec(function(err,posts){
             if(err){
                 console.log(err);
                 q.flash('error',err.message);
