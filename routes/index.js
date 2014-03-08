@@ -68,6 +68,26 @@ module.exports = function (app) {
     app.get('/albums/new',album.getNew);
     app.post('/albums',album.postNew);
     app.get('/albums/:title',album.getOneAlbum);
+
+//  Redirect Old Posts
+    app.get('/20120512.html',redi('/posts/豆瓣阅读的作品商店上线'));
+    app.get('/20120915.html',redi('/posts/创意网页文字排版教程'));
+    app.get('/20121117.html‎',redi('/posts/微信机器人微天气上线'));
+    app.get('/20121119.html',redi('/posts/网页设计中的-icon-字体'));
+    app.get('/20130109.html‎',redi('/posts/调戏小黄鸡'));
+    app.get('/20130224.html‎',redi('/posts/lab-itunes-的-coverflow-样式'));
+    app.get('/20130502.html‎',redi('/posts/markdown-windows上的-markdown-工具推荐'));
+    app.get('/20130602.html',redi('/posts/三体书评'));
+    app.get('/20130625.html',redi('/posts/实验室利用node-webkit打造豆瓣电台桌面客户端'));
+    app.get('/20131015.html',redi('/posts/基于-nodejs-的博客程序-ghost'));
+    app.get('/About.html',redi('/about'));
+
+
+    function redi(newUrl){
+        return function(q,s,next){
+            s.redirect(301, newUrl);
+        };
+    }
     function checkLogin(q,s,next){
         if (!q.session.user){
             q.flash("error","Login First!");
