@@ -1,0 +1,208 @@
+/**
+ * Created by Cyril Hou on 14-3-9.
+ */
+mainColor = rgb(159,206,95)
+/*mainColor = #444*/
+.clearfix:before
+.clearfix:after
+  display table
+  content ""
+.clearfix:after
+  clear both
+body
+  font-family "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif
+  background: #d8d8d8
+  font-size 16px
+  color #555555
+p
+  margin-top 0
+img
+  max-width 100%
+a
+  color mainColor - 20%
+main
+  width: 900px;
+  overflow hidden
+  position relative
+  display block;
+  margin: 30px auto
+  background #ffffff
+  padding 100px 200px 100px 50px
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75)
+  -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75)
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75)
+  h1,h2
+    margin-top 0
+    font-weight normal
+    color mainColor
+  .avatar
+    position absolute
+    width 200px
+    right 200px
+    top 100px
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+    .avatar_group
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-transform: translateZ(-100px);
+      -moz-transform: translateZ(-100px);
+      transform: translateZ(-100px);
+      -webkit-transition: -webkit-transform 350ms;
+      -moz-transition: -moz-transform 350ms;
+      transition: transform 350ms;
+      .avatar_img
+        display block
+        width 100%
+        box-shadow: inset 0px 0px 40px rgba(255,255,255,0);
+        -webkit-transform: translateZ(100px);
+        -moz-transform: translateZ(100px);
+        transform: translateZ(100px);
+        background-size: cover;
+        background-repeat: no-repeat;
+        -webkit-transition: opacity 350ms;
+        -moz-transition: opacity 350ms;
+        transition: opacity 350ms;
+      .avatar_back
+        position absolute
+        top 0
+        height 100%
+        background: #efefef
+        box-shadow: inset -300px 0px 40px rgba(0,0,0,0.5);
+        -webkit-transform: rotateY(90deg) translateZ(100px);
+        -moz-transform: rotateY(90deg) translateZ(100px);
+        transform: rotateY(90deg) translateZ(100px);
+        -webkit-transition: box-shadow 350ms
+        -moz-transition: box-shadow 350ms
+        -ms-transition: box-shadow 350ms
+        -o-transition: box-shadow 350ms
+        transition: box-shadow 350ms
+        .tags_group
+          padding 9px
+        span.tags
+          display inline-block
+          padding 3px 5px
+          background: mainColor
+          color #ffffff
+          margin-bottom 3px
+          -webkit-border-radius: 3px
+          -moz-border-radius: 3px
+          border-radius: 3px
+      &:after
+        content: '';
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        bottom: 0;
+        box-shadow: 0 30px 50px rgba(0,0,0,0.3);
+        -webkit-transform-origin: 100% 100%;
+        -moz-transform-origin: 100% 100%;
+        transform-origin: 100% 100%;
+        -webkit-transform: rotateX(90deg) translateY(100px);
+        -moz-transform: rotateX(90deg) translateY(100px);
+        transform: rotateX(90deg) translateY(100px);
+        -webkit-transition: box-shadow 350ms;
+        -moz-transition: box-shadow 350ms;
+        transition: box-shadow 350ms;
+      &:hover
+        -webkit-transform: rotateY(-90deg) translateZ(0px);
+        -moz-transform: rotateY(-90deg) translateZ(20px);
+        transform: rotateY(-90deg) translateZ(20px);
+        &:after
+          box-shadow: 20px -5px 50px rgba(0,0,0,0.3);
+        .avatar_back
+          box-shadow: inset 0px 0px 40px rgba(0,0,0,0);
+        .avatar_img
+          box-shadow: inset 300px 0px 40px rgba(255,255,255,0.8);
+          opacity 0.3
+  .spin
+    /*display none*/
+    position absolute
+    width 110px
+    height 100%
+    background mainColor
+    right 40px
+    top 0
+    color #ffffff
+    font-size 30px
+    span.phone,span.arrow
+      display block
+      white-space nowrap
+      position absolute
+      right 0
+      left 0
+      height 100px
+      line-height 100px
+      top 50%
+      margin-top -300px
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      filter: unquote("progid:DXImageTransform.Microsoft.BasicImage(rotation=3)")
+    span.arrow
+      margin-top 300px
+      &:after
+        display block
+        content ""
+        width: 0px
+        height: 0px
+        border-top: 55px solid transparent
+        border-bottom: 55px solid transparent
+        border-right: 55px solid #ffffff
+        position absolute
+        left: 1084px
+        top: -5px
+        -webkit-transition: left 0.5s
+        -moz-transition: left 0.5s
+        -ms-transition: left 0.5s
+        -o-transition: left 0.5s
+        transition: left 0.5s
+      &:before
+        display block
+        content "Hire Me!"
+        text-indent 1050px
+        color mainColor
+        width 2000px
+        height 110px
+        background: #fff
+        position absolute
+        left: 1138px
+        top: -5px
+        -webkit-transition: left 0.5s
+        -moz-transition: left 0.5s
+        -ms-transition: left 0.5s
+        -o-transition: left 0.5s
+        transition: left 0.5s
+    &:hover
+        span.arrow:after
+          left -326px
+        span.arrow:before
+          left -272px
+  hr.header
+    border 0
+    border-bottom 1px solid #dddddd
+    height 0
+    display block
+  .main_info_group
+    margin-bottom 50px
+    width 600px
+  .main_info
+    float left
+    display block
+    width 300px
+    font-size 18px
+    margin-bottom 15px
+  .tech_info_group
+    margin-bottom 40px
+    li
+      margin-bottom 15px
+  .base_info_group
+  .career_info
+  .url_info_group
+  .person_intro
+    margin-bottom 40px
+
+
