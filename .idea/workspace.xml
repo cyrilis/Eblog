@@ -2,7 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1f2b440-a030-4a6e-b81d-18bc193abbfe" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/404.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/album.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/dropdown/assets/img/background.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/doubanshow/body.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/coverflow/cover.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/coverflow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/douapi.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/doubanshow.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/dropdown.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/eye.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/eyes.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/dropdown/assets/font-awesome/font/fontawesome-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/dropdown/assets/font-awesome/font/fontawesome-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/dropdown/assets/font-awesome/font/fontawesome-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/lyrics.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/renren.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/tweets.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/upload.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/coverflow/cover.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/dropdown/assets/font-awesome/css/font-awesome.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/dropdown/assets/font-awesome/font/fontawesome-webfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/coverflow/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/doubanshow/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/dropdown/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/coverflow/jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/doubanshow/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/coverflow/mousewheel.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/coverflow/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/doubanshow/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/dropdown/assets/css/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="test.iws" />
@@ -26,67 +60,13 @@
     <favorites_list name="test" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5760066">
+    <splitter split-orientation="horizontal" split-proportion="0.7978786">
       <split-first>
         <leaf>
-          <file leaf-file-name="_footer.ejs" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/_footer.ejs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="21" column="0" selection-start="891" selection-end="891" vertical-scroll-proportion="-14.7" vertical-offset="0" max-vertical-offset="567">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="54" column="0" selection-start="1497" selection-end="1497" vertical-scroll-proportion="0.0" vertical-offset="587" max-vertical-offset="1260">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="post_list.ejs" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/post_list.ejs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="8" column="52" selection-start="480" selection-end="480" vertical-scroll-proportion="-5.6" vertical-offset="0" max-vertical-offset="777">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="post.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/controller/post.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="40" column="23" selection-start="1038" selection-end="1038" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="5481">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="site.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/controller/site.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="51" column="7" selection-start="1470" selection-end="1470" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="2037">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/routes/index.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="82" column="42" selection-start="3022" selection-end="3022" vertical-scroll-proportion="0.0" vertical-offset="1399" max-vertical-offset="2310">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="application.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="138" column="7" selection-start="4472" selection-end="4472" vertical-scroll-proportion="0.0" vertical-offset="2360" max-vertical-offset="3297">
                   <folding />
                 </state>
               </provider>
@@ -101,10 +81,66 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/README.md">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="13" column="35" selection-start="522" selection-end="522" vertical-scroll-proportion="0.328125" vertical-offset="0" max-vertical-offset="945">
+                <state line="13" column="35" selection-start="522" selection-end="522" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="945">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/lab/doubanshow/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="28" column="37" selection-start="1310" selection-end="1310" vertical-scroll-proportion="-14.666667" vertical-offset="148" max-vertical-offset="987">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/lab/coverflow/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="7" column="5" selection-start="289" selection-end="289" vertical-scroll-proportion="-4.9" vertical-offset="0" max-vertical-offset="3024">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/lab/coverflow/style.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="25" column="7" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="987">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/lab/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="6" column="35" selection-start="183" selection-end="183" vertical-scroll-proportion="-4.2" vertical-offset="0" max-vertical-offset="819">
+                  <folding>
+                    <element signature="n#style#0;n#img#0;n#a#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/public/lab/style.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="88" column="28" selection-start="2417" selection-end="2417" vertical-scroll-proportion="0.80667436" vertical-offset="1147" max-vertical-offset="2121">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/lab/doubanshow/main.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="1" column="0" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="924">
                   <folding />
                 </state>
               </provider>
@@ -126,7 +162,7 @@
           <file leaf-file-name="style.styl" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/stylesheets/style.styl">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="60" column="22" selection-start="1551" selection-end="1551" vertical-scroll-proportion="0.2955368" vertical-offset="1015" max-vertical-offset="15351">
+                <state line="60" column="22" selection-start="1551" selection-end="1551" vertical-scroll-proportion="0.31370038" vertical-offset="1015" max-vertical-offset="15351">
                   <folding />
                 </state>
               </provider>
@@ -194,12 +230,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/views/index.ejs" />
-        <option value="$PROJECT_DIR$/controller/file.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/umeditor.config.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/application.js" />
-        <option value="$PROJECT_DIR$/controller/site.js" />
-        <option value="$PROJECT_DIR$/models/database.js" />
         <option value="$PROJECT_DIR$/views/settings/logs.ejs" />
         <option value="$PROJECT_DIR$/controller/user.js" />
         <option value="$PROJECT_DIR$/controller/utils.js" />
@@ -210,6 +240,12 @@
         <option value="$PROJECT_DIR$/public/stylesheets/style.styl" />
         <option value="$PROJECT_DIR$/views/_header.ejs" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/public/lab/doubanshow/js1.js" />
+        <option value="$PROJECT_DIR$/public/lab/doubanshow/index.html" />
+        <option value="$PROJECT_DIR$/public/lab/coverflow/index.html" />
+        <option value="$PROJECT_DIR$/public/lab/coverflow/style.css" />
+        <option value="$PROJECT_DIR$/public/lab/index.html" />
+        <option value="$PROJECT_DIR$/public/lab/style.css" />
       </list>
     </option>
   </component>
@@ -429,6 +465,24 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="style.styl" />
               <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Eblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lab" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -999,7 +1053,11 @@
       <created>1394335612526</created>
       <updated>1394335612526</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="fix screen path 'cupid'">
+      <created>1394335800335</created>
+      <updated>1394335800336</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1074,7 +1132,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="response style need to be fixed." />
     <MESSAGE value="gogogo go to sleep." />
     <MESSAGE value="add user setting page" />
     <MESSAGE value="update settings and profiles page." />
@@ -1099,7 +1156,8 @@
     <MESSAGE value="Add Screen shop and Fix Readme.md :cupid:" />
     <MESSAGE value="rename one file" />
     <MESSAGE value="Refix Readme.md :cupid:" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refix Readme.md :cupid:" />
+    <MESSAGE value="fix screen path 'cupid'" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix screen path 'cupid'" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1122,71 +1180,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/settings/posts.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="29" selection-start="0" selection-end="854" vertical-scroll-proportion="-16.1" vertical-offset="0" max-vertical-offset="609">
-          <folding>
-            <marker date="1394036612093" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394036612093" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394036612093" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/database.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="3" selection-start="2244" selection-end="2244" vertical-scroll-proportion="0.0" vertical-offset="1302" max-vertical-offset="2499">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/settings/logs.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="29" selection-start="1751" selection-end="1751" vertical-scroll-proportion="-22.966667" vertical-offset="298" max-vertical-offset="1113">
-          <folding>
-            <marker date="1394294843271" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1394294843271" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1394294843271" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1394294843271" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1394294843271" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1394294843271" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1394294843271" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1394294843271" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394294843271" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1394294843271" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1394294843271" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="7" selection-start="3271" selection-end="3271" vertical-scroll-proportion="0.0" vertical-offset="1718" max-vertical-offset="4557">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="31" selection-start="502" selection-end="502" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1302">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/site.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="7" selection-start="1470" selection-end="1470" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="2037">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="1497" selection-end="1497" vertical-scroll-proportion="0.0" vertical-offset="587" max-vertical-offset="1260">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="138" column="7" selection-start="4472" selection-end="4472" vertical-scroll-proportion="0.0" vertical-offset="2360" max-vertical-offset="3297">
@@ -1217,7 +1210,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/style.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="22" selection-start="1551" selection-end="1551" vertical-scroll-proportion="0.2955368" vertical-offset="1015" max-vertical-offset="15351">
+        <state line="60" column="22" selection-start="1551" selection-end="1551" vertical-scroll-proportion="0.31370038" vertical-offset="1015" max-vertical-offset="15351">
           <folding />
         </state>
       </provider>
@@ -1245,7 +1238,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="35" selection-start="522" selection-end="522" vertical-scroll-proportion="0.328125" vertical-offset="0" max-vertical-offset="945">
+        <state line="13" column="35" selection-start="522" selection-end="522" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="945">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lab/doubanshow/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="924">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lab/doubanshow/body.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lab/doubanshow/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="37" selection-start="1310" selection-end="1310" vertical-scroll-proportion="-14.666667" vertical-offset="148" max-vertical-offset="987">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lab/coverflow/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="5" selection-start="289" selection-end="289" vertical-scroll-proportion="-4.9" vertical-offset="0" max-vertical-offset="3024">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lab/coverflow/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="7" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="987">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lab/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="35" selection-start="183" selection-end="183" vertical-scroll-proportion="-4.2" vertical-offset="0" max-vertical-offset="819">
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lab/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="28" selection-start="2417" selection-end="2417" vertical-scroll-proportion="0.80667436" vertical-offset="1147" max-vertical-offset="2121">
           <folding />
         </state>
       </provider>

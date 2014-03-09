@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+	    <title>Latest Douban FM FAV</title>
+		<meta name="keywords" content="Recent Douban Fm Fav" />
+		<meta name="robots" content="follow" />
+		<meta property="og:site_name" content="最近喜欢的歌曲" />
+		<meta property="og:title" content="我最近喜欢的歌曲" />
+		<meta property="og:description" content="Douban FM Music Cover" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="http://lab.cyrilis.com/doubanshow/" />
+		<meta property="og:image" content="http://lab.cyrilis.com/icon.png" />
+		<link rel="icon" href="http://lab.cyrilis.com/icon.png">
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+		<script type="application/javascript">
+			var db_doubanid ='cyr1l';
+		</script>
+	</head>
+	<body>
+	<div id="title1">
+        <img src="http://t.douban.com/pics/red-heart.gif"/> &nbsp;Latest Douban FM FAV
+    </div>
+	<div>
+		<p>请输入你的豆瓣ID： <input name="id" type="text"/></p>
+		<p><input type="button" onclick="refreshCover_btn();return false;" value="确定" class="button"/></p>
+	</div>
+	<p class=idname>以下为<a target="_blank" id="user_link" href="http://www.douban.com/people/cyril">"Cyr1l"</a>的最新音乐收藏：</p>
+    <hr>
+	<script type="application/javascript" src="main.js"></script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-33923086-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+	</body>
+</html>

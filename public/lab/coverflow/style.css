@@ -1,0 +1,42 @@
+body{
+    background: #333333;
+}
+#music{
+	background: #333;
+	height: 600px;
+	width: 1200px;
+	margin: 10px auto;
+	margin-top: 100px;
+	overflow: hidden;
+}
+#covers{
+	margin: 0px 10px;
+	padding-top: 380px;
+	position: relative;
+	-webkit-perspective: 700px;
+	-moz-perspective: 700px;
+	-ms-perspective: 700px;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-webkit-transform: translate3d(0px, 0, 0);
+	-moz-transform: translate3d(0px, 0, 0);
+	-ms-transform: translate3d(0px, 0, 0);
+}
+.cover{
+	position: absolute;
+	top: 90px;
+	left:50%;
+	-ms-transform: translate3d(-170px, 0px, -170px) rotateY(70deg);
+	-webkit-transform: translate3d(-170px, 0px, -170px) rotateY(70deg);
+	-moz-transform: translate3d(-170px, 0px, -170px) rotateY(70deg);
+	
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-ms-transition: 0.5s;
+}
+.cover img{
+	-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent), to(rgba(255,255,255,0.4)));
+	-moz-box-reflect: below 0px -moz-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent), to(rgba(255,255,255,0.4)));
+	-ms-box-reflect: below 0px -ms-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent), to(rgba(255,255,255,0.4)));
+}
