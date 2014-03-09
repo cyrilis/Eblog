@@ -9,9 +9,9 @@ Eblog has a clear and customizable Theme, which can change main color easily by 
 
 ##Screenshot
  
-![](../public/images/screenshot_0.png)
-![](../public/images/screenshot_1.png)
-![](../public/images/screenshot_2.png)
+![](public/images/screenshot_0.png)
+![](public/images/screenshot_1.png)
+![](public/images/screenshot_2.png)
 
 Eblog's WYSIWYG editor is powered by https://github.com/cyrilis/umeditor-turquoise , it's forked from umeditor . For more info please visite the link above. 
 

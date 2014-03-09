@@ -104,7 +104,7 @@
           <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/README.md">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="39" column="18" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.984375" vertical-offset="0" max-vertical-offset="945">
+                <state line="13" column="35" selection-start="522" selection-end="522" vertical-scroll-proportion="0.328125" vertical-offset="0" max-vertical-offset="945">
                   <folding />
                 </state>
               </provider>
@@ -995,7 +995,11 @@
       <created>1394335357602</created>
       <updated>1394335357602</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Refix Readme.md :cupid:">
+      <created>1394335612526</created>
+      <updated>1394335612526</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1070,7 +1074,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="forgot to add the font file." />
     <MESSAGE value="response style need to be fixed." />
     <MESSAGE value="gogogo go to sleep." />
     <MESSAGE value="add user setting page" />
@@ -1095,7 +1098,8 @@
     <MESSAGE value="add two pic as screenshot" />
     <MESSAGE value="Add Screen shop and Fix Readme.md :cupid:" />
     <MESSAGE value="rename one file" />
-    <option name="LAST_COMMIT_MESSAGE" value="rename one file" />
+    <MESSAGE value="Refix Readme.md :cupid:" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refix Readme.md :cupid:" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1241,7 +1245,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="18" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.984375" vertical-offset="0" max-vertical-offset="945">
+        <state line="13" column="35" selection-start="522" selection-end="522" vertical-scroll-proportion="0.328125" vertical-offset="0" max-vertical-offset="945">
           <folding />
         </state>
       </provider>
