@@ -113,7 +113,7 @@
           <file leaf-file-name="_header.ejs" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/_header.ejs">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="5" column="62" selection-start="196" selection-end="196" vertical-scroll-proportion="0.13092269" vertical-offset="0" max-vertical-offset="1323">
+                <state line="7" column="83" selection-start="411" selection-end="411" vertical-scroll-proportion="0.18329178" vertical-offset="0" max-vertical-offset="1344">
                   <folding />
                 </state>
               </provider>
@@ -1021,7 +1021,11 @@
       <created>1394326345251</created>
       <updated>1394326345251</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="test if it hide nav bar in iOS">
+      <created>1394327235847</created>
+      <updated>1394327235847</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1096,7 +1100,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="Fuck Yeah, todo: User module." />
     <MESSAGE value="Remove handleError Function and  fix tag span style .&#10;TODO: Padding animation change on Hover need to be fixed." />
     <MESSAGE value="todo:Album Detal page." />
     <MESSAGE value="Changed something." />
@@ -1121,7 +1124,8 @@
     <MESSAGE value="add user populate &#10;fix responsive style&#10;resort js" />
     <MESSAGE value="Redirect Old Post" />
     <MESSAGE value="Word break fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Word break fix" />
+    <MESSAGE value="test if it hide nav bar in iOS" />
+    <option name="LAST_COMMIT_MESSAGE" value="test if it hide nav bar in iOS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1269,7 +1273,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/_header.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="62" selection-start="196" selection-end="196" vertical-scroll-proportion="0.13092269" vertical-offset="0" max-vertical-offset="1323">
+        <state line="7" column="83" selection-start="411" selection-end="411" vertical-scroll-proportion="0.18329178" vertical-offset="0" max-vertical-offset="1344">
           <folding />
         </state>
       </provider>
