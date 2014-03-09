@@ -1,42 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1f2b440-a030-4a6e-b81d-18bc193abbfe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/404.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/album.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/dropdown/assets/img/background.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/doubanshow/body.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/coverflow/cover.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/coverflow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/douapi.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/doubanshow.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/dropdown.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/eye.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/eyes.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/dropdown/assets/font-awesome/font/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/dropdown/assets/font-awesome/font/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/dropdown/assets/font-awesome/font/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/lyrics.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/renren.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/tweets.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/upload.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/coverflow/cover.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/dropdown/assets/font-awesome/css/font-awesome.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/dropdown/assets/font-awesome/font/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/coverflow/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/doubanshow/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/dropdown/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/coverflow/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/doubanshow/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/coverflow/mousewheel.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/coverflow/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/doubanshow/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/dropdown/assets/css/styles.css" />
+    <list default="true" id="d1f2b440-a030-4a6e-b81d-18bc193abbfe" name="Default" comment="add another lab item">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/img/bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/assets/img/bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/img/bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/img/bg_glow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/images/bucket-background.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/images/color-swatch-brown.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/images/color-swatch-green.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/images/color-swatch-purple.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/images/color-swatch-yellow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/images/crayon-background.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/images/crayon-outline.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/images/crayon-texture.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/images/eraser-background.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/images/eraser-outline.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/img/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/images/marker-background.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/images/marker-outline.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/images/paint-outline.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/assets/img/pointer.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/screenshot/threejs.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/images/watermelon-duck-outline.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/draw.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/draw.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/excanvas.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/threejs/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/io.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/assets/js/script.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/draw/assets/css/styles.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lab/threejs/javascripts/three.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/lab/index.html" afterPath="$PROJECT_DIR$/public/lab/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="test.iws" />
@@ -63,24 +61,6 @@
     <splitter split-orientation="horizontal" split-proportion="0.7978786">
       <split-first>
         <leaf>
-          <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/routes/index.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="82" column="42" selection-start="3022" selection-end="3022" vertical-scroll-proportion="0.0" vertical-offset="1399" max-vertical-offset="2310">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_header.ejs" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/_header.ejs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="7" column="83" selection-start="411" selection-end="411" vertical-scroll-proportion="-4.9" vertical-offset="0" max-vertical-offset="1344">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/README.md">
               <provider selected="true" editor-type-id="text-editor">
@@ -117,10 +97,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/lab/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="6" column="35" selection-start="183" selection-end="183" vertical-scroll-proportion="-4.2" vertical-offset="0" max-vertical-offset="819">
+                <state line="19" column="75" selection-start="1009" selection-end="1009" vertical-scroll-proportion="0.48305085" vertical-offset="0" max-vertical-offset="840">
                   <folding>
                     <element signature="n#style#0;n#img#0;n#a#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                   </folding>
@@ -128,12 +108,35 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/lab/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="88" column="28" selection-start="2417" selection-end="2417" vertical-scroll-proportion="0.80667436" vertical-offset="1147" max-vertical-offset="2121">
+                <state line="76" column="25" selection-start="2013" selection-end="2013" vertical-scroll-proportion="0.0" vertical-offset="1147" max-vertical-offset="2121">
                   <folding />
                 </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/lab/threejs/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="18" column="27" selection-start="399" selection-end="399" vertical-scroll-proportion="-0.0" vertical-offset="378" max-vertical-offset="3801">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="douapi.jpg" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/lab/screenshot/douapi.jpg">
+              <provider selected="true" editor-type-id="images">
+                <state />
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="dropdown.jpg" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/lab/screenshot/dropdown.jpg">
+              <provider selected="true" editor-type-id="images">
+                <state />
               </provider>
             </entry>
           </file>
@@ -141,15 +144,6 @@
             <entry file="file://$PROJECT_DIR$/public/lab/doubanshow/main.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="1" column="0" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="924">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="LICENSE" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/LICENSE">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="20" column="0" selection-start="1076" selection-end="1076" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="546">
                   <folding />
                 </state>
               </provider>
@@ -230,7 +224,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/views/settings/logs.ejs" />
         <option value="$PROJECT_DIR$/controller/user.js" />
         <option value="$PROJECT_DIR$/controller/utils.js" />
         <option value="$PROJECT_DIR$/app.js" />
@@ -244,8 +237,9 @@
         <option value="$PROJECT_DIR$/public/lab/doubanshow/index.html" />
         <option value="$PROJECT_DIR$/public/lab/coverflow/index.html" />
         <option value="$PROJECT_DIR$/public/lab/coverflow/style.css" />
-        <option value="$PROJECT_DIR$/public/lab/index.html" />
         <option value="$PROJECT_DIR$/public/lab/style.css" />
+        <option value="$PROJECT_DIR$/public/lab/threejs/index.html" />
+        <option value="$PROJECT_DIR$/public/lab/index.html" />
       </list>
     </option>
   </component>
@@ -440,32 +434,6 @@
               <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Eblog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="style.styl" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -482,20 +450,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="lab" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Eblog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -560,11 +514,14 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../www/public/editor" />
     <property name="FullScreen" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="Z:\Sites\test\public\lab\img" />
+      <recent name="Z:\Sites\test\public\lab\threejs\javascripts" />
       <recent name="Z:\Sites\test\views" />
       <recent name="Z:\Sites\test\public\stylesheets\fonts" />
     </key>
@@ -1057,7 +1014,11 @@
       <created>1394335800335</created>
       <updated>1394335800336</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="add some lab items">
+      <created>1394341379807</created>
+      <updated>1394341379807</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1132,8 +1093,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="gogogo go to sleep." />
-    <MESSAGE value="add user setting page" />
     <MESSAGE value="update settings and profiles page." />
     <MESSAGE value="some post" />
     <MESSAGE value="Fix application js" />
@@ -1157,7 +1116,9 @@
     <MESSAGE value="rename one file" />
     <MESSAGE value="Refix Readme.md :cupid:" />
     <MESSAGE value="fix screen path 'cupid'" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix screen path 'cupid'" />
+    <MESSAGE value="add some lab items" />
+    <MESSAGE value="add another lab item" />
+    <option name="LAST_COMMIT_MESSAGE" value="add another lab item" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1180,34 +1141,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="7" selection-start="4472" selection-end="4472" vertical-scroll-proportion="0.0" vertical-offset="2360" max-vertical-offset="3297">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/_footer.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="891" selection-end="891" vertical-scroll-proportion="-14.7" vertical-offset="0" max-vertical-offset="567">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/post_list.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="52" selection-start="480" selection-end="480" vertical-scroll-proportion="-5.6" vertical-offset="0" max-vertical-offset="777">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/post.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="23" selection-start="1038" selection-end="1038" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="5481">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/style.styl">
       <provider selected="true" editor-type-id="text-editor">
         <state line="60" column="22" selection-start="1551" selection-end="1551" vertical-scroll-proportion="0.31370038" vertical-offset="1015" max-vertical-offset="15351">
@@ -1276,19 +1209,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/lab/index.html">
+    <entry file="file://$PROJECT_DIR$/public/lab/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="35" selection-start="183" selection-end="183" vertical-scroll-proportion="-4.2" vertical-offset="0" max-vertical-offset="819">
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="76" column="25" selection-start="2013" selection-end="2013" vertical-scroll-proportion="0.0" vertical-offset="1147" max-vertical-offset="2121">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/lab/style.css">
+    <entry file="file://$PROJECT_DIR$/public/lab/threejs/javascripts/three.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="28" selection-start="2417" selection-end="2417" vertical-scroll-proportion="0.80667436" vertical-offset="1147" max-vertical-offset="2121">
+        <state line="17" column="23" selection-start="316" selection-end="316" vertical-scroll-proportion="0.41705608" vertical-offset="0" max-vertical-offset="766920">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lab/threejs/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="27" selection-start="399" selection-end="399" vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="3801">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lab/screenshot/douapi.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lab/screenshot/dropdown.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lab/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="75" selection-start="1009" selection-end="1009" vertical-scroll-proportion="0.48305085" vertical-offset="0" max-vertical-offset="840">
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

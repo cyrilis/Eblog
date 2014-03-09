@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Threejs_demo</title>
+    <style>canvas { width: 100%; height: 100% }
+    body{
+        font-family: sans-serif;
+        background-color: #f0f0f0;
+        margin: 0px;
+        overflow: hidden;
+    }
+    </style>
+</head>
+<body>
+<script src="javascripts/three.js"></script>
+<script>
+    var db;
+    function db_success(a){
+        db = a;
+        return db
+    }
+
+</script>
+<script src="http://api.douban.com/people/27953152/favsongs?max-results=50&alt=xd&callback=db_success&apikey=0f85e9acfb703eb32e91bd06f250bc19"></script>
+<script>
+
+    var cover=[];
+    db.entry.forEach(function(a,b){
+        cover.push(a.cover.$t.replace(/mpic/, "lpic"))
+    });
+
+
+    // // img loader eventlistener loop
+
+    // var imgTexture = new THREE.Texture();
+    // var loader = new THREE.ImageLoader();
+    // var i=0;
+    // loader.addEventListener( 'load', function ( event ) {
+
+    // 	imgTexture.image = event.content;
+    // 	console.log(event.content);
+    // 	imgTexture.needsUpdate = true;
+    // 	if(i==cover.length-1){
+    // 		return false;
+    // 	}
+    // 	loader.load(cover[i+1]);
+    // 	i++
+
+    // } );
+
+    // loader.load(cover[0]);
+
+    // // var material = new THREE.MeshBasicMaterial( { map: imgTexture, overdraw: true } );
+
+
+    // now cover got all pic urls ~~~~
+
+    // Three need three things: scene camera and renderer.
+    // camera has some different kinds of camera , here we use PerspectiveCamera
+    // renderer has some arguments 1st for field of view (Familair right ? you may seen this on some game settings ) the second is
+    // for aspect ratio , last two are for near and far clipping plane , I don't know what it's means. Don't ask me .
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000000 );
+    var renderer = new THREE.CanvasRenderer();
+
+    // renderer size setting
+    renderer.setSize( window.innerWidth, window.innerHeight );
+
+    // append to the body
+    document.body.appendChild( renderer.domElement );
+
+    // let's add a cube here
+    // var geometry = new THREE.CubeGeometry(200,200,200);
+
+
+    // // for ( var i = 0; i < geometry.faces.length; i ++ ) {
+    // // 	geometry.faces[ i ].img=cover[i];
+    // // }
+
+    // // var material = new THREE.MeshBasicMaterial( { vertexColors: THREE.FaceColors } );
+
+    // var material = new THREE.MeshBasicMaterial( { map: imgTexture, overdraw: false } );
+
+    // var cube = new THREE.Mesh( geometry, material );
+    // scene.add( cube );
+
+
+    // cube.position.y = 150;
+
+
+    // var geometry = new THREE.PlaneGeometry( 200, 200 );
+    // // geometry.applyMatrix( new THREE.Matrix4().makeRotationX( - Math.PI / 2 ) );
+    // // var material = new THREE.MeshBasicMaterial( { color: 0xe0e0e0 } );
+    // var material = new THREE.MeshBasicMaterial( { map: imgTexture, overdraw: false } );
+    // plane = new THREE.Mesh( geometry, material );
+    // scene.add( plane );
+
+    // img loader eventlistener loop
+    var imgs=[],planes=[];
+    planes.length=cover.length;
+    var geometrys=[],materials=[];
+    var loader = new THREE.ImageLoader();
+    var i=0;
+    loader.addEventListener( 'load', function ( event ) {
+        var imgTexture = new THREE.Texture();
+        imgTexture.image = event.content;
+        imgs.push(imgTexture);
+        geometrys[i] = new THREE.PlaneGeometry( 200, 200 );
+        materials[i] = new THREE.MeshBasicMaterial( { map: imgs[i], overdraw: true } );
+        planes[i] = new THREE.Mesh( geometrys[i], materials[i] );
+        planes[i].doubleSided = true;
+        scene.add( planes[i] );
+        planes[i].position.x = Math.random()*-window.innerWidth+window.innerWidth/2;
+        planes[i].position.y = Math.random()*-window.innerHeight+window.innerHeight/2;
+        planes[i].position.z = -Math.random()*800;
+        imgTexture.needsUpdate = true;
+        if(i==cover.length-1){
+            return false;
+        }
+        loader.load(cover[i+1]);
+        i++
+    } );
+
+    loader.load(cover[0]);
+
+    // var material = new THREE.MeshBasicMaterial( { map: imgTexture, overdraw: true } );
+
+    camera.position.y = 0;
+    camera.position.z = 250;
+
+    var mouseX=0,mouseY=0,
+            windowHalfY=window.innerHeight/2,
+            windowHalfX=window.innerWidth/2;
+    document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+    function onDocumentMouseMove( event ) {
+
+        mouseX = event.clientX - windowHalfX;
+        mouseY = event.clientY - windowHalfY;
+
+    }
+
+    // render the scene
+    function render() {
+
+        // the loop
+        requestAnimationFrame(render);
+
+        // animate the cube
+        // cube.rotation.x += 0.01;
+        // cube.rotation.y += 0.05;
+        // plane.rotation.y += 0.05;
+
+        camera.position.x += ( - mouseX - camera.position.x ) * 0.05;
+        camera.position.y += (  mouseY - camera.position.y ) * 0.05;
+        camera.lookAt( scene.position );
+
+        renderer.render(scene, camera);
+    }
+
+    // document.addEventListener( 'mousedown', onDocumentMouseDown, false );
+    // document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+    // document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+
+
+    var onDocumentTouchMove = function(){
+
+    };
+
+    render();
+
+    // .addEventListener( 'mousedown', onDocumentMouseDown, false );
+
+</script>
+</body>
+</html>
