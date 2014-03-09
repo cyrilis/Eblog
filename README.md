@@ -2,6 +2,8 @@
 
 Eblog is another Blog system powered by Express and MongoDB .
 
+![](public/images/screenshot_0.png)
+
 Eblog has a clear and customizable Theme, which can change main color easily by change a color value in stylus file, and it's responsive designed, it means it's mobile-friendly. The WYSIWYG editor can upload image by drag pic files into the editor area, like this ->
  
 ![](public/images/screenshot_1.png)
