@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1f2b440-a030-4a6e-b81d-18bc193abbfe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/screenshot_0.png" />
-      <change type="DELETED" beforePath="Z:\Sites\test\public\images\screenshop_0.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="test.iws" />
@@ -105,7 +104,7 @@
           <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/README.md">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="4" column="35" selection-start="107" selection-end="107" vertical-scroll-proportion="0.100961536" vertical-offset="0" max-vertical-offset="861">
+                <state line="39" column="18" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.984375" vertical-offset="0" max-vertical-offset="945">
                   <folding />
                 </state>
               </provider>
@@ -992,7 +991,11 @@
       <created>1394335268503</created>
       <updated>1394335268503</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="rename one file">
+      <created>1394335357602</created>
+      <updated>1394335357602</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1017,7 +1020,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34154353" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840723" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1025,7 +1028,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22271715" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="0" y="308" width="1600" height="244" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24721603" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962631" sideWeight="0.71672356" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.104957804" sideWeight="0.7060134" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.104957804" sideWeight="0.7060134" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33386075" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16393442" sideWeight="0.30821916" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16926503" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1067,7 +1070,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="Made a lot of changes :cupid:" />
     <MESSAGE value="forgot to add the font file." />
     <MESSAGE value="response style need to be fixed." />
     <MESSAGE value="gogogo go to sleep." />
@@ -1092,7 +1094,8 @@
     <MESSAGE value="Fix ReadMe.MD :cupid:" />
     <MESSAGE value="add two pic as screenshot" />
     <MESSAGE value="Add Screen shop and Fix Readme.md :cupid:" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Screen shop and Fix Readme.md :cupid:" />
+    <MESSAGE value="rename one file" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename one file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1238,7 +1241,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="35" selection-start="107" selection-end="107" vertical-scroll-proportion="0.100961536" vertical-offset="0" max-vertical-offset="861">
+        <state line="39" column="18" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.984375" vertical-offset="0" max-vertical-offset="945">
           <folding />
         </state>
       </provider>

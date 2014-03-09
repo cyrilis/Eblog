@@ -1,18 +1,22 @@
 #Eblog#
-
+---------------------
 Eblog is another Blog system powered by Express and MongoDB .
 
-![](public/images/screenshot_0.png)
+Eblog has a clear and customizable Theme, which can change main color easily by change a color value in stylus file, and it's responsive designed, it means it's mobile-friendly. The WYSIWYG editor can upload image by drag pic files into the editor area.
 
-Eblog has a clear and customizable Theme, which can change main color easily by change a color value in stylus file, and it's responsive designed, it means it's mobile-friendly. The WYSIWYG editor can upload image by drag pic files into the editor area, like this ->
+##Example
+[http://cyrilis.com](http://cyrilis.com)
+
+##Screenshot
  
-![](public/images/screenshot_1.png)
-![](public/images/screenshot_2.png)
+![](../public/images/screenshot_0.png)
+![](../public/images/screenshot_1.png)
+![](../public/images/screenshot_2.png)
 
 Eblog's WYSIWYG editor is powered by https://github.com/cyrilis/umeditor-turquoise , it's forked from umeditor . For more info please visite the link above. 
 
 ##install:##
-firstly , you should make sure Nodejs mongodb node installed , and then
+firstly , you should make sure nodejs mongodb node installed , and then
 
     > git clone git@github.com:cyrilis/Eblog.git blog
     > cd blog
