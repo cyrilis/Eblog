@@ -126,7 +126,7 @@ $(document).ready(function(){
         $(this).parent().toggleClass('open');
         return false;
     });
-    $("header .toggle_sidebar").on("touchstart",function(e){
+    $("header .toggle_sidebar").on("touchstart click",function(e){
         e.preventDefault();
         $('header').toggleClass("show");
         $('html').toggleClass('toggled');
@@ -147,5 +147,74 @@ $(document).ready(function(){
     }
     window.hljs.configure({useBR: true});
     highlight();
+
+    function showBox (message, action, showCb, closeCb ){
+        var _x, _y;
+        var dragable = false;
+        var body = $('body').on('mouseleave', function(){
+            dragable && template.removeAttr('style');
+            dragable = false;
+        });
+        var template =$('<div class="confirm"><div class="confirm_header"><a class="close">×</a></div>' +
+            '<div class="confirm_body">'+message+'</div>' +
+            '<div class="confirm_footer">' +
+            '<button class="button close">取消</button>' +
+            '<button class="button action">确定</button>' +
+            '</div></div>')
+            .appendTo(body)
+            .find('.close').click(function(){
+                template.removeClass('show');
+                dropback.removeClass('show');
+                window.setTimeout(function(){
+                    template.remove();
+                    dropback.remove();
+                    typeof closeCb === "function" && closeCb();
+                },300);
+            }).end().find('.action').click(function(){
+                typeof action === 'function' && action();
+                template.removeClass('show');
+                dropback.removeClass('show');
+                window.setTimeout(function(){
+                    template.remove();
+                    dropback.remove();
+                    typeof closeCb === "function" && closeCb();
+                },300);
+            }).end()
+            .find('.confirm_header').on('mousedown',function(e){
+                dragable = true;
+                _x=e.pageX-parseInt(template.css("left"));
+                _y=e.pageY-parseInt(template.css("top"));
+            })
+            .on('mousemove', function(e){
+                if(dragable){
+                    var x=e.pageX-_x,y=e.pageY-_y;
+                    template.css({top:y,left:x});
+                }
+            })
+            .on('mouseup',function(e){
+                dragable = false;
+            }).end();
+        var dropback = $('<div class="backdrops show">').appendTo(body).click(function(){
+            $(this).removeClass('show');
+            template.removeClass('show');
+            window.setTimeout(function(){
+                template.remove();
+                $(this).remove();
+                typeof closeCb === "function" && closeCb();
+            },300);
+        });
+        window.setTimeout(function(){
+            template.addClass('show');
+            typeof showCb === "function" && showCb();
+        },1); // hack for -webkit-transition
+        $( window ).resize(function() {
+            template.removeAttr('style');
+            dragable = false;
+        });
+    }
+
+
+//    showBox('Sure to Delete it?', function(){alert('Action!');},function(){alert('Showed!');},function(){alert('Closed');});
+
 
 });

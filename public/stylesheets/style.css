@@ -528,11 +528,11 @@ div.show_box {
   -ms-transform: scale(1.5);
   -o-transform: scale(1.5);
   transform: scale(1.5);
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  -moz-transition: opacity 0.3s, -moz-transform 0.3s;
+  -ms-transition: opacity 0.3s, -ms-transform 0.3s;
+  -o-transition: opacity 0.3s, -o-transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
   z-index: 1001;
 }
 div.confirm .form-group label,
@@ -568,6 +568,17 @@ div.confirm a.close:hover,
 div.show_box a.close:hover {
   color: #333;
   font-weight: bold;
+}
+div.confirm .confirm_header,
+div.show_box .confirm_header {
+  width: 100%;
+  height: 40px;
+  background: #ececec;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-bottom: 1px solid #ddd;
+  cursor: move;
 }
 div.confirm .confirm_footer,
 div.show_box .confirm_footer,

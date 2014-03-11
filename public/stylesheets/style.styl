@@ -451,11 +451,11 @@ div.confirm,div.show_box
   -ms-transform: scale(1.5)
   -o-transform: scale(1.5)
   transform: scale(1.5)
-  -webkit-transition: all .3s
-  -moz-transition: all .3s
-  -ms-transition: all .3s
-  -o-transition: all .3s
-  transition: all .3s
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s
+  -moz-transition: opacity 0.3s, -moz-transform 0.3s
+  -ms-transition: opacity 0.3s, -ms-transform 0.3s
+  -o-transition: opacity 0.3s, -o-transform 0.3s
+  transition: opacity 0.3s, transform 0.3s
   z-index 1001
   & .form-group label
     width 80px
@@ -483,6 +483,15 @@ div.confirm,div.show_box
     &:hover
       color: #333
       font-weight bold
+  .confirm_header
+    width: 100%;
+    height: 40px;
+    background: #ECECEC;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-bottom: 1px solid #ddd;
+    cursor move
   .confirm_footer,.box_footer
     position relative
     bottom 0
