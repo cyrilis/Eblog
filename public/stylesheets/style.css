@@ -614,12 +614,11 @@ h6 a {
 }
 .post_title h2 {
   float: left;
-  width: 60%;
 }
 .post_title p.info {
   float: right;
   text-align: right;
-  margin-top: 25px;
+  margin-top: 40px;
   color: #aaa;
 }
 .post_title p.info a {
@@ -658,6 +657,12 @@ h6 a {
 }
 .tag_links a {
   text-decoration: none;
+  padding: 5px 10px;
+  background: #a3a3a3;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color: #fff !important;
 }
 .tag_links a i {
   margin-right: 5px;
@@ -667,13 +672,15 @@ h6 a {
 }
 .post_info {
   color: #9c9c9c;
+  margin: 20px 0;
 }
 .post_info a {
   color: #8a8a8a;
   margin-left: 10px;
 }
 .post_info a:hover {
-  color: #666;
+  background: #ddd;
+  color: #bebbbb !important;
 }
 img.avatar {
   float: left;
