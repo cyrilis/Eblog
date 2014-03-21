@@ -2,12 +2,12 @@
 <div class="container posts">
     <% include post_list.ejs %>
     <div class="pagination clearfix">
-        <% if(page-1>0){    %>
+        <% if(+page>1){    %>
         <a class="button prev" href="/pages/<%= +page-1 %>">Prev</a>
         <%} %>
-        <%if(count/limit>page){ %>
+        <%if(+count/limit>page){ %>
         <a class="button next" href="/pages/<%= +page+1 %>">Next</a>
-        <%}   %>
+        <%} %>
     </div>
 </div>
 <% include _footer.ejs %>

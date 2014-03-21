@@ -44,7 +44,7 @@ exports.index = function(q,s,next){
                 posts: posts,
                 count: count,
                 limit: limit,
-                page: q.query.page||1,
+                page: q.params.page||1,
                 title: "Home"
             });
         });
