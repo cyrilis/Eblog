@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1f2b440-a030-4a6e-b81d-18bc193abbfe" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/post_list.ejs" afterPath="$PROJECT_DIR$/views/post_list.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="test.iws" />
     <ignored path="public/images/upload/" />
     <ignored path=".idea/" />
+    <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,37 +28,40 @@
     <favorites_list name="test" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.69491524">
+    <splitter split-orientation="horizontal" split-proportion="0.61858004">
       <split-first>
         <leaf>
-          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/lab/doubanshow/index.html">
+          <file leaf-file-name="post.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/controller/post.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="7" column="28" selection-start="353" selection-end="353" vertical-scroll-proportion="0.0" vertical-offset="147" max-vertical-offset="987">
+                <state line="144" column="24" selection-start="3988" selection-end="3988" vertical-scroll-proportion="0.0" vertical-offset="1040" max-vertical-offset="5742">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_header.ejs" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/_header.ejs">
+          <file leaf-file-name="_setting_sidebar.ejs" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/settings/_setting_sidebar.ejs">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="30" column="43" selection-start="1441" selection-end="1441" vertical-scroll-proportion="-14.7" vertical-offset="189" max-vertical-offset="1344">
-                  <folding>
-                    <marker date="1394327686271" expanded="true" signature="592:670" placeholder="{...}" />
-                    <marker date="1394327686271" expanded="true" signature="1514:1982" placeholder="{...}" />
-                    <marker date="1394327686271" expanded="true" signature="1986:2104" placeholder="{...}" />
-                    <marker date="1394327686271" expanded="true" signature="2321:2398" placeholder="{...}" />
-                    <marker date="1394327686271" expanded="true" signature="2436:2518" placeholder="{...}" />
-                  </folding>
+                <state line="17" column="9" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="528">
+                  <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="robots.txt" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/robots.txt">
+          <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/routes/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="1" column="9" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="147">
+                <state line="41" column="40" selection-start="1307" selection-end="1307" vertical-scroll-proportion="0.0" vertical-offset="902" max-vertical-offset="2420">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="user.ejs" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/user.ejs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="12" column="0" selection-start="580" selection-end="580" vertical-scroll-proportion="0.0" vertical-offset="22" max-vertical-offset="396">
                   <folding />
                 </state>
               </provider>
@@ -65,61 +70,81 @@
           <file leaf-file-name="post.ejs" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/post.ejs">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="46" column="17" selection-start="2434" selection-end="2434" vertical-scroll-proportion="-19.6" vertical-offset="378" max-vertical-offset="1218">
-                  <folding />
+                <state line="9" column="43" selection-start="507" selection-end="507" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="1276">
+                  <folding>
+                    <marker date="1395904161851" expanded="true" signature="459:722" placeholder="{...}" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="post_list.ejs" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/views/post_list.ejs">
+          <file leaf-file-name="about.ejs" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/about.ejs">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="11" column="65" selection-start="743" selection-end="743" vertical-scroll-proportion="0.27966103" vertical-offset="0" max-vertical-offset="1029">
+                <state line="14" column="17" selection-start="397" selection-end="397" vertical-scroll-proportion="0.0" vertical-offset="308" max-vertical-offset="440">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.ejs" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/index.ejs">
+          <file leaf-file-name="about.ejs" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/settings/about.ejs">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="12" column="25" selection-start="404" selection-end="404" vertical-scroll-proportion="-8.4" vertical-offset="0" max-vertical-offset="378">
+                <state line="7" column="14" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0" vertical-offset="154" max-vertical-offset="440">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="post.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/controller/post.js">
+          <file leaf-file-name="user.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/controller/user.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="34" column="19" selection-start="822" selection-end="822" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="5481">
-                  <folding />
+                <state line="211" column="0" selection-start="7055" selection-end="7055" vertical-scroll-proportion="0.0" vertical-offset="4074" max-vertical-offset="4774">
+                  <folding>
+                    <marker date="1394424183949" expanded="true" signature="1275:3274" placeholder="{...}" />
+                    <marker date="1394424183949" expanded="true" signature="1381:1499" placeholder="{...}" />
+                    <marker date="1394424183949" expanded="true" signature="1575:1673" placeholder="{...}" />
+                    <marker date="1394424183949" expanded="true" signature="1868:3269" placeholder="{...}" />
+                    <marker date="1394424183949" expanded="true" signature="1885:1969" placeholder="{...}" />
+                    <marker date="1394424183949" expanded="true" signature="1986:2098" placeholder="{...}" />
+                    <marker date="1394424183949" expanded="true" signature="2102:3263" placeholder="{...}" />
+                    <marker date="1394424183949" expanded="true" signature="2146:3250" placeholder="{...}" />
+                    <marker date="1394424183949" expanded="true" signature="2171:2287" placeholder="{...}" />
+                    <marker date="1394424183949" expanded="true" signature="5050:6788" placeholder="{...}" />
+                    <marker date="1394424183949" expanded="true" signature="5087:6683" placeholder="{...}" />
+                    <marker date="1394424183949" expanded="true" signature="5185:6527" placeholder="{...}" />
+                    <marker date="1394424183949" expanded="true" signature="5251:6515" placeholder="{...}" />
+                    <marker date="1394424183949" expanded="true" signature="5278:5385" placeholder="{...}" />
+                    <marker date="1394424183949" expanded="true" signature="5678:6362" placeholder="{...}" />
+                    <marker date="1394424183949" expanded="true" signature="6012:6342" placeholder="{...}" />
+                    <marker date="1394424183949" expanded="true" signature="6045:6147" placeholder="{...}" />
+                    <marker date="1394424183949" expanded="true" signature="6366:6501" placeholder="{...}" />
+                    <marker date="1394424183949" expanded="true" signature="6531:6677" placeholder="{...}" />
+                    <marker date="1394424183949" expanded="true" signature="6687:6786" placeholder="{...}" />
+                    <marker date="1394424183949" expanded="true" signature="6831:6865" placeholder="{...}" />
+                    <marker date="1394424183949" expanded="true" signature="6909:6946" placeholder="{...}" />
+                    <marker date="1394424183949" expanded="true" signature="6988:7052" placeholder="{...}" />
+                    <marker date="1394424183949" expanded="true" signature="7020:7048" placeholder="{&quot;mode&quot;: &quot;edit&quot;...}" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/lab/index.html">
+          <file leaf-file-name="application.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="6" column="12" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="840">
+                <state line="214" column="0" selection-start="7431" selection-end="7431" vertical-scroll-proportion="0.0" vertical-offset="4249" max-vertical-offset="4972">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="resume.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/resume.html">
+          <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="44" column="0" selection-start="1602" selection-end="1602" vertical-scroll-proportion="0.0" vertical-offset="361" max-vertical-offset="2037">
+                <state line="45" column="39" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.69736844" vertical-offset="619" max-vertical-offset="1320">
                   <folding />
                 </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="dropdown.jpg" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/lab/screenshot/dropdown.jpg">
-              <provider selected="true" editor-type-id="images">
-                <state />
               </provider>
             </entry>
           </file>
@@ -130,7 +155,7 @@
           <file leaf-file-name="style.styl" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/stylesheets/style.styl">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="511" column="14" selection-start="11578" selection-end="11578" vertical-scroll-proportion="0.19751553" vertical-offset="10572" max-vertical-offset="15645">
+                <state line="425" column="14" selection-start="9758" selection-end="9758" vertical-scroll-proportion="0.63721806" vertical-offset="9011" max-vertical-offset="16390">
                   <folding />
                 </state>
               </provider>
@@ -139,34 +164,7 @@
           <file leaf-file-name="database.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/models/database.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="87" column="3" selection-start="2244" selection-end="2244" vertical-scroll-proportion="0.0" vertical-offset="1302" max-vertical-offset="2499">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="icon_style.css" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/stylesheets/icon_style.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="9" column="1" selection-start="361" selection-end="361" vertical-scroll-proportion="0.0" vertical-offset="189" max-vertical-offset="3129">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="file.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/controller/file.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="9" column="20" selection-start="188" selection-end="188" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="693">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="umeditor.config.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/javascripts/umeditor.config.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="140" column="42" selection-start="3901" selection-end="3901" vertical-scroll-proportion="0.0" vertical-offset="2940" max-vertical-offset="5271">
+                <state line="21" column="35" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0" vertical-offset="462" max-vertical-offset="2618">
                   <folding />
                 </state>
               </provider>
@@ -196,30 +194,30 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/public/lab/doubanshow/js1.js" />
-        <option value="$PROJECT_DIR$/public/lab/doubanshow/index.html" />
-        <option value="$PROJECT_DIR$/public/lab/coverflow/index.html" />
-        <option value="$PROJECT_DIR$/public/lab/coverflow/style.css" />
-        <option value="$PROJECT_DIR$/public/lab/style.css" />
-        <option value="$PROJECT_DIR$/public/lab/threejs/index.html" />
-        <option value="$PROJECT_DIR$/public/lab/index.html" />
-        <option value="$PROJECT_DIR$/public/style.styl" />
-        <option value="$PROJECT_DIR$/public/resume.html" />
-        <option value="$PROJECT_DIR$/public/robots.txt" />
+        <option value="$PROJECT_DIR$/views/edit.ejs" />
+        <option value="$PROJECT_DIR$/models/database.js" />
+        <option value="$PROJECT_DIR$/views/_setting_sidebar.ejs" />
+        <option value="$PROJECT_DIR$/views/editAbout.ejs" />
         <option value="$PROJECT_DIR$/views/post.ejs" />
-        <option value="$PROJECT_DIR$/public/stylesheets/style.styl" />
+        <option value="$PROJECT_DIR$/views/about.ejs" />
+        <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/views/header.ejs" />
+        <option value="$PROJECT_DIR$/views/user.ejs" />
         <option value="$PROJECT_DIR$/controller/post.js" />
-        <option value="$PROJECT_DIR$/views/index.ejs" />
-        <option value="$PROJECT_DIR$/views/post_list.ejs" />
+        <option value="$PROJECT_DIR$/views/settings/_setting_sidebar.ejs" />
+        <option value="$PROJECT_DIR$/views/settings/about.ejs" />
+        <option value="$PROJECT_DIR$/controller/user.js" />
+        <option value="$PROJECT_DIR$/public/stylesheets/style.styl" />
+        <option value="$PROJECT_DIR$/public/javascripts/application.js" />
+        <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -268,25 +266,26 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
-      <showMembers />
+      <showMembers ProjectPane="false" />
       <showModules />
       <showLibraryContents />
       <hideEmptyPackages />
       <abbreviatePackageNames />
-      <autoscrollToSource />
+      <autoscrollToSource ProjectPane="false" />
       <autoscrollFromSource ProjectPane="true" />
       <sortByType />
     </navigator>
     <panes>
       <pane id="Scope">
         <subPane subId="Problems" />
+        <subPane subId="Tests" />
         <subPane subId="Project Files">
           <PATH>
             <PATH_ELEMENT USER_OBJECT="Root">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="test">
+            <PATH_ELEMENT USER_OBJECT="Eblog">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -296,7 +295,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="test">
+            <PATH_ELEMENT USER_OBJECT="Eblog">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -310,7 +309,25 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="test">
+            <PATH_ELEMENT USER_OBJECT="Eblog">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="views">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="albums">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Eblog">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -324,7 +341,57 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="test">
+            <PATH_ELEMENT USER_OBJECT="Eblog">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="public">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="stylesheets">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Eblog">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="public">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="javascripts">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Eblog">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="public">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Eblog">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -375,7 +442,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="Eblog" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -385,21 +452,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Eblog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -413,7 +466,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="Eblog" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -421,57 +474,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Eblog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="style.styl" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Eblog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Eblog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
+              <option name="myItemId" value="javascripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -481,29 +484,24 @@
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
-    <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../www/public/editor" />
-    <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="TODO_SCOPE" value="Project Files" />
+    <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea/workspace.xml" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="options.splitter.details.proportions" value="0.32932693" />
     <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="Z:\Sites\test\public\lab\img" />
-      <recent name="Z:\Sites\test\public\lab\threejs\javascripts" />
-      <recent name="Z:\Sites\test\views" />
-      <recent name="Z:\Sites\test\public\stylesheets\fonts" />
+      <recent name="D:\Sites\Eblog\views" />
+      <recent name="D:\Sites\Eblog\public\javascripts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="Z:\Sites\test\views\settings" />
-      <recent name="Z:\Sites\test\views\albums" />
+      <recent name="D:\Sites\Eblog\views\settings" />
     </key>
   </component>
   <component name="RestoreUpdateTree">
@@ -522,9 +520,12 @@
             <option name="myCanBeAbsent" value="false" />
             <option name="myId" value="UPDATED" />
             <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/public/javascripts/application.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/controller/post.js</PATH>
             <PATH vcs="Git" revision="">$PROJECT_DIR$/public/stylesheets/style.css</PATH>
             <PATH vcs="Git" revision="">$PROJECT_DIR$/public/stylesheets/style.styl</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/views/index.ejs</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/views/post.ejs</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/views/post_list.ejs</PATH>
           </FILE-GROUP>
           <FILE-GROUP>
             <option name="myUpdateName" value="Created" />
@@ -532,6 +533,7 @@
             <option name="mySupportsDeletion" value="false" />
             <option name="myCanBeAbsent" value="false" />
             <option name="myId" value="CREATED" />
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/public/robots.txt</PATH>
           </FILE-GROUP>
           <FILE-GROUP>
             <option name="myUpdateName" value="Deleted" />
@@ -622,20 +624,12 @@
     </UpdateInfo>
   </component>
   <component name="RunManager" selected="Node.js.app.js">
-    <configuration default="false" name="app.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="Z:/Program Files/nodejs/node" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
+    <configuration default="false" name="app.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="C:/Program Files/nodejs/node" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
       <browser start="false" name="Chrome" url="" with-js-debugger="true" />
       <RunnerSettings RunnerId="NodeJS.debug" />
       <RunnerSettings RunnerId="NodeJS.run" />
       <ConfigurationWrapper RunnerId="NodeJS.debug" />
       <ConfigurationWrapper RunnerId="NodeJS.run" />
-      <method />
-    </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -648,6 +642,18 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
@@ -655,31 +661,11 @@
       <setting name="preferredDebugBrowser" value="CHROME" />
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" editBeforeRun="true" path-to-node="C:/Program Files/nodejs/node" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
       <browser start="true" name="Chrome" url="" with-js-debugger="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="XSLT" factoryName="XSLT">
-      <option name="myOutputFile" />
-      <option name="myOpenOutputFile" value="false" />
-      <option name="myOpenInBrowser" value="false" />
-      <option name="mySmartErrorHandling" value="true" />
-      <option name="myRunnerPort" value="34873" />
-      <option name="myVmArguments" />
-      <option name="myWorkingDirectory" />
-      <option name="myModule" />
-      <option name="myJdk" />
-      <parameters />
-      <OutputType value="CONSOLE" save-to-file="false" />
-      <FileType name="XML" />
-      <JdkChoice value="FROM_MODULE" />
       <method />
     </configuration>
     <list size="1">
@@ -808,208 +794,96 @@
       <created>1384363378730</created>
       <updated>1384363378730</updated>
     </task>
-    <task id="LOCAL-00024" summary="Made any Change?">
-      <created>1387134296622</created>
-      <updated>1387134296622</updated>
+    <task id="LOCAL-00024" summary="Make the editor color customizable">
+      <created>1387182275297</created>
+      <updated>1387182275297</updated>
     </task>
-    <task id="LOCAL-00025" summary="fix onload css3 transition">
-      <created>1388607551065</created>
-      <updated>1388607551065</updated>
+    <task id="LOCAL-00025" summary="W I V D">
+      <created>1387273507946</created>
+      <updated>1387273507946</updated>
     </task>
-    <task id="LOCAL-00026" summary="add prefix as a lib :cupid:">
-      <created>1389547700332</created>
-      <updated>1389547700332</updated>
+    <task id="LOCAL-00026" summary="Change WYSIWYG Editor">
+      <created>1387791022662</created>
+      <updated>1387791022662</updated>
     </task>
-    <task id="LOCAL-00027" summary="add prefix as a lib :cupid:">
-      <created>1389547714500</created>
-      <updated>1389547714500</updated>
+    <task id="LOCAL-00027" summary="fix tag add and remove method">
+      <created>1387791786414</created>
+      <updated>1387791786414</updated>
     </task>
-    <task id="LOCAL-00028" summary="fix footer javascript link">
-      <created>1389547979035</created>
-      <updated>1389547979035</updated>
+    <task id="LOCAL-00028" summary="What's error with USER">
+      <created>1392632073022</created>
+      <updated>1392632073022</updated>
     </task>
-    <task id="LOCAL-00029" summary="Though I Don't get what i've done , i still wanna commit .">
-      <created>1391966932057</created>
-      <updated>1391966932057</updated>
+    <task id="LOCAL-00029" summary="go back home .">
+      <created>1392633463486</created>
+      <updated>1392633463486</updated>
     </task>
-    <task id="LOCAL-00030" summary="use mongoose instead of mongodb.">
-      <created>1392496140172</created>
-      <updated>1392496140172</updated>
+    <task id="LOCAL-00030" summary="go back home .">
+      <created>1392633779586</created>
+      <updated>1392633779586</updated>
     </task>
-    <task id="LOCAL-00031" summary="Tobe  Effective.">
-      <created>1392543861864</created>
-      <updated>1392543861864</updated>
+    <task id="LOCAL-00031" summary="fix user controller and post#populate in tag and category">
+      <created>1392713512572</created>
+      <updated>1392713512572</updated>
     </task>
-    <task id="LOCAL-00032" summary="Go to McDonald's. Back Soon.">
-      <created>1392546823957</created>
-      <updated>1392546823957</updated>
+    <task id="LOCAL-00032" summary="Fix Error Handle :cupid:">
+      <created>1392719428748</created>
+      <updated>1392719428748</updated>
     </task>
-    <task id="LOCAL-00033" summary="todo: fix User Module">
-      <created>1392577204874</created>
-      <updated>1392577204874</updated>
+    <task id="LOCAL-00033" summary="remove slug virtual method">
+      <created>1392719517640</created>
+      <updated>1392719517640</updated>
     </task>
-    <task id="LOCAL-00034" summary="Fuck Yeah, todo: User module.">
-      <created>1392577308502</created>
-      <updated>1392577308502</updated>
+    <task id="LOCAL-00034" summary="remove unused database hook.">
+      <created>1392774765180</created>
+      <updated>1392774765180</updated>
     </task>
-    <task id="LOCAL-00035" summary="Remove handleError Function and  fix tag span style .&#10;TODO: Padding animation change on Hover need to be fixed.">
-      <created>1392813522028</created>
-      <updated>1392813522028</updated>
+    <task id="LOCAL-00035" summary="rewrite Album controller">
+      <created>1392780530150</created>
+      <updated>1392780530150</updated>
     </task>
-    <task id="LOCAL-00036" summary="todo:Album Detal page.">
-      <created>1392829395712</created>
-      <updated>1392829395712</updated>
+    <task id="LOCAL-00036" summary="add new Photo controller">
+      <created>1392804035038</created>
+      <updated>1392804035038</updated>
     </task>
-    <task id="LOCAL-00037" summary="Changed something.">
-      <created>1393173198313</created>
-      <updated>1393173198313</updated>
+    <task id="LOCAL-00037" summary="add Photo and Album Logic in the album controller. &#10;Then go home . and have fun.">
+      <created>1392806562606</created>
+      <updated>1392806562606</updated>
     </task>
-    <task id="LOCAL-00038" summary="TODO: Write a Promise Class.">
-      <created>1393173251976</created>
-      <updated>1393173251976</updated>
+    <task id="LOCAL-00038" summary="fix some album logic and post sort.">
+      <created>1392883000410</created>
+      <updated>1392883000410</updated>
     </task>
-    <task id="LOCAL-00039" summary="Made a lot of changes :cupid:">
-      <created>1393737425100</created>
-      <updated>1393737425100</updated>
+    <task id="LOCAL-00039" summary="go">
+      <created>1392892611139</created>
+      <updated>1392892611139</updated>
     </task>
-    <task id="LOCAL-00040" summary="forgot to add the font file.">
-      <created>1393737476781</created>
-      <updated>1393737476781</updated>
+    <task id="LOCAL-00040" summary="Fox some style about P style">
+      <created>1393580339958</created>
+      <updated>1393580339958</updated>
     </task>
-    <task id="LOCAL-00041" summary="response style need to be fixed.">
-      <created>1393763740271</created>
-      <updated>1393763740271</updated>
+    <task id="LOCAL-00041" summary="add Dribble to Lab Sys">
+      <created>1393829450276</created>
+      <updated>1393829450276</updated>
     </task>
-    <task id="LOCAL-00042" summary="gogogo go to sleep.">
-      <created>1393777257564</created>
-      <updated>1393777257564</updated>
+    <task id="LOCAL-00042" summary="add utils  and user settings">
+      <created>1393929218602</created>
+      <updated>1393929218602</updated>
     </task>
-    <task id="LOCAL-00043" summary="add user setting page">
-      <created>1393941231462</created>
-      <updated>1393941231462</updated>
+    <task id="LOCAL-00043" summary="Save and go home.">
+      <created>1394102259385</created>
+      <updated>1394102259385</updated>
     </task>
-    <task id="LOCAL-00044" summary="update settings and profiles page.">
-      <created>1393947940417</created>
-      <updated>1393947940417</updated>
+    <task id="LOCAL-00044" summary="fix touch and click event .">
+      <created>1394534388373</created>
+      <updated>1394534388373</updated>
     </task>
-    <task id="LOCAL-00045" summary="some post">
-      <created>1394039292459</created>
-      <updated>1394039292459</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Fix application js">
-      <created>1394130003352</created>
-      <updated>1394130003352</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Almost Done!&#10;">
-      <created>1394294963963</created>
-      <updated>1394294963963</updated>
-    </task>
-    <task id="LOCAL-00048" summary="fix env and listen address">
-      <created>1394295976448</created>
-      <updated>1394295976448</updated>
-    </task>
-    <task id="LOCAL-00049" summary="fix word error">
-      <created>1394296086670</created>
-      <updated>1394296086670</updated>
-    </task>
-    <task id="LOCAL-00050" summary="fix user register">
-      <created>1394296930217</created>
-      <updated>1394296930217</updated>
-    </task>
-    <task id="LOCAL-00051" summary="temporarily get rid of albums">
-      <created>1394297210073</created>
-      <updated>1394297210073</updated>
-    </task>
-    <task id="LOCAL-00052" summary="cancel listen on only localhost">
-      <created>1394297438215</created>
-      <updated>1394297438215</updated>
-    </task>
-    <task id="LOCAL-00053" summary="fix get ip Error.">
-      <created>1394297891243</created>
-      <updated>1394297891243</updated>
-    </task>
-    <task id="LOCAL-00054" summary="fix location lookup">
-      <created>1394298047199</created>
-      <updated>1394298047199</updated>
-    </task>
-    <task id="LOCAL-00055" summary="listen on localhost again! &#10;easy to get IP">
-      <created>1394298585860</created>
-      <updated>1394298585860</updated>
-    </task>
-    <task id="LOCAL-00056" summary="add user populate &#10;fix responsive style&#10;resort js">
-      <created>1394304404910</created>
-      <updated>1394304404910</updated>
-    </task>
-    <task id="LOCAL-00057" summary="Redirect Old Post">
-      <created>1394306722859</created>
-      <updated>1394306722859</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Word break fix">
-      <created>1394326345251</created>
-      <updated>1394326345251</updated>
-    </task>
-    <task id="LOCAL-00059" summary="test if it hide nav bar in iOS">
-      <created>1394327235847</created>
-      <updated>1394327235847</updated>
-    </task>
-    <task id="LOCAL-00060" summary="hide taskbar on iOS">
-      <created>1394327708127</created>
-      <updated>1394327708127</updated>
-    </task>
-    <task id="LOCAL-00061" summary="Fix ReadMe.MD :cupid:">
-      <created>1394334629468</created>
-      <updated>1394334629468</updated>
-    </task>
-    <task id="LOCAL-00062" summary="add two pic as screenshot">
-      <created>1394334689882</created>
-      <updated>1394334689882</updated>
-    </task>
-    <task id="LOCAL-00063" summary="Add Screen shop and Fix Readme.md :cupid:">
-      <created>1394335268503</created>
-      <updated>1394335268503</updated>
-    </task>
-    <task id="LOCAL-00064" summary="rename one file">
-      <created>1394335357602</created>
-      <updated>1394335357602</updated>
-    </task>
-    <task id="LOCAL-00065" summary="Refix Readme.md :cupid:">
-      <created>1394335612526</created>
-      <updated>1394335612526</updated>
-    </task>
-    <task id="LOCAL-00066" summary="fix screen path 'cupid'">
-      <created>1394335800335</created>
-      <updated>1394335800336</updated>
-    </task>
-    <task id="LOCAL-00067" summary="add some lab items">
-      <created>1394341379807</created>
-      <updated>1394341379807</updated>
-    </task>
-    <task id="LOCAL-00068" summary="add another lab item">
-      <created>1394342450697</created>
-      <updated>1394342450697</updated>
-    </task>
-    <task id="LOCAL-00069" summary="add personal resume">
-      <created>1394387694539</created>
-      <updated>1394387694539</updated>
-    </task>
-    <task id="LOCAL-00070" summary="add robots.txt and Disqus widget.">
-      <created>1395431013447</created>
-      <updated>1395431013448</updated>
-    </task>
-    <task id="LOCAL-00071" summary="add robots.txt and Disqus widget.">
-      <created>1395431175069</created>
-      <updated>1395431175069</updated>
-    </task>
-    <task id="LOCAL-00072" summary="fix pagination.">
-      <created>1395431935559</created>
-      <updated>1395431935560</updated>
-    </task>
-    <option name="localTasksCounter" value="73" />
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
-  <component name="TodoView" selected-index="0">
+  <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
-      <are-packages-shown value="true" />
+      <are-packages-shown value="false" />
       <are-modules-shown value="false" />
       <flatten-packages value="false" />
       <is-autoscroll-to-source value="false" />
@@ -1028,91 +902,69 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34154353" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19911012" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32676518" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22271715" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="0" y="308" width="1600" height="244" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32839838" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32479784" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32884097" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="0" y="308" width="1600" height="244" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962631" sideWeight="0.71672356" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14029536" sideWeight="0.707127" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15989847" sideWeight="0.7735849" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33386075" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16393442" sideWeight="0.30821916" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16926503" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29287305" sideWeight="0.5437764" order="3" side_tool="false" content_ui="tabs" x="12" y="282" width="871" height="363" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16926503" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21698113" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32479784" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="12" y="282" width="1342" height="163" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2264151" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24721603" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2857143" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24961948" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840723" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32676518" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24721603" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33386075" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16393442" sideWeight="0.30821916" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16926503" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16926503" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34154353" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22271715" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="0" y="308" width="1600" height="244" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962631" sideWeight="0.71672356" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14053673" sideWeight="0.7061281" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24961948" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29387188" sideWeight="0.5437764" order="3" side_tool="false" content_ui="tabs" x="12" y="282" width="871" height="363" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="Almost Done!&#10;" />
-    <MESSAGE value="fix env and listen address" />
-    <MESSAGE value="fix word error" />
-    <MESSAGE value="fix user register" />
-    <MESSAGE value="temporarily get rid of albums" />
-    <MESSAGE value="cancel listen on only localhost" />
-    <MESSAGE value="fix get ip Error." />
-    <MESSAGE value="fix location lookup" />
-    <MESSAGE value="listen on localhost again! &#10;easy to get IP" />
-    <MESSAGE value="add user populate &#10;fix responsive style&#10;resort js" />
-    <MESSAGE value="Redirect Old Post" />
-    <MESSAGE value="Word break fix" />
-    <MESSAGE value="test if it hide nav bar in iOS" />
-    <MESSAGE value="hide taskbar on iOS" />
-    <MESSAGE value="Fix ReadMe.MD :cupid:" />
-    <MESSAGE value="add two pic as screenshot" />
-    <MESSAGE value="Add Screen shop and Fix Readme.md :cupid:" />
-    <MESSAGE value="rename one file" />
-    <MESSAGE value="Refix Readme.md :cupid:" />
-    <MESSAGE value="fix screen path 'cupid'" />
-    <MESSAGE value="add some lab items" />
-    <MESSAGE value="add another lab item" />
-    <MESSAGE value="add personal resume" />
-    <MESSAGE value="add robots.txt and Disqus widget." />
-    <MESSAGE value="fix pagination." />
-    <option name="LAST_COMMIT_MESSAGE" value="fix pagination." />
+    <MESSAGE value="fix again" />
+    <MESSAGE value="go to sleep" />
+    <MESSAGE value="Changed Database to a stable Connection" />
+    <MESSAGE value="fix" />
+    <MESSAGE value="Changed  a Lot" />
+    <MESSAGE value="Make the editor color customizable" />
+    <MESSAGE value="W I V D" />
+    <MESSAGE value="Change WYSIWYG Editor" />
+    <MESSAGE value="fix tag add and remove method" />
+    <MESSAGE value="What's error with USER" />
+    <MESSAGE value="go back home ." />
+    <MESSAGE value="fix user controller and post#populate in tag and category" />
+    <MESSAGE value="Fix Error Handle :cupid:" />
+    <MESSAGE value="remove slug virtual method" />
+    <MESSAGE value="remove unused database hook." />
+    <MESSAGE value="rewrite Album controller" />
+    <MESSAGE value="add new Photo controller" />
+    <MESSAGE value="add Photo and Album Logic in the album controller. &#10;Then go home . and have fun." />
+    <MESSAGE value="fix some album logic and post sort." />
+    <MESSAGE value="go" />
+    <MESSAGE value="Fox some style about P style" />
+    <MESSAGE value="add Dribble to Lab Sys" />
+    <MESSAGE value="add utils  and user settings" />
+    <MESSAGE value="Save and go home." />
+    <MESSAGE value="fix touch and click event ." />
+    <option name="LAST_COMMIT_MESSAGE" value="fix touch and click event ." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
@@ -1128,112 +980,141 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/lab/threejs/javascripts/three.js">
+    <entry file="file://$PROJECT_DIR$/views/edit.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="23" selection-start="316" selection-end="316" vertical-scroll-proportion="0.41705608" vertical-offset="0" max-vertical-offset="766920" />
+        <state line="13" column="19" selection-start="569" selection-end="569" vertical-scroll-proportion="-9.862069" vertical-offset="0" max-vertical-offset="1276" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/lab/threejs/index.html">
+    <entry file="file://$PROJECT_DIR$/views/reg.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="27" selection-start="399" selection-end="399" vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="3801">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="682" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/lab/screenshot/douapi.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/lab/screenshot/dropdown.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/lab/index.html">
+    <entry file="file://$PROJECT_DIR$/views/_setting_sidebar.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="12" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="840">
-          <folding />
-        </state>
+        <state line="12" column="57" selection-start="409" selection-end="409" vertical-scroll-proportion="-9.103448" vertical-offset="0" max-vertical-offset="528" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/style.styl">
+    <entry file="file://$PROJECT_DIR$/views/post_list.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="166" column="14" selection-start="4836" selection-end="4836" vertical-scroll-proportion="5.330275" vertical-offset="0" max-vertical-offset="4494" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/resume.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="0" selection-start="1602" selection-end="1602" vertical-scroll-proportion="0.0" vertical-offset="361" max-vertical-offset="2037">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/umeditor.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="42" selection-start="3901" selection-end="3901" vertical-scroll-proportion="0.0" vertical-offset="4336" max-vertical-offset="5208">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/lab/doubanshow/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="28" selection-start="353" selection-end="353" vertical-scroll-proportion="0.0" vertical-offset="147" max-vertical-offset="987">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/_header.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="43" selection-start="1441" selection-end="1441" vertical-scroll-proportion="-14.7" vertical-offset="189" max-vertical-offset="1344">
+        <state line="29" column="14" selection-start="77" selection-end="1380" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="814">
           <folding>
-            <marker date="1394327686271" expanded="true" signature="592:670" placeholder="{...}" />
-            <marker date="1394327686271" expanded="true" signature="1514:1982" placeholder="{...}" />
-            <marker date="1394327686271" expanded="true" signature="1986:2104" placeholder="{...}" />
-            <marker date="1394327686271" expanded="true" signature="2321:2398" placeholder="{...}" />
-            <marker date="1394327686271" expanded="true" signature="2436:2518" placeholder="{...}" />
+            <marker date="1395904161852" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395904161852" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395904161852" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395904161852" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395904161852" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/robots.txt">
+    <entry file="file://$PROJECT_DIR$/views/about.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="9" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="147">
+        <state line="14" column="17" selection-start="397" selection-end="397" vertical-scroll-proportion="0.0" vertical-offset="308" max-vertical-offset="440">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.styl">
+    <entry file="file://$PROJECT_DIR$/views/user.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="511" column="14" selection-start="11578" selection-end="11578" vertical-scroll-proportion="0.19751553" vertical-offset="10572" max-vertical-offset="15645">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/post.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="19" selection-start="822" selection-end="822" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="5481">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="25" selection-start="404" selection-end="404" vertical-scroll-proportion="-8.4" vertical-offset="0" max-vertical-offset="378">
+        <state line="12" column="0" selection-start="580" selection-end="580" vertical-scroll-proportion="0.0" vertical-offset="22" max-vertical-offset="396">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/post.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="17" selection-start="2434" selection-end="2434" vertical-scroll-proportion="-19.6" vertical-offset="378" max-vertical-offset="1218">
+        <state line="9" column="43" selection-start="507" selection-end="507" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="1276">
+          <folding>
+            <marker date="1395904161851" expanded="true" signature="459:722" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/post.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="144" column="24" selection-start="3988" selection-end="3988" vertical-scroll-proportion="0.0" vertical-offset="1040" max-vertical-offset="5742">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/post_list.ejs">
+    <entry file="file://$PROJECT_DIR$/views/settings/_setting_sidebar.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="65" selection-start="743" selection-end="743" vertical-scroll-proportion="0.27966103" vertical-offset="0" max-vertical-offset="1029">
+        <state line="17" column="9" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="528">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="40" selection-start="1307" selection-end="1307" vertical-scroll-proportion="0.0" vertical-offset="902" max-vertical-offset="2420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/settings/about.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="14" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0" vertical-offset="154" max-vertical-offset="440">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="211" column="0" selection-start="7055" selection-end="7055" vertical-scroll-proportion="0.0" vertical-offset="4074" max-vertical-offset="4774">
+          <folding>
+            <marker date="1394424183949" expanded="true" signature="1275:3274" placeholder="{...}" />
+            <marker date="1394424183949" expanded="true" signature="1381:1499" placeholder="{...}" />
+            <marker date="1394424183949" expanded="true" signature="1575:1673" placeholder="{...}" />
+            <marker date="1394424183949" expanded="true" signature="1868:3269" placeholder="{...}" />
+            <marker date="1394424183949" expanded="true" signature="1885:1969" placeholder="{...}" />
+            <marker date="1394424183949" expanded="true" signature="1986:2098" placeholder="{...}" />
+            <marker date="1394424183949" expanded="true" signature="2102:3263" placeholder="{...}" />
+            <marker date="1394424183949" expanded="true" signature="2146:3250" placeholder="{...}" />
+            <marker date="1394424183949" expanded="true" signature="2171:2287" placeholder="{...}" />
+            <marker date="1394424183949" expanded="true" signature="5050:6788" placeholder="{...}" />
+            <marker date="1394424183949" expanded="true" signature="5087:6683" placeholder="{...}" />
+            <marker date="1394424183949" expanded="true" signature="5185:6527" placeholder="{...}" />
+            <marker date="1394424183949" expanded="true" signature="5251:6515" placeholder="{...}" />
+            <marker date="1394424183949" expanded="true" signature="5278:5385" placeholder="{...}" />
+            <marker date="1394424183949" expanded="true" signature="5678:6362" placeholder="{...}" />
+            <marker date="1394424183949" expanded="true" signature="6012:6342" placeholder="{...}" />
+            <marker date="1394424183949" expanded="true" signature="6045:6147" placeholder="{...}" />
+            <marker date="1394424183949" expanded="true" signature="6366:6501" placeholder="{...}" />
+            <marker date="1394424183949" expanded="true" signature="6531:6677" placeholder="{...}" />
+            <marker date="1394424183949" expanded="true" signature="6687:6786" placeholder="{...}" />
+            <marker date="1394424183949" expanded="true" signature="6831:6865" placeholder="{...}" />
+            <marker date="1394424183949" expanded="true" signature="6909:6946" placeholder="{...}" />
+            <marker date="1394424183949" expanded="true" signature="6988:7052" placeholder="{...}" />
+            <marker date="1394424183949" expanded="true" signature="7020:7048" placeholder="{&quot;mode&quot;: &quot;edit&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/database.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="35" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0" vertical-offset="462" max-vertical-offset="2618">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="425" column="14" selection-start="9758" selection-end="9758" vertical-scroll-proportion="0.63721806" vertical-offset="9011" max-vertical-offset="16390">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="214" column="0" selection-start="7431" selection-end="7431" vertical-scroll-proportion="0.0" vertical-offset="4249" max-vertical-offset="4972">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="39" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.69736844" vertical-offset="619" max-vertical-offset="1320">
           <folding />
         </state>
       </provider>
