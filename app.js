@@ -37,9 +37,9 @@ app.use(express.session({
     })
 }));
 var oneMonth = 86400000*30;
-app.use(express.static(path.join(__dirname, 'public')),{maxAge:oneMonth});
+app.use(express.static(path.join(__dirname, 'public'),{maxAge:oneMonth}));
 // Lab source
-app.use(express.static(path.join(__dirname, 'lab')),{maxAge:oneMonth});
+app.use(express.static(path.join(__dirname, 'lab'),{maxAge:oneMonth}));
 // Route the App
 app.use(app.router);
 // development only

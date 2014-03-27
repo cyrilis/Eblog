@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d1f2b440-a030-4a6e-b81d-18bc193abbfe" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="test.iws" />
@@ -142,7 +141,7 @@
           <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="45" column="39" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.69736844" vertical-offset="619" max-vertical-offset="1320">
+                <state line="43" column="20" selection-start="1244" selection-end="1244" vertical-scroll-proportion="0.71023965" vertical-offset="620" max-vertical-offset="1320">
                   <folding />
                 </state>
               </provider>
@@ -155,7 +154,7 @@
           <file leaf-file-name="style.styl" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/stylesheets/style.styl">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="425" column="14" selection-start="9758" selection-end="9758" vertical-scroll-proportion="0.63721806" vertical-offset="9011" max-vertical-offset="16390">
+                <state line="425" column="14" selection-start="9758" selection-end="9758" vertical-scroll-proportion="0.7385621" vertical-offset="9011" max-vertical-offset="16390">
                   <folding />
                 </state>
               </provider>
@@ -878,7 +877,11 @@
       <created>1394534388373</created>
       <updated>1394534388373</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="fix cache-control.">
+      <created>1395904315472</created>
+      <updated>1395904315472</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -910,12 +913,12 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32479784" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32884097" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="0" y="308" width="1600" height="244" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962631" sideWeight="0.71672356" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15989847" sideWeight="0.7735849" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15989847" sideWeight="0.67520213" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33386075" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16393442" sideWeight="0.30821916" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21698113" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32479784" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="12" y="282" width="1342" height="163" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2264151" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32479784" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="12" y="282" width="1342" height="163" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2264151" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -933,7 +936,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="fix again" />
     <MESSAGE value="go to sleep" />
     <MESSAGE value="Changed Database to a stable Connection" />
     <MESSAGE value="fix" />
@@ -958,7 +960,8 @@
     <MESSAGE value="add utils  and user settings" />
     <MESSAGE value="Save and go home." />
     <MESSAGE value="fix touch and click event ." />
-    <option name="LAST_COMMIT_MESSAGE" value="fix touch and click event ." />
+    <MESSAGE value="fix cache-control." />
+    <option name="LAST_COMMIT_MESSAGE" value="fix cache-control." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1100,7 +1103,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/style.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="425" column="14" selection-start="9758" selection-end="9758" vertical-scroll-proportion="0.63721806" vertical-offset="9011" max-vertical-offset="16390">
+        <state line="425" column="14" selection-start="9758" selection-end="9758" vertical-scroll-proportion="0.7385621" vertical-offset="9011" max-vertical-offset="16390">
           <folding />
         </state>
       </provider>
@@ -1114,7 +1117,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="39" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.69736844" vertical-offset="619" max-vertical-offset="1320">
+        <state line="43" column="20" selection-start="1244" selection-end="1244" vertical-scroll-proportion="0.71023965" vertical-offset="620" max-vertical-offset="1320">
           <folding />
         </state>
       </provider>
