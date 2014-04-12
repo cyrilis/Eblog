@@ -411,6 +411,92 @@ main
             &>a
               /*text-decoration none*/
               text-transform capitalize
+.markdown
+  #post_title_outer
+    margin-left 200px
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    display block
+    position absolute
+    top 0
+    height 56px
+    padding 5px 10px
+    -webkit-border-radius: 0
+    -moz-border-radius: 0
+    border-radius: 0
+    border-width 0
+  .form-group-group
+    width 100%
+    .form-group
+      margin-left 10px
+      margin-right 20px
+    input[type="submit"]
+      margin-right 10px
+  .markdown_container
+    height 700px
+    margin-bottom 10px
+    border-top 2px solid #dddddd
+    border-bottom 2px solid #dddddd
+  .markdown_text
+    width 50%
+    float left
+    height 100%
+    position relative
+    textarea
+      width 100%
+      resize: none
+      font-size 16px
+      -webkit-box-sizing: border-box
+      -moz-box-sizing: border-box
+      box-sizing: border-box
+      &:focus
+        border-color #dddddd
+  .markdown_preview
+    width 50%
+    float left
+    height: 100%
+    overflow-y: scroll
+    .preview_html
+      width 100%
+      min-height 800px
+      padding 40px
+      -webkit-box-sizing: border-box
+      -moz-box-sizing: border-box
+      box-sizing: border-box
+ul,ol
+  li
+    font-size 16px
+.abs.logo
+  position absolute
+  top 0
+  left 0
+  display inline-block
+  width auto
+  height 56px
+  h1
+    display inline
+    line-height 56px
+    font-size 48px
+    a
+      display block
+      font-size 30px
+      height 56px
+      padding 0
+      line-height 56px
+      width 200px
+      background maincolor
+      color #ffffff
+      -webkit-transition: all 0.3s
+      -moz-transition: all 0.3s
+      -ms-transition: all 0.3s
+      -o-transition: all 0.3s
+      transition: all 0.3s
+      &:hover
+        background #ffffff
+        color maincolor
+    span
+      display none
 .backdrops
   display block
   position fixed

@@ -14,6 +14,19 @@
 <script>
     var ue = UM.getEditor('post_content');
 </script><%} %>
+<% if (mode == 'markdown'){ %>
+<link rel="stylesheet" href="/javascripts/codemirror/codemirror.css"/>
+<script src="/javascripts/shortcuts.js"></script>
+<script src="/javascripts/codemirror/codemirror.js"></script>
+<script src="/javascripts/codemirror/markdown-actions.js"></script>
+<script src="/javascripts/codemirror/overlay.js"></script>
+<script src="/javascripts/codemirror/markdown.js"></script>
+<script src="/javascripts/codemirror/gfm.js"></script>
+<script src="/javascripts/showdown/showdown.js"></script>
+<script src="/javascripts/showdown/imagepreview.js"></script>
+<script src="/javascripts/showdown/gfm.js"></script>
+<script src="/javascripts/markdown.js"></script>
+<%} %>
 <script src="/javascripts/prefix.js"></script>
 <script src="/javascripts/highlight.min.js"></script>
 <script src="/javascripts/application.js"></script>

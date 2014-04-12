@@ -1,47 +1,53 @@
 <%- include _header.ejs   %>
-<div class="container" xmlns="http://www.w3.org/1999/html">
-
-
+<div class="markdown" xmlns="http://www.w3.org/1999/html">
 
     <form action="/posts" class="clearfix" id="post" onsubmit="submitPost();return false" method="POST">
-        <% if (mode == 'edit'){ %>
+        <% if (mode == 'markdown'){ %>
         <input type="hidden" name="_method" value="PUT"/>
         <input type="hidden" name="post[_id]" value="<%= post._id %>"/>
         <%} %>
         <% if(post){ %>
-        <h2>Edit Post</h2>
-        <div style="padding: 0 7px;"><input type="text" name="post[title]" id="post_title_outer" placeholder="Post Title" value="<%= post.title   %>" /></div>
+        <div><input type="text" name="post[title]" id="post_title_outer" placeholder="Post Title" value="<%= post.title   %>" /></div>
         <% }else{%>
         <h2>New Post</h2>
-        <div style="padding: 0 7px;"><input type="text" name="post[title]" id="post_title_outer" placeholder="Post Title" /></div>
+        <div><input type="text" name="post[title]" id="post_title_outer" placeholder="Post Title" /></div>
         <% }   %>
-        <div style="margin: 20px 0;width: 1000px">
-            <% if(post&&post._id){   %>
-            <script name="post[content]" id="post_content" cols="30" rows="10" style="display: block;width: 100%;height: 500px"><%- post.content   %></script>
-            <% }else{   %>
-            <textarea name="post[content]" id="post_content" cols="30" rows="10" style="width: 100%;height: 400px"><p>Page Content...</p></textarea>
-            <%}   %>
+        <div class="markdown_container clearfix">
+            <div class="markdown_text">
+                <% if(post&&post._id){   %>
+                <textarea name="post[content]" id="post_content" cols="30" rows="10"><%- post.content   %></textarea>
+                <% }else{   %>
+                <textarea name="post[content]" id="post_content" cols="30" rows="10" >Page Content...</textarea>
+                <%}   %>
+            </div>
+            <div class="markdown_preview">
+                <div class="preview_html">
+
+                </div>
+            </div>
         </div>
 
         <input name="post[tags]" id="post_tags" type="text" hidden="hidden"/>
-        <div class="form-group">
-            <label for="post_tags">Tags</label>
+        <div class="form-group-group clearfix">
+            <div class="form-group pull-left">
+                <label for="post_tags">Tags</label>
             <span id="tags_container">
                 <%if(post&&post.tags){ %>
                 <%post.tags.forEach(function(tag){%><span class="tag_span"><span class="tag_name"><%= tag %></span><span class="tag_close">×</span></span><%}) %>
                 <%}  %>
                 <input id="newTag" type="text"/>
             </span>
-        </div>
-        <div class="form-group">
-            <label for="post_category">Category</label>
-            <select name="post[category]" id="post_category">
-                <option value="Uncategorized">Uncategorized</option>
-                <option value="Technology" <%= post&&post.category=="Technology"? ' selected="selected"':'' %>>Technology</option>
-                <option value="Music"      <%= post&&post.category=="Music"? ' selected="selected"':'' %>>Music</option>
-                <option value="Life"       <%= post&&post.category=="Life"? ' selected="selected"':'' %>>Life</option>
-                <option value="Think"      <%= post&&post.category=="Think"? ' selected="selected"':'' %>>Think</option>
-            </select>
+            </div>
+            <div class="form-group pull-left">
+                <label for="post_category">Category</label>
+                <select name="post[category]" id="post_category">
+                    <option value="Uncategorized">Uncategorized</option>
+                    <option value="Technology" <%= post&&post.category=="Technology"? ' selected="selected"':'' %>>Technology</option>
+                    <option value="Music"      <%= post&&post.category=="Music"? ' selected="selected"':'' %>>Music</option>
+                    <option value="Life"       <%= post&&post.category=="Life"? ' selected="selected"':'' %>>Life</option>
+                    <option value="Think"      <%= post&&post.category=="Think"? ' selected="selected"':'' %>>Think</option>
+                </select>
+            </div>
             <% if(post){  %>
             <input type="submit" class="button pull-right" value="Update Post"/>
             <% }else{   %>

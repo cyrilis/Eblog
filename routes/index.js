@@ -56,6 +56,8 @@ module.exports = function (app) {
     app.post('/logout', user.logout);
     app.get('/posts/:slug/edit', checkLogin);
     app.get('/posts/:slug/edit', post.getEdit);
+    app.get('/posts/:slug/markdown', checkLogin);
+    app.get('/posts/:slug/markdown', post.getMarkdown);
     app.put('/posts', checkLogin);
     app.put('/posts', post.postEdit);
     app.delete('/posts/:slug', checkLogin);

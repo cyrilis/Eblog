@@ -140,7 +140,7 @@ $(document).ready(function(){
 //    Highlight Code
 //    Powered By Highlight.js
     function highlight(){
-        var code = document.getElementsByTagName('pre');
+        var code = $('.container pre');
         Array.prototype.map.call(code, function(e){
             window.hljs.highlightBlock(e);
         });
