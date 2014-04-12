@@ -189,6 +189,26 @@ exports.getEdit=function(q,s){
     });
 };
 
+exports.getMarkdown = function(q,s){
+    Post.findOne({slug: q.params.slug}).sort('_id').exec(function(err,post){
+        if(err){
+           console.log(err);
+           q.flash('error',err.message);
+           s.redirect('back');
+           return;
+        }
+        if(!post){
+           s.redirect(404,'404');
+           return;
+        }
+        s.render('markdown', {
+            post: post,
+            title: 'Edit Post: '+ post.title,
+            mode: 'markdown'
+        });
+    });
+};
+
 exports.postEdit=function(q,s,next){
     if(!q.body.post.title){
         q.flash('error',"Oh-oh, Something Went Wrong, Check if your post title Exist.");
