@@ -7,7 +7,6 @@
 // Is only used in the admin client.
 
 
-var Ghost = Ghost || {};
 (function () {
     var ghostimagepreview = function () {
         return [
@@ -28,15 +27,12 @@ var Ghost = Ghost || {};
                             result = '<img class="js-upload-target" src="' + src + '"/>';
                         }
 
-                        if (Ghost && Ghost.touchEditor) {
-                            output = '<section class="image-uploader">' +
-                                result + '<div class="description">Mobile uploads coming soon</div></section>';
-                        } else {
-                            output = '<section id="image_upload_' + key + '" class="js-drop-zone image-uploader">' +
-                                result + '<div class="description">Add image of <strong>' + alt + '</strong></div>' +
-                                '<input data-url="upload" class="js-fileupload main fileupload" type="file" name="uploadimage">' +
-                                '</section>';
-                        }
+
+                        output = '<section id="image_upload_' + key + '" class="js-drop-zone image-uploader">' +
+                            result + '<div class="description">Add image of <strong>' + alt + '</strong></div>' +
+                            '<input data-url="upload" class="js-fileupload main fileupload" type="file" name="uploadimage">' +
+                            '</section>';
+
 
                         return output;
                     });
