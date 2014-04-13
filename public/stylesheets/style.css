@@ -69,12 +69,32 @@ blockquote {
   background: #f8f8f8;
   margin-bottom: 10px;
 }
+code {
+  display: inline-block;
+  padding: 2px;
+  margin: 0 3px;
+  background: #ddd;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
 pre {
   font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif;
   border-left: 5px solid #18b0b6;
   padding: 20px;
   font-size: 16px;
   overflow-x: auto;
+  background: #333;
+  color: #fff;
+}
+pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 pre p {
   margin: 0;
@@ -511,7 +531,7 @@ main .posts div.post_list>article .post_title h2>a {
   margin-right: 10px;
 }
 .markdown .markdown_container {
-  height: 700px;
+  height: 100%;
   margin-bottom: 10px;
   border-top: 2px solid #ddd;
   border-bottom: 2px solid #ddd;
@@ -521,9 +541,14 @@ main .posts div.post_list>article .post_title h2>a {
   float: left;
   height: 100%;
   position: relative;
+  border-right: 2px solid #ddd;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: auto;
 }
 .markdown .markdown_text textarea {
-  width: 100%;
+  width: 0;
   resize: none;
   font-size: 16px;
   -webkit-box-sizing: border-box;
@@ -546,6 +571,14 @@ main .posts div.post_list>article .post_title h2>a {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  line-height: 1.4;
+}
+.markdown .markdown_preview .preview_html p {
+  font-size: 16px;
+  line-height: 1.4;
+}
+.markdown .markdown_preview .preview_html blockquote p {
+  margin: 0;
 }
 ul li,
 ol li {

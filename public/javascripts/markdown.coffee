@@ -144,7 +144,7 @@ a = new Editor()
 if $('.markdown_text').size() > 0
   $('.logo').addClass('abs')
   $('header nav').removeClass('container')
-  $("main").css("padding":0)
+  $("main").css("padding",0)
   $("header").css('border',0)
   $('footer').hide()
   aviableHeight = window.innerHeight - 120 #todo: remove magic number
