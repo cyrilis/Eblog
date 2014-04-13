@@ -70,12 +70,28 @@ blockquote
   font-size 16px
   background #f8f8f8
   margin-bottom: 10px
+code
+  display inline-block
+  padding 2px
+  margin 0 3px
+  background #dddddd
+  border 1px solid #ccc
+  -webkit-border-radius: 3px
+  -moz-border-radius: 3px
+  border-radius: 3px
 pre
   font-family Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif
   border-left 5px solid maincolor
   padding 20px
   font-size 16px
   overflow-x auto
+  background #333333
+  color #ffffff
+  code
+    background none
+    border none
+    padding 0
+    margin 0
   p
     margin 0
 pre.hljs
@@ -434,7 +450,7 @@ main
     input[type="submit"]
       margin-right 10px
   .markdown_container
-    height 700px
+    height 100%
     margin-bottom 10px
     border-top 2px solid #dddddd
     border-bottom 2px solid #dddddd
@@ -443,8 +459,13 @@ main
     float left
     height 100%
     position relative
+    border-right 2px solid #dddddd
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    overflow auto
     textarea
-      width 100%
+      width 0
       resize: none
       font-size 16px
       -webkit-box-sizing: border-box
@@ -464,6 +485,13 @@ main
       -webkit-box-sizing: border-box
       -moz-box-sizing: border-box
       box-sizing: border-box
+      line-height 1.4
+      p
+        font-size 16px
+        line-height 1.4
+      blockquote
+        p
+          margin 0
 ul,ol
   li
     font-size 16px
