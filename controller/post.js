@@ -7,7 +7,9 @@ var Post = db.Post,
     User = db.User,
     log  = require('../controller/utils').log,
     mail = require('../controller/utils').mail,
-    Site = db.Site;
+    Site = db.Site,
+    uslug = require('uslug'),
+    Showdown = require('showdown');
 exports.all = function(q,s,next){
     log(q);
     Site.findOne(function(err,site){
@@ -40,6 +42,14 @@ exports.index = function(q,s,next){
                 next(err);
                 return;
             }
+            posts.forEach(function(post,index){
+                if(post.isMarkdwon){
+                    var converter = new Showdown.converter();
+                    post.content = converter.makeHtml(post.markdown);
+                    console.log(post);
+                    converter = null;
+                }
+            });
             s.render('index',{
                 posts: posts,
                 count: count,
@@ -65,6 +75,13 @@ exports.tag = function(q,s,next){
                 next(err);
                 return;
             }
+            posts.forEach(function(post,index){
+                if(post.isMarkdwon){
+                    var converter = new Showdown.converter();
+                    post.content = converter.makeHtml(post.markdown);
+                    converter = null;
+                }
+            });
             s.render('index',{
                 title: 'Tags: '+ q.params.tag + ' - Page: '+ (q.query.page||1),
                 posts: posts,
@@ -93,6 +110,13 @@ exports.category= function(q,s,next){
                 s.redirect('back');
                 return;
             }
+            posts.forEach(function(post,index){
+                if(post.isMarkdwon){
+                    var converter = new Showdown.converter();
+                    post.content = converter.makeHtml(post.markdown);
+                    converter = null;
+                }
+            });
             s.render('index',{
                 title: 'Category: '+ q.params.category,
                 posts: posts,
@@ -121,18 +145,40 @@ exports.getNew=function (q, s,next) {
     });
 };
 
+exports.markdownNew = function(q,s,next){
+    Post.distinct('category',function(err,categories){
+        if(err){
+            console.log(err);
+            q.flash('error',err.message);
+            s.redirect('back');
+            return;
+        }
+        s.render('markdown',{
+            title: "New Post",
+            post: null,
+            categories: categories,
+            mode: 'markdown'
+        });
+    });
+};
 
 exports.postNew=function (q, s, next) {
     if(!q.body.post.title){
         q.flash('error',"Oh-oh, Something Went Wrong, Check if your post title Exist.");
-        s.redirect("/post/new");
+        s.redirect("back");
         return;
     }
     var postObj = q.body.post;
     postObj.time = new Date();
     postObj.user = q.session.user._id;
     postObj.tags = q.body.post.tags.split('|').map(function(e){return e.trim();}).filter(function(n){return n;});
-    var newPost = new Post(q.body.post);
+    if(postObj.isMarkdown=== "true"){
+        delete postObj.content;
+        postObj.isMarkdwon = true;
+    }
+    var newPost = new Post(postObj);
+    console.log(newPost);
+    console.log(q.body.post);
     newPost.save(function(err,post){
         //console.log(post);
         if(err){
@@ -161,6 +207,11 @@ exports.show=function(q,s){
             s.redirect(404,'404');
             return;
         }
+        if(post.isMarkdwon){
+            var converter = new Showdown.converter();
+            post.content = converter.makeHtml(post.markdown);
+            converter = null;
+        }
         s.render('post',{
             post: post,
             title: post.title
@@ -180,10 +231,10 @@ exports.getEdit=function(q,s){
             s.redirect(404,'404');
             return;
         }
-        s.render('edit',{
+        s.render(post.isMarkdwon? "markdown":"edit",{
             post: post,
             title: 'Edit Post: '+ post.title,
-            mode: 'edit'
+            mode: post.isMarkdwon? "markdown":"edit"
         });
     });
 };
@@ -218,13 +269,22 @@ exports.postEdit=function(q,s,next){
     postObj.user = q.session.user._id;
     var _id = postObj._id;
     delete postObj._id;
+    if(postObj.updateSlug){
+        postObj.slug = uslug(postObj.title);
+    }
     //console.log(postObj);
     postObj.tags = postObj.tags.split('|').map(function(e){return e.trim();}).filter(function(n){return n;});
-    Post.findByIdAndUpdate(_id,{title: postObj.title, content: postObj.content,tags: postObj.tags,category: postObj.category},function(err,post){
+    Post.findByIdAndUpdate(_id,postObj,function(err,post){
         if(err){
             console.log(err);
-            s.send(err.message);
+            q.flash('error',err.message);
+            s.redirect('back');
             return;
+        }
+        if(post.isMarkdwon){
+            var converter = new Showdown.converter();
+            post.content = converter.makeHtml(post.markdown);
+            converter = null;
         }
         q.flash('success',"Post Updated Successfully!");
         s.redirect('back');

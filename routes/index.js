@@ -49,6 +49,8 @@ module.exports = function (app) {
 //    Post Actions
     app.get('/posts/new', checkLogin);
     app.get('/posts/new', post.getNew);
+    app.get('/posts/markdown',checkLogin);
+    app.get('/posts/markdown',post.markdownNew);
     app.post('/posts', checkLogin);
     app.post('/posts', post.postNew);
     app.get('/posts/:slug', post.show);
