@@ -27,12 +27,14 @@ var PostSchema = new Schema({
     time: {type: Date},
     title: {type: String, required: true, default: ''},
     content: String,
+    markdown: String,
     tags: [{
         type: String
     }],
     user: {type: ObjectId, ref: 'User'},
     category: String,
-    slug: {type: String, unique: true}
+    slug: {type: String, unique: true},
+    isMarkdwon : {type:Boolean, default: false}
 });
 PostSchema.pre('save',function (next) {
     this.slug = uslug(this.title);

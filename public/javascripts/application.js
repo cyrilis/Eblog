@@ -145,7 +145,7 @@ $(document).ready(function(){
             window.hljs.highlightBlock(e);
         });
     }
-    window.hljs.configure({useBR: true});
+   // window.hljs.configure({useBR: true});
     highlight();
 
     function showBox (message, action, showCb, closeCb ){

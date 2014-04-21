@@ -3,21 +3,19 @@
 
     <form action="/posts" class="clearfix" id="post" onsubmit="submitPost();return false" method="POST">
         <% if (mode == 'markdown'){ %>
+        <% if (post){ %>
         <input type="hidden" name="_method" value="PUT"/>
         <input type="hidden" name="post[_id]" value="<%= post._id %>"/>
         <%} %>
-        <% if(post){ %>
-        <div><input type="text" name="post[title]" id="post_title_outer" placeholder="Post Title" value="<%= post.title   %>" /></div>
-        <% }else{%>
-        <h2>New Post</h2>
-        <div><input type="text" name="post[title]" id="post_title_outer" placeholder="Post Title" /></div>
-        <% }   %>
+        <input type="hidden" name="post[isMarkdown]" value="true"/>
+        <%} %>
+        <div><input type="text" name="post[title]" id="post_title_outer" placeholder="Post Title" value="<%= post? post.title:""   %>" /></div>
         <div class="markdown_container clearfix">
             <div class="markdown_text">
                 <% if(post&&post._id){   %>
-                <textarea name="post[content]" id="post_content" cols="30" rows="10"><%- post.content   %></textarea>
+                <textarea name="post[markdown]" id="post_content" cols="30" rows="10"><%- post.markdown||"No Content..."%></textarea>
                 <% }else{   %>
-                <textarea name="post[content]" id="post_content" cols="30" rows="10" >Page Content...</textarea>
+                <textarea name="post[markdown]" id="post_content" cols="30" rows="10" >Page Content...</textarea>
                 <%}   %>
             </div>
             <div class="markdown_preview">
@@ -47,6 +45,10 @@
                     <option value="Life"       <%= post&&post.category=="Life"? ' selected="selected"':'' %>>Life</option>
                     <option value="Think"      <%= post&&post.category=="Think"? ' selected="selected"':'' %>>Think</option>
                 </select>
+            </div>
+            <div class="form-group pull-left">
+                <label for="post_updateSlug" style="width: 100px;">Update Slug</label>
+                <input id="post_updateSlug" type="checkbox" name="post[updateSlug]" style="margin-top: 10px;"/>
             </div>
             <% if(post){  %>
             <input type="submit" class="button pull-right" value="Update Post"/>
