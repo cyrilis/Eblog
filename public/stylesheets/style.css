@@ -578,7 +578,7 @@ main .posts div.post_list>article .post_title h2>a {
   line-height: 1.4;
 }
 .markdown .markdown_preview .preview_html blockquote p {
-  margin: 0;
+  margin: 1em 0;
 }
 ul li,
 ol li {
