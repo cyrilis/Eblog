@@ -7,7 +7,8 @@ var Post = db.Post,
     User = db.User,
     log  = require('../controller/utils').log,
     mail = require('../controller/utils').mail,
-    Site = db.Site;
+    Site = db.Site,
+    config = require('../settings');
 exports.all = function(q,s,next){
     log(q);
     Site.findOne(function(err,site){
@@ -143,7 +144,7 @@ exports.postNew=function (q, s, next) {
         }
         q.flash('success',"New Post Created!");
         s.redirect('/');
-        mail("robot@again.cc","houshoushuai@gmail.com","Just Posted 《"+post.title+"》 a new Blog!","<h1>"+post.title+"</h1>"+post.content,null);
+        mail(config.mailfrom,config.mailto,"Just Posted 《"+post.title+"》 a new Blog!","<h1>"+post.title+"</h1>"+post.content,null);
     });
 };
 
@@ -208,7 +209,7 @@ exports.postEdit=function(q,s,next){
         }
         q.flash('success',"Post Updated Successfully!");
         s.redirect('back');
-        mail("robot@again.cc","houshoushuai@gmail.com","The Post 《"+post.title+"》 Got Updated!","<h1>"+post.title+"</h1>"+post.content,null);
+        mail(config.mailfrom,config.mailto,"The Post 《"+post.title+"》 Got Updated!","<h1>"+post.title+"</h1>"+post.content,null);
     });
 };
 
@@ -221,7 +222,7 @@ exports.postDelete=function(q,s,next){
                 return;
             }
             post.remove();
-            mail("robot@again.cc","houshoushuai@gmail.com","One Post Got Deleted!","<h1>"+post.title+"</h1>"+post.content,null);
+            mail(config.mailfrom,config.mailto,"One Post Got Deleted!","<h1>"+post.title+"</h1>"+post.content,null);
             q.flash("success", "The post was deleted successfully!");
             s.redirect("/");
         }

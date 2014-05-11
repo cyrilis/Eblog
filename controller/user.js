@@ -6,7 +6,8 @@ var crypto = require('crypto'),
     db = require('../models/database'),
     User = db.User,
     Post = db.Post,
-    mail = require('../controller/utils').mail;
+    mail = require('../controller/utils').mail,
+    config = require('../settings');
 
 exports.show=function(q,s,next){
     var limit = 10,skip = ((q.query.page||1)-1)*limit;
@@ -91,7 +92,7 @@ exports.postNew=function (q, s,next) {
                     console.log('Register Successfully!');
                     q.flash('success','Congratulations, Registered Successfully!');
                     s.redirect('/');
-                    mail("robot@again.cc","houshoushuai@gmail.com","Welcome New User ! "+ user.name,"<h1>Welcome ,"+user.name+"! </h1><h3>"+user.email+"</h3>",null);
+                    mail(config.mailfrom,config.mailto,"Welcome New User ! "+ user.name,"<h1>Welcome ,"+user.name+"! </h1><h3>"+user.email+"</h3>",null);
                 });
             });
 

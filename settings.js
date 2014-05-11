@@ -9,5 +9,7 @@ module.exports = {
     mailgun:{
         user: "robot@again.cc",
         pass: "WhatEver!"
-    }
+    },
+    mailto: "houshoushuai@gmail.com",
+    mailfrom: "robot@again.cc"
 };
