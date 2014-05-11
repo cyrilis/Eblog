@@ -35,7 +35,7 @@ body {
   margin: 0;
   padding: 0;
   background: #fff;
-  font-family: "Open Sans", "Microsoft Yahei", "Helvetica Neue", Arail, sans-serif;
+  font: 400 18px/1.62 "Georgia", "Xin Gothic", "Hiragino Sans GB", "Open Sans", "Droid Sans", "Microsoft YaHei", sans-serif;
   font-size: 14px;
   line-height: 26px;
   color: #555;
