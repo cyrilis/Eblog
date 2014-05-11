@@ -169,7 +169,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
   border-width: 0;
   background: transparent;
   font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, 'Microsoft Yahei', serif;
-  font-size: inherit;
+  font-size: 16px;
   margin: 0;
   white-space: pre;
   word-wrap: normal;
