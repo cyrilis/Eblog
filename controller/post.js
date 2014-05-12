@@ -20,7 +20,12 @@ exports.all = function(q,s,next){
             user: q.session.user||null,
             title: 'Eblog',
             mode: null,
-            site: site
+            site: site,
+            util:{
+                isProduction: function(){
+                    return false
+                }
+            }
         });
         next();
     });
@@ -321,7 +326,7 @@ exports.settingPages = function(q,s,next){
         }
         Post.find().skip(skip).limit(limit).sort('-_id').populate('user').exec(function(err,posts){
             if(err){
-                console.log();
+                console.log(err);
                 next(err);
                 return;
             }

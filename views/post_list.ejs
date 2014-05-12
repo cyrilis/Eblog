@@ -1,35 +1,8 @@
 <div class="post_list">
     <% posts.forEach(function(post, index){   %>
-    <article class="clearfix">
-        <div class="post_title clearfix">
-            <h2><a href="/posts/<%= post.slug %>"><%= post.title  %></a></h2>
-            <p class="info">By  <a href="/u/<%= post.user.name %>"><%= post.user.name %></a>
-                <span> at  <%= post.date  %></span>
-                <% if(user&&post.user.name==user.name){ %>
-                <a href="/posts/<%= post.slug %>/edit">Edit</a>
-                <a class="confirm" data-method="delete" rel="nofollow" data-confirm="Are you sure to Detele this blog?" href="/posts/<%= post.slug %>">Delete</a>
-                <% } %>
-                <a href="/posts/<%= post.slug %>#disqus_thread"> Comments</a>
-            </p>
-        </div>
-        <div class="post_content clearfix">
-            <%- post.content  %>
-        </div>
-        <div class="post_info clearfix">
-            <% if(post.tags){ %>
-            <div class="tag_links">
-                Tags:&nbsp;&nbsp;
-                <%post.tags.forEach(function(tag){ %>
-                <a class="tag_link" href="/tags/<%=tag %>"><i class="icon-tags"></i><%= tag %></a>
-                <%})%>
-            </div>
-            <%}   %>
-            <% if(post.category){ %>
-            <div class="category_link">Category:&nbsp;&nbsp;<a href="/categories/<%=post.category%>"><%=post.category %></a></div>
-            <%}   %>
-        </div>
-    </article>
-    <% })   %>
+    <% include post_single.ejs %>
+    <% })  %>
+    <% if(isProduction()){ %>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'cyrilis'; // required: replace example with your forum shortname
@@ -41,4 +14,5 @@
             (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
         }());
     </script>
+    <%}%>>
 </div>
