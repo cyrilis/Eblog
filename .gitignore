@@ -3,3 +3,4 @@ node_modules/*
 public/images/upload/*
 public/draw/*
 settings.js
+*.map

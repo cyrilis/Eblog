@@ -9,7 +9,10 @@ var Post = db.Post,
     mail = require('../controller/utils').mail,
     Site = db.Site,
     uslug = require('uslug'),
-    Showdown = require('showdown');
+    Showdown = require('showdown'),
+    config = require('../settings');
+var figure = require('./figure_for_showdown');
+var converter = new Showdown.converter({ extensions: [figure] });
 exports.all = function(q,s,next){
     log(q);
     Site.findOne(function(err,site){
@@ -49,10 +52,8 @@ exports.index = function(q,s,next){
             }
             posts.forEach(function(post,index){
                 if(post.isMarkdwon){
-                    var converter = new Showdown.converter();
                     post.content = converter.makeHtml(post.markdown);
                     console.log(post);
-                    converter = null;
                 }
             });
             s.render('index',{
@@ -82,9 +83,7 @@ exports.tag = function(q,s,next){
             }
             posts.forEach(function(post,index){
                 if(post.isMarkdwon){
-                    var converter = new Showdown.converter();
                     post.content = converter.makeHtml(post.markdown);
-                    converter = null;
                 }
             });
             s.render('index',{
@@ -117,9 +116,7 @@ exports.category= function(q,s,next){
             }
             posts.forEach(function(post,index){
                 if(post.isMarkdwon){
-                    var converter = new Showdown.converter();
                     post.content = converter.makeHtml(post.markdown);
-                    converter = null;
                 }
             });
             s.render('index',{
@@ -194,7 +191,7 @@ exports.postNew=function (q, s, next) {
         }
         q.flash('success',"New Post Created!");
         s.redirect('/');
-        mail("robot@again.cc","houshoushuai@gmail.com","Just Posted 《"+post.title+"》 a new Blog!","<h1>"+post.title+"</h1>"+post.content,null);
+        mail(config.mailfrom,config.mailto,"Just Posted 《"+post.title+"》 a new Blog!","<h1>"+post.title+"</h1>"+post.content,null);
     });
 };
 
@@ -213,9 +210,7 @@ exports.show=function(q,s){
             return;
         }
         if(post.isMarkdwon){
-            var converter = new Showdown.converter();
             post.content = converter.makeHtml(post.markdown);
-            converter = null;
         }
         s.render('post',{
             post: post,
@@ -287,13 +282,11 @@ exports.postEdit=function(q,s,next){
             return;
         }
         if(post.isMarkdwon){
-            var converter = new Showdown.converter();
             post.content = converter.makeHtml(post.markdown);
-            converter = null;
         }
         q.flash('success',"Post Updated Successfully!");
         s.redirect('back');
-        mail("robot@again.cc","houshoushuai@gmail.com","The Post 《"+post.title+"》 Got Updated!","<h1>"+post.title+"</h1>"+post.content,null);
+        mail(config.mailfrom,config.mailto,"The Post 《"+post.title+"》 Got Updated!","<h1>"+post.title+"</h1>"+post.content,null);
     });
 };
 
@@ -306,7 +299,7 @@ exports.postDelete=function(q,s,next){
                 return;
             }
             post.remove();
-            mail("robot@again.cc","houshoushuai@gmail.com","One Post Got Deleted!","<h1>"+post.title+"</h1>"+post.content,null);
+            mail(config.mailfrom,config.mailto,"One Post Got Deleted!","<h1>"+post.title+"</h1>"+post.content,null);
             q.flash("success", "The post was deleted successfully!");
             s.redirect("/");
         }
