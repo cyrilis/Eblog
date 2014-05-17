@@ -30,8 +30,8 @@
             <li><a href="/lab">Lab</a></li>
             <li><a href="/about">About</a></li>
             <% if (user){ %>
-            <li class="has-sub"><a href="/u/<%= user.name %>"><%= user.name %></a>
-                <ul class="sub_nav">
+            <li class="has-sub"><a href="/settings/profile">Admin</a>
+                <ul class="sub-nav">
                     <li><a href="/posts/new"><i class="icon-pencil"></i>New Post</a></li>
                     <li><a href="/posts/markdown"><i class="icon-pencil"></i>Markdown</a></li>
                     <li><a href="/settings/profile"><i class="icon-cog"></i>Settings</a></li>

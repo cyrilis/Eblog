@@ -9,6 +9,13 @@ a {
   color: #00a6e8;
   text-decoration: none;
 }
+pre {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  white-space: pre;
+  background: #23241f;
+}
 .clearfix {
   zoom: 1;
 }
@@ -26,6 +33,7 @@ a {
 .container {
   margin: 0 auto;
   width: 960px;
+  position: relative;
 }
 #header {
   border-bottom: 2px solid #f0f0f0;
@@ -43,17 +51,40 @@ a {
 }
 #header nav ul li a {
   display: inline-block;
-  width: 220px;
+  width: 160px;
   height: 40px;
   padding: 10px;
   text-align: center;
   line-height: 40px;
 }
-#header nav ul li.has-sub ul {
+#header nav ul li.has-sub {
   position: absolute;
+  right: 0;
 }
-#header nav ul li.has-sub ul li {
+#header nav ul li.has-sub a {
+  padding-bottom: 20px;
+}
+#header nav ul li.has-sub ul.sub-nav {
+  position: absolute;
+  display: none;
+  z-index: 100;
+  zoom: 1;
+  background: #fff;
+  border: 2px solid #f0f0f0;
+  border-top: 0;
+  padding-top: 0;
+  top: 100%;
+}
+#header nav ul li.has-sub ul.sub-nav li {
   float: none;
+}
+#header nav ul li.has-sub ul.sub-nav li a {
+  text-align: left;
+  padding: 10px 30px;
+  width: auto;
+}
+#header nav ul li.has-sub:hover ul.sub-nav {
+  display: block;
 }
 main article {
   width: 100%;
