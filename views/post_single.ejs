@@ -2,7 +2,7 @@
     <header class="post_title clearfix">
         <h2><a href="/posts/<%= post.slug %>"><%= post.title  %></a></h2>
     </header>
-    <aside class="post-meta">By <a href="/u/<%= post.user.name %>"><%= post.user.name %></a>
+    <aside class="post-meta">By <a href="/about"><%= post.user.name %></a>
         <div class="post-date"><%= post.date  %></div>
         <% if(user&&post.user.name==user.name){ %>
         <div>
