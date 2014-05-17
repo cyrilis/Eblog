@@ -7,6 +7,12 @@ body
 a
   color linkColor
   text-decoration none
+pre
+  display block
+  overflow-x auto
+  width 100%
+  white-space pre
+  background: #23241f
 .clearfix
   zoom 1
 .clearfix:after
@@ -21,6 +27,7 @@ a
 .container
   margin: 0 auto
   width: 960px
+  position relative
 #header
   border-bottom 2px solid #f0f0f0
   nav ul
@@ -34,16 +41,36 @@ a
       position: relative;
       a
         display inline-block
-        width 220px
+        width 160px
         height 40px
         padding 10px
         text-align center
         line-height 40px
       &.has-sub
-        ul
+        position: absolute;
+        right 0
+        a
+          padding-bottom 20px
+        ul.sub-nav
           position: absolute;
+          display none
+          z-index 100
+          zoom: 1;
+          background #ffffff
+          border 2px solid #f0f0f0
+          border-top 0
+          padding-top 0
+          top 100%
           li
             float: none;
+            a
+              text-align left
+              padding 10px 30px
+              width auto
+        &:hover
+          ul.sub-nav
+            display block
+
 main
   article
     width: 100%

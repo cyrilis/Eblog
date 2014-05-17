@@ -139,8 +139,9 @@ $(document).ready(function(){
     });
 //    Highlight Code
 //    Powered By Highlight.js
+    hljs.configure({useBR: false});
     function highlight(){
-        var code = $('.container pre');
+        var code = $('.container pre code');
         Array.prototype.map.call(code, function(e){
             window.hljs.highlightBlock(e);
         });
