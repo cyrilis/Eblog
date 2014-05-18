@@ -7,7 +7,7 @@ figure = ->
             pathRegex = /^(\/)?([^\/\0]+(\/)?)+$/i
             return text.replace imageMarkdownRegex, (match, key, alt, src)->
                 if src and (src.match(uriRegex) or src.match(pathRegex))
-                    result = '<img class="image" src="' + src + '"/>'
+                    result = '<img class="image" alt="'+alt+'" src="' + src + '"/>'
 
                 output =  """
                     <figure id="image_upload_#{key}" class="figure">

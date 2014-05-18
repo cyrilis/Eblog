@@ -14,7 +14,7 @@
           return text.replace(imageMarkdownRegex, function(match, key, alt, src) {
             var output, result;
             if (src && (src.match(uriRegex) || src.match(pathRegex))) {
-              result = '<img class="image" src="' + src + '"/>';
+              result = '<img class="image" alt="' + alt + '" src="' + src + '"/>';
             }
             output = "<figure id=\"image_upload_" + key + "\" class=\"figure\">\n" + result + "\n<figcaption>" + alt + "</figcaption>\n</figure>";
             return output;
