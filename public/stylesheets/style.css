@@ -9,6 +9,28 @@ a {
   color: #00a6e8;
   text-decoration: none;
 }
+figure {
+  width: 100%;
+  position: relative;
+}
+figcaption {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -200px;
+  width: 180px;
+  text-align: right;
+  margin-right: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #999;
+}
+img {
+  max-width: 760px;
+}
+hr {
+  border-top: 1px solid #f0f0f0;
+}
 pre {
   display: block;
   overflow-x: auto;
@@ -117,4 +139,96 @@ main article .post-content p {
 }
 main article .post-footer {
   clear: both;
+}
+.setting_sidebar {
+  width: 200px;
+  float: left;
+}
+.setting_sidebar ul {
+  border-left: 2px solid #f0f0f0;
+  border-right: 2px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fff;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.setting_sidebar ul li {
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.setting_sidebar ul li [class^="icon-"],
+.setting_sidebar ul li [class*=" icon-"] {
+  display: inline-block;
+  margin-right: 5px;
+  height: 50px;
+  border-right: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-right: 1px solid #f0f0f0;
+}
+.setting_sidebar ul li a {
+  text-transform: uppercase;
+  color: #777;
+}
+.setting_content {
+  width: 720px;
+  float: right;
+}
+form .form-group {
+  margin-bottom: 10px;
+}
+form .form-group label {
+  display: inline-block;
+  width: 135px;
+  margin-right: 10px;
+}
+form .form-group input[type="email"],
+form .form-group input[type="text"],
+form .form-group input[type="password"] {
+  padding: 5px;
+  border: 1px solid #f0f0f0;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+form .form-group textarea {
+  padding: 5px;
+  border: 1px solid #f0f0f0;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+form .form-group input,
+form .form-group textarea {
+  width: 400px;
+}
+form .form-group input:active,
+form .form-group textarea:active,
+form .form-group input:focus,
+form .form-group textarea:focus {
+  outline: none;
+}
+.button {
+  display: inline-block;
+  width: auto !important;
+  padding: 8px 20px;
+  font-size: 1em;
+  line-height: 1;
+  border: 1px solid #f0f0f0;
+  background: #f0f0f0;
+  -webkit-transition: background 0.3s ease-out, border-color 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out, border-color 0.3s ease-out;
+  -ms-transition: background 0.3s ease-out, border-color 0.3s ease-out;
+  -o-transition: background 0.3s ease-out, border-color 0.3s ease-out;
+  transition: background 0.3s ease-out, border-color 0.3s ease-out;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.button:hover {
+  background: #ddd;
+  border-color: #ddd;
 }
