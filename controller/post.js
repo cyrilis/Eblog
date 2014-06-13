@@ -51,7 +51,7 @@ exports.index = function(q,s,next){
                 return;
             }
             posts.forEach(function(post,index){
-                if(post.isMarkdwon){
+                if(post.isMarkdwon && post.markdown){
                     post.content = converter.makeHtml(post.markdown);
                     console.log(post);
                 }
@@ -209,7 +209,7 @@ exports.show=function(q,s){
             s.redirect(404,'404');
             return;
         }
-        if(post.isMarkdwon){
+        if(post.isMarkdwon && post.markdown){
             post.content = converter.makeHtml(post.markdown);
         }
         s.render('post',{
