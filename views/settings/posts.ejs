@@ -7,6 +7,10 @@
                 <% posts.forEach(function(post){ %>
                 <li>
                     <a href="/posts/<%= post.slug %>/edit"><h2><%= post.title %></h2></a>
+                    <div class="post-actions">
+                        <a href="/posts/<%= post.slug %>">View</a>
+                        <a href="/posts/<%= post.slug %>" data-method="delete" data-confirm="Are you sure to delete <%= post.title %>?" rel="nofollow">Delete</a>
+                    </div>
                 </li>
                 <%}) %>
             </ul>

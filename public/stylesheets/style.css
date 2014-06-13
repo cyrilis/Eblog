@@ -177,6 +177,29 @@ main article .post-footer {
   width: 720px;
   float: right;
 }
+.setting_content .post_list_tab li {
+  position: relative;
+}
+.setting_content .post_list_tab h2 {
+  font-size: 20px;
+}
+.setting_content .post_list_tab .post-actions {
+  position: absolute;
+  line-height: 20px;
+  right: 0;
+  top: 0;
+  display: block;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.setting_content .post_list_tab li:hover .post-actions {
+  display: block;
+  opacity: 1;
+}
 form .form-group {
   margin-bottom: 10px;
 }
