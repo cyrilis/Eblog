@@ -25,6 +25,9 @@ img {
 a {
   color: #82b838;
 }
+code.hljs {
+  display: inline-block;
+}
 main {
   width: 900px;
   overflow: hidden;
