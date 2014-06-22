@@ -1,5 +1,5 @@
 <%- include _header.ejs   %>
-<div class="markdown" xmlns="http://www.w3.org/1999/html">
+<div id="markdown" class="container">
 
     <form action="/posts" class="clearfix" id="post" onsubmit="submitPost();return false" method="POST">
         <% if (mode == 'markdown'){ %>
@@ -9,9 +9,11 @@
         <%} %>
         <input type="hidden" name="post[isMarkdown]" value="true"/>
         <%} %>
-        <div><input type="text" name="post[title]" id="post_title_outer" placeholder="Post Title" value="<%= post? post.title:""   %>" /></div>
+        <div class="form-group">
+            <input type="text" name="post[title]" id="post-title-input" placeholder="Post Title" value="<%= post? post.title:""   %>" />
+        </div>
         <div class="markdown_container clearfix">
-            <div class="markdown_text">
+            <div class="markdown_text form-group">
                 <% if(post&&post._id){   %>
                 <textarea name="post[markdown]" id="post_content" cols="30" rows="10"><%- post.markdown||"No Content..."%></textarea>
                 <% }else{   %>

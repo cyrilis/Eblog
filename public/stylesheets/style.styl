@@ -182,18 +182,15 @@ form
       display inline-block
       width 135px
       margin-right 10px
-    input[type="email"],input[type="text"],input[type="password"]
+    input[type="email"],input[type="text"],input[type="password"], textarea
       padding 5px
       border 1px solid #f0f0f0
       -webkit-border-radius: 2px
       -moz-border-radius: 2px
       border-radius: 2px
-    textarea
-      padding 5px
-      border 1px solid #f0f0f0
-      -webkit-border-radius: 2px
-      -moz-border-radius: 2px
-      border-radius: 2px
+      -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+      -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+      box-sizing: border-box;
     input, textarea
       width 400px
       &:active,&:focus
@@ -244,3 +241,16 @@ form
   &:hover
     opacity 0.3
 
+#post-title-input
+  border-width 0
+  border-bottom-width 1px
+  font-size 22px
+  font-weight bold
+  margin 20px 0 10px 0
+  width 100%
+  line-height 30px
+#markdown
+  textarea
+    width: 100%
+    border 0
+    min-height 600px
