@@ -4,16 +4,17 @@
 
 
     <form action="/posts" class="clearfix" id="post" onsubmit="submitPost();return false" method="POST">
+
         <% if (mode == 'edit'){ %>
         <input type="hidden" name="_method" value="PUT"/>
         <input type="hidden" name="post[_id]" value="<%= post._id %>"/>
         <%} %>
         <% if(post){ %>
         <h2>Edit Post</h2>
-        <input type="text" name="post[title]" id="post_title_outer" placeholder="Post Title" value="<%= post.title   %>" />
+        <input type="text" name="post[title]" id="post-title-input" placeholder="Post Title" value="<%= post.title   %>" />
         <% }else{%>
         <h2>New Post</h2>
-        <input type="text" name="post[title]" id="post_title_outer" placeholder="Post Title" />
+        <input type="text" name="post[title]" id="post-title-input" placeholder="Post Title" />
         <% }   %>
         <div>
             <% if(post&&post._id){   %>
