@@ -10,12 +10,12 @@
         <%} %>
         <% if(post){ %>
         <h2>Edit Post</h2>
-        <div style="padding: 0 7px;"><input type="text" name="post[title]" id="post_title_outer" placeholder="Post Title" value="<%= post.title   %>" /></div>
+        <input type="text" name="post[title]" id="post_title_outer" placeholder="Post Title" value="<%= post.title   %>" />
         <% }else{%>
         <h2>New Post</h2>
-        <div style="padding: 0 7px;"><input type="text" name="post[title]" id="post_title_outer" placeholder="Post Title" /></div>
+        <input type="text" name="post[title]" id="post_title_outer" placeholder="Post Title" />
         <% }   %>
-        <div style="margin: 20px 0;width: 1000px">
+        <div>
             <% if(post&&post._id){   %>
             <script name="post[content]" id="post_content" cols="30" rows="10" style="display: block;width: 100%;height: 500px"><%- post.content   %></script>
             <% }else{   %>
