@@ -220,19 +220,18 @@ form .form-group label {
 }
 form .form-group input[type="email"],
 form .form-group input[type="text"],
-form .form-group input[type="password"] {
-  padding: 5px;
-  border: 1px solid #f0f0f0;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-}
+form .form-group input[type="password"],
 form .form-group textarea {
   padding: 5px;
   border: 1px solid #f0f0f0;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
+  -webkit-box-sizing: border-box;
+/* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+/* Firefox, other Gecko */
+  box-sizing: border-box;
 }
 form .form-group input,
 form .form-group textarea {
@@ -296,4 +295,18 @@ form .form-group textarea:focus {
 .flash_success:hover,
 .flash_error:hover {
   opacity: 0.3;
+}
+#post-title-input {
+  border-width: 0;
+  border-bottom-width: 1px;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 20px 0 10px 0;
+  width: 100%;
+  line-height: 30px;
+}
+#markdown textarea {
+  width: 100%;
+  border: 0;
+  min-height: 600px;
 }
