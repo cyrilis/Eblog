@@ -34,7 +34,7 @@ var PostSchema = new Schema({
     user: {type: ObjectId, ref: 'User'},
     category: String,
     slug: {type: String, unique: true},
-    isMarkdwon : {type:Boolean, default: false}
+    isMarkdown : {type:Boolean, default: false}
 });
 PostSchema.pre('save',function (next) {
     this.slug = uslug(this.title);

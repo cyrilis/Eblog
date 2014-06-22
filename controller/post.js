@@ -12,7 +12,7 @@ var Post = db.Post,
     Showdown = require('showdown'),
     config = require('../settings');
 var figure = require('./figure_for_showdown');
-var converter = new Showdown.converter({ extensions: [figure] });
+var converter = new Showdown.converter({ extensions: [figure] });  // todo: Change to Marked
 exports.all = function(q,s,next){
     log(q);
     Site.findOne(function(err,site){
@@ -31,7 +31,6 @@ exports.all = function(q,s,next){
         });
         next();
     });
-
 };
 
 exports.index = function(q,s,next){
@@ -52,7 +51,7 @@ exports.index = function(q,s,next){
             }
             posts.forEach(function(post,index){
                 if(post.isMarkdwon && post.markdown){
-                    post.content = converter.makeHtml(post.markdown);
+                    post.content = converter.makeHtml(post.markdown); //todo: Change to Marked
                     console.log(post);
                 }
             });
