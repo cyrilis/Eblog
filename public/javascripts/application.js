@@ -141,6 +141,74 @@ function close_box(){
     },300);
 }
 
+function toggleFullscreen($markdownContainer) {
+    var element = $markdownContainer.get(0);
+    if ($markdownContainer.hasClass('fullscreen')){
+        console.log("Exit Fullscreen!");
+        if(document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if(document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if(document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        }
+    }else{
+        console.log('Goto Fullscreen!');
+        if(element.requestFullscreen) {
+            element.requestFullscreen();
+        } else if(element.mozRequestFullScreen) {
+            element.mozRequestFullScreen();
+        } else if(element.webkitRequestFullscreen) {
+            element.webkitRequestFullscreen();
+        } else if(element.msRequestFullscreen) {
+            element.msRequestFullscreen();
+        }
+    }
+    $markdownContainer.off("mozfullscreenerror webkitfullscreenchange fullscreenchange");
+    $markdownContainer.on("mozfullscreenerror webkitfullscreenchange fullscreenchange",function(event){
+        console.debug(event);
+        $markdownContainer.toggleClass('fullscreen', !$markdownContainer.hasClass("fullscreen"));
+    });
+}
+
+function renderPreview(text){
+    if(window.marked){
+        window.marked.setOptions({
+            gfm: true
+        });
+        window.marked(text, function (err, content) {
+            if (err){
+                console.debug(err);
+            }
+            $(".markdown_preview").html(content);
+            highlight();
+        });
+    }
+}
+
+//    Highlight Code
+//    Powered By Highlight.js
+window.hljs.configure({useBR: false});
+function highlight(){
+    var code = $('.container pre code');
+    Array.prototype.map.call(code, function(e){
+        window.hljs.highlightBlock(e);
+    });
+}
+
+function syncScroll(){
+    var $text = $(".markdown_text");
+    var $html = $(".markdown_html");
+    $text.scroll(function(event) {
+        var top = $text.scrollTop();
+        var winHeight = $(window).height();
+        var textHeight= $(".CodeMirror").height() + 120;
+        var htmlHeight = $(".markdown_preview").height() + 120;
+        var scrollTop = top * ( htmlHeight - winHeight ) / ( textHeight - winHeight );
+        console.debug(top, winHeight, textHeight, htmlHeight, scrollTop);
+        $html.scrollTop(scrollTop);
+    });
+}
 
 $(document).ready(function(){
     var newTag = $('#newTag');
@@ -221,16 +289,21 @@ $(document).ready(function(){
             $('html').removeClass('toggled');
         }
     });
-//    Highlight Code
-//    Powered By Highlight.js
-    window.hljs.configure({useBR: false});
-    function highlight(){
-        var code = $('.container pre code');
-        Array.prototype.map.call(code, function(e){
-            window.hljs.highlightBlock(e);
-        });
-    }
+
    // window.hljs.configure({useBR: true});
     highlight();
 
+    // Call Full Screen
+    $("#fullscreen").click(function(){
+        toggleFullscreen($("#markdown-container"));
+    });
+
+    renderPreview($("#post_content").val());
+    if(window.editor){
+        console.debug("Has Editor");
+        window.editor.on('change', function(event){
+            renderPreview(event.doc.getValue());
+        });
+    }
+    syncScroll();
 });
