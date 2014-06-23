@@ -12,7 +12,7 @@
         <div class="form-group">
             <input type="text" name="post[title]" id="post-title-input" placeholder="Post Title" value="<%= post? post.title:""   %>" />
         </div>
-        <div class="markdown_container clearfix">
+        <div id="markdown-container" class="markdown_container clearfix">
             <div class="markdown_text form-group">
                 <% if(post&&post._id){   %>
                 <textarea name="post[markdown]" id="post_content" cols="30" rows="10"><%- post.markdown||"No Content..."%></textarea>
@@ -23,8 +23,8 @@
             <div class="markdown_html">
                 <div class="markdown_preview"></div>
             </div>
+            <div id="fullscreen" title="Edit in Full-screen"><i class="icon-expand"></i><i class="icon-contract"></i></div>
         </div>
-        <div id="fullscreen" title="Edit in Full-screen"><i class="icon-expand"></i></div>
         <input name="post[tags]" id="post_tags" type="text" hidden="hidden"/>
         <div class="form-group-group clearfix">
             <div class="form-group pull-left">

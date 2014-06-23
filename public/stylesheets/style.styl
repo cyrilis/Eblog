@@ -275,6 +275,10 @@ form
   position: absolute;
   top 30px
   right 0
+  i.icon-expand
+    display inline-block
+  i.icon-contract
+    display none
 .markdown_text
   margin-bottom 30px
 
@@ -282,7 +286,7 @@ form
 /* CodeMirror Style Override */
 
 .CodeMirror
-  min-height 600px
+  min-height 450px
   &.cm-s-default .cm-link
     color: linkColor
   &.cm-s-default .cm-string
@@ -291,5 +295,35 @@ form
     color: #419C78;
 .markdown_html
   display none
+
+#markdown-container.fullscreen
+  display block
+  width 100%
+  background #ffffff
+  height 100%
+  .markdown_text, .markdown_html
+    display block
+    width 50%
+    height 100%
+    overflow auto
+    position fixed
+    padding 60px 30px
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    min-height 100%
+  .markdown_text
+    left 0
+  .markdown_html
+    right 0
+    border-left 2px solid #dddddd
+  #fullscreen
+    right 30px
+    top 30px
+    i.icon-contract
+      display inline-block
+    i.icon-expand
+      display none
+
 
 
