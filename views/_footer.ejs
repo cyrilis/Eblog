@@ -2,7 +2,7 @@
 <footer>
     <div class="container">
         <P style="text-align: center">
-            Copyright @ 2013 &nbsp;&nbsp;&nbsp;&nbsp; <a target="_blank" class="github_link" href="http://Github.com/Cyrilis/Eblog">  <i class="icon-embed"></i> &nbsp;with&nbsp; <i class="icon-heart"></i> &nbsp;at&nbsp; <i class="icon-github"></i></a>
+            Copyright @ 2013 &nbsp;&nbsp;&nbsp;&nbsp; <a target="_blank" title="Code with Love at Github" class="github_link" href="http://Github.com/Cyrilis/Eblog">  <i title="Code" class="icon-embed"></i> &nbsp;with&nbsp; <i class="icon-heart"></i> &nbsp;at&nbsp; <i class="icon-github"></i></a>
         </P>
     </div>
 </footer>
@@ -15,17 +15,18 @@
     var ue = UM.getEditor('post_content');
 </script><%} %>
 <% if (mode == 'markdown'){ %>
-<link rel="stylesheet" href="/javascripts/codemirror/codemirror.css"/>
-<script src="/javascripts/shortcuts.js"></script>
-<script src="/javascripts/codemirror/codemirror.js"></script>
-<script src="/javascripts/codemirror/markdown-actions.js"></script>
-<script src="/javascripts/codemirror/overlay.js"></script>
-<script src="/javascripts/codemirror/markdown.js"></script>
-<script src="/javascripts/codemirror/gfm.js"></script>
-<script src="/javascripts/showdown/showdown.js"></script>
-<script src="/javascripts/showdown/imagepreview.js"></script>
-<script src="/javascripts/showdown/gfm.js"></script>
-<script src="/javascripts/markdown.js"></script>
+    <script src="/javascripts/markdown/codemirror.js"></script>
+    <script src="/javascripts/markdown/overlay.js"></script>
+    <script src="/javascripts/markdown/markdown.js"></script>
+    <script src="/javascripts/markdown/gfm.js"></script>
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("post_content"), {
+            mode: 'gfm',
+            lineNumbers: false,
+            theme: "default",
+            lineWrapping: true
+        });
+    </script>
 <%} %>
 <script src="/javascripts/prefix.js"></script>
 <script src="/javascripts/highlight.min.js"></script>
