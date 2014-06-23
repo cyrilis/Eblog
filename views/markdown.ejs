@@ -20,20 +20,18 @@
                 <textarea name="post[markdown]" id="post_content" cols="30" rows="10" >Page Content...</textarea>
                 <%}   %>
             </div>
-            <div class="markdown_preview">
-                <div class="preview_html">
-
-                </div>
+            <div class="markdown_html">
+                <div class="markdown_preview"></div>
             </div>
         </div>
-
+        <div id="fullscreen" title="Edit in Full-screen"><i class="icon-expand"></i></div>
         <input name="post[tags]" id="post_tags" type="text" hidden="hidden"/>
         <div class="form-group-group clearfix">
             <div class="form-group pull-left">
-                <label for="post_tags">Tags</label>
-            <span id="tags_container">
+                <label for="newTag">Tags</label>
+            <span id="tags-container">
                 <%if(post&&post.tags){ %>
-                <%post.tags.forEach(function(tag){%><span class="tag_span"><span class="tag_name"><%= tag %></span><span class="tag_close">×</span></span><%}) %>
+                <%post.tags.forEach(function(tag){%><span class="tag-span"><span class="tag_name"><%= tag %></span><span class="tag_close">×</span></span><%}) %>
                 <%}  %>
                 <input id="newTag" type="text"/>
             </span>
@@ -49,7 +47,7 @@
                 </select>
             </div>
             <div class="form-group pull-left">
-                <label for="post_updateSlug" style="width: 100px;">Update Slug</label>
+                <label for="post_updateSlug">Update Slug</label>
                 <input id="post_updateSlug" type="checkbox" name="post[updateSlug]" style="margin-top: 10px;"/>
             </div>
             <% if(post){  %>

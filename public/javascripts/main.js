@@ -115,7 +115,7 @@
 //        if(e.which == 13&&$(this).val()){
 //            e.preventDefault();
 //            console.log(e);
-//            $('<span class="tag_span">' +
+//            $('<span class="tag-span">' +
 //                '<span class="tag_name">'+$(this).val()+'</span>' +
 //                '<span class="tag_close">&times;</span>' +
 //                '</span>\n\r').insertBefore($("#newTag"))
@@ -141,7 +141,7 @@ $("a.confirm").click(function(){
     showDialog(url,data,!!1);
     return false;
 });
-$(".tag_span").click(function(){
+$(".tag-span").click(function(){
     $(this).remove();
     updateTags();
 });
@@ -231,7 +231,7 @@ $(document).ready(function(){
         $(".flash_error,.flash_success").removeClass("show");
     },5000);
     updateTags();
-    $("#tags_container").click(function(){
+    $("#tags-container").click(function(){
         $("#newTag").focus();
     });
 });

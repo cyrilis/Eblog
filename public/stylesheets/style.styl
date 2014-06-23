@@ -254,3 +254,42 @@ form
     width: 100%
     border 0
     min-height 600px
+#tags-container
+  display inline-block
+  border 1px solid #f1f1f1
+  input
+    border 0
+.tag-span
+  display inline-block
+  background linkColor
+  color #ffffff
+  padding 0 5px
+  margin-right 4px
+  -webkit-border-radius: 2px
+  -moz-border-radius: 2px
+  border-radius: 2px
+#fullscreen
+  display block
+  color linkColor
+  cursor pointer
+  position: absolute;
+  top 30px
+  right 0
+.markdown_text
+  margin-bottom 30px
+
+
+/* CodeMirror Style Override */
+
+.CodeMirror
+  min-height 600px
+  &.cm-s-default .cm-link
+    color: linkColor
+  &.cm-s-default .cm-string
+    color: #D64473
+  &.cm-s-default .cm-tag
+    color: #419C78;
+.markdown_html
+  display none
+
+
