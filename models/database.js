@@ -36,10 +36,7 @@ var PostSchema = new Schema({
     slug: {type: String, unique: true},
     isMarkdown : {type:Boolean, default: false}
 });
-PostSchema.pre('save',function (next) {
-    this.slug = uslug(this.title);
-    next();
-});
+
 var postDate = PostSchema.virtual('date');
 postDate.get(function(){
 //    2014-02-16 18:02:30

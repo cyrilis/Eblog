@@ -9,10 +9,11 @@ var Post = db.Post,
     mail = require('../controller/utils').mail,
     Site = db.Site,
     uslug = require('uslug'),
-    Showdown = require('showdown'),
     config = require('../settings');
-var figure = require('./figure_for_showdown');
-var converter = new Showdown.converter({ extensions: [figure] });  // todo: Change to Marked
+var marked = require('marked');
+marked.setOptions({
+    gfm: true
+});
 exports.all = function(q,s,next){
     log(q);
     Site.findOne(function(err,site){
@@ -25,7 +26,7 @@ exports.all = function(q,s,next){
             site: site,
             util:{
                 isProduction: function(){
-                    return false
+                    return false;
                 }
             }
         });
@@ -49,12 +50,6 @@ exports.index = function(q,s,next){
                 next(err);
                 return;
             }
-            posts.forEach(function(post,index){
-                if(post.isMarkdwon && post.markdown){
-                    post.content = converter.makeHtml(post.markdown); //todo: Change to Marked
-                    console.log(post);
-                }
-            });
             s.render('index',{
                 posts: posts,
                 count: count,
@@ -68,23 +63,16 @@ exports.index = function(q,s,next){
 
 
 
-
-
 exports.tag = function(q,s,next){
     var limit = 10,skip= ((q.query.page||1)-1)*limit;
     var query = {'tags': q.params.tag};
     Post.find(query).count(null,function(err,count){
-        Post.find(query).populate('user').sort('-_id').exec(function(err,posts){
+        Post.find(query).populate('user').skip(skip).sort('-_id').exec(function(err,posts){
             if(err){
                 console.log(err);
                 next(err);
                 return;
             }
-            posts.forEach(function(post,index){
-                if(post.isMarkdwon){
-                    post.content = converter.makeHtml(post.markdown);
-                }
-            });
             s.render('index',{
                 title: 'Tags: '+ q.params.tag + ' - Page: '+ (q.query.page||1),
                 posts: posts,
@@ -96,10 +84,10 @@ exports.tag = function(q,s,next){
     });
 };
 
-exports.category= function(q,s,next){
+exports.category= function(q,s){
     var query = {'category': q.params.category};
     var limit = 10, skip = ((q.query.page||1)-1)*limit;
-    Post.find(query).count(function(err, count){
+    Post.find(query).skip(skip).count(function(err, count){
         if(err){
             console.log(err);
             q.flash('error',err.message);
@@ -113,11 +101,6 @@ exports.category= function(q,s,next){
                 s.redirect('back');
                 return;
             }
-            posts.forEach(function(post,index){
-                if(post.isMarkdwon){
-                    post.content = converter.makeHtml(post.markdown);
-                }
-            });
             s.render('index',{
                 title: 'Category: '+ q.params.category,
                 posts: posts,
@@ -129,7 +112,7 @@ exports.category= function(q,s,next){
     });
 };
 
-exports.getNew=function (q, s,next) {
+exports.getNew=function (q, s) {
     Post.distinct('category',function(err,categories){
         if(err){
             console.log(err);
@@ -146,7 +129,7 @@ exports.getNew=function (q, s,next) {
     });
 };
 
-exports.markdownNew = function(q,s,next){
+exports.markdownNew = function(q,s){
     Post.distinct('category',function(err,categories){
         if(err){
             console.log(err);
@@ -163,37 +146,6 @@ exports.markdownNew = function(q,s,next){
     });
 };
 
-exports.postNew=function (q, s, next) {
-    if(!q.body.post.title){
-        q.flash('error',"Oh-oh, Something Went Wrong, Check if your post title Exist.");
-        s.redirect("back");
-        return;
-    }
-    var postObj = q.body.post;
-    postObj.time = new Date();
-    postObj.user = q.session.user._id;
-    postObj.tags = q.body.post.tags.split('|').map(function(e){return e.trim();}).filter(function(n){return n;});
-    if(postObj.isMarkdown=== "true"){
-        delete postObj.content;
-        postObj.isMarkdwon = true;
-    }
-    var newPost = new Post(postObj);
-    console.log(newPost);
-    console.log(q.body.post);
-    newPost.save(function(err,post){
-        //console.log(post);
-        if(err){
-            console.log(err);
-            q.flash('error',err.message);
-            s.redirect('back');
-            return;
-        }
-        q.flash('success',"New Post Created!");
-        s.redirect('/');
-        mail(config.mailfrom,config.mailto,"Just Posted 《"+post.title+"》 a new Blog!","<h1>"+post.title+"</h1>"+post.content,null);
-    });
-};
-
 exports.show=function(q,s){
     Post.find({slug: q.params.slug}).populate('user').sort('_id').exec(function(err,posts){
         if(err){
@@ -207,9 +159,6 @@ exports.show=function(q,s){
         if(!post){
             s.redirect(404,'404');
             return;
-        }
-        if(post.isMarkdwon && post.markdown){
-            post.content = converter.makeHtml(post.markdown);
         }
         s.render('post',{
             post: post,
@@ -230,10 +179,10 @@ exports.getEdit=function(q,s){
             s.redirect(404,'404');
             return;
         }
-        s.render(post.isMarkdwon? "markdown":"edit",{
+        s.render(post.isMarkdown? "markdown":"edit",{
             post: post,
             title: 'Edit Post: '+ post.title,
-            mode: post.isMarkdwon? "markdown":"edit"
+            mode: post.isMarkdown? "markdown":"edit"
         });
     });
 };
@@ -258,7 +207,70 @@ exports.getMarkdown = function(q,s){
     });
 };
 
-exports.postEdit=function(q,s,next){
+
+
+exports.postNew=function (q, s) {
+    if(!q.body.post.title){
+        q.flash('error',"Oh-oh, Something Went Wrong, Check if your post title Exist.");
+        s.redirect("back");
+        return;
+    }
+    var postObj = q.body.post;
+    postObj.time = new Date();
+    postObj.user = q.session.user._id;
+    postObj.tags = q.body.post.tags.split('|').map(function(e){return e.trim();}).filter(function(n){return n;});
+    if(postObj.isMarkdown === "true"){
+        delete postObj.content;
+        postObj.isMarkdown = true;
+    }
+
+    if (!postObj.updateSlug || !postObj.slug){
+        postObj.slug = uslug(postObj.title);
+    }
+
+    if (postObj.isMarkdown){
+        marked(postObj.markdown, function (err, content) {
+            if (err){
+                throw err;
+            }
+            postObj.content = content;
+
+            console.log(q.body.post);
+            var newPost = new Post(postObj);
+            console.log(newPost);
+            newPost.save(function(err,post){
+                //console.log(post);
+                if(err){
+                    console.log(err);
+                    q.flash('error',err.message);
+                    s.redirect('back');
+                    return;
+                }
+                q.flash('success',"New Post Created!");
+                s.redirect('/posts/'+post.slug);
+                mail(config.mailfrom,config.mailto,"Just Posted a new Blog: 《"+post.title+"》 ","<h1>"+post.title+"</h1>"+post.content,null);
+            });
+        });
+    }else{
+        var newPost = new Post(postObj);
+        newPost.save(function(err,post){
+            //console.log(post);
+            if(err){
+                console.log(err);
+                q.flash('error',err.message);
+                s.redirect('back');
+                return;
+            }
+            q.flash('success',"New Post Created!");
+            s.redirect('/posts/'+post.slug);
+            mail(config.mailfrom,config.mailto,"Just Posted a new Blog: 《"+post.title+"》 ","<h1>"+post.title+"</h1>"+post.content,null);
+        });
+    }
+
+};
+
+
+exports.postEdit=function(q,s){
     if(!q.body.post.title){
         q.flash('error',"Oh-oh, Something Went Wrong, Check if your post title Exist.");
         s.redirect("back");
@@ -268,28 +280,51 @@ exports.postEdit=function(q,s,next){
     postObj.user = q.session.user._id;
     var _id = postObj._id;
     delete postObj._id;
-    if(postObj.updateSlug){
-        postObj.slug = uslug(postObj.title);
+    if(postObj.isMarkdown === "true"){
+        delete postObj.content;
+        postObj.isMarkdown = true;
+    }
+    if(!postObj.updateSlug || !postObj.slug){
+        delete postObj.slug;
     }
     //console.log(postObj);
     postObj.tags = postObj.tags.split('|').map(function(e){return e.trim();}).filter(function(n){return n;});
-    Post.findByIdAndUpdate(_id,postObj,function(err,post){
-        if(err){
-            console.log(err);
-            q.flash('error',err.message);
-            s.redirect('back');
-            return;
-        }
-        if(post.isMarkdwon){
-            post.content = converter.makeHtml(post.markdown);
-        }
-        q.flash('success',"Post Updated Successfully!");
-        s.redirect('back');
-        mail(config.mailfrom,config.mailto,"The Post 《"+post.title+"》 Got Updated!","<h1>"+post.title+"</h1>"+post.content,null);
-    });
+    console.log(postObj);
+
+    if (postObj.isMarkdown){
+        marked(postObj.markdown, function (err, content) {
+            if (err){
+                throw err;
+            }
+            postObj.content = content;
+            Post.findByIdAndUpdate(_id,postObj,function(err,post){
+                if(err){
+                    console.log(err);
+                    q.flash('error',err.message);
+                    s.redirect('back');
+                    return;
+                }
+                q.flash('success',"Post Updated Successfully!");
+                s.redirect('/posts/'+post.slug);
+                mail(config.mailfrom,config.mailto,"The Post 《"+post.title+"》 Got Updated!","<h1>"+post.title+"</h1>"+post.content,null);
+            });
+        });
+    }else{
+        Post.findByIdAndUpdate(_id,postObj,function(err,post){
+            if(err){
+                console.log(err);
+                q.flash('error',err.message);
+                s.redirect('back');
+                return;
+            }
+            q.flash('success',"Post Updated Successfully!");
+            s.redirect('/posts/'+post.slug);
+            mail(config.mailfrom,config.mailto,"The Post 《"+post.title+"》 Got Updated!","<h1>"+post.title+"</h1>"+post.content,null);
+        });
+    }
 };
 
-exports.postDelete=function(q,s,next){
+exports.postDelete=function(q,s){
     Post.findOne({slug: q.params.slug},function(err,post){
             if(err){
                 console.log(err);
