@@ -31,9 +31,9 @@
         <input name="post[tags]" id="post_tags" type="text" hidden="hidden"/>
         <div class="form-group">
             <label for="post_tags">Tags</label>
-            <span id="tags_container">
+            <span id="tags-container">
                 <%if(post&&post.tags){ %>
-                <%post.tags.forEach(function(tag){%><span class="tag_span"><span class="tag_name"><%= tag %></span><span class="tag_close">×</span></span><%}) %>
+                <%post.tags.forEach(function(tag){%><span class="tag-span"><span class="tag_name"><%= tag %></span><span class="tag_close">×</span></span><%}) %>
                 <%}  %>
                 <input id="newTag" type="text"/>
             </span>
