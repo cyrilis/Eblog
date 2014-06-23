@@ -84,7 +84,12 @@ div.CodeMirror-overwrite div.CodeMirror-cursor {}
 .cm-s-default .cm-bracket {color: #997;}
 .cm-s-default .cm-tag {color: #170;}
 .cm-s-default .cm-attribute {color: #00c;}
-.cm-s-default .cm-header {color: #000000; font-size: 30px;}
+.cm-s-default .cm-header {
+    display: block;
+    color: #000000;
+    font-size: 30px;
+    margin: 0.1em 0;
+    font-weight: bold;}
 .cm-s-default .cm-header-1 {font-size: 31px;}
 .cm-s-default .cm-header-2 {font-size: 28px;}
 .cm-s-default .cm-header-3 {font-size: 25px;}

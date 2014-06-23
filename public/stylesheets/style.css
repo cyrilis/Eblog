@@ -335,12 +335,18 @@ form .form-group textarea:focus {
   top: 30px;
   right: 0;
 }
+#fullscreen i.icon-expand {
+  display: inline-block;
+}
+#fullscreen i.icon-contract {
+  display: none;
+}
 .markdown_text {
   margin-bottom: 30px;
 }
 /* CodeMirror Style Override */
 .CodeMirror {
-  min-height: 600px;
+  min-height: 450px;
 }
 .CodeMirror.cm-s-default .cm-link {
   color: #00a6e8;
@@ -352,5 +358,43 @@ form .form-group textarea:focus {
   color: #419c78;
 }
 .markdown_html {
+  display: none;
+}
+#markdown-container.fullscreen {
+  display: block;
+  width: 100%;
+  background: #fff;
+  height: 100%;
+}
+#markdown-container.fullscreen .markdown_text,
+#markdown-container.fullscreen .markdown_html {
+  display: block;
+  width: 50%;
+  height: 100%;
+  overflow: auto;
+  position: fixed;
+  padding: 60px 30px;
+  -webkit-box-sizing: border-box;
+/* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+/* Firefox, other Gecko */
+  box-sizing: border-box;
+  min-height: 100%;
+}
+#markdown-container.fullscreen .markdown_text {
+  left: 0;
+}
+#markdown-container.fullscreen .markdown_html {
+  right: 0;
+  border-left: 2px solid #ddd;
+}
+#markdown-container.fullscreen #fullscreen {
+  right: 30px;
+  top: 30px;
+}
+#markdown-container.fullscreen #fullscreen i.icon-contract {
+  display: inline-block;
+}
+#markdown-container.fullscreen #fullscreen i.icon-expand {
   display: none;
 }
