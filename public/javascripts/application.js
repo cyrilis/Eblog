@@ -2,7 +2,7 @@
  * Created by Cyril on 13-10-27.
  */
 "use strict";
-window.showBox = function showBox (message, action, showCb, closeCb ){
+function showBox (option){
     var _x, _y;
     var dragable = false;
     var body = $('body').on('mouseleave', function(){
@@ -11,45 +11,34 @@ window.showBox = function showBox (message, action, showCb, closeCb ){
         }
         dragable = false;
     });
-    var template =$('<div class="confirm"><div class="confirm_header"><a class="close">×</a></div>' +
-        '<div class="confirm_body">'+message+'</div>' +
-        '<div class="confirm_footer">' +
-        '<button class="button close">取消</button>' +
+    function closeBox(){
+        template.removeClass('show');
+        dropback.removeClass('show');
+        window.setTimeout(function(){
+            template.remove();
+            dropback.remove();
+            template.trigger("close");
+        },300);
+    }
+    var template =$('<div class="show-box"><div class="box-header"><a class="close">×</a></div>' +
+        '<div class="box-body">'+option.template+'</div>' +
+        '<div class="box-footer">' +
         '<button class="button action">确定</button>' +
+        '<button class="button close">取消</button>' +
         '</div></div>')
         .appendTo(body)
-        .find('.close').click(function(){
-            template.removeClass('show');
-            dropback.removeClass('show');
-            window.setTimeout(function(){
-                template.remove();
-                dropback.remove();
-                if (typeof closeCb === "function"){
-                    closeCb();
-                }
-            },300);
-        }).end().find('.action').click(function(){
-            if (typeof action === 'function'){
-                action();
-            }
-            template.removeClass('show');
-            dropback.removeClass('show');
-            window.setTimeout(function(){
-                template.remove();
-                dropback.remove();
-                if (typeof closeCb === "function"){
-                    closeCb();
-                }
-            },300);
+        .find('.close').click(closeBox).end().find('.action').click(function(){
+            template.trigger('confirm');
+            closeBox();
         }).end()
-        .find('.confirm_header').on('mousedown',function(e){
+        .find('.box-header').on('mousedown',function(e){
             dragable = true;
             _x=e.pageX-parseInt(template.css("left"));
             _y=e.pageY-parseInt(template.css("top"));
         })
         .on('mousemove', function(e){
             if(dragable){
-                var x=e.pageX-_x,y=e.pageY-_y;
+                var x=e.clientX-_x,y=e.clientY-_y;
                 template.css({top:y,left:x});
             }
         })
@@ -57,27 +46,18 @@ window.showBox = function showBox (message, action, showCb, closeCb ){
             dragable = false;
         }).end();
     var dropback = $('<div class="backdrops show">').appendTo(body).click(function(){
-        $(this).removeClass('show');
-        template.removeClass('show');
-        window.setTimeout(function(){
-            template.remove();
-            $(this).remove();
-            if (typeof closeCb === "function"){
-                closeCb();
-            }
-        },300);
+        closeBox();
     });
     window.setTimeout(function(){
         template.addClass('show');
-        if (typeof showCb === "function"){
-            showCb();
-        }
+        template.trigger('show');
     },1); // hack for -webkit-transition
     $( window ).resize(function() {
         template.removeAttr('style');
         dragable = false;
     });
-};
+    return template;
+}
 
 function updateTagsDom (elem){
     var _this = elem|| $("#newTag");
@@ -90,27 +70,6 @@ function updateTagsDom (elem){
             updateTags();
         });
     $(_this).val(" ");
-}
-
-function showDialog(url,data,really){
-    if(!really){
-        return confirm(data.confirm)? window.location = url :false;
-    }else{
-        var newDiv=document.createElement("div");
-        newDiv.className="confirm";
-        newDiv.innerHTML='<a class="close">&times;</a>' +
-            '<div class="confirm_body">'+data.confirm+'</div>' +
-            '<div class="confirm_footer">' +
-            '<button class="button close">取消</button>' +
-            '<a href="'+url+'" data-method="'+data.method+'" class="button">确定</a>' +
-            '</div>';
-        document.body.appendChild(newDiv);
-        setTimeout(function(){
-            newDiv.className+=" show";
-        },1);
-        $(".backdrops").addClass('show');
-        return false;
-    }
 }
 
 function initFlash () {
@@ -135,9 +94,9 @@ function updateTags(){
 
 
 function close_box(){
-    $('div.confirm,.show_box,.backdrops').removeClass("show");
+    $('.show-box,.backdrops').removeClass("show");
     setTimeout(function(){
-        $("div.confirm,.show_box").remove();
+        $(".show-box").remove();
     },300);
 }
 
@@ -199,7 +158,7 @@ function highlight(){
 function syncScroll(){
     var $text = $(".markdown_text");
     var $html = $(".markdown_html");
-    $text.scroll(function(event) {
+    $text.scroll(function() {
         var top = $text.scrollTop();
         var winHeight = $(window).height();
         var textHeight= $(".CodeMirror").height() + 120;
@@ -257,7 +216,7 @@ $(document).ready(function(){
                 method: this.getAttribute('data-method')
             };
         console.log(data);
-        showDialog(url,data,!!1);
+        showBox(url,data,!!1);
         return false;
     });
     $(".tag-span").click(function(){
@@ -266,9 +225,6 @@ $(document).ready(function(){
     });
 
     $('.backdrops').click(close_box);
-    $(document).on("click",".confirm .close,.show_box .close",function(){
-        close_box();
-    });
 
 
     initFlash ();
