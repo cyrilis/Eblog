@@ -9,6 +9,9 @@ a {
   color: #00a6e8;
   text-decoration: none;
 }
+p {
+  margin: 0 0 1em 0;
+}
 figure {
   width: 100%;
   position: relative;
@@ -232,14 +235,15 @@ form .form-group textarea {
   -moz-box-sizing: border-box;
 /* Firefox, other Gecko */
   box-sizing: border-box;
-}
-form .form-group input,
-form .form-group textarea {
   width: 400px;
 }
-form .form-group input:active,
+form .form-group input[type="email"]:active,
+form .form-group input[type="text"]:active,
+form .form-group input[type="password"]:active,
 form .form-group textarea:active,
-form .form-group input:focus,
+form .form-group input[type="email"]:focus,
+form .form-group input[type="text"]:focus,
+form .form-group input[type="password"]:focus,
 form .form-group textarea:focus {
   outline: none;
 }
@@ -313,6 +317,7 @@ form .form-group textarea:focus {
 #tags-container {
   display: inline-block;
   border: 1px solid #f1f1f1;
+  width: 600px;
 }
 #tags-container input {
   border: 0;
@@ -322,7 +327,7 @@ form .form-group textarea:focus {
   background: #00a6e8;
   color: #fff;
   padding: 0 5px;
-  margin-right: 4px;
+  margin: 2px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;

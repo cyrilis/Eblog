@@ -213,7 +213,7 @@ function syncScroll(){
 $(document).ready(function(){
     var newTag = $('#newTag');
     window.submitPost = function(){
-        if(!$('#post_title_outer').val()){
+        if(!$('#post-title-input').val()){
             alert("Title Can't be Blank");
             return false;
         }

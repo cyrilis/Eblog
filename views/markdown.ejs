@@ -29,12 +29,9 @@
         <div class="form-group-group clearfix">
             <div class="form-group pull-left">
                 <label for="newTag">Tags</label>
-            <span id="tags-container">
-                <%if(post&&post.tags){ %>
-                <%post.tags.forEach(function(tag){%><span class="tag-span"><span class="tag_name"><%= tag %></span><span class="tag_close">×</span></span><%}) %>
-                <%}  %>
-                <input id="newTag" type="text"/>
-            </span>
+                <span id="tags-container">
+                    <%if(post&&post.tags){ %><%post.tags.forEach(function(tag){%><span class="tag-span"><span class="tag_name"><%= tag %></span><span class="tag_close">×</span></span><%}) %><%}  %><input id="newTag" style="width:200px;border: 0;" type="text"/>
+                </span>
             </div>
             <div class="form-group pull-left">
                 <label for="post_category">Category</label>
@@ -47,8 +44,9 @@
                 </select>
             </div>
             <div class="form-group pull-left">
-                <label for="post_updateSlug">Update Slug</label>
-                <input id="post_updateSlug" type="checkbox" name="post[updateSlug]" style="margin-top: 10px;"/>
+                <label for="post_slug">Slug</label>
+                <span class="slug">/posts/<input type="text" id="post_slug" name="post[slug]" placeholder="<% if(post){ %><%= post.slug %><% }else{ %>slug<% } %>"/>
+                    Check to update slug : <input id="post_updateSlug" type="checkbox" name="post[updateSlug]" style="margin-top: 10px;"/></span>
             </div>
             <% if(post){  %>
             <input type="submit" class="button pull-right" value="Update Post"/>
