@@ -104,6 +104,10 @@ CodeMirror.defineMode("gfm", function(config, modeConfig) {
           //state.combineTokens = true;
           return 'strikethrough';
       }
+      if (stream.match(/[\u4e00-\u9fa5]/)){
+          state.combineTokens = true;
+          return "chinese";
+      }
       stream.next();
       return null;
     },
