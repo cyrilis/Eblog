@@ -2,7 +2,7 @@
 
 .CodeMirror {
   /* Set height, width, borders, and global font properties here */
-  font-family: monospace;
+  font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif;
 }
 .CodeMirror-scroll {
   /* Set scrolling behaviour here */
@@ -85,7 +85,7 @@ div.CodeMirror-overwrite div.CodeMirror-cursor {}
 .cm-s-default .cm-tag {color: #170;}
 .cm-s-default .cm-attribute {color: #00c;}
 .cm-s-default .cm-header {
-    display: block;
+    display: inline-block;
     color: #000000;
     font-size: 30px;
     margin: 0.1em 0;
@@ -99,7 +99,9 @@ div.CodeMirror-overwrite div.CodeMirror-cursor {}
 .cm-s-default .cm-quote {color: #090;}
 .cm-s-default .cm-hr {color: #999;}
 .cm-s-default .cm-link {color: #00c;}
-
+.cm-s-default .cm-chinese{
+  font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans", "Microsoft YaHei", sans-serif;
+}
 
 .cm-negative {color: #d44;}
 .cm-positive {color: #292;}
