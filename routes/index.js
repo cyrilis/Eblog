@@ -86,6 +86,9 @@ module.exports = function (app) {
     app.get('/20131015.html',redi('/posts/基于-nodejs-的博客程序-ghost'));
     app.get('/About.html',redi('/about'));
 
+// handel Email from MailGun
+    app.post('/receive-email', site.receiveEmail);
+
 
     function redi(newUrl){
         return function(q,s,next){
