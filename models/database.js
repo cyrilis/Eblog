@@ -57,6 +57,7 @@ var albumCover = AlbumSchema.virtual('cover');
 albumCover.get(function(){
         return this.photos&&this.photos.length? this.photos[0].location: '/images/default_cover.png';
 });
+
 var PhotoSchema = new Schema({
     id: ObjectId,
     time: Date,
@@ -81,6 +82,37 @@ var LogSchema = new Schema({
     os: String
 });
 
+var EmailSchema = new Schema({
+    id: ObjectId,
+    time: Date,
+    recipient: String,
+    sender: String,
+    subject: String,
+    from: String,
+    "X-Envelope-From": String,
+    received: String,
+    'Dkim-Signature': String,
+    'Mime-Version': String,
+    'X-Received': String,
+    Date: String,
+    "Message-Id": String,
+    'Subject': String,
+    From: String,
+    To: String,
+    'Content-Type': String,
+    'X-Mailgun-Incoming': String,
+    'message-headers': String,
+    timestamp: String,
+    token: String,
+    signature: String,
+    'body-plan': String,
+    'body-html': String,
+    'stripped-html': String,
+    'stripped-text': String,
+    'stripped-signature': String
+});
+
+
 var logDate = LogSchema.virtual('time');
 logDate.get(function(){
     return moment(this.date).lang('zh-cn').format("YYYY/MM/DD/H:mm:ss");
@@ -100,7 +132,8 @@ var connection = mongoose.createConnection(settings.dburl),
     Album = connection.model('Album',AlbumSchema),
     Photo = connection.model('Photo',PhotoSchema),
     Log   = connection.model("Log", LogSchema),
-    Site  = connection.model("Site", SiteSchema);
+    Site  = connection.model("Site", SiteSchema),
+    Email  = connection.model("Site", EmailSchema);
 
 module.exports = {
     'User': User,
@@ -108,5 +141,6 @@ module.exports = {
     'Album': Album,
     'Photo': Photo,
     'Log' : Log,
-    'Site': Site
+    'Site': Site,
+    'Email': Email
 };
