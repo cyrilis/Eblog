@@ -5,6 +5,9 @@
 "use strict";
 var Log =  require('../models/database').Log;
 var Site = require("../models/database").Site;
+var Email = require('../models/database').Email;
+var setting = require('../settings');
+var mail = require('../controller/utils').mail;
 exports.updateAbout = function(q,s, next){
     if(!q.body.site||!q.body.site.about){
         q.flash('error',"Sorry, About content can't be blank!");
@@ -88,5 +91,20 @@ exports.visiteLogs = function(q,s,next){
             limit: limit,
             page: q.query.page||1
         });
+    });
+};
+
+exports.receiveEmail = function(q,s,next){
+    var emailInfo = q.body;
+    emailInfo.date = new Date();
+    var email = new Email(emailInfo);
+    email.save(function(err,email){
+        if (err){
+            console.log(err);
+            return false;
+        }
+        console.log(email.Subject);
+        mail(email.sender, setting.mailTo, email.subject + "[To: "+(email.To||email.recipient)+"]", email['body-html'], email['body-text']);
+        s.send('Got it!');
     });
 };
