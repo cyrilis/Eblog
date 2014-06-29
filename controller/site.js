@@ -101,7 +101,7 @@ exports.receiveEmail = function(q,s,next){
     email.save(function(err,email){
         if (err){
             console.log(err);
-            return false;
+            next(err);
         }
         console.log(email.Subject);
         mail(email.sender, setting.mailTo, email.subject + "[To: "+(email.To||email.recipient)+"]", email['body-html'], email['body-text']);
