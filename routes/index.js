@@ -3,7 +3,7 @@
  * Routes File
  * List all routes here
  */
-
+/* jshint -W100 */
 "use strict";
 
 var user = require('../controller/user.js'),
@@ -91,7 +91,7 @@ module.exports = function (app) {
 
 
     function redi(newUrl){
-        return function(q,s,next){
+        return function(q,s){
             s.redirect(301, newUrl);
         };
     }

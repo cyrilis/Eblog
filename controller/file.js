@@ -15,14 +15,14 @@ exports.upload=function(q,s){
     }else if(q.files.file && q.files.file.size===0){
         fs.unlinkSync(q.files.file.path);
         console.log("[Delete]-Successfully removed an empty file!");
-        editor_id? s.send("<script>parent.UM.getEditor('"+editor_id+"').getWidgetCallback('image')('','ERROR')</script>"): s.send('upload_failed.png');
+        return editor_id? s.send("<script>parent.UM.getEditor('"+editor_id+"').getWidgetCallback('image')('','ERROR')</script>"): s.send('upload_failed.png');
     }else if(!q.files.file){
-        editor_id? s.send("<script>parent.UM.getEditor('"+editor_id+"').getWidgetCallback('image')('','ERROR')</script>"): s.send('upload_failed.png');
+        return editor_id? s.send("<script>parent.UM.getEditor('"+editor_id+"').getWidgetCallback('image')('','ERROR')</script>"): s.send('upload_failed.png');
     }else{
         target_path='/images/upload/'+(function(){return +new Date();})()+".jpg";
         fs.renameSync(q.files.file.path,"./public"+target_path);
         console.log("[Rename]-Successfully renamed a file!");
-        editor_id? s.send("<script>parent.UM.getEditor('"+editor_id+"').getWidgetCallback('image')('" + target_path+"','SUCCESS')</script>"): s.send(target_path);
+        return editor_id? s.send("<script>parent.UM.getEditor('"+editor_id+"').getWidgetCallback('image')('" + target_path+"','SUCCESS')</script>"): s.send(target_path);
     }
 
 };
