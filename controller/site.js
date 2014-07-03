@@ -55,7 +55,7 @@ exports.updateAbout = function(q,s, next){
     });
 };
 
-exports.getAbout = function(q,s,next){
+exports.getAbout = function(q,s){
     s.render("about");
 };
 exports.updateSite= function(q,s,next){
@@ -70,7 +70,6 @@ exports.updateSite= function(q,s,next){
                 site: site
             });
             s.redirect('back');
-            return;
         });
     }
     next();
@@ -104,7 +103,7 @@ exports.receiveEmail = function(q,s,next){
             next(err);
         }
         console.log(email.Subject);
-        mail(email.sender, setting.mailTo, email.subject + "[To: "+(email.To||email.recipient)+"]", email['body-html'], email['body-text']);
+        mail(email.sender, setting.mailto, email.subject + "[To: "+(email.To||email.recipient)+"]", email['body-html'], email['body-text']);
         s.send('Got it!');
     });
 };
