@@ -19,44 +19,45 @@
     <% } %>
 </head>
 <body class="unloaded" onload="document.body.className='loaded'">
-    <div class="logo container">
-        <h1>
-            <a href="/"><%= site&&site.logo? site.logo : "Cyilis.com" %></a>
-            <span><%= site&&site.desc? site.desc : "Just Another EBlog" %></span>
-        </h1>
-    </div>
-<header id="header">
-    <nav class="container header_navs clearfix">
-        <ul class="clearfix">
-            <li><a href="/">Home</a></li>
-            <!--<li><a href="/albums">Albums</a></li>-->
-            <li><a href="/lab">Lab</a></li>
-            <li><a href="/about">About</a></li>
-            <% if (user){ %>
-            <li class="has-sub"><a href="/settings/profile">Admin</a>
-                <ul class="sub-nav">
-                    <li><a href="/posts/new"><i class="icon-pencil"></i>New Post</a></li>
-                    <li><a href="/posts/markdown"><i class="icon-pencil"></i>Markdown</a></li>
-                    <li><a href="/settings/profile"><i class="icon-cog"></i>Settings</a></li>
-                    <li><a data-method="post" href="/logout"><i class="icon-enter"></i>Logout</a></li>
-                </ul>
-            </li>
-            <% }else{  %>
-            <li><a href="/reg">Register</a></li>
-            <li><a href="/login">Login</a></li>
-            <%}   %>
-        </ul>
-    </nav>
-</header>
-<main>
-    <div class="container">
-        <div class="flash">
-            <% error = flash("error")||null;success = flash("success")||null %>
-            <% if (error.length) { %>
-            <div class="flash_error"><%= error %></div>
-            <% } %>
-            <% if (success.length){ %>
-            <div class="flash_success"><%= success  %></div>
-            <% } %>
+    <div id="container">
+        <div class="logo container">
+            <h1>
+                <a href="/"><%= site&&site.logo? site.logo : "Cyilis.com" %></a>
+                <span><%= site&&site.desc? site.desc : "Just Another EBlog" %></span>
+            </h1>
         </div>
-    </div>
+        <header id="header">
+            <nav class="container header_navs clearfix">
+                <ul class="clearfix">
+                    <li><a href="/">Home</a></li>
+                    <!--<li><a href="/albums">Albums</a></li>-->
+                    <li><a href="/lab">Lab</a></li>
+                    <li><a href="/about">About</a></li>
+                    <% if (user){ %>
+                    <li class="has-sub"><a href="/settings/profile">Admin</a>
+                        <ul class="sub-nav">
+                            <li><a href="/posts/new"><i class="icon-pencil"></i>New Post</a></li>
+                            <li><a href="/posts/markdown"><i class="icon-pencil"></i>Markdown</a></li>
+                            <li><a href="/settings/profile"><i class="icon-cog"></i>Settings</a></li>
+                            <li><a data-method="post" href="/logout"><i class="icon-enter"></i>Logout</a></li>
+                        </ul>
+                    </li>
+                    <% }else{  %>
+                    <li><a href="/reg">Register</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <%}   %>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="container">
+                <div class="flash">
+                    <% error = flash("error")||null;success = flash("success")||null %>
+                    <% if (error.length) { %>
+                    <div class="flash_error"><%= error %></div>
+                    <% } %>
+                    <% if (success.length){ %>
+                    <div class="flash_success"><%= success  %></div>
+                    <% } %>
+                </div>
+            </div>

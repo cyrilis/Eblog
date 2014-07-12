@@ -34,6 +34,15 @@ img {
 hr {
   border-top: 1px solid #f0f0f0;
 }
+/*Header Reset*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
 pre {
   display: block;
   overflow-x: auto;
@@ -43,6 +52,24 @@ pre {
 }
 code.hljs {
   display: inline-block;
+}
+select {
+  display: inline-block;
+  width: auto;
+  height: 33px;
+  background: #fff;
+  color: #222;
+  padding: 0 10px;
+  border-color: #eee;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+select:focus {
+  outline: none;
 }
 .clearfix {
   zoom: 1;
@@ -64,6 +91,11 @@ code.hljs {
   position: relative;
 }
 #header {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-top: 25px;
+}
+#header nav {
   border-bottom: 2px solid #f0f0f0;
 }
 #header nav ul {
@@ -81,6 +113,8 @@ code.hljs {
   display: inline-block;
   width: 160px;
   height: 40px;
+  font-size: 20px;
+  color: #333;
   padding: 10px;
   text-align: center;
   line-height: 40px;
@@ -95,7 +129,7 @@ code.hljs {
 #header nav ul li.has-sub ul.sub-nav {
   position: absolute;
   display: none;
-  z-index: 100;
+  z-index: 1000;
   zoom: 1;
   background: #fff;
   border: 2px solid #f0f0f0;
@@ -110,9 +144,14 @@ code.hljs {
   text-align: left;
   padding: 10px 30px;
   width: auto;
+  font-size: 18px;
 }
 #header nav ul li.has-sub:hover ul.sub-nav {
   display: block;
+}
+main {
+  max-width: 1440px;
+  margin: 0 auto;
 }
 main article {
   width: 100%;
@@ -124,8 +163,16 @@ main article header h2 {
   font-family: 'Libre Baskerville', serif;
 }
 main article aside.post-meta {
+  color: #999;
   width: 160px;
   float: left;
+}
+main article aside.post-meta a {
+  color: #999;
+  text-decoration: underline;
+}
+main article aside.post-meta a:hover {
+  color: #00a6e8;
 }
 main article aside.post-meta .post-date {
   border-top: 1px solid #eee;
@@ -134,6 +181,23 @@ main article aside.post-meta .post-date {
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
   margin-bottom: 10px;
+}
+main article aside.post-meta .category_link a {
+  background: #ddd;
+  padding: 2px 10px;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+main article aside.post-meta .tag_links {
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+  margin-top: 10px;
+}
+main article aside.post-meta .comment_link {
+  padding-top: 10px;
+  margin-top: 10px;
+  border-top: 1px solid #eee;
 }
 main article .post-content {
   width: 760px;
@@ -145,6 +209,32 @@ main article .post-content p {
 }
 main article .post-footer {
   clear: both;
+}
+footer {
+  max-width: 1440px;
+  margin: 40px auto;
+}
+#container {
+  max-width: 1440px;
+  margin: 0 auto;
+  background: #fff;
+  -webkit-box-shadow: 0 0 1.25em rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 0 1.25em rgba(0,0,0,0.1);
+  box-shadow: 0 0 1.25em rgba(0,0,0,0.1);
+  margin-top: 40px;
+  padding-bottom: 100px;
+}
+body {
+  background: #ddd;
+}
+.post-title h2 {
+  font-size: 50px;
+}
+.post-title h2 a {
+  color: #222;
+}
+.post-content p {
+  color: #222;
 }
 .setting_sidebar {
   width: 200px;
@@ -314,6 +404,9 @@ form .form-group textarea:focus {
   border: 0;
   min-height: 600px;
 }
+.edui-container {
+  margin-bottom: 30px;
+}
 #tags-container {
   display: inline-block;
   border: 1px solid #f1f1f1;
@@ -348,6 +441,11 @@ form .form-group textarea:focus {
 }
 .markdown_text {
   margin-bottom: 30px;
+}
+input#post-title-input {
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: normal;
 }
 /* CodeMirror Style Override */
 .CodeMirror {
