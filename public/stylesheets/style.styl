@@ -117,11 +117,20 @@ blockquote
             top 100%
             li
               float: none;
+              -webkit-transition: background 0.3s
+              -moz-transition: background 0.3s
+              -ms-transition: background 0.3s
+              -o-transition: background 0.3s
+              transition: background 0.3s
+              &:hover
+                background #eeeeee
               a
                 text-align left
-                padding 10px 30px
+                padding 10px 20px
                 width auto
                 font-size 18px
+                i
+                  margin-right 15px
           &:hover
             ul.sub-nav
               display block
