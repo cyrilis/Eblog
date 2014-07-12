@@ -1,31 +1,33 @@
 <article class="clearfix">
-    <header class="post_title clearfix">
+    <header class="post-title clearfix">
         <h2><a href="/posts/<%= post.slug %>"><%= post.title  %></a></h2>
     </header>
     <aside class="post-meta">By <a href="/about"><%= post.user.name %></a>
         <div class="post-date"><%= post.date  %></div>
+        <% if(post.category){ %>
+        <div class="category_link"><a href="/categories/<%=post.category%>"><%=post.category %></a></div>
+        <%}   %>
+        <% if(post.tags.length){ %>
+        <div class="tag_links">
+            <% taglast = post.tags.length -1;post.tags.forEach(function(tag, index){ %>
+            <a class="tag_link" href="/tags/<%=tag %>"><%= tag %></a><% if(index !== taglast){ %>,<% } %>
+            <%})%>
+        </div>
+        <%}   %>
+        <div class="comment_link">
+            <a href="/posts/<%= post.slug %>#disqus_thread"> Comments</a>
+        </div>
         <% if(user&&post.user.name==user.name){ %>
         <div>
             <a href="/posts/<%= post.slug %>/edit">Edit</a>
             <a class="confirm" data-method="delete" rel="nofollow" data-confirm="Are you sure to Detele this blog?" href="/posts/<%= post.slug %>">Delete</a>
         </div>
         <% } %>
-        <a href="/posts/<%= post.slug %>#disqus_thread"> Comments</a>
     </aside>
     <div class="post-content clearfix">
         <%- post.content  %>
     </div>
     <div class="post-footer clearfix">
-        <% if(post.tags.length){ %>
-        <div class="tag_links">
-            Tags:&nbsp;&nbsp;
-            <%post.tags.forEach(function(tag){ %>
-            <a class="tag_link" href="/tags/<%=tag %>"><i class="icon-tags"></i><%= tag %></a>
-            <%})%>
-        </div>
-        <%}   %>
-        <% if(post.category){ %>
-        <div class="category_link">Category:&nbsp;&nbsp;<a href="/categories/<%=post.category%>"><%=post.category %></a></div>
-        <%}   %>
+
     </div>
 </article>
