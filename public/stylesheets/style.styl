@@ -14,12 +14,6 @@ figure
   position: relative;
 figcaption
   display block
-  position: absolute;
-  top 0
-  left -200px
-  width 180px
-  text-align right
-  margin-right 20px
   padding-bottom 5px
   border-bottom 1px solid #f0f0f0
   color #999999
@@ -57,6 +51,14 @@ select
   border-radius: 0
 select:focus
   outline none
+blockquote
+  background: #EEE
+  padding: 20px
+  margin: 0
+  border-left: 5px solid #CCC
+  margin-bottom 20px
+  main article .post-content & p:last-child
+    margin-bottom 0
 .clearfix
   zoom 1
 .clearfix:after
@@ -66,6 +68,8 @@ select:focus
   content: ' ';
   clear: both;
   height: 0;
+.hide
+  display none
 .logo
   display none
 .container
@@ -274,6 +278,7 @@ form
   padding 8px 20px
   font-size 1em
   line-height 1
+  color #666666
   border 1px solid #f0f0f0
   background #f0f0f0
   -webkit-transition: background 0.3s ease-out, border-color 0.3s ease-out
@@ -287,6 +292,10 @@ form
   &:hover
     background #dddddd
     border-color #dddddd
+a.button
+  color #666666
+.pagination
+  text-align center
 .tag_link
   display inline-block
   margin-right 10px
@@ -335,6 +344,7 @@ form
   width 600px
   input
     border 0
+    width 100px
 .tag-span
   display inline-block
   background linkColor
@@ -365,7 +375,9 @@ input#post-title-input
 /* CodeMirror Style Override */
 
 .CodeMirror
-  min-height 450px
+  .CodeMirror-scroll
+    min-height 450px
+    cursor text
   &.cm-s-default .cm-link
     color: linkColor
   &.cm-s-default .cm-string
