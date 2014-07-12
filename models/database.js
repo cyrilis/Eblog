@@ -79,7 +79,8 @@ var LogSchema = new Schema({
     city: String,
     browser: String,
     version: String,
-    os: String
+    os: String,
+    ua: String
 });
 
 var EmailSchema = new Schema({
@@ -133,7 +134,7 @@ var connection = mongoose.createConnection(settings.dburl),
     Photo = connection.model('Photo',PhotoSchema),
     Log   = connection.model("Log", LogSchema),
     Site  = connection.model("Site", SiteSchema),
-    Email  = connection.model("Site", EmailSchema);
+    Email  = connection.model("Email", EmailSchema);
 
 module.exports = {
     'User': User,

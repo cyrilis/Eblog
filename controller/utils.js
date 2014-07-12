@@ -24,7 +24,8 @@ exports.log = function(q){
         city: city? city.city: "_",
         browser: userAgent.family||"_",
         version: userAgent.major||"_",
-        os: userAgent.os.family||"_"
+        os: userAgent.os.family||"_",
+        ua: q.headers['user-agent']
 });
     log.save();
 };

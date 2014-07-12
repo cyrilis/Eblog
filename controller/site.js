@@ -107,3 +107,7 @@ exports.receiveEmail = function(q,s,next){
         s.send('Got it!');
     });
 };
+
+exports.handleGithub = function(q,s, next){
+
+};
