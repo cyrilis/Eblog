@@ -146,12 +146,23 @@ main article .post-content blockquote p:last-child {
 }
 #header nav ul li.has-sub ul.sub-nav li {
   float: none;
+  -webkit-transition: background 0.3s;
+  -moz-transition: background 0.3s;
+  -ms-transition: background 0.3s;
+  -o-transition: background 0.3s;
+  transition: background 0.3s;
+}
+#header nav ul li.has-sub ul.sub-nav li:hover {
+  background: #eee;
 }
 #header nav ul li.has-sub ul.sub-nav li a {
   text-align: left;
-  padding: 10px 30px;
+  padding: 10px 20px;
   width: auto;
   font-size: 18px;
+}
+#header nav ul li.has-sub ul.sub-nav li a i {
+  margin-right: 15px;
 }
 #header nav ul li.has-sub:hover ul.sub-nav {
   display: block;
