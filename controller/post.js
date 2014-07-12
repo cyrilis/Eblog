@@ -14,6 +14,19 @@ var marked = require('marked');
 marked.setOptions({
     gfm: true
 });
+var renderer = new marked.Renderer();
+renderer.image = function (href, title, text) {
+    var out = '<figure><img src="' + href + '" alt="' + text + '"';
+    if (title) {
+        out += ' title="' + title + '"';
+    }
+    out += this.options.xhtml ? '/>' : '>';
+    if(title){
+        out += "<figcaption>"+title+"</figcaption>";
+    }
+    out += "</figure>";
+    return out;
+};
 exports.all = function(q,s,next){
     log(q);
     Site.findOne(function(err,site){
@@ -229,7 +242,7 @@ exports.postNew=function (q, s) {
     }
 
     if (postObj.isMarkdown){
-        marked(postObj.markdown, function (err, content) {
+        marked(postObj.markdown, {renderer: renderer}, function (err, content) {
             if (err){
                 throw err;
             }
@@ -292,7 +305,7 @@ exports.postEdit=function(q,s){
     console.log(postObj);
 
     if (postObj.isMarkdown){
-        marked(postObj.markdown, function (err, content) {
+        marked(postObj.markdown, {renderer: renderer}, function (err, content) {
             if (err){
                 throw err;
             }

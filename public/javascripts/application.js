@@ -103,7 +103,6 @@ function close_box(){
 function toggleFullscreen($markdownContainer) {
     var element = $markdownContainer.get(0);
     if ($markdownContainer.hasClass('fullscreen')){
-        console.log("Exit Fullscreen!");
         if(document.exitFullscreen) {
             document.exitFullscreen();
         } else if(document.mozCancelFullScreen) {
@@ -112,7 +111,6 @@ function toggleFullscreen($markdownContainer) {
             document.webkitExitFullscreen();
         }
     }else{
-        console.log('Goto Fullscreen!');
         if(element.requestFullscreen) {
             element.requestFullscreen();
         } else if(element.mozRequestFullScreen) {
@@ -124,10 +122,28 @@ function toggleFullscreen($markdownContainer) {
         }
     }
     $markdownContainer.off("mozfullscreenerror webkitfullscreenchange fullscreenchange");
-    $markdownContainer.on("mozfullscreenerror webkitfullscreenchange fullscreenchange",function(event){
-        console.debug(event);
+    $markdownContainer.on("mozfullscreenerror webkitfullscreenchange fullscreenchange",function(){
         $markdownContainer.toggleClass('fullscreen', !$markdownContainer.hasClass("fullscreen"));
     });
+}
+
+if(window.marked){
+    var renderer = new window.marked.Renderer();
+    renderer.image = function (href, title, text) {
+        var out = '<div class="image-uploader"><figure><img src="' + href + '" alt="' + text + '"';
+        if (title) {
+            out += ' title="' + title + '"';
+        }
+        out += this.options.xhtml ? '/>' : '>';
+        if(title){
+            out += "<figcaption>"+title+"</figcaption>";
+        }
+        out += "</figure>" +
+            "<input class='image-uploader-input' type='file'/>" +
+            "<iframe class='image-uploader-frame hide' src='/image-uploader'></iframe>" +
+            "</div>";
+        return out;
+    };
 }
 
 function renderPreview(text){
@@ -135,7 +151,7 @@ function renderPreview(text){
         window.marked.setOptions({
             gfm: true
         });
-        window.marked(text, function (err, content) {
+        window.marked(text, {renderer: renderer}, function (err, content) {
             if (err){
                 console.debug(err);
             }
@@ -164,7 +180,6 @@ function syncScroll(){
         var textHeight= $(".CodeMirror").height() + 120;
         var htmlHeight = $(".markdown_preview").height() + 120;
         var scrollTop = top * ( htmlHeight - winHeight ) / ( textHeight - winHeight );
-        console.debug(top, winHeight, textHeight, htmlHeight, scrollTop);
         $html.scrollTop(scrollTop);
     });
 }
@@ -192,7 +207,6 @@ $(document).ready(function(){
         return false;
     });
     newTag.on("keyup",function(e) {
-    console.log(e);
         var _this = this;
         if(e.which === 32&&$(_this).val().trim()&& $(_this).val().split('').pop()===" "){
             updateTagsDom(_this);
@@ -209,13 +223,11 @@ $(document).ready(function(){
     });
 
     $("a.confirm").click(function(){
-        console.log(111);
         var url=this.getAttribute("href"),
             data = {
                 confirm:this.getAttribute('data-confirm'),
                 method: this.getAttribute('data-method')
             };
-        console.log(data);
         showBox(url,data,!!1);
         return false;
     });
@@ -256,7 +268,6 @@ $(document).ready(function(){
 
     renderPreview($("#post_content").val());
     if(window.editor){
-        console.debug("Has Editor");
         window.editor.on('change', function(event){
             renderPreview(event.doc.getValue());
         });

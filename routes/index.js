@@ -89,6 +89,8 @@ module.exports = function (app) {
 // handel Email from MailGun
     app.post('/receive-email', site.receiveEmail);
 
+// Image Uploader
+    app.get('/image-uploader', function(q,s){s.send("");});
 
     function redi(newUrl){
         return function(q,s){
