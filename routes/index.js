@@ -92,6 +92,12 @@ module.exports = function (app) {
 // Image Uploader
     app.get('/image-uploader', function(q,s){s.send("");});
 
+
+// Handle 404
+    app.all('/*', function(q,s){
+        console.log(404, "Captured");
+        s.status(404).render('404');
+    });
     function redi(newUrl){
         return function(q,s){
             s.redirect(301, newUrl);
