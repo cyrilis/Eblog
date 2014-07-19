@@ -21,6 +21,7 @@
     "marked": "^0.3.2",
     "colors": "^0.6.2",
     "q": "^1.0.1",
-    "node-schedule": "^0.1.13"
+    "node-schedule": "^0.1.13",
+    "aws-sdk": "^2.0.8"
   }
 }

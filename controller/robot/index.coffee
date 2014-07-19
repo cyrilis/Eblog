@@ -5,6 +5,12 @@ setting = require '../../settings'
 schedule = require 'node-schedule'
 request = require 'superagent'
 Twit = require('twit')
+AWS = require('aws-sdk')
+AWS.config.loadFromPath('./config.json')
+AWS.config.apiVersion = {
+  s3: '2006-03-01'
+}
+S3 = new AWS.S3()
 twitter = new Twit
   consumer_key        : setting.twitter.consumerKey
   consumer_secret     : setting.twitter.consumerSecret
@@ -55,6 +61,9 @@ class Robot
   checkJobs: ->
     return @jobs
 
+  handler: (err)->
+    console.log new Error(err)
+
   addSchedule: (jobfunc, option)->
     if option.loop
       loopTime = new schedule.RecurrenceRule()
@@ -65,7 +74,7 @@ class Robot
         loop: loopTime
       console.log 'Added To LoopJobs'
 
-  getData: (options)->
+  web: (options)->
     def = null
     method = options.method.toLowerCase()
     if method in ['get','put', 'del', 'post', 'head']
@@ -80,7 +89,6 @@ class Robot
       else deferred.resolve(res)
     def.on 'error', (error)->
       deferred.reject(error)
-
     deferred.promise
   twitter: (options)->
     defer = Q.defer()
@@ -89,4 +97,20 @@ class Robot
       else defer.resolve(result)
     defer.promise
 
-  s3: (options)->
+  storage: (options)->
+    option = {
+      Bucket: setting.S3Bucket
+      key: option.name || path.resolve(options.path).split('/').pop()
+      ACL: if options.private and options.private isnt 'public' then "private" else "public-read"
+      }
+    s3Defer = Q.defer()
+    fs.readFile options.path, (err, file)=>
+      if err @handler(err)
+      else (file)->
+      option.Body = file
+      S3.putObject option, (err, data)->
+        if err then s3Defer.reject(err)
+        else s3Defer.resolve(data)
+    s3Defer.promise
+
+
