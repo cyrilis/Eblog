@@ -1,27 +1,46 @@
 setting     = require '../../settings'
+# better console
 require('colors')
+
+# Email
 nodemailer  = require "nodemailer"
+mailer = nodemailer.createTransport 'SMTP',
+  service: 'Mailgun',
+  auth   :
+    user  : setting.mailgun.user,
+    pass  : setting.mailgun.pass
+
+# Defer Lib
 Q           = require "q"
+
+# CronJob Lib
 schedule    = require 'node-schedule'
+
+# request Lib
 request     = require 'superagent'
+
+# Twitter Api Lib
 Twit        = require 'twit'
+twitter = new Twit
+  consumer_key        : setting.twitter.consumerKey
+  consumer_secret     : setting.twitter.consumerSecret
+  access_token        : setting.twitter.accessToken
+  access_token_secret : setting.twitter.accessTokenSecret
+
+# GitHub Api Lib
+github = require('octonode')
+client = github.client(setting.github)
+
+# RSS xml parser
 rssParser   = require "rssparser"
+
+# AWS SDK
 AWS = require 'aws-sdk'
 AWS.config.loadFromPath('./config.json')
 AWS.config.apiVersion = {
   s3: '2006-03-01'
 }
 S3 = new AWS.S3()
-twitter = new Twit
-  consumer_key        : setting.twitter.consumerKey
-  consumer_secret     : setting.twitter.consumerSecret
-  access_token        : setting.twitter.accessToken
-  access_token_secret : setting.twitter.accessTokenSecret
-mailer = nodemailer.createTransport 'SMTP',
-    service: 'Mailgun',
-    auth   :
-      user  : setting.mailgun.user,
-      pass  : setting.mailgun.pass
 
 class Robot
   constructor: (config)->
@@ -121,7 +140,7 @@ class Robot
       else rssDefer.resolve(out)
     rssDefer.promise
 
-  github: (options)->
+  github: client
 
 
 
