@@ -95,7 +95,8 @@ exports.visiteLogs = function(q,s,next){
 
 exports.receiveEmail = function(q,s,next){
     var emailInfo = q.body;
-    emailInfo.date = new Date();
+    emailInfo.time = new Date();
+    emailInfo.type = "receive";
     var email = new Email(emailInfo);
     email.save(function(err,email){
         if (err){

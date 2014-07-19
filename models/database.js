@@ -84,6 +84,7 @@ var LogSchema = new Schema({
 });
 
 var EmailSchema = new Schema({
+    'type': String,
     id: ObjectId,
     time: Date,
     recipient: String,
