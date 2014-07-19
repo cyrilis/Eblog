@@ -1,11 +1,12 @@
+setting     = require '../../settings'
 require('colors')
-nodemailer = require("nodemailer")
-Q = require "q"
-setting = require '../../settings'
-schedule = require 'node-schedule'
-request = require 'superagent'
-Twit = require('twit')
-AWS = require('aws-sdk')
+nodemailer  = require "nodemailer"
+Q           = require "q"
+schedule    = require 'node-schedule'
+request     = require 'superagent'
+Twit        = require 'twit'
+rssParser   = require "rssparser"
+AWS = require 'aws-sdk'
 AWS.config.loadFromPath('./config.json')
 AWS.config.apiVersion = {
   s3: '2006-03-01'
@@ -112,5 +113,15 @@ class Robot
         if err then s3Defer.reject(err)
         else s3Defer.resolve(data)
     s3Defer.promise
+
+  rss: (options)->
+    rssDefer = Q.defer()
+    parser.parseURL options.url, options, (err, out)->
+      if err then rssDefer.reject(err)
+      else rssDefer.resolve(out)
+    rssDefer.promise
+
+  
+
 
 
