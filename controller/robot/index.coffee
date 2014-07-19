@@ -65,17 +65,17 @@ class Robot
   handler: (err)->
     console.log new Error(err)
 
-  addSchedule: (jobfunc, option)->
+  addSchedule: (option)->  #{job, loop,[hour, day, minute, seconds, week, month, year]}
     if option.loop
       loopTime = new schedule.RecurrenceRule()
       loopTime.hour = option.hour
-      loopJob = schedule.scheduleJob loopTime, jobfunc
+      loopJob = schedule.scheduleJob loopTime, option.job
       @jobs.push
         job: loopJob,
         loop: loopTime
       console.log 'Added To LoopJobs'
 
-  web: (options)->
+  web: (options)-> #{url [,method, header, data]}
     def = null
     method = options.method.toLowerCase()
     if method in ['get','put', 'del', 'post', 'head']
@@ -91,14 +91,14 @@ class Robot
     def.on 'error', (error)->
       deferred.reject(error)
     deferred.promise
-  twitter: (options)->
+  twitter: (options)-> #{action, method, data}
     defer = Q.defer()
     twitter[options.method] options.action, options.data, (err,result)->
       if err then defer.reject(err)
       else defer.resolve(result)
     defer.promise
 
-  storage: (options)->
+  storage: (options)-> #{path [, private(true, otherStringBut"public"), name]}
     option = {
       Bucket: setting.S3Bucket
       key: option.name || path.resolve(options.path).split('/').pop()
@@ -114,14 +114,15 @@ class Robot
         else s3Defer.resolve(data)
     s3Defer.promise
 
-  rss: (options)->
+  rss: (options)-> # {url, [requestOptions]}
     rssDefer = Q.defer()
     parser.parseURL options.url, options, (err, out)->
       if err then rssDefer.reject(err)
       else rssDefer.resolve(out)
     rssDefer.promise
 
-  
+  github: (options)->
+
 
 
 

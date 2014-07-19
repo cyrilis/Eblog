@@ -96,12 +96,12 @@
       return console.log(new Error(err));
     };
 
-    Robot.prototype.addSchedule = function(jobfunc, option) {
+    Robot.prototype.addSchedule = function(option) {
       var loopJob, loopTime;
       if (option.loop) {
         loopTime = new schedule.RecurrenceRule();
         loopTime.hour = option.hour;
-        loopJob = schedule.scheduleJob(loopTime, jobfunc);
+        loopJob = schedule.scheduleJob(loopTime, option.job);
         this.jobs.push({
           job: loopJob,
           loop: loopTime
@@ -190,6 +190,8 @@
       });
       return rssDefer.promise;
     };
+
+    Robot.prototype.github = function(options) {};
 
     return Robot;
 
