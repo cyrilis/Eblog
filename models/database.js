@@ -121,6 +121,7 @@ var RobotSchema = new Schema({
     type: String,
     time: Date,
     form: String,
+    status: String,
     content: Mixed
 });
 
