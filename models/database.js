@@ -9,6 +9,8 @@ var settings = require('../settings'),
     uslug = require('uslug'),
     moment = require('moment');
 
+var Mixed = Schema.Types.Mixed;
+
 var UserSchema = new Schema({
     id: ObjectId,
     name: {type:String, default: ""},
@@ -115,6 +117,13 @@ var EmailSchema = new Schema({
 });
 
 
+var RobotSchema = new Schema({
+    type: String,
+    time: Date,
+    form: String,
+    content: Mixed
+});
+
 var logDate = LogSchema.virtual('time');
 logDate.get(function(){
     return moment(this.date).lang('zh-cn').format("YYYY/MM/DD/H:mm:ss");
@@ -135,7 +144,8 @@ var connection = mongoose.createConnection(settings.dburl),
     Photo = connection.model('Photo',PhotoSchema),
     Log   = connection.model("Log", LogSchema),
     Site  = connection.model("Site", SiteSchema),
-    Email  = connection.model("Email", EmailSchema);
+    Email  = connection.model("Email", EmailSchema),
+    Robot = connection.model("Robot", RobotSchema);
 
 module.exports = {
     'User': User,
@@ -144,5 +154,6 @@ module.exports = {
     'Photo': Photo,
     'Log' : Log,
     'Site': Site,
-    'Email': Email
+    'Email': Email,
+    'Robot': Robot
 };
