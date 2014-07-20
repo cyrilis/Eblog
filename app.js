@@ -11,9 +11,9 @@ var path = require('path');
 var MongoStore = require('connect-mongo')(express);
 var settings = require('./settings');
 var flash = require('connect-flash');
-
+var robot = require('./routes/robot');
 var app = express();
-
+robot.start();
 // all environments
 var port = process.argv.indexOf('-p')? +process.argv[process.argv.indexOf('-p')+1]:undefined;
 app.set('port', process.env.PORT || port || 2000);
@@ -26,6 +26,7 @@ app.use(express.bodyParser({
     keepExtensions: true,
     uploadDir: './public/images/upload'
 }));
+
 app.use(express.methodOverride());
 app.use(express.cookieParser());
 app.use(express.session({
