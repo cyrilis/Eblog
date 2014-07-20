@@ -44,7 +44,7 @@ start = ->
         return false
       result = result || {content: "There is nothing here."}
       result.now = moment(new Date()).format('ll')
-      result.time = if result.time then (moment(new Date(result.time)).fromNow() + " [#{moment(new Date(result.time)).format("LLLL")}]") else "[No Memory]"
+      result.time = if result.time then ("#{moment(new Date(result.time)).fromNow()}  [#{moment(new Date(result.time)).format("LLLL")}]") else "[No Memory]"
       sendEmail(result).then (data)->
         diaryDefer.resolve(data)
       , (err)->
