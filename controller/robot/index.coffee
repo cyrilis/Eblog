@@ -72,7 +72,6 @@ class Robot
   mail: (options)->
     console.log options
     console.log @
-    options.subject = "[#{@name}]" + options.subject
     mailDiffer = Q.nfcall(mailer.sendMail, options)
     mailDiffer.then ->
       console.log arguments
@@ -95,15 +94,17 @@ class Robot
     failEvent.save()
 
 
-  jobs: (option)->  #{job, loop,[hour, day, minute, seconds, week, month, year]}
-    if option.loop
+  schedule: (option)->  #{job, loop,[hour, day, minute, seconds, week, month, year]}
+    if option.job
+      job = option.job
+      delete option.job
       loopTime = new schedule.RecurrenceRule()
+      loopTime.minute = option.minute
       loopTime.hour = option.hour
-      loopJob = schedule.scheduleJob loopTime, option.job
-      @jobs.push
-        job: loopJob,
-        loop: loopTime
-      console.log 'Added To LoopJobs'
+      loopTime.day = option.day
+      loopJob = schedule.scheduleJob loopTime, job
+      console.log('Added To Schedule.')
+      loopJob
 
   web: (options)-> #{url [,method, header, data]}
     console.log '[Fetching Web]'.green.inverse, options.url
@@ -195,6 +196,6 @@ class Robot
         token: setting.readabilityToken
     )
 
-exports = Robot
+module.exports = Robot
 
 
