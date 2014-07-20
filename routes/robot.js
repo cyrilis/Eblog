@@ -64,7 +64,7 @@
           content: "There is nothing here."
         };
         result.now = moment(new Date()).format('ll');
-        result.time = result.time ? moment(result.time).fromNow() + (" [" + (moment(result.time).format("LLLL")) + "]") : "[No Memory]";
+        result.time = result.time ? moment(new Date(result.time)).fromNow() + (" [" + (moment(new Date(result.time)).format("LLLL")) + "]") : "[No Memory]";
         return sendEmail(result).then(function(data) {
           return diaryDefer.resolve(data);
         }, function(err) {
