@@ -4,4 +4,4 @@ public/images/upload/*
 public/draw/*
 settings.js
 *.map
-controller/robot/config.json
+awsConfig.json

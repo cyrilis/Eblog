@@ -1,9 +1,9 @@
+path = require 'path'
 setting     = require '../../settings'
 # better console
 require('colors')
 
 # Database
-
 RobotEvent = require('../../models/database').Robot
 
 # Email
@@ -40,7 +40,7 @@ rssParser   = require "rssparser"
 
 # AWS SDK
 AWS = require 'aws-sdk'
-AWS.config.loadFromPath('./config.json')
+AWS.config.loadFromPath( path.resolve __dirname, "../../awsConfig.json")
 AWS.config.apiVersion = {
   s3: '2006-03-01'
 }
@@ -108,13 +108,15 @@ class Robot
   web: (options)-> #{url [,method, header, data]}
     console.log '[Fetching Web]'.green.inverse, options.url
     def = null
-    method = options.method.toLowerCase()
+    method = (options.method||'get').toLowerCase()
     if method in ['get','put', 'del', 'post', 'head']
       def = request[method](options.url)
     if options.data
       def = def.send data
     if options.header
       def = def.set options.header
+    if options.query
+      def = def.query options.query
     deferred = Q.defer()
     def.end (res)->
       if res.error then deferred.reject(res)
@@ -185,6 +187,14 @@ class Robot
 
   github: client
 
+  readability: (url)->
+    @web(
+      url: "https://readability.com/api/content/v1/parser"
+      query:
+        url: url
+        token: setting.readabilityToken
+    )
 
+exports = Robot
 
 

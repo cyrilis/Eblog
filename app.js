@@ -11,7 +11,7 @@ var path = require('path');
 var MongoStore = require('connect-mongo')(express);
 var settings = require('./settings');
 var flash = require('connect-flash');
-
+var robot = require('./routes/robot');
 var app = express();
 
 // all environments
@@ -26,6 +26,7 @@ app.use(express.bodyParser({
     keepExtensions: true,
     uploadDir: './public/images/upload'
 }));
+app.use(robot);
 app.use(express.methodOverride());
 app.use(express.cookieParser());
 app.use(express.session({
