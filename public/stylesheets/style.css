@@ -98,6 +98,7 @@ main article .post-content blockquote p:last-child {
   position: relative;
 }
 #header {
+  max-width: 1440px;
   margin: 0 auto;
   padding-top: 25px;
 }
@@ -167,6 +168,7 @@ main article .post-content blockquote p:last-child {
   display: block;
 }
 main {
+  max-width: 1440px;
   margin: 0 auto;
 }
 main article {
@@ -227,6 +229,7 @@ main article .post-footer {
   clear: both;
 }
 footer {
+  max-width: 1440px;
   margin: 40px auto;
 }
 #container {
@@ -238,26 +241,6 @@ footer {
   box-shadow: 0 0 1.25em rgba(0,0,0,0.1);
   margin-top: 40px;
   padding-bottom: 100px;
-}
-@media screen and (max-width: 1520px) {
-  #container {
-    max-width: 1366px;
-  }
-}
-@media screen and (max-width: 1450px) {
-  #container {
-    max-width: 1170px;
-  }
-}
-@media screen and (max-width: 1280px) {
-  #container {
-    max-width: 1100px;
-  }
-}
-@media screen and (max-width: 1100px) {
-  #container {
-    max-width: 900px;
-  }
 }
 body {
   background: #ddd;

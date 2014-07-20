@@ -4,3 +4,4 @@ public/images/upload/*
 public/draw/*
 settings.js
 *.map
+awsConfig.json

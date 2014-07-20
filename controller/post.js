@@ -39,7 +39,7 @@ exports.all = function(q,s,next){
             site: site,
             util:{
                 isProduction: function(){
-                    return true;
+                    return false;
                 }
             }
         });

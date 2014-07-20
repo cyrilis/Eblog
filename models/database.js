@@ -9,6 +9,8 @@ var settings = require('../settings'),
     uslug = require('uslug'),
     moment = require('moment');
 
+var Mixed = Schema.Types.Mixed;
+
 var UserSchema = new Schema({
     id: ObjectId,
     name: {type:String, default: ""},
@@ -84,35 +86,60 @@ var LogSchema = new Schema({
 });
 
 var EmailSchema = new Schema({
+    type: String,
     id: ObjectId,
     time: Date,
     recipient: String,
     sender: String,
     subject: String,
     from: String,
-    "X-Envelope-From": String,
     received: String,
-    'Dkim-Signature': String,
-    'Mime-Version': String,
-    'X-Received': String,
     Date: String,
-    "Message-Id": String,
-    'Subject': String,
     From: String,
     To: String,
-    'Content-Type': String,
-    'X-Mailgun-Incoming': String,
-    'message-headers': String,
     timestamp: String,
     token: String,
     signature: String,
+    "X-Envelope-From": String,
+    'Dkim-Signature': String,
+    'Mime-Version': String,
+    'X-Received': String,
+    "Message-Id": String,
+    'Subject': String,
+    'Content-Type': String,
+    'X-Mailgun-Incoming': String,
+    'message-headers': String,
     'body-plan': String,
     'body-html': String,
     'stripped-html': String,
     'stripped-text': String,
-    'stripped-signature': String
+    'stripped-signature': String,
+    'In-Reply-To': String
 });
 
+var DiarySchema = new Schema({
+    time: Date,
+    content: String,
+    form: String
+});
+
+DiarySchema.statics.random = function(callback) {
+    this.count(function(err, count) {
+        if (err) {
+            return callback(err);
+        }
+        var rand = Math.floor(Math.random() * count);
+        this.findOne().skip(rand).exec(callback);
+    }.bind(this));
+};
+
+var RobotSchema = new Schema({
+    type: String,
+    time: Date,
+    form: String,
+    status: String,
+    content: Mixed
+});
 
 var logDate = LogSchema.virtual('time');
 logDate.get(function(){
@@ -134,7 +161,9 @@ var connection = mongoose.createConnection(settings.dburl),
     Photo = connection.model('Photo',PhotoSchema),
     Log   = connection.model("Log", LogSchema),
     Site  = connection.model("Site", SiteSchema),
-    Email  = connection.model("Email", EmailSchema);
+    Email  = connection.model("Email", EmailSchema),
+    Robot = connection.model("Robot", RobotSchema),
+    Diary = connection.model("Diary", DiarySchema);
 
 module.exports = {
     'User': User,
@@ -143,5 +172,7 @@ module.exports = {
     'Photo': Photo,
     'Log' : Log,
     'Site': Site,
-    'Email': Email
+    'Email': Email,
+    'Robot': Robot,
+    'Diary': Diary
 };
