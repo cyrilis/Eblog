@@ -19,7 +19,6 @@ start = ->
 
     diaryDefer = Q.defer()
 
-
     sendEmail = (content)->
       ejs.renderFile mailTemplate, content, (err, data)->
         if err
@@ -29,7 +28,7 @@ start = ->
         robot.mail(
           from: setting.mailfrom
           to: setting.mailto
-          subject: "[Daily Mail] How is your day going?"
+          subject: "[Daily Mail] How is your day going? [#{moment().format('ll')}]"
           html: data
         ).then (data)->
           console.log "Daily Mail Sent."
@@ -44,8 +43,8 @@ start = ->
         diaryDefer.reject(err)
         return false
       result = result || {content: "There is nothing here."}
-      result.now = moment(new Date()).format('LLLL')
-      result.time = if result.time then moment(result.time).fromNow() else "[No Memory]"
+      result.now = moment(new Date()).format('ll')
+      result.time = if result.time then (moment(result.time).fromNow() + " [#{moment(result.time).format("LLLL")}]") else "[No Memory]"
       sendEmail(result).then (data)->
         diaryDefer.resolve(data)
       , (err)->
@@ -57,7 +56,8 @@ start = ->
   console.log "Adding to Schedule......"
   newJob = robot.schedule(
     job: dailyMail
-    minute: 30
+    hour: 0
+    minute: 0
   )
   newJob.runOnDate(new Date())
 

@@ -44,7 +44,7 @@
           return robot.mail({
             from: setting.mailfrom,
             to: setting.mailto,
-            subject: "[Daily Mail] How is your day going?",
+            subject: "[Daily Mail] How is your day going? [" + (moment().format('ll')) + "]",
             html: data
           }).then(function(data) {
             console.log("Daily Mail Sent.");
@@ -63,8 +63,8 @@
         result = result || {
           content: "There is nothing here."
         };
-        result.now = moment(new Date()).format('LLLL');
-        result.time = result.time ? moment(result.time).fromNow() : "[No Memory]";
+        result.now = moment(new Date()).format('ll');
+        result.time = result.time ? moment(result.time).fromNow() + (" [" + (moment(result.time).format("LLLL")) + "]") : "[No Memory]";
         return sendEmail(result).then(function(data) {
           return diaryDefer.resolve(data);
         }, function(err) {
@@ -76,7 +76,8 @@
     console.log("Adding to Schedule......");
     newJob = robot.schedule({
       job: dailyMail,
-      minute: 30
+      hour: 0,
+      minute: 0
     });
     return newJob.runOnDate(new Date());
   };
