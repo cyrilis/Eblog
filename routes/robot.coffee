@@ -3,7 +3,8 @@ setting = require "../settings"
 path = require 'path'
 Diary = require('../models/database.js').Diary
 Q = require 'q'
-console.log Robot
+moment = require('moment')
+moment.lang('zh-cn')
 ejs = require 'ejs'
 mailTemplate = path.resolve __dirname, "../views/templates/mail.html"
 robot = new Robot
@@ -42,7 +43,9 @@ start = ->
       if err
         diaryDefer.reject(err)
         return false
-      result = result || {time: new Date(), content: "There is nothing here."}
+      result = result || {content: "There is nothing here."}
+      result.now = moment(new Date()).format('LLLL')
+      result.time = if result.time then moment(result.time).fromNow() else "[No Memory]"
       sendEmail(result).then (data)->
         diaryDefer.resolve(data)
       , (err)->
@@ -54,7 +57,7 @@ start = ->
   console.log "Adding to Schedule......"
   newJob = robot.schedule(
     job: dailyMail
-    minute: 1
+    second: 30
   )
   newJob.runOnDate(new Date())
 

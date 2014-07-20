@@ -9,6 +9,7 @@ var Email = require('../models/database').Email;
 var Diary = require('../models/database').Diary;
 var setting = require('../settings');
 var mail = require('../controller/utils').mail;
+var cheerio = require('cheerio');
 exports.updateAbout = function(q,s, next){
     if(!q.body.site||!q.body.site.about){
         q.flash('error',"Sorry, About content can't be blank!");
@@ -115,6 +116,11 @@ exports.receiveEmail = function(q,s,next){
             time: new Date(),
             from: emailInfo.sender
         };
+        var $ = cheerio.load( diaryParams.content);
+
+        $(".gmail_quote").remove();
+        diaryParams.content = $.html();
+
         new Diary(diaryParams).save(function(err, result){
             if(err){
                 console.log(err);
