@@ -65,6 +65,7 @@
         };
         result.now = moment(new Date()).format('ll');
         result.time = result.time ? "" + (moment(new Date(result.time)).fromNow()) + "  [" + (moment(new Date(result.time)).format("LLLL")) + "]" : "[No Memory]";
+        console.log(result.time);
         return sendEmail(result).then(function(data) {
           return diaryDefer.resolve(data);
         }, function(err) {
